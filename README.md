@@ -168,7 +168,8 @@ During all the implementation process  I have been adding required styling in t
 ## **UX Design**
 
 ### **Scope**
-
+With the development of technology, the comfort level of our life increases. The use of the Internet has become an everyday reality. In connection with this, we can observe emerging trends in the market related to the use of mobile devices and the easy accessibility they provide. One of the rapidly growing trends is online shopping. In response to the growing interest in virtual trading, Pretty Curly Girls has prepared an easy-to-use e-commerce application that is fully responsive and designed in the spirit of the greatest user experience.
+Particular attention will be placed on the smooth navigation through the page, easy checkout process and user-friendly features like: the wish list, rating scale or advanced search engine.
 
 ### **Skeleton** 
 #### **Wireframes:**
@@ -189,7 +190,7 @@ I have implemented **PostgreSQL (Postgres)** - the open-source database object-r
   <img src="https://github.com/KlaudiaBC/FST-Project-Empire-of-Thoughts/blob/main/static/images/readme/heroku_data_postgres.png?raw=true" alt="postgres">
 </p>
 
-Entity relationship diagram:
+Entity relationship diagram for all the models included in the application:
 <p align="center">
   <img src="#" alt="entity relationship diagram">
 </p>
@@ -204,8 +205,6 @@ Entity relationship diagram:
 **Logo and navbar:**
 Sticky top, includes logo (left side) and the navbar on the right side (burder-menu on the mobile devices)
 Menu includes following:
- - For new User: Register, Login
- - For registered Users: Home, MyPage, Category, AddPost, Logout.
 
 <p align="center">
   <img src="#" alt="landing page desktop">
@@ -370,36 +369,34 @@ I have used the following technologies and support sources:
 ## **Acknowledgements**
 
 In this place I would like to thank everyone, who added an knowledge and value to this project:
-- <a href="https://codeinstitute.net/" target="_blank">Code Institute</a> course, materials and walkthroughs - especially the walkthrough "I Think Therefore I Blog"
+- <a href="https://codeinstitute.net/" target="_blank">Code Institute</a> course, materials and walkthroughs
 - lead and support of my Code Institute Mentor - Guido Cecilio
 - Code Institute Slack Community
 - <a href="https://stackoverflow.com/" target="_blank">Stack Overflow</a>
 - <a href="https://www.w3schools.com/" target="_blank">W3schools</a>
-- <a href="https://www.youtube.com/watch?v=B40bteAMM_M&list=PLCC34OHNcOtr025c1kHSPrnP18YPB-NFi" target="_blank">Create A Simple Blog With Python and Django</a> by John Elder from Codemy.com - great part of my project is based on his tutorials (authorisation, commenting, categorisation, likes)
+- 
+- <a href="#">Some title</a> by ??
+- 
 - <a href="https://ordinarycoders.com/blog/article/django-user-register-login-logout" target="_blank">"A Guide to User Registration, Login, and Logout in Django"</a> by < ordinary > coders
 - <a href="https://dev.to/lawrence_eagles/causes-of-heroku-h10-app-crashed-error-and-how-to-solve-them-3jnl" target="_blank">"Causes of Heroku H10-App Crashed Error And How To Solve Them"</a> by Dev.to
-- <a href="https://realpython.com/python-django-blog/" target="_blank">"Build a Blog Using Django, Vue, and GraphQL"</a> by Real Python
 - <a href="https://realpython.com/django-hosting-on-heroku/" target="_blank">"Hosting a Django Project on Heroku"</a> by Real Python
 - <a href="https://www.atlassian.com/agile/project-management/user-stories" target="_blank">"User stories with examples and a template"</a> by Atlassian
 - <a href="https://www.easyagile.com/blog/how-to-write-good-user-stories-in-agile-software-development/" target="_blank">"How to Write Good User Stories in Agile Software Development"</a> by EasyAgile
 - <a href="https://www.knowledgehut.com/blog/agile/powerful-tips-for-writing-the-best-user-stories-in-scrum" target="_blank">"Powerful Tips for Writing the Best User Stories in Scrum"</a> by Knowledgehut
-- <a href="https://www.canva.com/learn/social-media-design-trends-2022/" target="_blank">"7 Social Media Graphic Design Trends to Build Your Brand in 2022"</a> by Canva
-- <a href="https://www.digitalinformationworld.com/2022/03/here-are-social-media-design-trends-you.html?m=1" target="_blank">"Social Media Design Trends You Should Know About in 2022"</a> by 
-- <a href="https://inkbotdesign.com/ui-elements/" target="_blank">"7 Essential UI Elements for Social Websites"</a> by Inkbot Design
-- <a href="https://www.techcronus.com/blog/building-social-networking-platform-with-python-django-framework/" target="_blank">"Building Social Networking Platform With Python Django Framework"</a> by Techcronus
-- <a href="https://softwareengineering.stackexchange.com/questions/335925/do-i-store-blog-posts-in-a-database-and-how-do-i-continue-to-make-posts" target="_blank">"Do I store blog posts in a database? And how do I continue to make posts?"</a> by Software Engineering
-- <a href="https://influencermarketinghub.com/social-media-graphic-design-trends/#:~:text=In%202022%2C%20expect%20to%20see,elements%2C%20but%20everything%20is%20intentional" target="_blank">"The 20 Biggest Social Media Graphic Design Trends to Watch For in 2022"</a> by Influencer
-- <a href="https://www.aimprosoft.com/blog/how-to-build-a-social-media-website/" target="_blank">"How to Create a Social Media Network Site Like Facebook"</a> by Aimprosoft
+- <a href="[https://www.canva.com/learn/social-media-design-trends-2022/](https://dribbble.com/tags/ecommerce_app)" target="_blank">"Ecommerce App (design inspirations)"</a> by Dribbble.com
+- <a href="https://www.google.com/amp/s/appinventiv.com/blog/ecommerce-app-features-for-startups-and-enterprises/">"Top 10 eCommerce app features for startups and enterprises"</a> by Appinventiv.com
+- <a href="https://mindsea.com/mobile-app-marketing/">"Mobile app marketing"</a> by Mindsea
+- <a href="https://mindster.com/mindster-blogs/ecommerce-applications/">"How e-Commerce Applications Help Your Business Grow?"</a> by Mindster
+- <a href="https://buildfire.com/mobile-app-ecommerce-marketing-ideas/">"Mobile ecommerce marketing ideas"</a> by Buildfire
+- <a href="https://blog.hubspot.com/marketing/ecommerce-marketing">"Everything you need to know about ecommerce marketing"</a> by HubSpot
+- <a href="#">Some title</a> by ??
+- <a href="#">Some title</a> by ??
+- <a href="#">Some title</a> by ??
 - <a href="https://www.djangoproject.com/" target="_blank">Django documentation</a> by Django
 
 Media used:
-- Image of persona - Pixabay
-- Image in the backgroung by Anna Nekrashevich via Pexels
-
-Text used as "posts" entances:
-- <a href="https://englishluv.com/diary-writing-samples/" target="_blank">Diary Samples</a>
-- <a href="https://businessmantalk.com/diary-writing-format/>" target="_blank">How to write diary?</a>
-- <a href="https://kinectinc.com/what-do-you-want-to-do-with-your-life/" target="_blank">What do you want to do...</a>
+- All images included in the front end application are coming directly from the Client: <a href="https://prettycurlygirl.store/">Pretty Curly Girl</a>
+- Image of persona: <a href="https://www.pexels.com/photo/women-wearing-black-clothes-7623816/">Photo by Mikhail Nilov</a> via Pexels
 
 
 <p align="right"><a href="#welcome">Bact to top</a></p>
