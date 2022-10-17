@@ -1,1 +1,1 @@
-gunicorn PCG.wsgi
+gunicorn pretty-curly-girl.wsgi
