@@ -1,9 +1,11 @@
 asgiref==3.5.2
+dj-database-url==1.0.0
 Django==3.2.16
 django-allauth==0.41.0
 gunicorn==20.1.0
 heroku==0.1.4
 oauthlib==3.2.1
+psycopg2==2.9.4
 python-dateutil==1.5
 python3-openid==3.2.0
 pytz==2022.4
