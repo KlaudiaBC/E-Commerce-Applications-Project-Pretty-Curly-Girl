@@ -1,160 +1,245 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-dark sub-menu">
-    <div class="container">
-        <div class="collapse navbar-collapse" id="navbar">
-            <ul class="navbar-nav mx-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
+  <!-- Promo text -->
+  <div class="overlay"></div>
+  <div class="utility-nav">
+      <div class="container">
+          <div>
+              <p class="small">Free shipping on total of $99 of all products</p>
+          </div>
+      </div>
+  </div>
 
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="about-us-link" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        About Us
-                    </a>
-                    <div class="dropdown-menu border-0" aria-labelledby="about-us-link">
-                        <a href="" class="dropdown-item">Our mission</a>
-                        <a href="" class="dropdown-item ">3-steps curly routine</a>
-                        <a href="" class="dropdown-item ">Shipping Policy</a>
-                        <a href="" class="dropdown-item ">Terms and Conditions</a>
-                        <a href="" class="dropdown-item">Contact</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="about-us-link" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        Products
-                    </a>
-                    <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-                        <a href="" class="dropdown-item">By category</a>
-                        <a href="" class="dropdown-item ">By rating</a>
-                        <a href="" class="dropdown-item ">By price</a>
-                        <a href="" class="dropdown-item">Bundles</a>
-                        <a href="" class="dropdown-item">All Products</a>
-                    </div>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Locations</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Curly STAR</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Curly Tips</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
+  <!-- Header -->
+  <nav class="navbar navbar-expand-md navbar-light bg-light main-menu" style="box-shadow:none">
+      <div class="container">
 
-<!-- Search bar -->
-<div class="search-bar d-block d-md-none search-dark">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <form class="form-inline mb-3 mx-auto">
-                    <input class="form-control" type="search" placeholder="Search for products..." aria-label="Search">
-                    <input type="image" id="Search" class="sm-icons d-block d-md-none"
-                    src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/static/images/media/search-white.png?raw=true"
-                    alt="search">
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
+          <input type="image" id="sidebarCollapse" class="sm-icons d-block d-md-none"
+              src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/static/images/media/menu.png?raw=true"
+              alt="Menu">
 
-<!-- Sidebar -->
-<nav id="sidebar">
-    <div class="sidebar-header">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-10 pl-0">
-                    <a class="text-black nav-link" href="#user-options-sm" data-toggle="collapse" aria-expanded="false"
-                        class="dropdown-toggle">My Account</a>
-                    <ul class="collapse list-unstyled" id="user-options-sm">
-                        {% if request.user.is_authenticated %}
-                        {% if request.user.is_superuser %}
-                        <li><a href="" class="dropdown-item">Product Management</a></li>
-                        {% endif %}
-                        <li><a href="" class="dropdown-item">My Profile</a></li>
-                        <li><a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a></li>
-                        {% else %}
-                        <li><a href="{% url 'account_signup' %}" class="dropdown-item">Register</a></li>
-                        <li><a href="{% url 'account_login' %}" class="dropdown-item">Login</a></li>
-                        {% endif %}
-                    </ul>
-                </div>
+          <a class="navbar-brand" href="{% url 'home' %}">
+              <h4 class="font-weight-bold">Pretty Curly Girl</h4>
+          </a>
 
-                <div class="col-2 text-left">
-                    <button type="button" id="sidebarCollapseX" class="close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                </div>
-            </div>
-        </div>
-    </div>
+          <ul class="navbar-nav ml-auto d-block d-md-none">
+              <li class="nav-item sm-icons">
+                  <a href="#"><img
+                          src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/static/images/media/shopping-cart.png?raw=true">
+              </li>
+          </ul>
 
-    <ul class="list-unstyled components links">
-        <li class="active">
-            <a href="#"><i class="bx bx-home mr-3"></i> Home</a>
-        </li>
-        <li>
-            <a href="#productSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i
-                    class="bx bx-help-circle mr-3"></i>Products</a>
-            <ul class="collapse list-unstyled" id="productSubmenu">
-                <li>
-                    <a href="#">By category</a>
-                </li>
-                <li>
-                    <a href="#">By rating</a>
-                </li>
-                <li>
-                    <a href="#">By price</a>
-                </li>
-                <li>
-                    <a href="#">Bundles</a>
-                </li>
-                <li>
-                    <a href="#">All Products</a>
-                </li>
-            </ul>
-        </li>
-        <li>
-            <a href="#"><i class="bx bx-book-open mr-3"></i> Locations</a>
-        </li>
-        <li>
-            <a href="#"><i class="bx bx-crown mr-3"></i> Curly STAR</a>
-        </li>
-        <li>
-            <a href="#"><i class="bx bx-crown mr-3"></i> Curly Tips</a>
-        </li>
-        <li>
-            <a href="#"><i class="bx bx-crown mr-3"></i> Contact</a>
-        </li>
-    </ul>
+          <div class="collapse navbar-collapse header-lg">
+              <form class="form-inline my-2 my-lg-0 mx-auto">
+                  <input class="form-control" type="search" placeholder="Search for products..." aria-label="Search">
+                  <input type="image" id="Search" class="sm-icons my-2 my-sm-0"
+                      src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/static/images/media/search.png?raw=true"
+                      alt="search">
+              </form>
 
-    <h6 class="text-uppercase mb-1">Categories</h6>
-    <ul class="list-unstyled components mb-3">
-        <li>
-            <a href="#">Category 1</a>
-        </li>
-        <li>
-            <a href="#">Category 1</a>
-        </li>
-        <li>
-            <a href="#">Category 1</a>
-        </li>
-        <li>
-            <a href="#">Category 1</a>
-        </li>
-    </ul>
+              <li class="list-inline-item dropdown">
+                  <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true"
+                      aria-expanded="false">
+                      <div class="text-center">
+                          <div><i class="fas fa-user fa-lg"></i></div>
+                          <p class="my-0">My Account</p>
+                      </div>
+                  </a>
+                  <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                      {% if request.user.is_authenticated %}
+                      {% if request.user.is_superuser %}
+                      <a href="" class="dropdown-item">Product Management</a>
+                      {% endif %}
+                      <a href="" class="dropdown-item">My Profile</a>
+                      <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                      {% else %}
+                      <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                      <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                      {% endif %}
+                  </div>
+              </li>
 
-    <ul class="social-icons">
-        <li><a href="#" target="_blank" title=""><i class="bx bxl-facebook-square"></i></a></li>
-        <li><a href="#" target="_blank" title=""><i class="bx bxl-twitter"></i></a></li>
-        <li><a href="#" target="_blank" title=""><i class="bx bxl-linkedin"></i></a></li>
-        <li><a href="#" target="_blank" title=""><i class="bx bxl-instagram"></i></a></li>
-    </ul>
+              <ul class="navbar-nav">
+                  <li class="nav-item sm-icons">
+                      <a href="#"><img
+                              src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/static/images/media/shopping-cart.png?raw=true">
+                  </li>
+                  <li class="list-inline-item">
+                      <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link"
+                          href="">
+                          <div class="text-center">
+                              <p class="my-0">
+                                  {% if grand_total %}
+                                  ${{ grand_total|floatformat:2 }}
+                                  {% else %}
+                                  € 0.00
+                                  {% endif %}
+                              </p>
+                          </div>
+                      </a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </nav>
 
-</nav>
+  <!-- Main navbar -->
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark sub-menu">
+      <div class="container">
+          <div class="collapse navbar-collapse" id="navbar">
+              <ul class="navbar-nav mx-auto">
+                  <li class="nav-item active">
+                      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                  </li>
+
+                  <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="about-us-link" data-toggle="dropdown"
+                          aria-haspopup="true" aria-expanded="false">
+                          About Us
+                      </a>
+                      <div class="dropdown-menu border-0" aria-labelledby="about-us-link">
+                          <a href="" class="dropdown-item">Our mission</a>
+                          <a href="" class="dropdown-item ">3-steps curly routine</a>
+                          <a href="" class="dropdown-item ">Shipping Policy</a>
+                          <a href="" class="dropdown-item ">Terms and Conditions</a>
+                          <a href="" class="dropdown-item">Contact</a>
+                      </div>
+                  </li>
+                  <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="about-us-link" data-toggle="dropdown"
+                          aria-haspopup="true" aria-expanded="false">
+                          Products
+                      </a>
+                      <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
+                          <a href="" class="dropdown-item">By category</a>
+                          <a href="" class="dropdown-item ">By rating</a>
+                          <a href="" class="dropdown-item ">By price</a>
+                          <a href="" class="dropdown-item">Bundles</a>
+                          <a href="" class="dropdown-item">All Products</a>
+                      </div>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">Locations</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">Curly STAR</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">Curly Tips</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">Contact</a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </nav>
+
+  <!-- Search bar -->
+  <div class="search-bar d-block d-md-none search-dark">
+      <div class="container">
+          <div class="row">
+              <div class="col-12">
+                  <form class="form-inline mb-3 mx-auto">
+                      <input class="form-control" type="search" placeholder="Search for products..."
+                          aria-label="Search">
+                      <input type="image" id="Search" class="sm-icons d-block d-md-none"
+                          src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/static/images/media/search-dark.png?raw=true"
+                          alt="search">
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Sidebar -->
+  <nav id="sidebar">
+      <div class="sidebar-header">
+          <div class="container">
+              <div class="row align-items-center">
+                  <div class="col-10 pl-0">
+                      <a class="text-black nav-link" href="#user-options-sm" data-toggle="collapse"
+                          aria-expanded="false" class="dropdown-toggle">My Account</a>
+                      <ul class="collapse list-unstyled" id="user-options-sm">
+                          {% if request.user.is_authenticated %}
+                          {% if request.user.is_superuser %}
+                          <li><a href="" class="dropdown-item">Product Management</a></li>
+                          {% endif %}
+                          <li><a href="" class="dropdown-item">My Profile</a></li>
+                          <li><a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a></li>
+                          {% else %}
+                          <li><a href="{% url 'account_signup' %}" class="dropdown-item">Register</a></li>
+                          <li><a href="{% url 'account_login' %}" class="dropdown-item">Login</a></li>
+                          {% endif %}
+                      </ul>
+                  </div>
+
+                  <div class="col-2 text-left">
+                      <button type="button" id="sidebarCollapseX" class="close">
+                          <span aria-hidden="true">&times;</span>
+                      </button>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <ul class="list-unstyled components links">
+          <li class="active">
+              <a href="#"><i class="bx bx-home mr-3"></i> Home</a>
+          </li>
+          <li>
+              <a href="#productSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i
+                      class="bx bx-help-circle mr-3"></i>Products</a>
+              <ul class="collapse list-unstyled" id="productSubmenu">
+                  <li>
+                      <a href="#">By category</a>
+                  </li>
+                  <li>
+                      <a href="#">By rating</a>
+                  </li>
+                  <li>
+                      <a href="#">By price</a>
+                  </li>
+                  <li>
+                      <a href="#">Bundles</a>
+                  </li>
+                  <li>
+                      <a href="#">All Products</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+              <a href="#"><i class="bx bx-book-open mr-3"></i> Locations</a>
+          </li>
+          <li>
+              <a href="#"><i class="bx bx-crown mr-3"></i> Curly STAR</a>
+          </li>
+          <li>
+              <a href="#"><i class="bx bx-crown mr-3"></i> Curly Tips</a>
+          </li>
+          <li>
+              <a href="#"><i class="bx bx-crown mr-3"></i> Contact</a>
+          </li>
+      </ul>
+
+      <h6 class="text-uppercase mb-1">Categories</h6>
+      <ul class="list-unstyled components mb-3">
+          <li>
+              <a href="#">Category 1</a>
+          </li>
+          <li>
+              <a href="#">Category 1</a>
+          </li>
+          <li>
+              <a href="#">Category 1</a>
+          </li>
+          <li>
+              <a href="#">Category 1</a>
+          </li>
+      </ul>
+
+      <ul class="social-icons">
+          <li><a href="#" target="_blank" title=""><i class="bx bxl-facebook-square"></i></a></li>
+          <li><a href="#" target="_blank" title=""><i class="bx bxl-twitter"></i></a></li>
+          <li><a href="#" target="_blank" title=""><i class="bx bxl-linkedin"></i></a></li>
+          <li><a href="#" target="_blank" title=""><i class="bx bxl-instagram"></i></a></li>
+      </ul>
+
+  </nav>
