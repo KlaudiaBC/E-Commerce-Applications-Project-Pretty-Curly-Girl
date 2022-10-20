@@ -24,84 +24,8 @@
 
 <body>
 
-  <!-- Promo text -->
-  <div class="overlay"></div>
-  <div class="utility-nav">
-    <div class="container">
-      <div>
-        <p class="small">Free shipping on total of $99 of all products</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Header -->
-  <nav class="navbar navbar-expand-md navbar-light bg-light main-menu" style="box-shadow:none">
-    <div class="container">
-
-      <input type="image" id="sidebarCollapse" class="sm-icons d-block d-md-none"
-        src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/static/images/media/menu.png?raw=true"
-        alt="Menu">
-
-      <a class="navbar-brand" href="{% url 'home' %}">
-        <h4 class="font-weight-bold">Pretty Curly Girl</h4>
-      </a>
-
-      <ul class="navbar-nav ml-auto d-block d-md-none">
-        <li class="nav-item sm-icons">
-          <a href="#"><img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/static/images/media/shopping-cart.png?raw=true">
-        </li>
-      </ul>
-
-      <div class="collapse navbar-collapse header-lg">
-        <form class="form-inline my-2 my-lg-0 mx-auto">
-          <input class="form-control" type="search" placeholder="Search for products..." aria-label="Search">
-          <input type="image" id="Search" class="sm-icons my-2 my-sm-0"
-          src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/static/images/media/search.png?raw=true" alt="search">
-        </form>
-
-        <li class="list-inline-item dropdown">
-          <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false">
-            <div class="text-center">
-              <div><i class="fas fa-user fa-lg"></i></div>
-              <p class="my-0">My Account</p>
-            </div>
-          </a>
-          <div class="dropdown-menu border-0" aria-labelledby="user-options">
-            {% if request.user.is_authenticated %}
-            {% if request.user.is_superuser %}
-            <a href="" class="dropdown-item">Product Management</a>
-            {% endif %}
-            <a href="" class="dropdown-item">My Profile</a>
-            <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-            {% else %}
-            <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-            <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
-            {% endif %}
-          </div>
-        </li>
-
-        <ul class="navbar-nav">
-          <li class="nav-item sm-icons">
-              <a href="#"><img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/static/images/media/shopping-cart.png?raw=true">
-          </li>
-          <li class="list-inline-item">
-            <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="">
-              <div class="text-center">
-                <p class="my-0">
-                  {% if grand_total %}
-                  ${{ grand_total|floatformat:2 }}
-                  {% else %}
-                  € 0.00
-                  {% endif %}
-                </p>
-              </div>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  <!-- Header and Main navbar -->
+  {% include 'includes/navbar.html' %}
 
   <!-- Messages -->
   <div class="container">
@@ -116,9 +40,6 @@
       </div>
     </div>
   </div>
-
-  <!-- Main navbar -->
-  {% include 'includes/navbar.html' %}
 
   {% block content %}
   <!-- Content Goes here -->
