@@ -40,7 +40,7 @@
 
       <button type="button" id="sidebarCollapse" class="btn btn-link d-block d-md-none">
         <i class="bx bx-menu icon-single"></i>
-    </button>
+      </button>
 
       <a class="navbar-brand" href="{% url 'home' %}">
         <h4 class="font-weight-bold">Pretty Curly Girl</h4>
@@ -59,32 +59,27 @@
           <button class="btn btn-success my-2 my-sm-0" type="submit"><i class="bx bx-search"></i></button>
         </form>
 
-
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="btn btn-link" href="#"><i class="bx bxs-cart icon-single"></i> <span
-                class="badge badge-danger">3</span></a>
-          </li>
-          <li class="nav-item ml-md-3">
-            <a href="#"><i class="bx bxs-user-circle mr-1"></i>My Account</a>
-          </li>
-        </ul>
-
-        <ul class="navbar-nav">
           <li class="list-inline-item dropdown">
-            <div class="dropdown-menu border-0" aria-labelledby="user-options" id="user-options">
-              {% if request.user.is_authenticated %}
-              {% if request.user.is_superuser %}
-              <a href="" class="dropdown-item">Product Management</a>
-              {% endif %}
-              <a href="" class="dropdown-item">My Profile</a>
-              <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-              {% else %}
-              <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-              <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
-              {% endif %}
+            <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <div class="text-center">
+                    <div><i class="fas fa-user fa-lg"></i></div>
+                    <p class="my-0">My Account</p>
+                </div>
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                {% if request.user.is_authenticated %}
+                    {% if request.user.is_superuser %}
+                        <a href="" class="dropdown-item">Product Management</a>
+                    {% endif %}
+                    <a href="" class="dropdown-item">My Profile</a>
+                    <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                {% else %}
+                    <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                    <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                {% endif %}
             </div>
-          </li>
+        </li>
+
           <li class="list-inline-item">
             <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="">
               <div class="text-center">
@@ -100,6 +95,11 @@
             </a>
           </li>
         </ul>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="btn btn-link" href="#"><i class="bx bxs-cart icon-single"></i> <span
+                class="badge badge-danger">3</span></a>
+          </li>
       </div>
     </div>
   </nav>
@@ -120,9 +120,6 @@
 
   <!-- Main navbar -->
   {% include 'includes/navbar.html' %}
-
-  <section></section>
-  <section></section>
 
   {% block content %}
   <!-- Content Goes here -->
@@ -148,6 +145,35 @@
 
   <!-- Bootstrap4 SCRIPT -->
   {% block corejs %}
+  <script>
+    (() => {
+      // Immediately Invoked Function Expression
+      let sidebarCollapse = document.getElementById('sidebarCollapse')
+      let sidebarCollapseX = document.getElementById('sidebarCollapseX')
+
+      // Functions to toggle sidebar - collapse and expand
+      // Adjusted to the desktop/mobile size screen
+      sidebarCollapse.addEventListener("click", function () {
+        document.querySelector("#sidebar").classList.add("active");
+      });
+
+      sidebarCollapseX.addEventListener("click", function () {
+        document.querySelector("#sidebar").classList.remove("active");
+      });
+
+      sidebarCollapse.addEventListener("click", function () {
+        if (document.querySelector("#sidebar").classList.contains("active")) {
+          document.querySelector(".overlay").classList.add("visible");
+          console.log("it's working!");
+        }
+      });
+
+      sidebarCollapseX.addEventListener("click", function () {
+        document.querySelector(".overlay").classList.remove("visible");
+      });
+    })();
+  </script>
+
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
   </script>
