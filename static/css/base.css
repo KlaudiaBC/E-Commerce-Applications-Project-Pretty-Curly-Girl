@@ -6,6 +6,22 @@ html {
     color: black;
 }
 
+
+
+/* css for index */
+.carousel-inner {
+    height: 620px;
+  }
+  
+  .carousel-item img {
+      position: absolute;
+      object-fit: cover;
+      top: 0;
+      left: 0;
+      min-height: 620px;
+  }
+  
+
 /* from Bulma */
 .icon {
     align-items: center;
