@@ -24,52 +24,62 @@
 
 <body>
 
-  <!-- From Ado -->
-  <header>
-    <div class="row">
-      <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
-        <a href="{% url 'home' %}" class="nav-link main-logo-link">
-          <h2 class="text-black my-0">Pretty Curly Girl</h2>
-        </a>
+  <!-- Promo text -->
+  <div class="overlay"></div>
+  <div class="utility-nav d-none d-md-block">
+    <div class="container">
+      <div class="promo">
+        <p class="small">Free shipping on total of $99 of all products</p>
       </div>
-      <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
-        <form method="GET" action="">
-          <div class="input-group w-100">
-            <input class="form-control border border-black rounded-0" type="text" name="q"
-              placeholder="Search our site">
-            <div class="input-group-append">
-              <button class="form-control btn btn-black border border-black rounded-0" type="submit">
-                <span class="icon">
-                  <i class="fas fa-search"></i>
-                </span>
-              </button>
-            </div>
-          </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <nav class="navbar navbar-expand-md navbar-light bg-light main-menu" style="box-shadow:none">
+    <div class="container">
+
+      <button type="button" id="sidebarCollapse" class="btn btn-link d-block d-md-none">
+        <i class="bx bx-menu icon-single"></i>
+      </button>
+
+      <a class="navbar-brand" href="{% url 'home' %}">
+        <h4 class="font-weight-bold">Pretty Curly Girl</h4>
+      </a>
+
+      <ul class="navbar-nav ml-auto d-block d-md-none">
+        <li class="nav-item">
+          <a class="btn btn-link" href="#"><i class="bx bxs-cart icon-single"></i> <span
+              class="badge badge-danger">3</span></a>
+        </li>
+      </ul>
+
+      <div class="collapse navbar-collapse">
+        <form class="form-inline my-2 my-lg-0 mx-auto">
+          <input class="form-control" type="search" placeholder="Search for products..." aria-label="Search">
+          <button class="btn btn-success my-2 my-sm-0" type="submit"><i class="bx bx-search"></i></button>
         </form>
-      </div>
-      <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
-        <ul class="list-inline list-unstyled text-center text-lg-right my-0">
+
           <li class="list-inline-item dropdown">
-            <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true"
-              aria-expanded="false">
-              <div class="text-center">
-                <div><i class="fas fa-user fa-lg"></i></div>
-                <p class="my-0">My Account</p>
-              </div>
+            <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <div class="text-center">
+                    <div><i class="fas fa-user fa-lg"></i></div>
+                    <p class="my-0">My Account</p>
+                </div>
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="user-options">
-              {% if request.user.is_authenticated %}
-              {% if request.user.is_superuser %}
-              <a href="" class="dropdown-item">Product Management</a>
-              {% endif %}
-              <a href="" class="dropdown-item">My Profile</a>
-              <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-              {% else %}
-              <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-              <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
-              {% endif %}
+                {% if request.user.is_authenticated %}
+                    {% if request.user.is_superuser %}
+                        <a href="" class="dropdown-item">Product Management</a>
+                    {% endif %}
+                    <a href="" class="dropdown-item">My Profile</a>
+                    <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                {% else %}
+                    <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                    <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                {% endif %}
             </div>
-          </li>
+        </li>
+
           <li class="list-inline-item">
             <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="">
               <div class="text-center">
@@ -85,10 +95,16 @@
             </a>
           </li>
         </ul>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="btn btn-link" href="#"><i class="bx bxs-cart icon-single"></i> <span
+                class="badge badge-danger">3</span></a>
+          </li>
       </div>
     </div>
-  </header>
+  </nav>
 
+  <!-- Messages -->
   <div class="container">
     <div class="row">
       <div class="col-md-8 offset-md-2">
@@ -102,38 +118,8 @@
     </div>
   </div>
 
-<!-- Second line navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
-          Categories
-        </a>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" href="#">Cat 1</a>
-          <a class="dropdown-item" href="#">Cat 2</a>
-          <a class="dropdown-item" href="#">Cat 3</a>
-        </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Our Story</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Contact</a>
-      </li>
-    </ul>
-  </div>
-</nav>
-
-
-
+  <!-- Main navbar -->
+  {% include 'includes/navbar.html' %}
 
   {% block content %}
   <!-- Content Goes here -->
@@ -159,6 +145,35 @@
 
   <!-- Bootstrap4 SCRIPT -->
   {% block corejs %}
+  <script>
+    (() => {
+      // Immediately Invoked Function Expression
+      let sidebarCollapse = document.getElementById('sidebarCollapse')
+      let sidebarCollapseX = document.getElementById('sidebarCollapseX')
+
+      // Functions to toggle sidebar - collapse and expand
+      // Adjusted to the desktop/mobile size screen
+      sidebarCollapse.addEventListener("click", function () {
+        document.querySelector("#sidebar").classList.add("active");
+      });
+
+      sidebarCollapseX.addEventListener("click", function () {
+        document.querySelector("#sidebar").classList.remove("active");
+      });
+
+      sidebarCollapse.addEventListener("click", function () {
+        if (document.querySelector("#sidebar").classList.contains("active")) {
+          document.querySelector(".overlay").classList.add("visible");
+          console.log("it's working!");
+        }
+      });
+
+      sidebarCollapseX.addEventListener("click", function () {
+        document.querySelector(".overlay").classList.remove("visible");
+      });
+    })();
+  </script>
+
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
   </script>
