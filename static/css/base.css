@@ -34,7 +34,6 @@ html {
   
   .form-control {
     height: calc(2.5rem + 2px);
-    padding: 0.5rem 1.5rem;
     font-size: 1rem;
     line-height: 1.5;
     border-radius: 0.3rem;
@@ -69,21 +68,21 @@ html {
   /* Medium devices (tablets, 768px and up) */
   @media (min-width: 768px) {
     .form-inline .form-control {
-      width: 210px;
+      width: 150px;
     }
   }
   
   /* Large devices (desktops, 992px and up) */
   @media (min-width: 992px) {
     .form-inline .form-control {
-      width: 300px;
+      width: 200px;
     }
   }
   
   /* Extra large devices (large desktops, 1200px and up) */
   @media (min-width: 1200px) {
     .form-inline .form-control {
-      width: 400px;
+      width: 300px;
     }
   }
   
@@ -268,7 +267,7 @@ html {
   }
   
   .search-bar .form-control {
-    width: calc(100% - 45px);
+    width: calc(100% - 60px);
   }
   
   .avatar {
@@ -314,11 +313,6 @@ html {
     width: 3rem;
     padding: 0.5rem;
     display: flex;
-}
-
-.sm-icons:hover {
-    height: 3.3rem;
-    width: 3.3rem;
 }
 
 .sm-icons img {
