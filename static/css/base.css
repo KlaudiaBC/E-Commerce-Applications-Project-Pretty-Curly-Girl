@@ -6,9 +6,11 @@ html {
     color: black;
 }
 
-.promo {
-  text-align: center;
+.search-dark {
+  background-color: black;
+  padding-top: 0.5rem;
 }
+
 
 /* from Bulma */
 .icon {
@@ -69,6 +71,10 @@ html {
   @media (min-width: 768px) {
     .form-inline .form-control {
       width: 150px;
+    }
+    
+    .header-lg {
+      flex-grow: 0;
     }
   }
   
@@ -252,12 +258,14 @@ html {
   }
   
   .utility-nav {
-    background: #e4e4e4;
+    background: #343a40;
     padding: 0.5rem 1rem;
+    text-align: center;
   }
   
   .utility-nav p {
     margin-bottom: 0;
+    color: #e4e4e4;
   }
   
   .search-bar {
