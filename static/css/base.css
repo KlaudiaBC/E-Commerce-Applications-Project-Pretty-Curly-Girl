@@ -7,7 +7,6 @@ html {
 }
 
 
-
 /* css for index */
 .carousel-inner {
     height: 620px;
@@ -25,8 +24,6 @@ html {
     background-color: black;
     padding-top: 0.5rem;
 }
-
-
 
 /* from Bulma */
 .icon {
@@ -107,10 +104,10 @@ html {
     }
 }
 
-.sub-menu.navbar-light .navbar-nav .active>.nav-link,
+.sub-menu.navbar-light .navbar-nav .active > .nav-link,
 .sub-menu.navbar-light .navbar-nav .nav-link.active,
 .sub-menu.navbar-light .navbar-nav .nav-link.show,
-.sub-menu.navbar-light .navbar-nav .show>.nav-link {
+.sub-menu.navbar-light .navbar-nav .show > .nav-link {
     border-bottom: 3px solid #007bff;
     color: #007bff;
 }
@@ -206,7 +203,7 @@ html {
     background: #fff;
 }
 
-#sidebar ul li.active>a,
+#sidebar ul li.active > a,
 #sidebar a[aria-expanded="true"] {
     color: #007bff;
     background: #e6f2ff;
@@ -337,11 +334,6 @@ ul.social-icons li {
     width: 3rem;
     padding: 0.5rem;
     display: flex;
-}
-
-.sm-icons:hover {
-    height: 3.3rem;
-    width: 3.3rem;
 }
 
 .sm-icons img {
