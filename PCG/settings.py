@@ -45,7 +45,9 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'django_summernote',
     'home',
+    'products',
 
     # Other
     'crispy_forms',
@@ -167,6 +169,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
+X_FRAME_OPTIONS = 'SAMEORIGIN'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
