@@ -20,7 +20,6 @@ See the live project <a href="https://pretty-curly-girl.herokuapp.com/">here</a>
   * [**Sprint planning**](#sprint-planning)
   * [**Daily stand-ups**](#daily-stand-ups)
   * [**Sprint review and retrospective**](#sprint-review-and-retrospective)
-* [**Implementation**](#implementation)
 * [**UX Design**](#ux-design)
   * [**Scope**](#scope)
   * [**Skeleton**](#skeleton) 
@@ -31,6 +30,10 @@ See the live project <a href="https://pretty-curly-girl.herokuapp.com/">here</a>
     * [**Content**](#content-of-the-pages)
     * [**Color scheme**](#color-scheme)
     * [**Typography**](#typography)
+* [**Implementation**](#implementation)
+    * [****Branches in GIT****](#branches-in-git)
+    * [**Performance**](#performance)
+* [**Marketing**](#marketing)
 * [**Testing**](#testing)
 * [**Deployment**](#deployment)
 * [**Technologies used**](#technologies-used)
@@ -39,128 +42,66 @@ See the live project <a href="https://pretty-curly-girl.herokuapp.com/">here</a>
 
 ## **Agile Scrum**
 ### **Planning Phase**
-Pretty Curly Girl is an exciting business which provides hair products designed for curly hair treatments.
-Hannah - the owner of the store (further called: *Client*), has asked me for a demo of an e-commerce application for her online sales - as she has been using the shopify services and while her business has grown, those services seem to not be satisfactory anymore.
-At first, I have become familiar with the mission of her business, the products and mainly the actual website she uses to provide online sales. I have listed all components she has used and UX issues I have found as a potential customer.
+Pretty Curly Girl is an exciting business which provides hair care products designed for curly hair treatments.
+Hanan - the owner of the brand (further called: *Client*), has started her online sales via one of e-commerce builders. Once her business has grown, the need for a professional website became one of the important factors that could have a positive impact on the further development of the brand.
+
+At first, I have become familiar with the mission of the business, the offer and mainly the actual website used to provide online sales. I have listed all components and features of the current application. I also pointed out UX issues I have found to make sure we could address them during the development.
 Then, I have discussed those aspects with the Client and proceeded with brainstorm sessions, which over a time have brought the final results.
-In this file I have documented all insights, ideas and the obstacles we have met together with my Client. I have also followed the Agile Scrum and built basic marketing strategy for e-commerce purposes.
 
-
-______________________________________________________
-
-#### Activity in social media:
-* All of the responders are checking social media everyday and the majority of them spend more than 2h daily.
-* Over half of responders like to read posts and comments.
-* 30% of responders belong to the support groups on Facebook.
-* 40% responders admit that they write long messages to their friends on the social communicators and that writing helps them express themselves.
-* Only 20% of responders do not post anything on social media.
-
-#### Extra features:
-1. Very important:
-Comment section, discussion panel - 80% responders admit that support from others is very important for them
-2. Important:
-Daily affirmations - 60% responders admit that motivation quotes and affirmation are quite important
-3. Useful:
-Q&A block - All of them consider the possibility to ask questions online as an important feature
-*Please see the full results attached - <a href="[https://www.djangoproject.com/](https://raw.githubusercontent.com/KlaudiaBC/FST-Project-Empire-of-Thoughts/main/static/images/readme/results.png)" target="_blank">here</a>*
- 
-Following my course with Code Institute, I also took one of the challenges from the learning material and created a short video presenting the planning process.
-Please, see the video published on my YouTube channel: <a href="https://youtu.be/mYHxvke3nY8">click here</a>
+In this file I have documented all insights, steps and the obstacles I have met during implementation. All technical issues have been documented also in the Jira - you can access the board of this project here.
+In addition, you can also find a basic e-commerce marketing strategy which includes critical points for the web implementation process like the SEO keywords.
+--> For more, please see: Marketing
 
 
 ### **Product roadmap**
-After analyzing the results of the survey and comparing them with a principles stated during the brainstorm session, I was able to create an image of Persona and the basic road map with the requirements to achieve minimum viable product.
+Following the Agile principles, I have created the *User Stories*, which helped me to map out the work required to develop this application. In order to easily manage the workflow, I have used the <a href="https://jira.atlassian.com/" target="_blank">Jira software</a>.
 
-<a href="https://prezi.com/view/jZmEUduLODT7R7EPVC5b/" target="_blank">See the results in this presentation.</a>
-
-At this point I started to develop a product backlog in Jira, where I stated: Epics containing User Stories. Each User Story had assigned story points, tasks and a priority label based on the MoSCoW prioritisation technique.
-See user stories: <a href="https://pdfhost.io/v/s87R9kjuz_User_Story">here.</a>
-
-
-### **Release planning**
-According to the Agile principles, I created two work sprints (cycles). I created my Sprints for the time of 2 weeks, where each week contains 30h of work, which is equal to the workforce of one part-time working developer (in this case I have assigned all the tasks to myself). Based on the story points I was able to estimate the time of each User Story and assign them into Sprints. The Story Points are equal to:
+Each User Story has assigned a *Story Points*.
+I have used the Fibonacci scale (1,2,3,5,8) to represent complexity and estimated amount of effort/time it takes to complete the task (story).
+The higher the number, the more involvement the task requires.
 
 Story Points | Importance | Time
 ---|---|---
-2p | small task | up to 2h of work
-4p | middle task | up to 4h of work
-8p | big task | more than 4h of work
+1p | small task - easy | up to 2 hours of work
+2p | small task - complex | up to 3 hours of work
+3p | midlle task | up to 4 hours of work
+5p | large task - easy | from 4-6 hours of work
+8p | large task - complex | more than 6 hours of work
 
-The big task should not take more than 8h of work.
+The large task should not take more than 8h of work.
+
+
+### **Release planning**
+I split the work evenly into two Sprints (duration: 2 weeks).
+I also connected my Jira Board to GitHub and had followed the naming convention for commits and branches, which automatically synchronized the progress of implementation with the jira tickets.
 
 
 ### **Sprint planning**
-In the first part of work (Sprint 1) the team should deliver Minimum Variable Product, which means create a basic newsfeed page, which is accesible for a User after registration. User should be able to add, edit and delete post as well as leave the comment. The Admin panel should be customised.
-The second Sprint contains adding more features like: categories, likes and MyPage (where User can see only his own posts and keep track of them). Before the second Sprint begins, the realization should be discussed with the Client and necessary changes should be added to the workflow.
-As you can see on the pictures below, I have not achieve the tasks connected with comment section, therefore those tickets was added to my second Sprint.
+In the first part of work (Sprint 1) the team should deliver Minimum Variable Product. In the case of this project MVP includes the home page, registration and login page, product list page, product detail page, search engine and Admin Panel with all functionality (CRUD for Admin - Product).
 
-**Jira backlog in the beggining of Sprint 1:**
+The second Sprint contains adding more features like the stripe Users Profile page, checkout (including the secure payment) and blog.
 
+Before the second Sprint begins, the realization should be discussed with the Client and necessary changes should be added to the workflow.
+
+See the Sprints as planned in the begging of implementation:
+
+**Jira backlog - Sprint 1:**
 <p align="center">
-  <img src="https://github.com/KlaudiaBC/FST-Project-Empire-of-Thoughts/blob/main/static/images/readme/jira_one_backlog.png?raw=true" alt="backlog_sprint_one">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/static/images/README/jira_backlog_sprint_one.png?raw=true" alt="backlog_sprint_one">
 </p>
 
-**Jira backlog - Roadmap:**
+
+**Jira backlog - Sprint 2:**
 <p align="center">
-  <img src="https://github.com/KlaudiaBC/FST-Project-Empire-of-Thoughts/blob/main/static/images/readme/roadmap.png?raw=true" alt="backlog_sprint_two">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/static/images/README/jira_backlog_sprint_two.png?raw=true" alt="backlog_sprint_two">
 </p>
 
-**Jira backlog in the beggining of Sprint 2:**
-<p align="center">
-  <img src="https://github.com/KlaudiaBC/FST-Project-Empire-of-Thoughts/blob/main/static/images/readme/jira_backlog_two.png?raw=true" alt="backlog_sprint_two">
-</p>
 
 ### **Daily stand-ups**
 This point of agile development would be necessary, if there was more than one developer working on the project. The short daily stand-up meeting helps the team accomplish their tasks by brief update on the work done and work which is planned for that day. I have been reviewing the workflow on the beginning of each day of development to keep track of the achieved tasks in comparison to the estimated time so that I could later implement the changes into a Second Sprint.
 
 ### **Sprint review and retrospective**
-After the end of the First Sprint I had scheduled a meeting with my mentor to discuss the current development and seek further review or advice. Secondly I have also presented the deployed page to the clients and had another brainstorm session to discuss further development. With all the changes included in the backlog, I was then ready to begin working on the Second Sprint.
-
-<p align="right"><a href="#welcome">Bact to top</a></p>
-
-
-## **Implementation**
-
-### **1. Create a basic Django project and first application**
-### **2. Initial deployment**
-### **3. Create Superuser**
-### **4. User authentication**
-### **5. Create product model and related views**
-### **6. CRUD for Users**
-### **7. Reviews **
-
-<p align="center">
-  <img src="#" alt="jira_sprint">
-</p>
-
-
-### **8. Categories**
-I have created the last model for my application *(Category)* which requires only one text-input field for the name of the category. I have registered the model in my Admin section, which automatically added the desired field into the Admin Panel and granted him the possibility to create/edit and delete Category. Since Admin is the only person who has permission to add and modify categories, no extra view or form was needed to add to the application.
-In order to run correct categorization, the *Category* input had to be implemented into the Post Model. I have added a dropdown menu field into my *Post Form* and set it to *required*.
-Furthermore I have created a view which will get the available categories created by the Admin and render them in the dropdown menu in the *Post Form* and also in the navigation panel. Then I added a next view responsible for filtering the posts, which have a common category and displaying them in descending order in a new html file. Thanks to that, User can filter the posts by category and access the information that he is looking for.
-
-### 11. **Extra features**
-
-<p align="center">
-  <img src="#" alt="cli">
-</p>
-
-**Add messages**
-One of the useful features provided by django framework is the messages system, which gives the User feedback about the action he has taken. I have added the bootstrap classes to the default messages coming in a django package. In order to do so, I have defined the classes in the *settings.py* file. To render the message connected to a particular action, I have added the for loop into my *base.html* file, which takes all messages and renders them in the specified cases: when User add or edit the post as well as when User add the comment.
-
-<p align="center">
-  <img src="https://github.com/KlaudiaBC/FST-Project-Empire-of-Thoughts/blob/main/static/images/readme/messages.png?raw=true" alt="messages">
-</p>
-
-**Customised 404 and 500 error pages.**
-During the final code review with my mentor, he suggested adding my custom 404 and 500 error pages, therefore I had created a customized html file in my templates and added views (linked to urls) which are the handlers for mentioned errors.
-
-<p align="center">
-  <img src="https://github.com/KlaudiaBC/FST-Project-Empire-of-Thoughts/blob/main/static/images/readme/errors.png?raw=true" alt="error pages">
-</p>
-
-**Styling**
-During all the implementation process  I have been adding required styling in the front-end, based mostly on the bootstrap components, grid, forms and classes. I have also created my own css file, where I added a custom styling for all components.
+After the end of the First Sprint I had scheduled a meeting with my mentor to discuss the current development and seek further review or advice. Secondly I have also presented the deployed page to the Client and had another brainstorm session to discuss further developments. With all the changes included in the backlog, I was then ready to begin working on the Second Sprint.
 
 <p align="right"><a href="#welcome">Bact to top</a></p>
 
@@ -187,7 +128,7 @@ Please, see the wireframes - created via <a href="https://app.diagrams.net/" tar
 #### **Database Schema**
 I have implemented **PostgreSQL (Postgres)** - the open-source database object-relational database system, which is an extension of the SQL language.
 <p align="center">
-  <img src="https://github.com/KlaudiaBC/FST-Project-Empire-of-Thoughts/blob/main/static/images/readme/heroku_data_postgres.png?raw=true" alt="postgres">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/static/images/README/heroku_data_postgres.png?raw=true" alt="postgres">
 </p>
 
 Entity relationship diagram for all the models included in the application:
@@ -197,8 +138,6 @@ Entity relationship diagram for all the models included in the application:
 
 
 ### **Surface**
-
-
 
 #### **Base (common for each page of application):**
 
@@ -212,12 +151,6 @@ Menu includes following:
 
 **Footer** - on the bottom of the page, contains information about the author, links to social media accounts (buttons/icons) and link to the Regulations.
 
-
-<p align="center">
-  <img src="#" alt="landing page mobile">
-</p>
-
-<p align="center">***</p>
 
 #### **Content of the pages:**
 
@@ -257,6 +190,46 @@ Detalic view page - render the: title, author, date and body of the particular p
 </p>
 
 #### **Typography**
+
+
+<p align="right"><a href="#welcome">Bact to top</a></p>
+
+## **Implementation**
+
+### **Branches in GIT**
+The implementation of this project was done in Gitpod (the virtual environment). At first I was working in the main branch where I have set and configured my Django project, created a home app and the base template.
+After initial deployment on Heroku (see: Deployment) I have followed the suggestion of my Mentor to create separate branches for different tasks.
+
+Using the Jira automation tools, I have connected this repository on GitHub with my project board. The names of the branches follow the Jira story numbers. Each commit message contains the story number of the task that was done and is visible in the Jira backlog. I have also added comments and images to the particular tickets with information that can make the code more readable and easily accessible during the future implementations.
+
+
+### **Performance**
+• In some cases I have been using the code provided by external sources (see: Acknowledgements). Some of them contained jQuery which I have changed to vanilla Javascript.
+
+• I have stored images of all icons used in the project in my internal static files and manually customized them in order to avoid using Font Awesome because of its extensive size.
+
+
+### **Features**
+1. Create a basic Django project and first application
+2. Initial deployment
+3. Create Superuser
+4. User authentication
+5. Create product model
+6. Add templates
+6. CRUD for Users
+7. Reviews
+8. Categories
+9. Messages
+10. Error pages
+11. Email API
+
+<p align="center">
+  <img src="#" alt="jira_sprint">
+</p>
+
+<p align="right"><a href="#welcome">Bact to top</a></p>
+
+## **Marketing**
 
 
 <p align="right"><a href="#welcome">Bact to top</a></p>
@@ -341,6 +314,11 @@ See how to handle that in the TESTING.md file / Errors and bugs.
 
 <p align="right"><a href="#welcome">Bact to top</a></p>
 
+## **Clon/Fork this repo**
+
+
+<p align="right"><a href="#welcome">Bact to top</a></p>
+
 ## **Technologies Used**
 I have used the following technologies and support sources:
 - <a href="https://www.w3schools.com/html/html_intro.asp" target="_blank">HTML5</a>
@@ -356,10 +334,7 @@ I have used the following technologies and support sources:
 - <a href="https://www.atlassian.com/" target="_blank">Jira Software</a> for Agile Scrum
 - <a href="https://app.diagrams.net/" target="_blank">Draw.io</a> for wireframes
 - <a href="https://fonts.google.com/" target="_blank">Google Fonts</a> for the "logo" font
-- <a href="https://animista.net/" target="_blank">Animista</a> for animation on landing page
 - <a href="https://www.flaticon.com/" target="_blank">Flaticon</a> by Freepik / for all icons included
-- <a href="https://prezi.com/" target="_blank">Prezi</a> for presentation
-- <a href="https://www.survio.com/" target="_blank">Survio</a> for a survey
 - <a href="https://coolors.co/" target="_blank">Coolors</a> for a color pallete
 - <a href="https://pdfhost.io/" target="_blank">PDF Host</a> for hosting the document with User Stories
 
@@ -369,7 +344,7 @@ I have used the following technologies and support sources:
 ## **Acknowledgements**
 
 In this place I would like to thank everyone, who added an knowledge and value to this project:
-- <a href="https://codeinstitute.net/" target="_blank">Code Institute</a> course, materials and walkthroughs
+- <a href="https://codeinstitute.net/" target="_blank">Code Institute</a> course, materials and walkthroughs - A great part of this project is done in accordance to the last walktrough: "Boutique Ado"
 - lead and support of my Code Institute Mentor - Guido Cecilio
 - Code Institute Slack Community
 - <a href="https://stackoverflow.com/" target="_blank">Stack Overflow</a>
@@ -395,7 +370,7 @@ In this place I would like to thank everyone, who added an knowledge and value t
 - <a href="https://www.djangoproject.com/" target="_blank">Django documentation</a> by Django
 
 Media used:
-- All images included in the front end application are coming directly from the Client: <a href="https://prettycurlygirl.store/">Pretty Curly Girl</a>
+- All images of the products are coming directly from the Client: <a href="https://prettycurlygirl.store/">Pretty Curly Girl</a>
 - Image of persona: <a href="https://www.pexels.com/photo/women-wearing-black-clothes-7623816/">Photo by Mikhail Nilov</a> via Pexels
 
 
