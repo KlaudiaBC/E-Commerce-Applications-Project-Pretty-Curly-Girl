@@ -87,7 +87,7 @@
           <div class="collapse navbar-collapse" id="navbar">
               <ul class="navbar-nav mx-auto">
                   <li class="nav-item active">
-                      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                      <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
                   </li>
 
                   <li class="nav-item dropdown">
@@ -104,16 +104,16 @@
                       </div>
                   </li>
                   <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="#" id="about-us-link" data-toggle="dropdown"
+                      <a class="nav-link dropdown-toggle" href="#" id="products-link" data-toggle="dropdown"
                           aria-haspopup="true" aria-expanded="false">
                           Products
                       </a>
-                      <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
+                      <div class="dropdown-menu border-0" aria-labelledby="products-link">
                           <a href="" class="dropdown-item">By category</a>
                           <a href="" class="dropdown-item ">By rating</a>
                           <a href="" class="dropdown-item ">By price</a>
                           <a href="" class="dropdown-item">Bundles</a>
-                          <a href="" class="dropdown-item">All Products</a>
+                          <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
                       </div>
                   <li class="nav-item">
                       <a class="nav-link" href="#">Locations</a>
@@ -182,7 +182,7 @@
 
       <ul class="list-unstyled components links">
           <li class="active">
-              <a href="#"><i class="bx bx-home mr-3"></i> Home</a>
+              <a href="{% url 'home' %}"><i class="bx bx-home mr-3"></i> Home</a>
           </li>
           <li>
               <a href="#productSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i
@@ -201,7 +201,7 @@
                       <a href="#">Bundles</a>
                   </li>
                   <li>
-                      <a href="#">All Products</a>
+                      <a href="{% url 'products' %}">All Products</a>
                   </li>
               </ul>
           </li>
