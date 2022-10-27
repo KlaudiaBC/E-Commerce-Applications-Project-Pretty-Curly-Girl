@@ -17,10 +17,10 @@ def all_products(request):
 def product_detail(request, product_id):
     """ A view to show the detail view of the product """
 
-    products = get_object_or_404(Product, pk=product_id)
+    product = get_object_or_404(Product, pk=product_id)
 
     context = {
-        'products': products,
+        'product': product,
     }
 
     return render(request, 'products/product-detail.html', context)
