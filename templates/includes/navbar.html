@@ -28,11 +28,11 @@
           </ul>
 
           <div class="collapse navbar-collapse header-lg">
-              <form class="form-inline my-2 my-lg-0 mx-auto">
+              <form method="GET" action="{% url 'products' %}" class="form-inline my-2 my-lg-0 mx-auto">
                   <input class="form-control" type="search" placeholder="Search for products..." aria-label="Search">
-                  <input type="image" id="Search" class="sm-icons my-2 my-sm-0"
+                  <input type="image" id="Search" name="submit" class="sm-icons my-2 my-sm-0"
                       src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/static/images/media/search.png?raw=true"
-                      alt="search">
+                      alt="submit">
               </form>
 
               <li class="list-inline-item dropdown">
@@ -137,12 +137,12 @@
       <div class="container">
           <div class="row">
               <div class="col-12">
-                  <form class="form-inline mb-3 mx-auto">
+                  <form method="GET" action="{% url 'products' %}" class="form-inline mb-3 mx-auto">
                       <input class="form-control" type="search" placeholder="Search for products..."
                           aria-label="Search">
                       <input type="image" id="Search" class="sm-icons d-block d-md-none"
                           src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/static/images/media/search-dark.png?raw=true"
-                          alt="search">
+                          alt="submit">
                   </form>
               </div>
           </div>
