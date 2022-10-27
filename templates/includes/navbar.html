@@ -30,7 +30,7 @@
           <div class="collapse navbar-collapse header-lg">
               <form method="GET" action="{% url 'products' %}" class="form-inline my-2 my-lg-0 mx-auto">
                   <input class="form-control" type="search" placeholder="Search for products..." aria-label="Search">
-                  <input type="image" id="Search" name="submit" class="sm-icons my-2 my-sm-0"
+                  <input type="image" id="Search" name="q" class="sm-icons my-2 my-sm-0"
                       src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/static/images/media/search.png?raw=true"
                       alt="submit">
               </form>
@@ -109,17 +109,12 @@
                           Products
                       </a>
                       <div class="dropdown-menu border-0" aria-labelledby="products-link">
-                          <a href="" class="dropdown-item">By category</a>
-                          <a href="" class="dropdown-item ">By rating</a>
-                          <a href="" class="dropdown-item ">By price</a>
-                          <a href="" class="dropdown-item">Bundles</a>
+                          <a href="" class="dropdown-item">Categories</a>
+                          <a href="{% url 'products' %}?category=bundles" class="dropdown-item">Bundles</a>
                           <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
                       </div>
                   <li class="nav-item">
                       <a class="nav-link" href="#">Locations</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="#">Curly STAR</a>
                   </li>
                   <li class="nav-item">
                       <a class="nav-link" href="#">Curly Tips</a>
@@ -140,9 +135,9 @@
                   <form method="GET" action="{% url 'products' %}" class="form-inline mb-3 mx-auto">
                       <input class="form-control" type="search" placeholder="Search for products..."
                           aria-label="Search">
-                      <input type="image" id="Search" class="sm-icons d-block d-md-none"
+                      <input type="image" id="Search" class="sm-icons d-block d-md-none" name="q"
                           src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/static/images/media/search-dark.png?raw=true"
-                          alt="submit">
+                          alt="search">
                   </form>
               </div>
           </div>
@@ -189,16 +184,10 @@
                       class="bx bx-help-circle mr-3"></i>Products</a>
               <ul class="collapse list-unstyled" id="productSubmenu">
                   <li>
-                      <a href="#">By category</a>
+                      <a href="#">Categories</a>
                   </li>
                   <li>
-                      <a href="#">By rating</a>
-                  </li>
-                  <li>
-                      <a href="#">By price</a>
-                  </li>
-                  <li>
-                      <a href="#">Bundles</a>
+                      <a href="{% url 'products' %}?category=bundles">Bundles</a>
                   </li>
                   <li>
                       <a href="{% url 'products' %}">All Products</a>
