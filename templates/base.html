@@ -24,9 +24,6 @@
 
 <body>
 
-  <!-- Header and Main navbar -->
-  {% include 'includes/navbar.html' %}
-
   <!-- Messages -->
   <div class="container">
     <div class="row">
@@ -41,8 +38,11 @@
     </div>
   </div>
 
+  <!-- Header and Main navbar -->
+  {% include 'includes/navbar.html' %}
+
   {% block content %}
-  <!-- Content Goes here -->
+  <!-- Content goes here -->
   {% endblock content %}
 
   <!-- Footer -->
