@@ -14,6 +14,14 @@
         </div>
     </div>
     <div class="row">
+        <div class="col text-center mt-3">
+            <p class="logo-font">Sort by:</p>
+            <a href="{% url 'products' %}?sort=price&direction=asc"> price</a>
+            <a href="{% url 'products' %}?sort=rating&direction=desc"> rating</a>
+            <hr class="w-50 mb-1">
+        </div>
+    </div>
+    <div class="row">
         <div class="product-container col-10 offset-1">
             <div class="row mt-1 mb-2"></div>
             <div class="row">
