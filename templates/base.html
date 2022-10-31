@@ -23,9 +23,15 @@
 </head>
 
 <body>
-
-  <!-- Header and Main navbar -->
-  {% include 'includes/navbar.html' %}
+  <!-- Promo text -->
+  <div class="overlay"></div>
+  <div class="utility-nav">
+    <div class="container">
+      <div>
+        <p class="small">Free shipping on total of $99 of all products</p>
+      </div>
+    </div>
+  </div>
 
   <!-- Messages -->
   <div class="container">
@@ -41,8 +47,11 @@
     </div>
   </div>
 
+  <!-- Header and Main navbar -->
+  {% include 'includes/navbar.html' %}
+
   {% block content %}
-  <!-- Content Goes here -->
+  <!-- Content goes here -->
   {% endblock content %}
 
   <!-- Footer -->

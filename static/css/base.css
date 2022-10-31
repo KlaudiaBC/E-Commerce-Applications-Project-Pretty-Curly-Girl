@@ -352,3 +352,14 @@ ul.social-icons li {
         max-width: 80%;
     }
 }
+
+/* pad the top a bit when navbar is collapsed on mobile */
+@media (max-width: 991px) {
+    .header-container {
+        padding-top: 116px;
+    }
+
+    body {
+        height: calc(100vh - 116px);
+    }
+}
