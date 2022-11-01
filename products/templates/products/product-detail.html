@@ -3,19 +3,14 @@
 {% block extra_title %}Products{% endblock %}
 
 {% block content %}
-<div class="overlay"></div>
-<div class="container-fluid">
+<div class="container-fluid h-100">
     <div class="row">
         <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
             <div class="image-container my-5">
                 {% if product.image %}
-                <a href="{{ product.image.url }}" target="_blank">
                     <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
-                </a>
                 {% else %}
-                <a href="">
                     <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
-                </a>
                 {% endif %}
             </div>
         </div>
@@ -34,5 +29,9 @@
             </div>
         </div>
     </div>
+</div>
+<br>
+<div>
+    <h2>You may also like:</h2>
 </div>
 {% endblock %}
