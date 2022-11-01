@@ -314,8 +314,27 @@ See how to handle that in the TESTING.md file / Errors and bugs.
 
 <p align="right"><a href="#welcome">Bact to top</a></p>
 
-## **Clon/Fork this repo**
+## **Fork this Project**
+At first, make sure you are logged into your GitHub account.
+Fork this repository by clicking the button "Fork", placed in the top right corner of the page.
+Once the button is clicked, the repository will be copied to your GitHub account and shown in the list of your repositories.
 
+## **Clon this Project**
+At first, make sure you are logged into your GitHub account.
+Click the drop-down button "Code" located above the list of files, on the right side.
+Chose one of the options in the tab menu, to clone the repository using:
+• HTTPS,
+• SSH key
+• Git CLI
+
+In order to process the clone request, copy the link provided in the tab of your choice via clicking the clipboard icon.
+In the new terminal, change the current working directory to the location where you want the cloned repository to be stored.
+Use the command: "git clone" + the copied URL.
+
+Eg. If you cloning the repository using HTTPS, the command should look like this:
+https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl.git
+
+You can now access your local clone created in the specified earlier directory.
 
 <p align="right"><a href="#welcome">Bact to top</a></p>
 
@@ -364,6 +383,8 @@ In this place I would like to thank everyone, who added an knowledge and value t
 - <a href="https://mindster.com/mindster-blogs/ecommerce-applications/">"How e-Commerce Applications Help Your Business Grow?"</a> by Mindster
 - <a href="https://buildfire.com/mobile-app-ecommerce-marketing-ideas/">"Mobile ecommerce marketing ideas"</a> by Buildfire
 - <a href="https://blog.hubspot.com/marketing/ecommerce-marketing">"Everything you need to know about ecommerce marketing"</a> by HubSpot
+- <a href="https://www.zoho.com/inventory/sku-generator/">Sku generator</a>
+- <a href="https://www.pythonmorsels.com/breaking-long-lines-code-python/">"Breaking long lines of code in Python</a> by Python Morsels
 - <a href="#">Some title</a> by ??
 - <a href="#">Some title</a> by ??
 - <a href="#">Some title</a> by ??
