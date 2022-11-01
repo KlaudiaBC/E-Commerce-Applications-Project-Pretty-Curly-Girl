@@ -13,6 +13,10 @@
         <ul class="navbar-nav ml-auto d-block d-md-none">
             <li class="nav-item sm-icons">
                 <a href="#"><img
+                        src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/static/images/media/heart.png?raw=true">
+            </li>
+            <li class="nav-item sm-icons">
+                <a href="#"><img
                         src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/static/images/media/shopping-cart.png?raw=true">
             </li>
         </ul>
@@ -31,7 +35,9 @@
                 <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true"
                     aria-expanded="false">
                     <div class="text-center">
-                        <div><i class="fas fa-user fa-lg"></i></div>
+                        <div class="sm-icons">
+                            <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/static/images/media/user.png?raw=true">
+                        </div>
                         <p class="my-0">My Account</p>
                     </div>
                 </a>
@@ -53,20 +59,6 @@
                 <li class="nav-item sm-icons">
                     <a href="#"><img
                             src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/static/images/media/shopping-cart.png?raw=true">
-                </li>
-                <li class="list-inline-item">
-                    <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link"
-                        href="">
-                        <div class="text-center">
-                            <p class="my-0">
-                                {% if grand_total %}
-                                ${{ grand_total|floatformat:2 }}
-                                {% else %}
-                                € 0.00
-                                {% endif %}
-                            </p>
-                        </div>
-                    </a>
                 </li>
             </ul>
         </div>
