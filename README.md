@@ -247,6 +247,12 @@ If 404 or 500 error occurs within the site, User will see the customized page th
 <p align="right"><a href="#welcome">Bact to top</a></p>
 
 ## **Business model**
+  - Who is the customer? --> B2C - individual customer
+  - What will they buy? --> The deliverable is a product.
+  - How will they pay? --> Single payment, which means the transaction is finished after the single payment is done.
+
+1. Individual customers are more likely to purchase the product impulsively, therefore it is important to make the check out process as quick and easy as possible.
+2. While the product is a deliverable, the database should include: product details, stock numbers, shipping or delivery costs, postal address of the customer, who purchased the order, ratings/reviews of the product as well as its image. The features should include: search tools, notice when the product is out of stock and notification for the customer about the order.
 
 
 ### **Marketing strategy**
