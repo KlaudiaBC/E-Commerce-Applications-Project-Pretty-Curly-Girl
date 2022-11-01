@@ -31,11 +31,21 @@ See the live project <a href="https://pretty-curly-girl.herokuapp.com/">here</a>
     * [**Color scheme**](#color-scheme)
     * [**Typography**](#typography)
 * [**Implementation**](#implementation)
-    * [****Branches in GIT****](#branches-in-git)
+    * [**Branches in GIT**](#branches-in-git)
     * [**Performance**](#performance)
-* [**Marketing**](#marketing)
+    * [**Defensive design**](#defensive-design)
+* [**Business model**](#business-model)
+  * [**Marketing strategy**](#marketing-strategy)
+     * [**Content marketing**](#content-marketing)
+     * [**Social media**](#social-media)
+     * [**Newsletter**](#newsletter)
+     * [**Public Relations**](#public-relations)
+     * [**Search Engine Optimization**](#search-engine-optimization)
+     * [**Control and updating procedures**](#control-and-updating-procedures)
 * [**Testing**](#testing)
 * [**Deployment**](#deployment)
+    * [**Fork this Project**](#fork-this-project)
+    * [**Clon this Project**](#clon-this-project)
 * [**Technologies used**](#technologies-used)
 * [**Acknowledgements**](#acknowledgements)
 
@@ -79,9 +89,9 @@ I also connected my Jira Board to GitHub and had followed the naming convention 
 ### **Sprint planning**
 In the first part of work (Sprint 1) the team should deliver Minimum Variable Product. In the case of this project MVP includes the home page, registration and login page, product list page, product detail page, search engine and Admin Panel with all functionality (CRUD for Admin - Product).
 
-The second Sprint contains adding more features like the stripe Users Profile page, checkout (including the secure payment) and blog.
-
+The Second Sprint contains adding more features like: Users Profile page, checkout (including the secure payment) and blog.
 Before the second Sprint begins, the realization should be discussed with the Client and necessary changes should be added to the workflow.
+
 
 See the Sprints as planned in the begging of implementation:
 
@@ -99,6 +109,7 @@ See the Sprints as planned in the begging of implementation:
 
 ### **Daily stand-ups**
 This point of agile development would be necessary, if there was more than one developer working on the project. The short daily stand-up meeting helps the team accomplish their tasks by brief update on the work done and work which is planned for that day. I have been reviewing the workflow on the beginning of each day of development to keep track of the achieved tasks in comparison to the estimated time so that I could later implement the changes into a Second Sprint.
+
 
 ### **Sprint review and retrospective**
 After the end of the First Sprint I had scheduled a meeting with my mentor to discuss the current development and seek further review or advice. Secondly I have also presented the deployed page to the Client and had another brainstorm session to discuss further developments. With all the changes included in the backlog, I was then ready to begin working on the Second Sprint.
@@ -209,6 +220,12 @@ Using the Jira automation tools, I have connected this repository on GitHub with
 • I have stored images of all icons used in the project in my internal static files and manually customized them in order to avoid using Font Awesome because of its extensive size.
 
 
+### **Defensive design**
+**Error pages (404 and 500)**
+
+If 404 or 500 error occurs within the site, User will see the customized page that contains the information about the error and button to go back to the Home page.
+
+
 ### **Features**
 1. Create a basic Django project and first application
 2. Initial deployment
@@ -229,8 +246,82 @@ Using the Jira automation tools, I have connected this repository on GitHub with
 
 <p align="right"><a href="#welcome">Bact to top</a></p>
 
-## **Marketing**
+## **Business model**
 
+
+### **Marketing strategy**
+#### **Content marketing:**
+The marketing plan is aimed at:
+<ul>
+  <li> determining of the target group</li>
+  <li> determining the trends prevailing mostly in the Dutch society (but also worldwide) in matters of online shopping</li>
+  <li> appointment of tasks aimed at reaching the above-mentioned target group</li>
+  <li> determining the budget for marketing purposes</li>
+  <li> planning activities related to communication with a potential client</li>
+  <li> defining specific actions related to running a 360 degree marketing strategy, and thus:
+      a) a plan of content marketing: social media accounts / blogging / newsletter,
+    b) a plan of experiential marketing activities (events)</li>
+  <li> defining the methods and tools used to measure the effectiveness of the strategy</li>
+  <li> defining deadlines associated with specific activities in the future</li>
+  <li> forecasts of results and determination of efficiency targets</li>
+</ul>
+
+**Time frame of the project:** After the first month of operation, the project will be evaluated for effectiveness. Then a decision will be made as to whether the planned campaign is efficient or there are any necessary changes.
+
+
+#### **Social Media**
+Facebook / Instagram / TikTok:
+  <ul>
+  <li> advertisement on FB, IG</li>
+  <li> regular posting, photos, videos</li>
+  <li> thematic drawings or pictures (holidays, Valentine's Day etc.) - designed and created directly for the brand (not copied from other websites)</li>
+  <li> personal message (eg. “behind the scenes” of creating products)</li>
+  <li> leveling up with the average pole, follow the statistics and adjust the strategy to meet New Users</li>
+  </ul>
+
+
+**Posts:** For the first 3 months posts should be added at least 2x a week and should be: interesting, divided, personalized, regular. Routine - add one post at a constant time of the day every day: eg in the morning or in the evening (make the User adjust to regular contact, schedule and create a trust tower, expectations).
+
+
+**Theme post:**
+  - Posts related to current celebrations, holidays etc.
+  - Hair care, skin care and wellbeing
+  - Questions about opinions, it is best to ask a question in a personal form, eg "This morning I thought about putting on a dress, I'm counting down the days until spring with impatience! Are you cold? Do any of you share my ideas for today's creations?" (the same applies to instagram: it is important to ALWAYS post also all the content on the “story” - FB and IG).
+
+
+#### **Newsletter**
+Collecting data for the newsletter via *"Subscribe for newsletter"* button on the website. Once a week: "Smart Collection" - Updates on items exhibited by our customers. Additionally: wishes for Christmas, Easter, Women / Men's Day, referring to children's day, birthday, Valentine's Day, Halloween, etc.
+
+
+#### **Public Relations**
+  - opening gala (contact local press)
+  - contact via social media
+  - contact via form located on the web page
+  - after 12 months of functioning - a charity event
+  - remember: respond to the customer within one working day, be polite and professional
+
+
+#### **Search Engine Optimization**
+In order to find the most effective **keywords** for my SEO, I have followed those steps:
+1. Write down all the keywords that match the website and its purpose.
+2. Take away the most common keywords (too popular keywords are too competitive)
+3. Search for keywords in Google:
+    - check autocomplete predictions
+    - check "People also ask" section
+    - check "People also search for" section
+    - check "Related searches" section
+4. I have used the Wordtracker in order to see the quantity of particular words exciting on the web and compare them to other keywords I collected, trying to choose the one that is less competitive.
+5. I have used the Google Trends platform to search for related keywords and check geographical keyword variations.
+
+#### **Control and updating procedures**
+  - BUZZSUMO - monitors the internet in terms of making a given article available to users, has internet monitoring functions in terms of content and competition (keywords)
+  - FACEBOOK AUDIENCE INSIGHTS - information about: how big is the target group on Facebook, how it behaves (which pages User likes, how many times in a month
+he clicks "I like it" etc)
+  - Programs for editing / graphic processing: PIXLR, Canva
+  - Programs useful for updating / publishing new content - PHOTO BANKS: Shutterstock, Fotolia (PAID) + Site Builder Report (FREE OF CHARGE)
+  - Sotrender - the best social media tool on the market, which will allow you to analyze activities on Facebook, Twitter, YouTube, Instagram, and suggest what can be improved to make the engagement on these channels higher
+  - Brand24 and Sentione are two tools for monitoring social media as well as broadly understood Internet (portals, websites). These tools will tell you if internet users are talking about the brand and where exactly.
+  - Google Analytics
 
 <p align="right"><a href="#welcome">Bact to top</a></p>
 
@@ -312,26 +403,28 @@ Unless your Django project will not read the staticfiles with the Debug set to *
 See how to handle that in the TESTING.md file / Errors and bugs.
 <a href="https://github.com/KlaudiaBC/FST-Project-Empire-of-Thoughts/blob/main/TESTING.md#errors-and-bugs" target="_blank">You can find it here.</a>
 
-<p align="right"><a href="#welcome">Bact to top</a></p>
 
-## **Fork this Project**
+### **Fork this Project**
 At first, make sure you are logged into your GitHub account.
 Fork this repository by clicking the button "Fork", placed in the top right corner of the page.
 Once the button is clicked, the repository will be copied to your GitHub account and shown in the list of your repositories.
 
-## **Clon this Project**
+
+### **Clon this Project**
 At first, make sure you are logged into your GitHub account.
 Click the drop-down button "Code" located above the list of files, on the right side.
 Chose one of the options in the tab menu, to clone the repository using:
-• HTTPS,
-• SSH key
-• Git CLI
+  • HTTPS,
+  • SSH key
+  • Git CLI
+
 
 In order to process the clone request, copy the link provided in the tab of your choice via clicking the clipboard icon.
 In the new terminal, change the current working directory to the location where you want the cloned repository to be stored.
 Use the command: "git clone" + the copied URL.
 
 Eg. If you cloning the repository using HTTPS, the command should look like this:
+
 https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl.git
 
 You can now access your local clone created in the specified earlier directory.
