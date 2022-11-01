@@ -16,7 +16,7 @@
                         src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/static/images/media/heart.png?raw=true">
             </li>
             <li class="nav-item sm-icons">
-                <a href="#"><img
+                <a href="{% url 'view_bag' %}"><img
                         src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/static/images/media/shopping-cart.png?raw=true">
             </li>
         </ul>
@@ -30,13 +30,14 @@
                     alt="submit">
             </form>
 
-        <!-- My account / Wishlist / Basket -->           
+            <!-- My account / Wishlist / Basket -->
             <li class="list-inline-item dropdown">
                 <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true"
                     aria-expanded="false">
                     <div class="text-center">
                         <div class="sm-icons">
-                            <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/static/images/media/user.png?raw=true">
+                            <img
+                                src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/static/images/media/user.png?raw=true">
                         </div>
                         <p class="my-0">My Account</p>
                     </div>
@@ -57,7 +58,7 @@
 
             <ul class="navbar-nav">
                 <li class="nav-item sm-icons">
-                    <a href="#"><img
+                    <a href="{% url 'view_bag' %}"><img
                             src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/static/images/media/shopping-cart.png?raw=true">
                 </li>
             </ul>
