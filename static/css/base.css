@@ -115,42 +115,6 @@ body {
 }
 
 
-/* footer */
-.footer {
-    bottom: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    background-color: #6c757d;
-    opacity: .95;
-    color: white;
-    font-family: sans-serif;
-}
-
-.footer p {
-    margin-top: 1rem;
-    font-size: smaller;
-}
-
-.sm-icons {
-    height: 3rem;
-    width: 3rem;
-    padding: 0.5rem;
-    display: flex;
-}
-
-.sm-icons img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    overflow: hidden;
-}
-
-
 /* -------------------------------- Media Queries */
 
 
@@ -298,32 +262,6 @@ a[data-toggle="collapse"] {
     top: 50%;
     right: 20px;
     transform: translateY(-50%);
-}
-
-section {
-    padding: 6rem;
-    background: #e4e4e4;
-    margin-bottom: 30px;
-    position: relative;
-    z-index: 1;
-}
-
-.overlay {
-    background: rgba(0, 0, 0, 0.7);
-    height: 100vh;
-    left: 0;
-    position: fixed;
-    top: 0;
-    -webkit-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
-    z-index: -1;
-    width: 100%;
-    opacity: 0;
-}
-
-.overlay.visible {
-    opacity: 1;
-    z-index: 5000;
 }
 
 ul.social-icons {
