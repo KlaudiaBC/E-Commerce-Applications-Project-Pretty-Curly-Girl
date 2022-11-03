@@ -22,15 +22,16 @@
                             <th scope="col">Product Info</th>
                             <th scope="col"></th>
                             <th scope="col">Price</th>
-                            <th scope="col">Quantity</th>
+                            <th scope="col" class="text-center">Quantity</th>
                             <th scope="col">Subtotal</th>
+                            <th scope="col"></th>
                         </tr>
                     </thead>
 
                     {% for item in bag_items %}
                     <tr>
                         <td class="p-3 w-25">
-                            <img class="img-fluid rounded" src="{{ item.product.image.url }}">
+                            <img class="img-fluid rounded" src="{{ item.product.image }}">
                         </td>
                         <td class="py-3">
                             <p class="my-0"><strong>{{ item.product.name }}</strong></p>
@@ -42,7 +43,7 @@
                         <td class="py-3 w-25">
                             <form class="form update-form" method="POST" action="{% url 'adjust_bag' item.item_id %}">
                                 {% csrf_token %}
-                                <div class="form-group">
+                                <div>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <button class="decrement-qty btn btn-sm rounded-0"
@@ -68,11 +69,17 @@
                                     </div>
                                 </div>
                             </form>
-                            <a class="update-link text-info"><small>Update</small></a>
-                            <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}"><small>Remove</small></a>
                         </td>
                         <td class="py-3">
                             <p class="my-0">€{{ item.product.price | calc_subtotal:item.quantity }}</p>
+                            <a class="update-link text-info"><small>Update</small></a>
+                        </td>
+                        <td>
+                            <span class="sm-icons">
+                                <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/static/images/media/trash.png?raw=true"
+                                    alt="remove">
+                            </span>
+                            <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}"><small>Remove</small></a>
                         </td>
                     </tr>
                     {% endfor %}
