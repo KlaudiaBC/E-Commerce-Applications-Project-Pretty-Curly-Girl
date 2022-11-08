@@ -29,18 +29,20 @@
                     </thead>
 
                     {% for item in bag_items %}
-                    <tr>
+                    <tr id="item_list">
                         <td class="p-3 w-25">
                             <img class="img-fluid rounded" src="{{ item.product.image.url }}">
                         </td>
                         <td class="py-3">
                             <p class="my-0"><strong>{{ item.product.name }}</strong></p>
-                            <p class="my-0 small text-muted">SKU: {{ item.product.sku|upper }}</p>
                         </td>
                         <td class="py-3">
                             <p class="my-0">€{{ item.product.price }}</p>
                         </td>
                         <td class="py-3 w-25">
+
+
+
                             <form class="form update-form" method="POST" action="{% url 'adjust_bag' item.item_id %}">
                                 {% csrf_token %}
                                 <div>
@@ -75,11 +77,12 @@
                             <a class="update-link text-info"><small>Update</small></a>
                         </td>
                         <td>
-                            <span class="sm-icons">
-                                <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/static/images/media/trash.png?raw=true"
-                                    alt="remove">
-                            </span>
-                            <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}"><small>Remove</small></a>
+                            <span class="sm-icons" style="cursor: pointer;"
+                                    hx-delete="{% url 'remove_from_bag' item.item_id %}"
+                                    hx-target="#item_list"
+                                    hx-confirm="Are you sure you wish to delete?">X</span>
+                                    <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/static/images/media/trash.png?raw=true"
+                                        alt="remove"></a>
                         </td>
                     </tr>
                     {% endfor %}
@@ -127,23 +130,39 @@
 
 <script type="text/javascript">
     // Update quantity on click
-    $('.update-link').click(function(e) {
-        var form = $(this).prev('.update-form');
+    var updateBtn = document.querySelector('.update-link')
+    updateBtn.addEventListener('click', function (e) {
+        var form = document.querySelector('.update-form')
+        event.preventDefault();
         form.submit();
     })
 
     // Remove item and reload on click
-    $('.remove-item').click(function(e) {
-        var csrfToken = "{{ csrf_token }}";
-        var itemId = $(this).attr('id').split('remove_')[1];
-        var url = `/bag/remove/${itemId}/`;
-        var data = {'csrfmiddlewaretoken': csrfToken};
-
-        $.post(url, data)
-         .done(function() {
-             location.reload();
-         });
+    document.body.addEventListener('htmx:configRequest', (event) => {
+        event.detail.headers['X-CSRFToken'] = '{{ csrf_token }}';
     })
+
+
+
+    // let removeBtn = document.querySelector('.remove-item')
+
+
+    // removeBtn.addEventListener('click', function (e) {
+    //     var ajax_request = new XMLHttpRequest();
+    //     var itemId = document.querySelector(this).attr('id').split('remove_')[1];
+    //     var url = `/bag/remove/${itemId}/`;
+    //     var csrfToken = "{{ csrf_token }}";
+    //     var data = { 'csrfmiddlewaretoken': csrfToken };
+
+    //     ajax_request.open('POST', url, true)
+
+    //     http.onreadystatechange = function () {
+    //         if (this.readyState == 4 && this.status == 200) {
+    //             location.reload();
+    //         }
+    //     }
+    //     ajax_request.send(data);
+    // });
 </script>
 
 {% endblock %}
