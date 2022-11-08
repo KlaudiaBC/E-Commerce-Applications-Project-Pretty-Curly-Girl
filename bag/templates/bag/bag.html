@@ -40,9 +40,6 @@
                             <p class="my-0">€{{ item.product.price }}</p>
                         </td>
                         <td class="py-3 w-25">
-
-
-
                             <form class="form update-form" method="POST" action="{% url 'adjust_bag' item.item_id %}">
                                 {% csrf_token %}
                                 <div>
@@ -78,11 +75,10 @@
                         </td>
                         <td>
                             <span class="sm-icons" style="cursor: pointer;"
-                                    hx-delete="{% url 'remove_from_bag' item.item_id %}"
-                                    hx-target="#item_list"
-                                    hx-confirm="Are you sure you wish to delete?">X</span>
-                                    <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/static/images/media/trash.png?raw=true"
-                                        alt="remove"></a>
+                                hx-delete="{% url 'remove_from_bag' item.item_id %}" hx-target="#item_list"
+                                hx-confirm="Are you sure you wish to delete?">
+                                <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/static/images/media/trash.png?raw=true"
+                                    alt="remove"></span>
                         </td>
                     </tr>
                     {% endfor %}
