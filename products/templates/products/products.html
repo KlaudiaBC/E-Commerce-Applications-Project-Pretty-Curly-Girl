@@ -40,7 +40,7 @@
                         </a>
                         {% else %}
                         <a href="{% url 'product_detail' product.id %}">
-                            <img class="card-img-top img-fluid" src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/static/images/media/no-photo.png?raw=true"
+                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png"
                                 alt="{{ product.name }}">
                         </a>
                         {% endif %}

@@ -25,6 +25,7 @@ urlpatterns = [
     path('summernote/', include('django_summernote.urls')),
     path('products/', include('products.urls')),
     path('bag/', include('bag.urls')),
+    path('checkout/', include('checkout.urls')),
 ]
 
 if settings.DEBUG:

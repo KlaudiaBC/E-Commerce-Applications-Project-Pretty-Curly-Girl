@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'home',
     'products',
     'bag',
+    'checkout',
 ]
 
 MIDDLEWARE = [
@@ -84,6 +85,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
                 'bag.contexts.bag_contents',
             ],
             'builtins': [
@@ -140,7 +142,8 @@ else:
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME':
-            'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+            'django.contrib.auth.password_\
+                validation.UserAttributeSimilarityValidator',
     },
     {
         'NAME':
