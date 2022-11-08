@@ -5,8 +5,8 @@ from .models import Order
 class OrderForm(forms.ModelForm):
     class Meta:
         model = Order
-        fields = ('first_name', 'last_name', 'email', 'phone_number',
-                  'address_line_1', 'address_line_1',
+        fields = ('first_name', 'last_name', 'email', 'phone',
+                  'address_line_1', 'address_line_2',
                   'city', 'postcode', 'country',
                   'order_note',)
 
@@ -20,13 +20,13 @@ class OrderForm(forms.ModelForm):
             'first_name': 'First Name',
             'last_name': 'Last Name',
             'email': 'Email Address',
-            'phone_number': 'Phone Number',
+            'phone': 'Phone Number',
             'country': 'Country',
             'postcode': 'Postal Code',
             'city': 'City',
             'address_line_1': 'Street Name',
             'address_line_2': 'House Number',
-            'order_note': "Add Message"
+            'order_note': "Add Message",
         }
 
         """

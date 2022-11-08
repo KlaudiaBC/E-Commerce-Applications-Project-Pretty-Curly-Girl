@@ -100,7 +100,7 @@
                             <a href="{% url 'products' %}" class="btn btn-outline-secondary rounded-0 btn-lg">
                                 <span class="text-uppercase">Keep Shopping</span>
                             </a>
-                            <a href="" class="btn btn-secondary rounded-0 btn-lg">
+                            <a href="{% url 'checkout' %}" class="btn btn-secondary rounded-0 btn-lg">
                                 <span class="text-uppercase">Secure Checkout</span>
                             </a>
                         </td>
@@ -128,37 +128,14 @@
     // Update quantity on click
     var updateBtn = document.querySelector('.update-link')
     updateBtn.addEventListener('click', function (e) {
-        var form = document.querySelector('.update-form')
-        event.preventDefault();
-        form.submit();
+        var updateForm = document.querySelector('.update-form')
+        updateForm.submit();
     })
 
     // Remove item and reload on click
     document.body.addEventListener('htmx:configRequest', (event) => {
         event.detail.headers['X-CSRFToken'] = '{{ csrf_token }}';
     })
-
-
-
-    // let removeBtn = document.querySelector('.remove-item')
-
-
-    // removeBtn.addEventListener('click', function (e) {
-    //     var ajax_request = new XMLHttpRequest();
-    //     var itemId = document.querySelector(this).attr('id').split('remove_')[1];
-    //     var url = `/bag/remove/${itemId}/`;
-    //     var csrfToken = "{{ csrf_token }}";
-    //     var data = { 'csrfmiddlewaretoken': csrfToken };
-
-    //     ajax_request.open('POST', url, true)
-
-    //     http.onreadystatechange = function () {
-    //         if (this.readyState == 4 && this.status == 200) {
-    //             location.reload();
-    //         }
-    //     }
-    //     ajax_request.send(data);
-    // });
 </script>
 
 {% endblock %}

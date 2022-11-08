@@ -26,7 +26,7 @@ class Order(models.Model):
     city = models.CharField(max_length=50, null=False, blank=False)
     country = models.CharField(max_length=50, null=False, blank=False)
     date = models.DateTimeField(auto_now_add=True)
-    order_note = models.CharField(max_length=100, blank=True)
+    order_note = models.CharField(max_length=100, null=True, blank=True)
     delivery_cost = models.DecimalField(max_digits=6, decimal_places=2,
                                         null=False, default=0)
     order_total = models.DecimalField(max_digits=10, decimal_places=2,
@@ -41,9 +41,6 @@ class Order(models.Model):
     def full_address(self):
         return f'{self.address_line_1} {self.address_line_2}'
 
-    def __str__(self):
-        return self.first_name
-
     def _generate_order_number(self):
         """
         Generate a random, unique order number using UUID
@@ -52,11 +49,11 @@ class Order(models.Model):
 
     def update_total(self):
         """
-        Update grand total each time a line item is added,
+        Update grand total each time a product item is added,
         accounting for delivery costs.
         """
-        self.order_total = self.lineitems.\
-            aggregate(Sum('lineitem_total'))['lineitem_total__sum'] or 0
+        self.order_total = self.products.\
+            aggregate(Sum('product_total'))['product_total__sum'] or 0
         if self.order_total < settings.FREE_DELIVERY_THRESHOLD:
             self.delivery_cost = self.order_total * settings.\
                 STANDARD_DELIVERY_PERCENTAGE / 100
@@ -90,7 +87,7 @@ class OrderProduct(models.Model):
 
     def save(self, *args, **kwargs):
         """
-        Override the original save method to set the lineitem total
+        Override the original save method to set the product_total
         and update the order total.
         """
         self.product_total = self.product.price * self.quantity
