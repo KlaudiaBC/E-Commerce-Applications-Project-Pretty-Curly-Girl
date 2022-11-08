@@ -49,6 +49,8 @@ INSTALLED_APPS = [
     'django_summernote',
     'crispy_forms',
     'cloudinary',
+    'widget_tweaks',
+    'django_extensions',
     'home',
     'products',
     'bag',
