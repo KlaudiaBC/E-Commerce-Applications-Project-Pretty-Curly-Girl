@@ -34,9 +34,6 @@ class Order(models.Model):
     grand_total = models.DecimalField(max_digits=10, decimal_places=2,
                                       null=False, default=0)
     status = models.CharField(max_length=10, choices=STATUS, default='New')
-    is_ordered = models.BooleanField(default=False)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
 
     def full_name(self):
         return f'{self.first_name} {self.last_name}'
@@ -85,19 +82,18 @@ class OrderProduct(models.Model):
     order = models.ForeignKey(Order, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     quantity = models.IntegerField(null=False, blank=False, default=0)
-    lineitem_total =\
+    product_total =\
         models.DecimalField(max_digits=6, decimal_places=2,
                             null=False, blank=False, editable=False)
     ordered = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
 
     def save(self, *args, **kwargs):
         """
         Override the original save method to set the lineitem total
         and update the order total.
         """
-        self.lineitem_total = self.product.price * self.quantity
+        self.product_total = self.product.price * self.quantity
         super().save(*args, **kwargs)
 
     def __str__(self):
