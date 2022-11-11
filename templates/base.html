@@ -18,6 +18,9 @@
   <!-- Internal CSS -->
   <link rel="stylesheet" href="{% static 'css/base.css' %}">
 
+  {% block extra_css %}
+  {% endblock %}
+
   <!-- Scripts -->
   {% block corejs %}
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"

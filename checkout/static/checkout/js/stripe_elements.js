@@ -43,6 +43,10 @@ card.addEventListener('change', function (event) {
 });
 
 
+// toggle spinner
+
+
+
 // Handle form submit
 var form = document.getElementById('payment-form');
 
