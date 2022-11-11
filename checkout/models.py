@@ -15,13 +15,13 @@ class Order(models.Model):
         ('Cancelled', 'Cancelled'),
     )
 
-    order_number = models.CharField(max_length=20, null=False, editable=False)
-    first_name = models.CharField(max_length=30, null=False, blank=False)
-    last_name = models.CharField(max_length=30, null=False, blank=False)
-    phone = models.CharField(max_length=15, null=False, blank=False)
-    email = models.EmailField(max_length=50, null=False, blank=False)
-    address_line_1 = models.CharField(max_length=50, null=False, blank=False)
-    address_line_2 = models.CharField(max_length=50, null=False, blank=False)
+    order_number = models.CharField(max_length=32, null=False, editable=False)
+    first_name = models.CharField(max_length=50, null=False, blank=False)
+    last_name = models.CharField(max_length=50, null=False, blank=False)
+    phone = models.CharField(max_length=30, null=False, blank=False)
+    email = models.EmailField(max_length=100, null=False, blank=False)
+    address_line_1 = models.CharField(max_length=100, null=False, blank=False)
+    address_line_2 = models.CharField(max_length=100, null=False, blank=False)
     postcode = models.CharField(max_length=20, null=True, blank=True)
     city = models.CharField(max_length=50, null=False, blank=False)
     country = models.CharField(max_length=50, null=False, blank=False)
@@ -52,8 +52,8 @@ class Order(models.Model):
         Update grand total each time a product item is added,
         accounting for delivery costs.
         """
-        self.order_total = self.products.\
-            aggregate(Sum('product_total'))['product_total__sum'] or 0
+        self.order_total = self.orderitems.\
+            aggregate(Sum('orderitem_total'))['orderitem_total__sum'] or 0
         if self.order_total < settings.FREE_DELIVERY_THRESHOLD:
             self.delivery_cost = self.order_total * settings.\
                 STANDARD_DELIVERY_PERCENTAGE / 100
@@ -75,11 +75,12 @@ class Order(models.Model):
         return self.order_number
 
 
-class OrderProduct(models.Model):
-    order = models.ForeignKey(Order, on_delete=models.CASCADE)
+class OrderItem(models.Model):
+    order = models.ForeignKey(Order, on_delete=models.CASCADE,
+                              related_name='orderitems')
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     quantity = models.IntegerField(null=False, blank=False, default=0)
-    product_total =\
+    orderitem_total =\
         models.DecimalField(max_digits=6, decimal_places=2,
                             null=False, blank=False, editable=False)
     ordered = models.BooleanField(default=False)
@@ -90,7 +91,7 @@ class OrderProduct(models.Model):
         Override the original save method to set the product_total
         and update the order total.
         """
-        self.product_total = self.product.price * self.quantity
+        self.orderitem_total = self.product.price * self.quantity
         super().save(*args, **kwargs)
 
     def __str__(self):
