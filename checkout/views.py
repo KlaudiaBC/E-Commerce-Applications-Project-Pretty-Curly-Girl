@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.conf import settings
 
 from .forms import OrderForm
-from .models import Order, OrderProduct
+from .models import Order, OrderItem
 from products.models import Product
 from bag.contexts import bag_contents
 
@@ -35,12 +35,12 @@ def checkout(request):
                 try:
                     product = Product.objects.get(id=item_id)
                     if isinstance(item_data, int):
-                        order_product = OrderProduct(
+                        order_item = OrderItem(
                             order=order,
                             product=product,
                             quantity=item_data,
                         )
-                        order_product.save()
+                        order_item.save()
 
                 except Product.DoesNotExist:
                     messages.error(request, (
