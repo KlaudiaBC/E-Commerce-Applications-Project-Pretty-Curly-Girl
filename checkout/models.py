@@ -34,6 +34,9 @@ class Order(models.Model):
     grand_total = models.DecimalField(max_digits=10, decimal_places=2,
                                       null=False, default=0)
     status = models.CharField(max_length=10, choices=STATUS, default='New')
+    original_bag = models.TextField(null=False, blank=False, default='')
+    stripe_pid = models.CharField(max_length=254, null=False,
+                                  blank=False, default='')
 
     def full_name(self):
         return f'{self.first_name} {self.last_name}'
