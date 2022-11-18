@@ -12,8 +12,8 @@ class UserProfile(models.Model):
     delivery information and order history
     """
     GENDER_CHOICES = [
-        (GENDER_MALE, _("Male")),
-        (GENDER_FEMALE, _("Female")),
+        ('GENDER_MALE', 'Male'),
+        ('GENDER_FEMALE', 'Female'),
     ]
 
     user = models.OneToOneField(User, on_delete=models.CASCADE)
