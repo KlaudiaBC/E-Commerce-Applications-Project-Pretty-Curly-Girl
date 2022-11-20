@@ -14,6 +14,7 @@ class UserProfile(models.Model):
     GENDER_CHOICES = [
         ('GENDER_MALE', 'Male'),
         ('GENDER_FEMALE', 'Female'),
+        ('GENDER_OTHER', 'Other'),       
     ]
 
     user = models.OneToOneField(User, on_delete=models.CASCADE)
