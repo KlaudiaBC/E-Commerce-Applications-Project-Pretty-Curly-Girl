@@ -72,15 +72,12 @@ def product_detail(request, product_id):
 def ratings(request):
     """ Display the rating """
 
-    rating = get_object_or_404(Rating, user=request.user)
-
     if request.method == 'POST':
         form = CreateUserRatingForm(request.POST, instance=rating)
         if form.is_valid():
             form.save()
-            rate-success
 
-    template = 'star_ratings/widget.html'
+    template = 'star_ratings/widget_base.html'
     context = {
         'form': form,
         'ratings': ratings
