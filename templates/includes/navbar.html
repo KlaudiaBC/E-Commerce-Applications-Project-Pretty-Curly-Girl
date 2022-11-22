@@ -1,66 +1,71 @@
 <!-- Header -->
+<div class="overlay"></div>
 <nav class="navbar navbar-expand-md navbar-light bg-light main-menu" style="box-shadow:none">
     <div class="container">
 
-        <input type="image" id="sidebarCollapse" class="sm-icons d-block d-md-none"
-            src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/static/images/media/menu.png?raw=true"
-            alt="Menu">
+        <button type="button" id="sidebarCollapse" class="btn d-block d-md-none">
+            <i class="fas fa-duotone fa-bars"></i>
+        </button>
 
         <a class="navbar-brand" href="{% url 'home' %}">
             <h4 class="font-weight-bold">Pretty Curly Girl</h4>
         </a>
-
         <ul class="navbar-nav ml-auto d-block d-md-none">
-            <li class="nav-item sm-icons">
-                <a href="{% url 'view_bag' %}"><img
-                        src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/static/images/media/shopping-cart.png?raw=true">
+            <li class="nav-item">
+                <a class="btn" href="{% url 'view_bag' %}"><i class="fas fa-duotone fa-cart-shopping fa-lg"></i>
+                    {% if product_count > 0 %}
+                    <span class="badge badge-danger">{{ product_count }}</span>
+                    {% endif %}
+                </a>
             </li>
         </ul>
 
         <!-- Search bar / large screen -->
-        <div class="collapse navbar-collapse header-lg">
+        <div class="collapse navbar-collapse">
             <form method="GET" action="{% url 'products' %}" class="form-inline my-2 my-lg-0 mx-auto">
-                <input class="form-control" type="search" placeholder="Search for products..." aria-label="Search">
-                <input type="image" id="Search" name="q" class="sm-icons my-2 my-sm-0"
-                    src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/static/images/media/search.png?raw=true"
-                    alt="submit">
+                <input class="form-control" name="q" type="search" placeholder="Search for products..."
+                    aria-label="Search">
+                <button class="btn btn-success my-2 my-sm-0" type="submit"><i
+                        class="fas fa-duotone fa-magnifying-glass"></i></button>
             </form>
 
             <!-- My account / Shopping Bag -->
-            <li class="list-inline-item dropdown">
-                <a class="text-black nav-link" href="{% url 'profile' %}" id="user-options" data-toggle="dropdown" aria-haspopup="true"
-                    aria-expanded="false">
-                    <div class="text-center">
-                        <div class="sm-icons">
-                            <img
-                                src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/static/images/media/user.png?raw=true">
+            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+                <ul class="list-inline list-unstyled text-center text-lg-right my-0 d-flex">
+                    <li class="list-inline-item dropdown">
+                        <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <div class="text-center">
+                                <i class="fas fa-duotone fa-user fa-lg"></i>
+                                <p class="my-0">My Account</p>
+                            </div>
+                        </a>
+                        <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                            {% if request.user.is_authenticated %}
+                            <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
+                            <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                            {% else %}
+                            <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                            <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                            {% endif %}
                         </div>
-                        <p class="my-0">My Account</p>
-                    </div>
-                </a>
-                <div class="dropdown-menu border-0" aria-labelledby="user-options">
-                    {% if request.user.is_authenticated %}
-                    <a href="" class="dropdown-item">My Wish List</a>
-                    <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
-                    <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-                    {% else %}
-                    <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                    <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
-                    {% endif %}
-                </div>
-            </li>
-            <a class="text-black nav-link" href="{% url 'view_bag' %}">
-                <div class="text-center">
-                    <div class="sm-icons">
-                        <img
-                            src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/static/images/media/shopping-cart.png?raw=true">
-                    </div>
-                    <p class="my-0">Shopping Bag</p>
-                </div>
-            </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <div class="text-center">
+                            <a class="btn" href="{% url 'view_bag' %}"><i
+                                    class="fas fa-duotone fa-cart-shopping fa-lg"></i>
+                                    {% if product_count > 0 %}
+                                    <span class="badge badge-danger">{{ product_count }}</span>
+                                    {% endif %}
+                                <p>My basket</p>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
 </nav>
+
 
 <!-- Main navbar / large screen -->
 <nav class="navbar navbar-expand-md navbar-dark bg-dark sub-menu">
@@ -117,20 +122,21 @@
 </nav>
 
 <!-- Search bar / small screen -->
-<div class="search-bar d-block d-md-none search-dark">
+<div class="search-bar d-block d-md-none">
     <div class="container">
         <div class="row">
             <div class="col-12">
                 <form method="GET" action="{% url 'products' %}" class="form-inline mb-3 mx-auto">
-                    <input class="form-control" type="search" placeholder="Search for products..." aria-label="Search">
-                    <input type="image" id="Search" class="sm-icons d-block d-md-none" name="q"
-                        src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/static/images/media/search.png?raw=true"
-                        alt="search">
+                    <input class="form-control" type="search" placeholder="Search for products..." aria-label="Search"
+                        name="q">
+                    <button class="btn btn-success" type="submit"><i
+                            class="fas fa-duotone fa-magnifying-glass"></i></button>
                 </form>
             </div>
         </div>
     </div>
 </div>
+
 
 <!-- Sidebar / small screen -->
 <nav id="sidebar">

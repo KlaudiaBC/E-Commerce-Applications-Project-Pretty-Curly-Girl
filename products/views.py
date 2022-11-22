@@ -52,11 +52,6 @@ def all_products(request):
         'current_sorting': current_sorting,
     }
 
-    context = {
-        'products': products,
-        'search_term': query,
-    }
-
     return render(request, 'products/products.html', context)
 
 
