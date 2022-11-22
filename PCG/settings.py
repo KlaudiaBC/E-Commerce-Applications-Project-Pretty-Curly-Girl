@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'cloudinary',
     'widget_tweaks',
     'django_extensions',
+    'star_ratings',
     'home',
     'products',
     'bag',
@@ -200,6 +201,7 @@ STRIPE_PUBLIC_KEY = os.environ.get('STRIPE_PUBLIC_KEY', '')
 STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY', '')
 STRIPE_WH_SECRET = os.environ.get('STRIPE_WH_SECRET', '')
 
+STAR_RATINGS_ANONYMOUS = True
 
 if DEBUG:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
