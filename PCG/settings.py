@@ -79,6 +79,7 @@ TEMPLATES = [
         'DIRS': [
             os.path.join(BASE_DIR, 'templates'),
             os.path.join(BASE_DIR, 'templates', 'allauth'),
+            os.path.join(BASE_DIR, 'templates', 'star_ratings'),
             ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -195,13 +196,18 @@ FREE_DELIVERY_THRESHOLD = 50
 STANDARD_DELIVERY_PERCENTAGE = 10
 
 
-# Stripe
+# Stripe config
 STRIPE_CURRENCY = 'eur'
 STRIPE_PUBLIC_KEY = os.environ.get('STRIPE_PUBLIC_KEY', '')
 STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY', '')
 STRIPE_WH_SECRET = os.environ.get('STRIPE_WH_SECRET', '')
 
-STAR_RATINGS_ANONYMOUS = True
+# Star rating config
+STAR_RATINGS_RERATE = False
+STAR_RATINGS_CLEARABLE = True
+STAR_RATINGS_STAR_HEIGHT = 24
+STAR_RATINGS_STAR_WIDTH = 24
+
 
 if DEBUG:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

@@ -1,6 +1,8 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib import messages
 from django.db.models import Q
+from star_ratings.models import Rating
+from star_ratings.forms import CreateUserRatingForm
 from .models import Product, Category
 
 
@@ -65,3 +67,23 @@ def product_detail(request, product_id):
     }
 
     return render(request, 'products/product-detail.html', context)
+
+
+def ratings(request):
+    """ Display the rating """
+
+    rating = get_object_or_404(Rating, user=request.user)
+
+    if request.method == 'POST':
+        form = CreateUserRatingForm(request.POST, instance=rating)
+        if form.is_valid():
+            form.save()
+            rate-success
+
+    template = 'star_ratings/widget.html'
+    context = {
+        'form': form,
+        'ratings': ratings
+    }
+
+    return render(request, template, context)
