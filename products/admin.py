@@ -10,7 +10,7 @@ class ProductAdmin(SummernoteModelAdmin):
     Args: SummernoteModelAdmin (describtions): Add tools for
     editing a text in the text field
     """
-    list_display = ('sku', 'name', 'category', 'price', 'rating', 'image',)
+    list_display = ('sku', 'name', 'category', 'price', 'image',)
     search_fields = ['name', 'category']
     summernote_fields = ('description', )
     ordering = ('sku',)

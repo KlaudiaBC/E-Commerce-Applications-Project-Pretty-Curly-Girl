@@ -13,6 +13,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='product',
             name='image_url',
-            field=models.URLField(blank=True, default=None, max_length=1024, null=True),
+            field=models.URLField(blank=True,
+                                  default=None, max_length=1024, null=True),
         ),
     ]
