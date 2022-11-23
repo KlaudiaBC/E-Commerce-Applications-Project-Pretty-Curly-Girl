@@ -3,7 +3,7 @@
 
 {% block content %}
 
-<div class="wrapper">
+<div class="container-tall">
   <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
@@ -26,6 +26,13 @@
       <span class="sr-only">Next</span>
     </button>
   </div>
+</div>
+<div class="container-tall">
+
+  <h2> Some extra content</h2>
+</div>
+<div class="container-tall">
+  {% include 'includes/mail_sub.html' %}
 </div>
 
 {% endblock %}

@@ -364,3 +364,9 @@ ul.social-icons li {
         height: calc(100vh - 116px);
     }
 }
+
+/* mail */
+#mc_embed_signup {
+    background:#fff;
+    font:14px Helvetica,Arial,sans-serif;
+}
