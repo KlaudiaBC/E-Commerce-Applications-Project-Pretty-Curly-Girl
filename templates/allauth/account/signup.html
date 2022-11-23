@@ -1,6 +1,7 @@
 {% extends "account/base.html" %}
 
 {% load i18n %}
+{% load account socialaccount %}
 
 {% block head_title %}{% trans "Signup" %}{% endblock %}
 
@@ -11,6 +12,28 @@
 <p class="text-center">{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign
     in</a>.{% endblocktrans %}</p>
 
+{% get_providers as socialaccount_providers %}
+
+{% if socialaccount_providers %}
+<p class="text-center">{% blocktrans with site.name as site_name %}Please sign in with one
+  of your existing third party accounts. Or, <a href="{{ signup_url }}">sign up</a>
+  for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
+
+
+<div class="socialaccount_ballot">
+
+  <ul class="socialaccount_providers">
+    {% include "socialaccount/snippets/provider_list.html" with process="login" %}
+  </ul>
+
+  <div class="login-or">{% trans 'or' %}</div>
+
+</div>
+
+{% include "socialaccount/snippets/login_extra.html" %}
+{% endif %}
+
+
 <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
   {% csrf_token %}
   {{ form|crispy }}
@@ -18,7 +41,7 @@
   <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
   {% endif %}
   <div class="col-md-12 text-center">
-  <button type="submit" class="btn btn-outline-secondary">{% trans "Sign Up" %} &raquo;</button>
+    <button type="submit" class="btn btn-outline-secondary">{% trans "Sign Up" %} &raquo;</button>
   </div>
 </form>
 <br><br>

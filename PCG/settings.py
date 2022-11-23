@@ -46,9 +46,10 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
+    'cloudinary',
     'django_summernote',
     'crispy_forms',
-    'cloudinary',
     'widget_tweaks',
     'django_extensions',
     'star_ratings',
@@ -116,6 +117,22 @@ ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
 ACCOUNT_USERNAME_MIN_LENGTH = 3
 LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/'
+
+# Social accounts / Google
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'SCOPE': [
+            'profile',
+            'email',
+        ],
+        'AUTH_PARAMS': {
+            'access_type': 'offline',
+        },
+        'OAUTH_PKCE_ENABLED': True,
+        'INCLUDE_GRANTED_SCOPES': True,
+        'ACCOUNT_USER_MODEL_USERNAME_FIELD': None,
+    }
+}
 
 WSGI_APPLICATION = 'PCG.wsgi.application'
 
@@ -209,6 +226,7 @@ STAR_RATINGS_STAR_WIDTH = 24
 STAR_RATINGS_ANONYMOUS = False
 
 
+# Email config
 if DEBUG:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
     DEFAULT_FROM_EMAIL = 'prettycurly.example.com'
