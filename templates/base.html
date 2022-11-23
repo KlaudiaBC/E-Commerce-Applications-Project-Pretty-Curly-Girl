@@ -34,14 +34,18 @@
     integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
     crossorigin="anonymous"></script>
 
-    <!-- HTMX -->
-    <script src="https://unpkg.com/htmx.org@1.6.0"></script>
+  <!-- Star rating -->
+  <link rel="stylesheet" href="{% static 'star-ratings/css/star-ratings.css' %}">
+  <script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.min.js' %}"></script>
 
-    <!-- Font awesome -->
-    <script src="https://kit.fontawesome.com/2b3ccafbd0.js" crossorigin="anonymous"></script>
+  <!-- HTMX -->
+  <script src="https://unpkg.com/htmx.org@1.6.0"></script>
 
-    <!-- STRIPE -->
-    <script src="https://js.stripe.com/v3/"></script>
+  <!-- Font awesome -->
+  <script src="https://kit.fontawesome.com/2b3ccafbd0.js" crossorigin="anonymous"></script>
+
+  <!-- STRIPE -->
+  <script src="https://js.stripe.com/v3/"></script>
   {% endblock %}
 
 </head>
@@ -127,4 +131,5 @@
   {% endblock %}
 
 </body>
+
 </html>

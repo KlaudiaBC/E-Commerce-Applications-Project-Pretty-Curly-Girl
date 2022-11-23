@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'cloudinary',
     'widget_tweaks',
     'django_extensions',
+    'star_ratings',
     'home',
     'products',
     'bag',
@@ -199,6 +200,13 @@ STRIPE_CURRENCY = 'eur'
 STRIPE_PUBLIC_KEY = os.environ.get('STRIPE_PUBLIC_KEY', '')
 STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY', '')
 STRIPE_WH_SECRET = os.environ.get('STRIPE_WH_SECRET', '')
+
+# Star-rating
+STAR_RATINGS_RERATE = False
+STAR_RATINGS_CLEARABLE = True
+STAR_RATINGS_STAR_HEIGHT = 24
+STAR_RATINGS_STAR_WIDTH = 24
+STAR_RATINGS_ANONYMOUS = False
 
 
 if DEBUG:
