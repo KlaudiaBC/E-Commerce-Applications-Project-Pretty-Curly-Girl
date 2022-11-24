@@ -1,6 +1,6 @@
 <!-- Header -->
 <div class="overlay"></div>
-<nav class="navbar navbar-expand-md navbar-light bg-light main-menu" style="box-shadow:none">
+<nav class="navbar navbar-expand-md navbar-light bg-light">
     <div class="container">
 
         <button type="button" id="sidebarCollapse" class="btn d-block d-md-none">
@@ -31,7 +31,7 @@
 
             <!-- My account / Shopping Bag -->
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
-                <ul class="list-inline list-unstyled text-center text-lg-right my-0 d-flex">
+                <ul class="row list-inline mb-0 mt-2 d-flex float-right">
                     <li class="list-inline-item dropdown">
                         <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
@@ -124,7 +124,7 @@
 <!-- Search bar / small screen -->
 <div class="search-bar d-block d-md-none">
     <div class="container">
-        <div class="row">
+        <div class="row mt-2">
             <div class="col-12">
                 <form method="GET" action="{% url 'products' %}" class="form-inline mb-3 mx-auto">
                     <input class="form-control" type="search" placeholder="Search for products..." aria-label="Search"
