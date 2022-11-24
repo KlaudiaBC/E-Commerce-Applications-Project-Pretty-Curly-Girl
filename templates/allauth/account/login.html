@@ -1,54 +1,68 @@
 {% extends "account/base.html" %}
 
 {% load i18n %}
+{% load static %}
 {% load account socialaccount %}
 
-{% block head_title %}{% trans "Sign In" %}{% endblock %}
+{% block extra_title %}Login{% endblock %}
+
 
 {% block inner_content %}
+{% providers_media_js %}
 
-<h2 class="text-center">{% trans "Sign In" %}</h2>
-<hr>
-
-{% get_providers as socialaccount_providers %}
-
-{% if socialaccount_providers %}
-<p class="text-center">{% blocktrans with site.name as site_name %}Please sign in with one
-  of your existing third party accounts. Or, <a href="{{ signup_url }}">sign up</a>
-  for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
-
-<div class="socialaccount_ballot">
-
-  <ul class="socialaccount_providers">
-    {% include "socialaccount/snippets/provider_list.html" with process="login" %}
-  </ul>
-
-  <div class="login-or">{% trans 'or' %}</div>
-
+<div class="text-center">
+  <h2>Login to your account</h2>
+  <hr>
 </div>
 
-{% include "socialaccount/snippets/login_extra.html" %}
 
-{% else %}
-<p class="text-center">{% blocktrans %}If you have not created an account yet, then please
-  <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}
-</p>
-{% endif %}
+<br>
 
+
+<div class="wrapper-form">
 <form class="login" method="POST" action="{% url 'account_login' %}">
   {% csrf_token %}
   {{ form|crispy }}
+
   {% if redirect_field_value %}
   <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
   {% endif %}
-  <div class="col-md-12 text-center">
-    <button class="primaryAction btn btn-outline-secondary" type="submit">{% trans "Sign In" %}</button>
-  </div>
-  <br>
-  <div class="col-md-12 text-center">
-    <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
+<div>
+  <p><a class="text-muted" href="{% url 'account_reset_password' %}">Forgot Password?</a></p>
+</div>
+  <div class="col-md-12 text-center p-3">
+    <button class="btn-block btn btn-secondary" type="submit">Login</button>
   </div>
 </form>
-<br><br>
+</div>
+
+<br>
+<div class="col-12">
+  <p class="inline-text"><span> or </span></p>
+</div>
+
+{% get_providers as socialaccount_providers %}
+<div class="row d-flex justify-content-around">
+  {% if socialaccount_providers %}
+  <div class="m-1">
+    <a href="{% provider_login_url 'google' method='oauth2' %}"  class="btn-google btn btn-social">
+      <img src="https://img.icons8.com/color/24/null/google-logo.png"/>
+      <span class="social-txt ml-2">Continue with Google</span>
+    </a>
+  </div>
+  <div class="m-1">
+    <a href="{% provider_login_url 'facebook' method='js_sdk' %}" class="btn-facebook btn btn-social">
+      <i class="fa-brands fa-facebook-f"></i><span class="social-txt ml-2"> Continue with Facebook</span>
+    </a>
+  </div>
+</div>
+{% endif %}
+<br>
+<br>
+<div class="text-center">
+  <span>Not a member?</span>
+    <p class="text-muted"><a href="{{ signup_url }}">Sign up</a> for free account.</p>
+  </div>
+</div>
 
 {% endblock %}

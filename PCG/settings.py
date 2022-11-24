@@ -94,9 +94,9 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
-                'bag.contexts.bag_contents',
                 'social_django.context_processors.backends',
                 'social_django.context_processors.login_redirect',
+                'bag.contexts.bag_contents',
             ],
             'builtins': [
                 'crispy_forms.templatetags.crispy_forms_tags',
@@ -129,17 +129,18 @@ ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
 ACCOUNT_USERNAME_MIN_LENGTH = 3
 SOCIALACCOUNT_QUERY_EMAIL = True
+ACCOUNT_LOGOUT_ON_GET = True
 
 LOGIN_URL = 'login/'
 LOGOUT_URL = 'logout/'
-LOGIN_REDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = '/'
 
 # Social accounts / Google
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
         'APP': {
-            'client_id': os.environ.get('GOOGLE_ID'),
-            'secret': os.environ.get('GOOGLE_SECRET'),
+            'client_id': os.environ.get('SOCIAL_AUTH_GOOGLE_ID'),
+            'secret': os.environ.get('SOCIAL_AUTH_GOOGLE_SECRET'),
         },
         'SCOPE': [
             'profile',
@@ -151,8 +152,26 @@ SOCIALACCOUNT_PROVIDERS = {
             'include_granted_scopes': 'true',
         },
         'OAUTH_PKCE_ENABLED': True,
-        'INCLUDE_GRANTED_SCOPES': True,
-        'ACCOUNT_USER_MODEL_USERNAME_FIELD': None,
+        'VERIFIED_EMAIL': True,
+        'METHOD': 'oauth2',
+        'SDK_URL': '//connect.facebook.net/{locale}/sdk.js',
+        'AUTH_PARAMS': {
+            'auth_type': 'reauthenticate',
+            'access_type': 'offline',
+            'state': 'sample_passthrough_value',
+            'include_granted_scopes': 'true',
+            },
+        'INIT_PARAMS': {'cookie': True},
+        'FIELDS': [
+            'id',
+            'first_name',
+            'last_name',
+            'name',
+        ],
+        'EXCHANGE_TOKEN': True,
+        'LOCALE_FUNC': 'path.to.callable',
+        'VERIFIED_EMAIL': True,
+        'VERSION': 'v13.0',
     }
 }
 
