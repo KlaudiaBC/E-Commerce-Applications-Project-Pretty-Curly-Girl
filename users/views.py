@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404
+from allauth.socialaccount.adapter import DefaultSocialAccountAdapter
 
 from django.contrib import messages
 
@@ -28,3 +29,15 @@ def profiles(request):
     }
 
     return render(request, template, context)
+
+
+class SocialAccountAdapter(DefaultSocialAccountAdapter):
+    def save_user(self, request, sociallogin, form=None):
+        user = super(SocialAccountAdapter, self).save_user(
+            request, sociallogin, form)
+
+        context = {
+            'user': profile,
+        }
+
+        return user

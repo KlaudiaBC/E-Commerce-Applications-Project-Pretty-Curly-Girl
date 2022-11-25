@@ -28,6 +28,7 @@ class Product(models.Model):
     image = models.ImageField(null=True, blank=True)
     image_url = models.URLField(max_length=1024, null=True,
                                 blank=True, default=None)
+    sale = models.BooleanField(default=False, null=True, blank=True)
 
     def __str__(self):
         return self.name

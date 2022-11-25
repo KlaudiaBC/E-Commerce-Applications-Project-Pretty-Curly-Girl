@@ -1,16 +1,24 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<!-- Internal css -->
+<link rel="stylesheet" href="{% static 'css/features.css' %}">
+{% endblock %}
+
+<!-- Google icon -->
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
 
 {% block content %}
-    <div class="container">
-        <div class="overlay"></div>
-        <div class="row d-flex justify-content-center">
-            <div class="col-12 col-md-6">
-                <hr>
-                <div class="allauth-form-inner-content container-tall">
-                    {% block inner_content %}
-                    {% endblock %}
-                </div>
+<div class="container">
+    <div class="row d-flex justify-content-center">
+        <div class="col-12 col-md-6">
+            <hr>
+            <div class="inner-content container-tall">
+                {% block inner_content %}
+                {% endblock %}
             </div>
         </div>
     </div>
+</div>
 {% endblock %}

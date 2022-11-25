@@ -29,7 +29,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME'), 'localhost']
+ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME'), 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -43,15 +43,20 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.facebook',
+
+    'cloudinary',
     'django_summernote',
     'crispy_forms',
-    'cloudinary',
     'widget_tweaks',
     'django_extensions',
     'star_ratings',
+
     'home',
     'products',
     'bag',
@@ -67,6 +72,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'social_django.middleware.SocialAuthExceptionMiddleware',
 ]
 
 ROOT_URLCONF = 'PCG.urls'
@@ -88,6 +94,8 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect',
                 'bag.contexts.bag_contents',
             ],
             'builtins': [
@@ -105,6 +113,12 @@ AUTHENTICATION_BACKENDS = [
 
     # `allauth` specific authentication methods, such as login by e-mail
     'allauth.account.auth_backends.AuthenticationBackend',
+
+    # `allauth` specific authentication methods for Google
+    'social_core.backends.google.GoogleOAuth2',
+
+    # `allauth` specific authentication methods for Fabebook
+    # 'social_core.backends.facebook.FacebookOAuth2',
 ]
 
 SITE_ID = 1
@@ -114,8 +128,53 @@ ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
 ACCOUNT_USERNAME_MIN_LENGTH = 3
-LOGIN_URL = '/accounts/login/'
+SOCIALACCOUNT_QUERY_EMAIL = True
+ACCOUNT_LOGOUT_ON_GET = True
+
+LOGIN_URL = 'login/'
+LOGOUT_URL = 'logout/'
 LOGIN_REDIRECT_URL = '/'
+
+# Social accounts / Google
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'APP': {
+            'client_id': os.environ.get('SOCIAL_AUTH_GOOGLE_ID'),
+            'secret': os.environ.get('SOCIAL_AUTH_GOOGLE_SECRET'),
+        },
+        'SCOPE': [
+            'profile',
+            'email',
+        ],
+        'AUTH_PARAMS': {
+            'access_type': 'offline',
+            'state': 'sample_passthrough_value',
+            'include_granted_scopes': 'true',
+        },
+        'OAUTH_PKCE_ENABLED': True,
+        'VERIFIED_EMAIL': True,
+        'METHOD': 'oauth2',
+        'SDK_URL': '//connect.facebook.net/{locale}/sdk.js',
+        'AUTH_PARAMS': {
+            'auth_type': 'reauthenticate',
+            'access_type': 'offline',
+            'state': 'sample_passthrough_value',
+            'include_granted_scopes': 'true',
+            },
+        'INIT_PARAMS': {'cookie': True},
+        'FIELDS': [
+            'id',
+            'first_name',
+            'last_name',
+            'name',
+        ],
+        'EXCHANGE_TOKEN': True,
+        'LOCALE_FUNC': 'path.to.callable',
+        'VERIFIED_EMAIL': True,
+        'VERSION': 'v13.0',
+    }
+}
+
 
 WSGI_APPLICATION = 'PCG.wsgi.application'
 
@@ -203,15 +262,13 @@ STRIPE_WH_SECRET = os.environ.get('STRIPE_WH_SECRET', '')
 
 # Star-rating
 STAR_RATINGS_RERATE = False
-STAR_RATINGS_CLEARABLE = True
-STAR_RATINGS_STAR_HEIGHT = 24
-STAR_RATINGS_STAR_WIDTH = 24
 STAR_RATINGS_ANONYMOUS = False
 
-
+# Email config
 if DEBUG:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
     DEFAULT_FROM_EMAIL = 'prettycurly.example.com'
+    ACCOUNT_DEFAULT_HTTP_PROTOCOL = 'https'
 else:
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
     EMAIL_USE_TLS = True
