@@ -3,19 +3,18 @@
 {% load i18n %}
 {% load static %}
 {% load account socialaccount %}
-
-{% block extra_title %}Login{% endblock %}
-
-{% block inner_content %}
 {% providers_media_js %}
 
+{% block head_title %}{% trans "Signup" %}{% endblock %}
+
+{% block inner_content %}
 <div class="text-center">
-  <h3>Sign up</h3>
+  <h1>Sign up</h1>
   <hr>
 </div>
 
 <div class="text-center">
-  <p class="small">Already have an account? Then please <a href="{{ login_url }}">sign in</p>
+  <p class="small">Already have an account? Then please <a href="{{ login_url }}">sign in</a></p>
 </div>
 <br>
 
@@ -37,24 +36,26 @@
 <br>
 <div class="col-12">
   <p class="inline-text"><span> or </span></p>
-</div>
+  <br>
+  <p class="text-center">Signup via your social account:</p>
 
-{% get_providers as socialaccount_providers %}
-<div class="row d-flex justify-content-around">
-  {% if socialaccount_providers %}
-  <div class="m-1">
-    <a href="{% provider_login_url 'google' method='oauth2' %}" class="btn-google btn btn-social">
-      <img src="https://img.icons8.com/color/24/null/google-logo.png" />
-      <span class="social-txt ml-2">Continue with Google</span>
-    </a>
-  </div>
-  <div class="m-1">
-    <a href="{% provider_login_url 'facebook' method='js_sdk' %}" class="btn-facebook btn btn-social">
-      <i class="fa-brands fa-facebook-f"></i><span class="social-txt ml-2"> Continue with Facebook</span>
-    </a>
+  {% get_providers as socialaccount_providers %}
+  <div class="row d-flex justify-content-center">
+    {% if socialaccount_providers %}
+    <div class="m-1">
+      <a href="{% provider_login_url 'google' method='oauth2' %}" class="btn-google btn btn-social">
+        <img src="https://img.icons8.com/color/24/null/google-logo.png" />
+        <span class="social-txt ml-2">Continue with Google</span>
+      </a>
+    </div>
+    <div class="m-1">
+      <a href="{% provider_login_url 'facebook' method='js_sdk' %}" class="btn-facebook btn btn-social">
+        <i class="fa-brands fa-facebook-f"></i><span class="social-txt ml-2"> Continue with Facebook</span>
+      </a>
+    </div>
   </div>
 </div>
-<br>
-<br>
-{% endif %}
-{% endblock %}
+  <br>
+
+  {% endif %}
+  {% endblock %}

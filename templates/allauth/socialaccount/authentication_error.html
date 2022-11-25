@@ -1,19 +1,17 @@
 {% extends "socialaccount/base.html" %}
-
 {% load i18n %}
 
 {% block head_title %}{% trans "Social Network Login Failure" %}{% endblock %}
 
 {% block inner_content %}
-
-<div class="container container-tall">
-    <div class="text-center">
-        <h3>"Social Network Login Failure"</h3>
-        <hr>
-    </div>
-    <br>
-    <div class="wrapper-form">
-        <p>{% trans "An error occurred while attempting to login via your social network account." %}</p>
-    </div><br>
+<div class="text-center">
+    <h1>"Social Network Login Failure"</h1>
+    <hr>
 </div>
+<br>
+
+<div class="wrapper-form">
+    <p>{% trans "An error occurred while attempting to login via your social network account." %}</p>
+</div>
+<br>
 {% endblock %}

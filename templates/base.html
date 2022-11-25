@@ -17,14 +17,12 @@
 
   <!-- Internal CSS -->
   <link rel="stylesheet" href="{% static 'css/base.css' %}">
-  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
-  <link rel="stylesheet" href="{% static 'star-ratings/css/star-ratings.css' %}">
 
   {% block extra_css %}
   {% endblock %}
 
   <!-- Scripts -->
-  {% block corejs %}
+  <!-- Bootstrap and popper -->
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
     crossorigin="anonymous"></script>
@@ -46,6 +44,8 @@
 
   <!-- STRIPE -->
   <script src="https://js.stripe.com/v3/"></script>
+
+  {% block corejs %}
   {% endblock %}
 
 </head>
@@ -146,8 +146,7 @@
       js = d.createElement(s); js.id = id;
       js.src = "https://connect.facebook.net/en_US/sdk.js";
       fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-    
+    }(document, 'script', 'facebook-jssdk'));   
   </script>
   {% endblock %}
 

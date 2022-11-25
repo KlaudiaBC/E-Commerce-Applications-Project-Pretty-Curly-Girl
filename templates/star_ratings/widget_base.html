@@ -1,23 +1,6 @@
 {% load i18n %}
 {% block rating_style %}
-<style>
-    #{{ id }} .star-ratings-rating-full, #{{ id }} .star-ratings-rating-empty {
-        width: {{ icon_width }}px;
-        height: {{ icon_height }}px;
-        background: url({{ sprite_image }}) no-repeat;
-        background-size: {{ sprite_width }}px;
-    }
-
-    #{{ id }} .star-ratings-rating-empty {
-        background-position: -{{ icon_width }}px 0;
-    }
-
-    {% if user.is_authenticated and editable %}
-    #{{ id }} .star-ratings-rating-full:hover, #{{ id }} .star-ratings-rating-empty:hover {
-        background-position: -{{ icon_width|add:icon_width }}px 0;
-    }
-    {% endif %}
-</style>
+<link rel="stylesheet" href="{% static 'css/features.css' %}">
 {% endblock rating_style %}
 
 {% block rating_container %}
@@ -43,7 +26,7 @@
                 {% endfor %}
             </ul>
 
-            <ul class="star-ratings-rating-foreground" style="width: {{ percentage|floatformat }}%">
+            <ul class="star-ratings-rating-foreground">
                 {% for star in stars %}
                     <li>
                     {% if editable %}
@@ -54,7 +37,7 @@
                         <button type="submit" class="star-ratings-rating-full" data-score="{{ star }}"></button>
                     </form>
                     {% else %}
-                        <span class="star-ratings-rating-full" title="Log in to rate"></span>
+                        <span class="star-ratings-rating-full"><a href="{{ login_url }}">Login to rate</a></span>
                     {% endif %}
                     </li>
                 {% endfor %}
@@ -75,18 +58,6 @@
     {% endif %}
     {% endblock rating_user %}
     <div class="star-ratings-errors"></div>
-    {% block rating_clearable %}
-        {% if clearable %}
-            <div class="star-ratings-clear star-ratings-clear-{{user_rating|yesno:'visible,hidden'}}">
-                <form action="{% url 'ratings:rate' rating.content_type_id rating.object_id %}" class="star-ratings-rate-action" method="post">
-                {% csrf_token %}
-                <input type="hidden" value="1" name="clear">
-                <input type="hidden" value="{{ request.path }}" name="next">
-                <button type="submit" class="star-ratings-rating-clear">Clear</button>
-                </form>
-            </div>
-        {% endif %}
-    {% endblock %}
     {% endblock rating_detail %}
 </div>
 {% endblock rating_container %}

@@ -1,23 +1,20 @@
 {% extends "account/base.html" %}
-
 {% load i18n %}
 
 {% block head_title %}{% trans "Verify Your E-mail Address" %}{% endblock %}
 
 {% block inner_content %}
-<div class="container container-tall">
-    <div class="text-center">
-        <h3>Verify Your E-mail Address</h3>
-        <hr>
-    </div>
-    <br>
-    <div class="wrapper-form">
+<div class="text-center">
+    <h1>Verify Your E-mail Address</h1>
+    <hr>
+</div>
+<br>
 
-        <p class="text-center">{% blocktrans %}We have sent an e-mail to you for verification. Follow the link provided
-            to finalize the signup process. Please contact us if you do not receive it within a few minutes.{%
-            endblocktrans %}</p>
-        <br>
-    </div>
+<div class="wrapper-form">
+    <p class="text-center">{% blocktrans %}We have sent an e-mail to you for verification. Follow the link provided
+        to finalize the signup process. Please contact us if you do not receive it within a few minutes.{%
+        endblocktrans %}</p>
+    <br>
 </div>
 
 {% endblock %}
