@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 import dj_database_url
+from htmlmin.minify import html_minify
+from django.apps import AppConfig
 if os.path.isfile("env.py"):
     import env
 
@@ -27,7 +29,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME'), 'localhost', '127.0.0.1']
 
@@ -40,8 +42,9 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'cloudinary_storage',
+    "whitenoise.runserver_nostatic",
     'django.contrib.staticfiles',
+    'cloudinary_storage',
     'django.contrib.sites',
 
     'allauth',
@@ -66,6 +69,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -118,7 +122,7 @@ AUTHENTICATION_BACKENDS = [
     'social_core.backends.google.GoogleOAuth2',
 
     # `allauth` specific authentication methods for Fabebook
-    # 'social_core.backends.facebook.FacebookOAuth2',
+    'social_core.backends.facebook.FacebookOAuth2',
 ]
 
 SITE_ID = 1
@@ -195,6 +199,8 @@ else:
     }
 
 
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
@@ -236,10 +242,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 STATICFILES_STORAGE = \
-    'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
-
+    "django.contrib.staticfiles.storage.ManifestStaticFilesStorage"
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
