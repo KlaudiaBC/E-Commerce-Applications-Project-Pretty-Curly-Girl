@@ -1,14 +1,3 @@
-/* star-ratings */
-.star-ratings-rating-full, .star-ratings-rating-empty {
-    width: 24px;
-    height: 24px;
-}
-    
-.star-ratings-rating-empty {
-    background-position: -24px 0;
-}
-
-
 /* allauth */
 .inline-text {
     width: 100%; 

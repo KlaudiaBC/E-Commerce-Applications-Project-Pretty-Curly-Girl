@@ -139,7 +139,7 @@ a:hover {
 }
 
 .navbar-brand {
-  font-size: 2.25rem;
+  margin-top: 1rem;
 }
 
 #navbar {
@@ -331,7 +331,13 @@ ul.social-icons li {
   }
 
   .navbar-collapse {
-    flex-grow: 0;
+    flex-grow: 1;
+  }
+
+  .navbar-brand {
+    font-size: 2.25rem;
+    margin-top: 0;
+    padding-right: 5rem;
   }
 }
 
