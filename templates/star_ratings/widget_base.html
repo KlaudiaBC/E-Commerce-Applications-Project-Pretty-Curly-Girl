@@ -1,30 +1,9 @@
 {% load i18n %}
-{% block rating_style %}
-<link rel="stylesheet" href="{% static 'css/features.css' %}">
-{% endblock rating_style %}
 
 {% block rating_container %}
 <div id="{{ id }}" class="star-ratings" data-max-rating="{{ star_count }}" data-avg-rating="{{ rating.average }}">
     {% block rating_stars %}
         <div class="star-ratings-rating-stars-container">
-            <ul class="star-ratings-rating-background">
-                {% for star in stars %}
-                    <li>
-                        {% if editable %}
-                        <form action="{% url 'ratings:rate' rating.content_type_id rating.object_id %}" class="star-ratings-rate-action" method="post">
-                            {% csrf_token %}
-                            <input type="hidden" value="{{ star }}" name="score">
-                            <input type="hidden" value="{{ request.path }}" name="next">
-                            <button type="submit" class="star-ratings-rating-empty" data-score="{{ star }}"></button>
-                        </form>
-                        {% elif user.is_authenticated %}
-                            <span class="star-ratings-rating-empty"></span>
-                        {% else %}
-                            <span class="star-ratings-rating-empty" title="{% trans 'Log in to rate' as title_login %}{{ title_login|escape }}"></span>
-                        {% endif %}
-                    </li>
-                {% endfor %}
-            </ul>
 
             <ul class="star-ratings-rating-foreground">
                 {% for star in stars %}
