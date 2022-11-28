@@ -1,16 +1,28 @@
 {% extends "base.html" %}
-
 {% load static %}
 
 {% block extra_title %}About Us{% endblock %}
 
 {% block content %}
-
-<h2>Our Story</h2>
-<h3>The story behind <b>Pretty Curly Girl</b></h3>
-
-<p>The person behind the company: Hanan - owner and founder - born and raised in the Netherlands with Moroccan roots.
-</p>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <hr class="w-50 mb-1">
+            <h2 class="logo-font mb-4 text-center">Our Story</h2>
+            <hr class="w-50 mb-1">
+        </div>
+    </div>
+<br>
+<div class="container">
+<h3 class="text=center">The story behind <b>Pretty Curly Girl</b></h3>
+<div class="col-6 col-sm-12">
+<img class="image-fluid" src="" alt="">
+</div>
+<div class="col-6 col-sm-12">
+<h4 class="text-muted">The person behind the company: Hanan - owner and founder - born and raised in the Netherlands with Moroccan roots.
+</h4>
+</div>
+<hr class="mx-1">
 <h4>Background</h4>
 <p>I studied law and became a lawyer. After some years as a lawyer I decided it was time for a change and I applied for
     a HR position. I worked for almost 9 years for an Oil & Gas company as a HR Business Partner with employment law as
@@ -20,7 +32,7 @@
     Legal job. Until after having my daughter in 2018. I decided to developed Pretty Curly Girl Products.</p>
 <p>I followed my passion, quitte my job and now I run my own International Curly Company, with more than 100 retailers
     worldwide. Follow your dreams my Pretty Curly Girls.</p>
-
+<hr>
 <h4>Growing up in the 80's</h4>
 <p>Having curls has always been challenging to deal with. As a child my mother did not know how to handle my curls. It
     was
@@ -31,6 +43,7 @@
     Most curly products in the '90 were too heavy for my hair. Having bad hair days became just normal and I dreamed of
     having straight hair so many times.</p>
 
+    <hr>
 <h4>CG Method</h4>
 <p>When I was introduced to the CG Method 3 years ago a curly world full of great hair days finally was there. I loved
     the
@@ -69,5 +82,5 @@
     available
     in more than 25 countries in just over a year.
 </p>
-
+</div>
 {% endblock %}
