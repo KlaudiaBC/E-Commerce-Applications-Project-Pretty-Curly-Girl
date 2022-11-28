@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block extra_title %}Products{% endblock %}
+{% block extra_title %}Product{% endblock %}
 
 {% block extra_css %}
-<link rel="stylesheet" href="{% static 'css/features/css' %}">
+<link rel="stylesheet" href="{% static 'css/features.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -42,9 +42,8 @@
                                         <div class="input-group-prepend">
                                             <button class="decrement-qty btn btn-black rounded-0"
                                                 data-item_id="{{ product.id }}" id="decrement-qty_{{ product.id }}">
-                                                <span class="sm-icons">
-                                                    <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/static/images/media/minus.png?raw=true"
-                                                        alt="minus">
+                                                <span class="icon">
+                                                    <i class="fas fa-square-minus fa-xl"></i>
                                                 </span>
                                             </button>
                                         </div>
@@ -54,9 +53,8 @@
                                         <div class="input-group-append">
                                             <button class="increment-qty btn btn-black rounded-0"
                                                 data-item_id="{{ product.id }}" id="increment-qty_{{ product.id }}">
-                                                <span class="sm-icons">
-                                                    <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/static/images/media/plus.png?raw=true"
-                                                        alt="plus">
+                                                <span class="icon">
+                                                    <i class="fas fa-square-plus fa-xl"></i>
                                                 </span>
                                             </button>
                                         </div>
@@ -66,10 +64,13 @@
 
                             <div class="col-12">
                                 <a href="{% url 'products' %}" class="btn btn-outline-secondary rounded-0 mt-5">
+                                    <span class="icon"><i class="fas fa-solid fa-arrow-left"></i></span>
                                     <span class="text-uppercase">Keep Shopping</span>
                                 </a>
-                                <input type="submit" class="btn btn-secondary rounded-0 text-uppercase mt-5"
-                                    value="Add to Bag">
+                                <button type="submit" class="btn btn-secondary rounded-0 text-uppercase mt-5">
+                                    <span class="text-uppercase">Add to bag </span>
+                                    <i class="fa-solid fa-cart-plus"></i>
+                                </button>
                             </div>
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         </div>
@@ -79,10 +80,12 @@
         </div>
     </div>
 </div>
-<br>
-<div>
-    <h2>You may also like:</h2>
+<hr>
+<div class="container container-tall">
+    <h2>Don't miss out!</h2>
+
 </div>
+<br>
 {% endblock %}
 
 {% block postloadjs %}

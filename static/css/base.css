@@ -82,8 +82,20 @@ a:hover {
 
 /* subscription */
 #mc_embed_signup {
-    background:#fff;
     font:14px Helvetica,Arial,sans-serif;
+}
+
+#mc-embedded-subscribe {
+  background-color: blue !important;
+}
+
+#mce-EMAIL-HELPERTEXT, .brandingLogo {
+  display: none !important;
+}
+
+.container-sub {
+  background-color: #a7a7a7;
+  border-radius: 20px;
 }
 
 /* From codepen --> navbar */
@@ -297,7 +309,7 @@ ul.social-icons li {
   z-index: 5000;
 }
 
-.carousel-inner {
+.inner-lg {
   height: 620px;
 }
 
