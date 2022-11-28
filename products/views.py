@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib import messages
 from django.db.models import Q
-from .models import Product, Category, MyRating
+from .models import Product, Category
 
 
 def all_products(request):
