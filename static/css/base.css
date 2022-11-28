@@ -20,6 +20,11 @@ body {
   width: 100%;
 }
 
+.img-fluid {
+  height: 90px;
+  width: 90px;
+}
+
 .btt-link,
 .update-link,
 .remove-item {
@@ -309,6 +314,16 @@ ul.social-icons li {
 .overlay.visible {
   opacity: 1;
   z-index: 5000;
+}
+
+/* htmx - ease out item that has been deleted */
+tr.htmx-swapping td {
+  opacity: 0;
+  transition: opacity 1s ease-out;
+}
+
+.qty_input {
+  flex: 0;
 }
 
 /* Style the button and place it in the middle of the container/image */

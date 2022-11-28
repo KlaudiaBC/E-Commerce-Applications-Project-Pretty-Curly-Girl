@@ -24,16 +24,21 @@
                             <th scope="col">Product Info</th>
                             <th scope="col"></th>
                             <th scope="col">Price</th>
-                            <th scope="col" class="text-center">Quantity</th>
+                            <th scope="col">Quantity</th>
                             <th scope="col">Subtotal</th>
-                            <th scope="col"></th>
                         </tr>
                     </thead>
 
                     {% for item in bag_items %}
-                    <tr id="item_list">
-                        <td class="p-3 w-25">
-                            <img class="img-fluid rounded" src="{{ item.product.image.url }}">
+                    <tr>
+                        <td class="p-3">
+                            {% if item.product.image %}
+                            <img class="img-fluid rounded" src="{{ item.product.image.url }}"
+                                alt="{{ item.product.name }}">
+                            {% else %}
+                            <img class="img-fluid rounded" src="{{ MEDIA_URL }}noimage.png"
+                                alt="{{ item.product.name }}">
+                            {% endif %}
                         </td>
                         <td class="py-3">
                             <p class="my-0"><strong>{{ item.product.name }}</strong></p>
@@ -49,38 +54,32 @@
                                         <div class="input-group-prepend">
                                             <button class="decrement-qty btn btn-sm rounded-0"
                                                 data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
-                                                <span class="sm-icons">
-                                                    <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/static/images/media/minus.png?raw=true"
-                                                        alt="minus">
+                                                <span class="icon">
+                                                    <i class="fa-solid fa-square-minus"></i>
                                                 </span>
                                             </button>
                                         </div>
                                         <input class="form-control form-control-sm qty_input" type="number"
                                             name="quantity" value="{{ item.quantity }}" min="1" max="99"
                                             data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}">
-                                        <div class="input-group-append sm-icons">
+                                        <div class="input-group-append">
                                             <button class="increment-qty btn btn-sm rounded-0"
                                                 data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
-                                                <span class="sm-icons">
-                                                    <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/static/images/media/plus.png?raw=true"
-                                                        alt="plus">
+                                                <span class="icon">
+                                                    <i class="fa-solid fa-square-plus"></i>
                                                 </span>
                                             </button>
                                         </div>
                                     </div>
                                 </div>
                             </form>
+                            <a class="update-link text-info"><small>Update</small></a>
+                            <span style="cursor: pointer;">
+                                <i class="fa-regular fa-trash-can fa-lg"></i></span>
                         </td>
+
                         <td class="py-3">
                             <p class="my-0">€{{ item.product.price | calc_subtotal:item.quantity }}</p>
-                            <a class="update-link text-info"><small>Update</small></a>
-                        </td>
-                        <td>
-                            <span class="sm-icons" style="cursor: pointer;"
-                                hx-delete="{% url 'remove_from_bag' item.item_id %}" hx-target="#item_list"
-                                hx-confirm="Are you sure you wish to delete?">
-                                <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/static/images/media/trash.png?raw=true"
-                                    alt="remove"></span>
                         </td>
                     </tr>
                     {% endfor %}
@@ -128,15 +127,23 @@
 
 <script type="text/javascript">
     // Update quantity on click
-    var updateBtn = document.querySelector('.update-link')
-    updateBtn.addEventListener('click', function (e) {
-        var updateForm = document.querySelector('.update-form')
-        updateForm.submit();
+    $('.update-link').click(function (e) {
+        var form = $(this).prev('.update-form');
+        form.submit();
     })
 
     // Remove item and reload on click
-    document.body.addEventListener('htmx:configRequest', (event) => {
-        event.detail.headers['X-CSRFToken'] = '{{ csrf_token }}';
+    $('.remove-item').click(function (e) {
+        var csrfToken = "{{ csrf_token }}";
+        var itemId = $(this).attr('id').split('remove_')[1];
+        var size = $(this).data('product_size');
+        var url = `/bag/remove/${itemId}/`;
+        var data = { 'csrfmiddlewaretoken': csrfToken, 'product_size': size };
+
+        $.post(url, data)
+            .done(function () {
+                location.reload();
+            });
     })
 </script>
 

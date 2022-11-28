@@ -14,13 +14,22 @@ class UserProfile(models.Model):
     GENDER_CHOICES = [
         ('GENDER_MALE', 'Male'),
         ('GENDER_FEMALE', 'Female'),
-        ('GENDER_OTHER', 'Other'),       
+        ('GENDER_OTHER', 'Other'),
     ]
 
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     birthdate = models.DateField(auto_now=False, null=True, blank=True)
     gender = models.PositiveSmallIntegerField(choices=GENDER_CHOICES,
                                               null=True, blank=True)
+    default_phone = models.CharField(max_length=20, null=True, blank=True)
+    default_address_line_1 = models.CharField(
+        max_length=80, null=True, blank=True)
+    default_address_line_2 = models.CharField(
+        max_length=80, null=True, blank=True)
+    default_city = models.CharField(max_length=40, null=True, blank=True)
+    default_postcode = models.CharField(max_length=20, null=True, blank=True)
+    default_country = CountryField(
+        blank_label='Country', null=True, blank=True)
 
     def __str__(self):
         return self.user.username
