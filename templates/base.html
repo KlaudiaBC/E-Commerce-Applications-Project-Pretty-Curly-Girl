@@ -123,7 +123,6 @@
       sidebarCollapseX.addEventListener("click", function () {
         document.querySelector(".overlay").classList.remove("visible");
       });
-    })();
 
     // Facebook - social accounts allauth
     window.fbAsyncInit = function () {
@@ -136,6 +135,8 @@
 
       FB.AppEvents.logPageView();
     };
+    })();
+
 
     (function (d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0];

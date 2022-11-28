@@ -8,12 +8,16 @@ body {
 }
 
 .container-tall {
-  min-height: 100vh;
+  min-height: calc(100vh - 116px);
 }
 
 .card-product {
   border-radius: 10px;
   box-shadow: 1px 2px grey;
+}
+
+.col-md-5 img {
+  width: 100%;
 }
 
 .btt-link,
@@ -85,18 +89,11 @@ a:hover {
     font:14px Helvetica,Arial,sans-serif;
 }
 
-#mc-embedded-subscribe {
-  background-color: blue !important;
-}
-
-#mce-EMAIL-HELPERTEXT, .brandingLogo {
-  display: none !important;
-}
-
 .container-sub {
   background-color: #a7a7a7;
   border-radius: 20px;
 }
+
 
 /* From codepen --> navbar */
 .btn .bx {
@@ -286,6 +283,11 @@ ul.social-icons li {
   width: calc(100% - 60px);
 }
 
+.search-dark {
+  background-color: #6c757d85;
+  padding-top: 0.5rem;
+}
+
 .user-dropdown .dropdown-menu {
   left: auto;
   right: 0;
@@ -309,22 +311,27 @@ ul.social-icons li {
   z-index: 5000;
 }
 
-.inner-lg {
-  height: 620px;
-}
-
-.carousel-item img {
+/* Style the button and place it in the middle of the container/image */
+.btn-shop {
   position: absolute;
-  object-fit: cover;
-  top: 0;
-  left: 0;
-  min-height: 620px;
+  top: 70%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #555;
+  color: white;
+  font-size: 24px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
-.search-dark {
-  background-color: #6c757d85;
-  padding-top: 0.5rem;
+.btn-shop:hover {
+  background-color: black;
 }
+
+
 
 /*------------- media queries ------------- */
 
