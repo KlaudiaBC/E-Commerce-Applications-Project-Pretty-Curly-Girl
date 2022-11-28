@@ -15,4 +15,8 @@ class Migration(migrations.Migration):
             name='sale',
             field=models.BooleanField(blank=True, default=False, null=True),
         ),
+        migrations.RemoveField(
+            model_name='product',
+            name='rating',
+        )
     ]
