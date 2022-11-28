@@ -29,7 +29,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME'), 'localhost', '127.0.0.1']
 
@@ -58,7 +58,6 @@ INSTALLED_APPS = [
     'crispy_forms',
     'widget_tweaks',
     'django_extensions',
-    'star_ratings',
 
     'home',
     'products',
@@ -70,9 +69,9 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -181,7 +180,8 @@ SOCIALACCOUNT_PROVIDERS = {
 
 
 WSGI_APPLICATION = 'PCG.wsgi.application'
-
+CSRF_TRUSTED_ORIGINS = [
+    'https://*pretty-curly-girl.herokuapp.com/', 'https://*.8000']
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
@@ -199,7 +199,8 @@ else:
     }
 
 
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTOCOL', 'https')
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -265,10 +266,6 @@ STRIPE_CURRENCY = 'eur'
 STRIPE_PUBLIC_KEY = os.environ.get('STRIPE_PUBLIC_KEY', '')
 STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY', '')
 STRIPE_WH_SECRET = os.environ.get('STRIPE_WH_SECRET', '')
-
-# Star-rating
-STAR_RATINGS_RERATE = False
-STAR_RATINGS_ANONYMOUS = False
 
 # Email config
 if DEBUG:
