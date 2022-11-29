@@ -1,5 +1,4 @@
 <!-- Header -->
-<div class="overlay"></div>
 <nav class="navbar navbar-expand-md navbar-light bg-light">
     <div class="container">
 
@@ -42,7 +41,7 @@
                         </a>
                         <div class="dropdown-menu border-0" aria-labelledby="user-options">
                             {% if request.user.is_authenticated %}
-                            <a href="{% url 'user_profile' %}" class="dropdown-item">My Profile</a>
+                            <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
                             <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
                             {% else %}
                             <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
@@ -139,8 +138,7 @@
                         aria-expanded="false">My Account</a>
                     <ul class="collapse list-unstyled" id="user-options-sm">
                         {% if request.user.is_authenticated %}
-                        <li><a href="" class="dropdown-item">My Wish List</a></li>
-                        <li><a href="{% url 'user_profile' %}" class="dropdown-item">My Profile</a></li>
+                        <li><a href="{% url 'profile' %}" class="dropdown-item">My Profile</a></li>
                         <li><a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a></li>
                         {% else %}
                         <li><a href="{% url 'account_signup' %}" class="dropdown-item">Register</a></li>

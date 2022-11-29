@@ -54,6 +54,10 @@ a:hover {
   color: inherit;
 }
 
+.no-form form {
+display: none;
+}
+
 .wrapper-form {
   background-color: #eeeeee;
   padding: 2rem;

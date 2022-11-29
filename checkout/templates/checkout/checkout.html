@@ -12,9 +12,9 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <hr class="w-50 mb-1">
-            <h2 class="logo-font mb-4">Checkout</h2>
-            <hr class="w-50 mb-1">
+            <div class="col text-center mt-3">
+                <h2 class="logo-font">Checkout</h2>
+                <hr class="w-50 mb-1">
         </div>
     </div>
 
@@ -98,10 +98,10 @@
                 </fieldset>
 
                 <div class="submit-button text-right mt-5 mb-2">
-                    <a href="{% url 'view_bag' %}" class="btn btn-outline-black rounded-0">
+                    <a href="{% url 'view_bag' %}" class="btn btn-outline-info rounded-3">
                         <span class="font-weight-bold">Adjust Bag</span>
                     </a>
-                    <button id="submit-button" class="btn btn-black rounded-0">
+                    <button id="submit-button" class="btn btn-info rounded-3">
                         <span class="font-weight-bold">Complete Order</span>
                     </button>
                     <p class="small text-danger my-0">

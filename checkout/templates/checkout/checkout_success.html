@@ -4,25 +4,26 @@
 {% block extra_title %}Checkout success{% endblock %}
 
 {% block content %}
-    <div class="container container-tall">
-        <div class="row">
-            <div class="col">
-                <hr>
-                <h2 class="logo-font mb-4">Thank You</h2>
-                <hr>
-                <p class="text-black">Your order was successfully placed. A confirmation email will be sent to <strong>{{ order.email }}</strong>.</p>
-            </div>
+<div class="container container-tall">
+    <div class="row">
+        <div class="col">
+            <hr>
+            <h2 class="logo-font mb-4">Thank You</h2>
+            <hr>
+            <p class="text-black">Your order was successfully placed. A confirmation email will be sent to <strong>{{
+                    order.email }}</strong>.</p>
         </div>
-
-        <div class="row">
-            <div class="col-12 col-lg-7"></div>
-        </div>
-        <div class="row">
-			<div class="col-12 col-lg-7 text-right">
-				<a href="{% url 'products' %}" class="btn btn-black rounded-0 my-2">
-					<span class="text-uppercase">Now check out the latest deals!</span>
-				</a>
-			</div>
-		</div>
     </div>
+
+    <div class="row">
+        <div class="col-12 col-lg-7"></div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-lg-7 text-right">
+            <a href="{% url 'products' %}" class="btn btn-outline-info rounded-3 my-2">
+                <span class="text-uppercase">Now check out the latest deals!</span>
+            </a>
+        </div>
+    </div>
+</div>
 {% endblock %}

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_title %}My Profile{% endblock %}
+
+{% block content %}
+<div class="container container-tall">
+    <hr class="w-50 mb-1">
+    <div class="row">
+        <div class="col text-center mt-3">
+            <h2 class="logo-font">Profile</h2>
+            <hr class="w-50 mb-1">
+        </div>
+    </div>
+
+    <br>
+    <div class="flex" aria-labelledby="#profile-tab">
+        <div class="container wrapper-form profile-tab">
+            <p class="text-muted lead">Default Delivery Information</p>
+            <form class="mt-3" action="{% url 'profile' %}" method="POST" id="profile-update-form">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <br>
+                <span class="d-flex justify-content-center">
+                    <button class="btn btn-info rounded-3 ">Update Information</button></span>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+<script type="text/javascript" src="{% static 'profiles/js/countryfield.js' %}"></script>
+{% endblock %}

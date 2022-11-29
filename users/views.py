@@ -25,9 +25,9 @@ def users(request):
                            'Update failed. Please ensure the form is valid.')
     else:
         form = UserProfileForm(instance=user)
-    orders = users.orders.all()
+    orders = user.orders.all()
 
-    template = 'profiles/profile.html'
+    template = 'users/profile.html'
     context = {
         'form': form,
         'orders': orders,
@@ -35,13 +35,6 @@ def users(request):
     }
 
     form = UserProfileForm(instance=user)
-
-    template = 'profiles/profile.html'
-    context = {
-        'form': form,
-        'orders': orders,
-        'on_profile_page': True
-    }
 
     return render(request, template, context)
 
@@ -56,20 +49,3 @@ class SocialAccountAdapter(DefaultSocialAccountAdapter):
         }
 
         return user
-
-
-def order_history(request, order_number):
-    order = get_object_or_404(Order, order_number=order_number)
-
-    messages.info(request, (
-        f'This is a past confirmation for order number {order_number}. '
-        'A confirmation email was sent on the order date.'
-    ))
-
-    template = 'checkout/checkout_success.html'
-    context = {
-        'order': order,
-        'from_profile': True,
-    }
-
-    return render(request, template, context)
