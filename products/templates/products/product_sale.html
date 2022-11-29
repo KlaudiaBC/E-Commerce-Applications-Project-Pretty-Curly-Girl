@@ -47,7 +47,6 @@
                         <div class="card-body pb-0">
                             <h5 class="card-title mb-2">{{ product.name }}</h5>
                             <h6 class="card-subtitle mb-2 text-muted">{{ product.extra_info }}</h6>
-                            <h6 class="card-subtitle mb-2 text-muted">{{ product.volume }}ml</h6>
                         </div>
                         <div class="card-footer bg-white pt-0 border-0 text-left">
                             <div class="row">
@@ -67,7 +66,7 @@
 {% else %}
 <br>
 <div class="container container-tall text-center">
-    <p>Sorry. Currently we do not have any products on sale.</p>
+    <p>Sorry! Currently we do not have any products on sale.</p>
     <div class="d-flex">
         <button class="btn btn-outline-secondary mx-auto"> <a href="{% url 'products' %}">Back</a></button>
     </div>

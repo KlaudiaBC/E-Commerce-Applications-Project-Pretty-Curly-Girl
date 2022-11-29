@@ -45,7 +45,7 @@ class SocialAccountAdapter(DefaultSocialAccountAdapter):
             request, sociallogin, form)
 
         context = {
-            'user': profile,
+            'user': user,
         }
 
         return user

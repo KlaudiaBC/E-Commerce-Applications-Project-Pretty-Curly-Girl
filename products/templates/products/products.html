@@ -14,7 +14,7 @@
             </div>
         </div>
         <div class="btn-group">
-            <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown"
+            <button type="button" class="btn btn-outline-secondary dropdown-toggle ml-3" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
                 Sort by
             </button>
@@ -45,12 +45,17 @@
                         <div class="card-body pb-0">
                             <h5 class="card-title mb-2">{{ product.name }}</h5>
                             <h6 class="card-subtitle mb-2 text-muted">{{ product.extra_info }}</h6>
-                            <h6 class="card-subtitle mb-2 text-muted">{{ product.volume }}ml</h6>
                         </div>
-                        <div class="card-footer bg-white pt-0 border-0 text-left">
+                        <div class="card-footer bg-white pt-0 border-0">
                             <div class="row">
-                                <div class="col">
+                                <div class="col-6">
                                     <p class="lead mb-0 text-left font-weight-bold">€{{ product.price }}</p>
+                                </div>
+                                <div class="col-6">
+                                    <button type="submit" id="add-bag" class="btn btn-secondary rounded-0 text-uppercase mt-5">
+                                        <i class="fa-solid fa-cart-plus"></i>
+                                        <span class="text-uppercase">Add to bag </span>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -78,4 +83,16 @@
     </div>
 </div>
 
+
+
+{% block postloadjs %}
+{{ block.super }}
+<!-- <script>
+    let addBagBtn = document.getElementById("add-bag")
+    addBagBtn.addEventListener("click", function(e) {
+// add to bag
+    } 
+    )
+</script> -->
+{% endblock %}
 {% endblock %}
