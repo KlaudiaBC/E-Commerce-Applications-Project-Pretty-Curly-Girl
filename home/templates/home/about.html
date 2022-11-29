@@ -15,10 +15,10 @@
     <br>
     <div class="container">
         <h3 class="text=center">The story behind <b>Pretty Curly Girl</b></h3>
-        <div class="col-6 col-sm-12">
-            <img class="image-fluid" src="{{ MEDIA_URL }}hanan.png" alt="hanan">
+        <div class="d-flex">
+            <img class="image-fluid img-md my-2" src="{{ MEDIA_URL }}hanan.png" alt="hanan">
         </div>
-        <div class="col-6 col-sm-12">
+        <div class="d-flex">
             <h4 class="text-muted">The person behind the company: Hanan - owner and founder - born and raised in the
                 Netherlands with Moroccan roots.
             </h4>
@@ -53,10 +53,11 @@
             dreamed of
             having straight hair so many times.</p>
         <br>
-        <div class="col-6 col-sm-12">
-            <img class="image-fluid" src="{{ MEDIA_URL }}pcr_girls.png" alt="pretty curly crew">
-            <br>
-
+        <div class="d=flex">
+            <img class="image-fluid img-md my-2" src="{{ MEDIA_URL }}pcr_girls.png" alt="pretty curly crew">
+        </div>
+        <br>
+        <div class="d=flex">
             <h4>CG Method</h4>
             <p>When I was introduced to the CG Method 3 years ago a curly world full of great hair days finally was
                 there. I loved
@@ -110,5 +111,8 @@
             </p>
         </div>
     </div>
+</div>
+<div class="d-flex">
+    <button class="btn btn-outline-secondary mx-auto"> <a href="{% url 'products' %}">Back</a></button>
 </div>
 {% endblock %}

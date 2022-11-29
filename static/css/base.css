@@ -25,6 +25,11 @@ body {
   width: 90px;
 }
 
+.img-md {
+  height: 200px;
+  width: 300px;
+}
+
 .btt-link,
 .update-link,
 .remove-item {
@@ -316,11 +321,6 @@ ul.social-icons li {
   z-index: 5000;
 }
 
-/* htmx - ease out item that has been deleted */
-tr.htmx-swapping td {
-  opacity: 0;
-  transition: opacity 1s ease-out;
-}
 
 .qty_input {
   flex: 0;
@@ -354,6 +354,11 @@ tr.htmx-swapping td {
 @media screen and (min-width: 600px) {
   .form-inline .form-control {
     width: 150px;
+  }
+
+  .img-md {
+    height: 400px;
+    width: 600px;
   }
   
   .form-inline{
