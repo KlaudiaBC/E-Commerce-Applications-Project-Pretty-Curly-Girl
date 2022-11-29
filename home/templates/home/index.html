@@ -7,7 +7,7 @@
 
 <div class="container-tall">
   <div class="row">
-    <div class="col-12">
+    <div class="col-12 d-none d-md-block">
       <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-item active">
           <img
@@ -30,14 +30,16 @@
         <span class="sr-only">Next</span>
       </button>
     </div>
+    <div class="col-12 d-block d-md-none">
+      <img class="img-fluid mx-auto d-block" src="{{ MEDIA_URL }}hero_mobile.pnq"
+      alt="pretty green">
+      <a href="{% url 'products' %}" class="btn btn-shop"><span class="text-uppercase">Shop now</span></a>
   </div>
 </div>
 
 <div class="container-tall">
   <h3 class="text-center">Pretty CURLY & Pretty GREEN</h3>
-  <img class="img-fluid mx-auto d-block"
-    src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/static/images/media/pretty_green.png?raw=true"
-    alt="pretty green">
+  <img class="img-fluid mx-auto d-block" src="{{ MEDIA_URL }}pretty_green.png" alt="pretty green ">
 </div>
 
 <hr>
@@ -53,12 +55,12 @@
     <p>some txt</p>
   </div>
   <div class="col-md-5">
-    <img src="#" alt="" class="featurette-image image-responsive">
+    <img src="{{ MEDIA_URL }}pexels01.png" alt="curly hair" class="featurette-image image-responsive">
   </div>
   <hr class="featurette-divider">
 
   <div class="col-md-5">
-    <img src="#" alt="" class="featurette-image image-responsive">
+    <img  alt="" class="featurette-image image-responsive">
   </div>
   <div class="col-md-7">
     <h3><a href="#">second article</a></h3>

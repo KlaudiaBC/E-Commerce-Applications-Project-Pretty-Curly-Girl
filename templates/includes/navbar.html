@@ -83,10 +83,7 @@
                     </a>
                     <div class="dropdown-menu border-0" aria-labelledby="about-us-link">
                         <a href="{% url 'about' %}" class="dropdown-item">Our mission</a>
-                        <a href="" class="dropdown-item ">3-steps curly routine</a>
-                        <a href="" class="dropdown-item ">Shipping Policy</a>
-                        <a href="" class="dropdown-item ">Terms and Conditions</a>
-                        <a href="" class="dropdown-item">Contact</a>
+                        <a href="{% url 'privacy_policy' %}" class="dropdown-item ">Terms and Conditions</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
@@ -95,26 +92,20 @@
                         Products
                     </a>
                     <div class="dropdown-menu border-0" aria-labelledby="products-link">
+                        <a href="{% url 'product_sale' %}" class="dropdown-item">SALE</a>
                         <a href="{% url 'products' %}?category=cleanse" class="dropdown-item">Step 1 - Cleanse</a>
                         <a href="{% url 'products' %}?category=condition" class="dropdown-item">Step 2 - Condition</a>
                         <a href="{% url 'products' %}?category=style" class="dropdown-item">Step 3 - Style</a>
                         <a href="{% url 'products' %}?category=travel_sizes" class="dropdown-item">Try Me Travel
                             Sizes</a>
                         <a href="{% url 'products' %}?category=bundle_sets" class="dropdown-item">Bundle sets</a>
-                        <a href="{% url 'products' %}?category=sale" class="dropdown-item">SALE</a>
                         <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
                     </div>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Locations</a>
-                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'products' %}?category=curly_star">Curly STAR</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Curly Tips</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
                 </li>
             </ul>
         </div>
@@ -176,6 +167,9 @@
                     class="bx bx-help-circle mr-3"></i>Products</a>
             <ul class="collapse list-unstyled" id="productSubmenu">
                 <li>
+                    <a href="{% url 'product_sale' %}">SALE</a>
+                </li>
+                <li>
                     <a href="{% url 'products' %}?category=cleanse">Step 1 - Cleanse</a>
                 </li>
                 <li>
@@ -189,9 +183,6 @@
                 </li>
                 <li>
                     <a href="{% url 'products' %}?category=bundle_sets">Bundle sets</a>
-                </li>
-                <li>
-                    <a href="{% url 'products' %}?category=sale">SALE</a>
                 </li>
                 <li>
                     <a href="{% url 'products' %}">All Products</a>

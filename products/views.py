@@ -65,3 +65,16 @@ def product_detail(request, product_id):
     }
 
     return render(request, 'products/product-detail.html', context)
+
+
+def product_sale(request):
+    """ A view to return the 'SALE' page """
+
+    products = Product.objects.all()
+    sale = products.filter(sale=True)
+
+    context = {
+        'sale': sale,
+    }
+
+    return render(request, 'products/product_sale.html', context)
