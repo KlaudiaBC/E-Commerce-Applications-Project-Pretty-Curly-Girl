@@ -2,10 +2,32 @@
 
 {% load i18n %}
 {% load static %}
+
+{% block extra_title %}Login{% endblock %}
+
 {% load account socialaccount %}
 {% providers_media_js %}
 
-{% block extra_title %}Login{% endblock %}
+{% block corejs %}
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1024114958983632',
+      xfbml      : true,
+      version    : 'v15.0'
+    });
+    FB.AppEvents.logPageView();
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+{% endblock %}
 
 {% block inner_content %}
 <div class="text-center">

@@ -135,7 +135,7 @@ SITE_ID = 1
 
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_EMAIL_VERIFICATION = 'none'  # mandatory
 ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = False
 ACCOUNT_LOGIN_ON_EMAIL_CONFIRMATION = True
 ACCOUNT_USERNAME_MIN_LENGTH = 3
@@ -161,9 +161,10 @@ SOCIALACCOUNT_PROVIDERS = {
             'access_type': 'offline',
             'state': 'sample_passthrough_value',
             'include_granted_scopes': 'true',
-        },
+        }},
+    'facebook': {
         'OAUTH_PKCE_ENABLED': True,
-        'VERIFIED_EMAIL': True,
+        'VERIFIED_EMAIL': False,
         'METHOD': 'oauth2',
         'SDK_URL': '//connect.facebook.net/{locale}/sdk.js',
         'AUTH_PARAMS': {
