@@ -12,6 +12,7 @@ def all_products(request):
     categories = None
     sort = None
     direction = None
+    sale = None
 
     if request.GET:
         if 'sort' in request.GET:
@@ -32,6 +33,9 @@ def all_products(request):
             products = products.filter(category__name__in=categories)
             categories = Category.objects.filter(name__in=categories)
 
+        if 'sale' in request.GET:
+            products = products.filter(sale=True)
+
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
@@ -50,6 +54,7 @@ def all_products(request):
         'search_term': query,
         'current_categories': categories,
         'current_sorting': current_sorting,
+        'current_sale': sale,
     }
 
     return render(request, 'products/products.html', context)
@@ -65,16 +70,3 @@ def product_detail(request, product_id):
     }
 
     return render(request, 'products/product-detail.html', context)
-
-
-def product_sale(request):
-    """ A view to return the 'SALE' page """
-
-    products = Product.objects.all()
-    sale = products.filter(sale=True)
-
-    context = {
-        'sale': sale,
-    }
-
-    return render(request, 'products/product_sale.html', context)

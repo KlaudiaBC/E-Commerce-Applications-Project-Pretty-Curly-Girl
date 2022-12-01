@@ -3,6 +3,12 @@ from .models import Product, Category
 from django_summernote.admin import SummernoteModelAdmin
 
 
+@admin.action(description='Mark selected products as on SALE')
+def make_sale(modeladmin, request, queryset):
+    queryset.update(sale=True)
+    obj.save()
+
+
 @admin.register(Product)
 class ProductAdmin(SummernoteModelAdmin):
     """
@@ -14,6 +20,7 @@ class ProductAdmin(SummernoteModelAdmin):
     search_fields = ['name', 'category']
     summernote_fields = ('description', )
     ordering = ('sku',)
+    actions = [make_sale]
 
 
 @admin.register(Category)

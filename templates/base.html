@@ -80,26 +80,80 @@
   <!-- Content goes here -->
   {% endblock content %}
 
-  <!-- Footer -->
   <br>
-  <footer class="footer">
-    
-      <!-- Disclaimer -->
-    <div>
-      <p>&copy; Copyright reserved. KBC 2022 &middot;</p>
-    </div>
-    <div class="sm-icons">
-      <a href="https://github.com/KlaudiaBC" title="GitHub" target="_blank"><img
-          src="https://github.com/KlaudiaBC/FST-Project-Empire-of-Thoughts/blob/main/static/images/github.png?raw=true"
-          alt="GitHub" /></a>
-    </div>
-    <div class="sm-icons">
-      <a href="https://www.linkedin.com/in/klaudia-blaize-coar/" title="LinkedIn" target="_blank"><img
-          src="https://github.com/KlaudiaBC/FST-Project-Empire-of-Thoughts/blob/main/static/images/linkedin.png?raw=true"
-          alt="LinkedIn" /></a>
+  <footer>
+    <div class="search-text">
+      <div class="container">
+        <div class="row text-center">
+
+          <div class="form">
+            <h4>SIGN UP TO OUR NEWSLETTER</h4>
+            <form id="search-form" class="form-search form-horizontal">
+              <input type="text" class="input-search" placeholder="Email Address">
+              <button type="submit" class="btn-search">SUBMIT</button>
+            </form>
+          </div>
+
+        </div>
+      </div>
     </div>
 
+    <div class="footer-top col-6">
+      <div class="container d-flex justify-content-around">
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text-center">
+          <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text-center">
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text-center">
+          <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container" style="border-top:1px solid grey;">
+      <div class="row text-center">
+        <div class="col-lg-6 col-lg-offset-3">
+          <ul class="menu">
+
+            <li>
+              <a href="#">Home</a>
+            </li>
+
+            <li>
+              <a href="#">About</a>
+            </li>
+
+            <li>
+              <a href="#">Blog</a>
+            </li>
+
+            <li>
+              <a href="#">Gallery</a>
+            </li>
+
+            <li>
+              <a href="#">Contact</a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
   </footer>
+
+
+  <div class="copyright">
+    <div class="container">
+
+      <div class="row text-center">
+        <p>Copyright © 2017 All rights reserved</p>
+      </div>
+
+    </div>
+  </div>
+
 
   {% block postloadjs %}
   <script>
@@ -147,14 +201,14 @@
       }, 2500);
 
 
-    (function (d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) { return; }
-      js = d.createElement(s); js.id = id;
-      js.src = "https://connect.facebook.net/en_US/sdk.js";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));   
-  })();
+      (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) { return; }
+        js = d.createElement(s); js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    })();
 
   </script>
   {% endblock %}
