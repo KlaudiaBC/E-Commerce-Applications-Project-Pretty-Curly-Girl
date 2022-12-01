@@ -3,72 +3,64 @@
 
 {% block content %}
 
-<div class="container-tall">
-    <div class="container-fluid">
-        <hr class="w-50 mb-1">
-        <div class="row">
-            <div class="col text-center mt-3">
-                <h2 class="logo-font">Products SALE</h2>
-                <hr class="w-50 mb-1">
-            </div>
-        </div>
-
-        {% if product.sale %}
-
-        <div class="btn-group">
-            <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
-                Sort by
-            </button>
-            <div class="dropdown-menu">
-                <button class="dropdown-item" type="button"><a
-                        href="{% url 'products' %}?sort=price&direction=asc">Price
-                        (low to high)</a></button>
-            </div>
+<div class="container-fluid">
+    <hr class="w-50 mb-1">
+    <div class="row">
+        <div class="col text-center mt-3">
+            <h2 class="logo-font">Products SALE</h2>
         </div>
     </div>
-    <div class="row">
-        <div class="product-container col-10 offset-1">
-            <div class="row mt-1 mb-2"></div>
-            <div class="row">
-                {% for product in products %}
-                <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                    <div class="card card-product h-100">
-                        {% if product.image %}
-                        <a href="{% url 'product_detail' product.id %}">
-                            <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
-                        </a>
-                        {% else %}
-                        <a href="{% url 'product_detail' product.id %}">
-                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png"
-                                alt="{{ product.name }}">
-                        </a>
-                        {% endif %}
-                        <div class="card-body pb-0">
-                            <h5 class="card-title mb-2">{{ product.name }}</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">{{ product.extra_info }}</h6>
-                        </div>
-                        <div class="card-footer bg-white pt-0 border-0 text-left">
-                            <div class="row">
-                                <div class="col">
-                                    <p class="lead mb-0 text-left font-weight-bold">€{{ product.price }}</p>
-                                </div>
+    <hr class="w-50 mb-1">
+</div>
+
+{% if product.sale %}
+<div class="row">
+    <div class="product-container col-10 offset-1">
+        <div class="row mt-1 mb-2"></div>
+        <div class="row">
+            {% for product in products %}
+            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                <div class="card card-product h-100">
+                    {% if product.image %}
+                    <a href="{% url 'product_detail' product.id %}">
+                        <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                    </a>
+                    {% else %}
+                    <a href="{% url 'product_detail' product.id %}">
+                        <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                    </a>
+                    {% endif %}
+                    <div class="card-body p-2">
+                        <h5 class="card-title mb-2">{{ product.name }}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{{ product.extra_info }}</h6>
+                    </div>
+                    <div class="card-footer bg-white pt-0 border-0 text-left">
+                        <div class="row">
+                            <div class="col">
+                                <p class="lead mb-0 text-left font-weight-bold">€{{ product.price }}</p>
                             </div>
+                            <div class="col">
+                                <button type="submit" id="add-bag"
+                                    class="btn btn-secondary rounded-0 text-uppercase mt-5">
+                                    <i class="fa-solid fa-cart-plus"></i>
+                                    <span class="text-uppercase"> Add to bag </span>
+                                </button>
+                            </div>
+                            {% endfor %}
                         </div>
                     </div>
                 </div>
-                {% endfor %}
             </div>
         </div>
     </div>
 </div>
 
-{% else %}
-<br>
+{% else %} `
+<br><br>
 <div class="container container-tall text-center">
     <p>Sorry! Currently we do not have any products on sale.</p>
     <div class="d-flex">
-        <button class="btn btn-outline-secondary mx-auto"> <a href="{% url 'products' %}">Back</a></button>
+        <button class="btn btn-temp-black mx-auto"> <a href="{% url 'products' %}">Back</a></button>
     </div>
     {% endif %}
 </div>

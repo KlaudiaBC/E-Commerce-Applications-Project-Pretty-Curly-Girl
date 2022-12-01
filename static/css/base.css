@@ -1,10 +1,19 @@
-body {
-    position: relative;
-    width: auto;
+html {
+  scroll-behavior: smooth;
 }
 
-.text-black {
-  color: black;
+body {
+  width: auto;
+  height: 100%;
+  font-family: "Montserrat", sans-serif;
+}
+
+.icon {
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+  height: 1.5rem;
+  width: 1.5rem;
 }
 
 .container-tall {
@@ -14,6 +23,16 @@ body {
 .card-product {
   border-radius: 10px;
   box-shadow: 1px 2px grey;
+}
+
+.card-title a {
+  color: black !important;
+    font-weight: bold;
+    line-height: 2rem;
+}
+
+.img-main {
+  object-fit: cover;
 }
 
 .col-md-5 img {
@@ -55,13 +74,50 @@ a:hover {
 }
 
 .no-form form {
-display: none;
+  display: none;
 }
 
+
+/* settings for template */
+/* if needd, change colors */
+.btn-temp-blue {
+  background-color: #007791;
+  color: #f5f5f5;
+}
+
+.btn-temp-black {
+  background: #46494c;
+  color: #fff;
+  width: 8rem;;
+}
+
+
+.btn-temp-black:hover,
+.btn-temp-black:active,
+.btn-temp-black:focus {
+  background: white;
+  color: black;
+  border: 1px solid black;
+}
+.btn-temp-black a:hover,
+.btn-temp-black a:active,
+.btn-temp-black a:focus  {
+  color: #0a0908;
+}
+
+
 .wrapper-form {
-  background-color: #eeeeee;
+  background-color: #f5f5f5;
   padding: 2rem;
-  border-radius: 40px;
+  border-radius: 40px solid #46494c;
+}
+
+.text-black {
+  color: #0a0908 !important;
+}
+
+.text-special {
+  color: #007791;
 }
 
 /* footer */
@@ -69,13 +125,13 @@ display: none;
   display: flex;
   flex-direction: row;
   align-items: center;
-  height: 50px;
+  height: 200px;
   justify-content: center;
   bottom: 0;
-  width: 100%;
-  background-color: #6c757d;
+  width: auto;
+  background-color: #46494c;
   opacity: 0.95;
-  color: white;
+  color: #fff;
   font-family: sans-serif;
 }
 
@@ -100,14 +156,12 @@ display: none;
 
 /* subscription */
 #mc_embed_signup {
-    font:14px Helvetica,Arial,sans-serif;
+  font: 14px Helvetica, Arial, sans-serif;
 }
 
-.container-sub {
-  background-color: #a7a7a7;
-  border-radius: 20px;
+.subtext {
+  text-align: center;
 }
-
 
 /* From codepen --> navbar */
 .btn .bx {
@@ -149,8 +203,8 @@ display: none;
 .sub-menu.navbar-light .navbar-nav .nav-link.active,
 .sub-menu.navbar-light .navbar-nav .nav-link.show,
 .sub-menu.navbar-light .navbar-nav .show > .nav-link {
-  border-bottom: 3px solid #007bff;
-  color: #007bff;
+  border-bottom: 3px solid #007791;
+  color: #007791;
 }
 
 .navbar .navbar-toggler {
@@ -214,13 +268,13 @@ display: none;
 
 #sidebar .sidebar-header {
   background: #fff;
-  border-bottom: 1px solid #e4e4e4;
+  border-bottom: 1px solid #f5f5f5;
   padding-bottom: 1.5rem;
 }
 
 #sidebar ul.components {
   padding: 20px 0;
-  border-bottom: 1px solid #e4e4e4;
+  border-bottom: 1px solid #f5f5f5;
   margin-bottom: 40px;
 }
 
@@ -233,18 +287,18 @@ display: none;
   padding: 10px 16px;
   font-size: 1.1em;
   display: block;
-  color: #000;
+  color: #0a0908;
 }
 
 #sidebar ul li a:hover {
-  color: #7386d5;
+  color: #007791;
   background: #fff;
 }
 
 #sidebar ul li.active > a,
 #sidebar a[aria-expanded="true"] {
-  color: #007bff;
-  background: #e6f2ff;
+  color: #007791;
+  background: #f5f5f5;
   border-radius: 6px;
 }
 
@@ -277,14 +331,14 @@ ul.social-icons li {
 }
 
 .utility-nav {
-  background: #343a40;
+  background: #46494c;
   padding: 0.5rem 1rem;
   text-align: center;
 }
 
 .utility-nav p {
   margin-bottom: 0;
-  color: #e4e4e4;
+  color: #f5f5f5;
 }
 
 .search-bar {
@@ -298,7 +352,7 @@ ul.social-icons li {
 }
 
 .search-dark {
-  background-color: #6c757d85;
+  background-color: #46494c;
   padding-top: 0.5rem;
 }
 
@@ -307,24 +361,10 @@ ul.social-icons li {
   right: 0;
 }
 
-.overlay {
-  background: rgba(0, 0, 0, 0.7);
-  height: 100vh;
-  left: 0;
-  position: fixed;
-  top: 0;
-  -webkit-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
-  z-index: -1;
-  width: 100%;
-  opacity: 0;
-}
-
 .overlay.visible {
   opacity: 1;
   z-index: 5000;
 }
-
 
 .qty_input {
   flex: 0;
@@ -337,20 +377,121 @@ ul.social-icons li {
   left: 75%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
-  background-color: #555;
-  color: white;
   font-size: 24px;
   padding: 12px 24px;
-  border: none;
   cursor: pointer;
   border-radius: 5px;
+  background-color: #fff;
+  color: #46494c;
+  border: 1px solid #46494c;
 }
 
 .btn-shop:hover {
-  background-color: black;
+  background-color: #46494c;
+  color: #fff;
+  border: none;
 }
 
+/* The hero image */
+.hero-image {
+  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("media/hero_mobile.jpg");
 
+  /* Set a specific height */
+  height: 50%;
+
+  /* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+/* Place text in the middle of the image */
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+/* home page layout - codepen */
+/* For all section's */
+.section-title {
+  font-size: 3rem;
+}
+
+/* Overview */
+.info-width {
+  width: 60%;
+  font-size: 1.3rem;
+}
+
+.overview-icon {
+  font-size: 3rem;
+  color: #007791;
+}
+
+.overview-row {
+  margin-top: 5rem;
+}
+
+.overview-header {
+  font-weight: 900;
+}
+.overview-icon,
+.overview-header,
+.info-width {
+  padding: 1rem 0;
+}
+
+/* Testimonials */
+#testimonials {
+  background-color: #007791;
+  margin-top: 100px;
+  padding: 100px 0;
+}
+.carousel-item {
+  padding: 7% 15%;
+}
+.carousel-item h3 {
+  font-size: 1.5rem;
+}
+
+/* Blog snippet */
+#blog {
+  padding: 100px 0;
+}
+
+.blog-title {
+  margin-bottom: 100px;
+}
+
+.card {
+  box-shadow: 0px 3px 63px -12px rgba(0, 0, 0, 0.75);
+  border-color: #007791;
+  border-radius: 10px;
+}
+.card-body {
+  padding: 7% 0;
+}
+
+.btn-block {
+  font-size: 1.5rem;
+}
+
+/* Call To Action */
+#cta {
+  background-color: #f5f5f5;
+  height: 300px;
+}
+.cta-text {
+  font-weight: bold;
+  font-size: 3rem;
+  color: #0a0908;
+}
 
 /*------------- media queries ------------- */
 
@@ -364,8 +505,8 @@ ul.social-icons li {
     height: 400px;
     width: 600px;
   }
-  
-  .form-inline{
+
+  .form-inline {
     flex-wrap: nowrap;
   }
 
@@ -382,6 +523,10 @@ ul.social-icons li {
     margin-top: 0;
     padding-right: 5rem;
   }
+  .hero-image {
+    /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("media/hero_desktop.jpg");
+}
 }
 
 /* for laptops */

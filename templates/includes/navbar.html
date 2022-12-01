@@ -53,9 +53,9 @@
                         <div class="text-center">
                             <a class="btn" href="{% url 'view_bag' %}"><i
                                     class="fas fa-duotone fa-cart-shopping fa-lg"></i>
-                                    {% if product_count > 0 %}
-                                    <span class="badge badge-danger">{{ product_count }}</span>
-                                    {% endif %}
+                                {% if product_count > 0 %}
+                                <span class="badge badge-danger">{{ product_count }}</span>
+                                {% endif %}
                                 <p>My basket</p>
                             </a>
                         </div>
@@ -63,6 +63,7 @@
                 </ul>
             </div>
         </div>
+    </div>
 </nav>
 
 
@@ -91,12 +92,9 @@
                         Products
                     </a>
                     <div class="dropdown-menu border-0" aria-labelledby="products-link">
-                        <a href="{% url 'product_sale' %}" class="dropdown-item">SALE</a>
                         <a href="{% url 'products' %}?category=cleanse" class="dropdown-item">Step 1 - Cleanse</a>
                         <a href="{% url 'products' %}?category=condition" class="dropdown-item">Step 2 - Condition</a>
                         <a href="{% url 'products' %}?category=style" class="dropdown-item">Step 3 - Style</a>
-                        <a href="{% url 'products' %}?category=travel_sizes" class="dropdown-item">Try Me Travel
-                            Sizes</a>
                         <a href="{% url 'products' %}?category=bundle_sets" class="dropdown-item">Bundle sets</a>
                         <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
                     </div>
@@ -104,7 +102,7 @@
                     <a class="nav-link" href="{% url 'products' %}?category=curly_star">Curly STAR</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Curly Tips</a>
+                    <a class="nav-link" href="{% url 'product_sale' %}">SALE</a>
                 </li>
             </ul>
         </div>
@@ -165,9 +163,6 @@
                     class="bx bx-help-circle mr-3"></i>Products</a>
             <ul class="collapse list-unstyled" id="productSubmenu">
                 <li>
-                    <a href="{% url 'product_sale' %}">SALE</a>
-                </li>
-                <li>
                     <a href="{% url 'products' %}?category=cleanse">Step 1 - Cleanse</a>
                 </li>
                 <li>
@@ -177,9 +172,6 @@
                     <a href="{% url 'products' %}?category=style">Step 3 - Style</a>
                 </li>
                 <li>
-                    <a href="{% url 'products' %}?category=travel_sizes">Try Me Travel Sizes</a>
-                </li>
-                <li>
                     <a href="{% url 'products' %}?category=bundle_sets">Bundle sets</a>
                 </li>
                 <li>
@@ -187,17 +179,12 @@
                 </li>
             </ul>
         </li>
-        <li>
-            <a href="#"><i class="bx bx-book-open mr-3"></i> Locations</a>
-        </li>
+
         <li>
             <a href="{% url 'products' %}?category=curly_star"><i class="bx bx-crown mr-3"></i> Curly STAR</a>
         </li>
         <li>
-            <a href="#"><i class="bx bx-crown mr-3"></i> Curly Tips</a>
-        </li>
-        <li>
-            <a href="#"><i class="bx bx-crown mr-3"></i> Contact</a>
+            <a href="{% url 'product_sale' %}"><i class="bx bx-home mr-3"></i>SALE</a>
         </li>
     </ul>
 
@@ -207,24 +194,11 @@
             <a href="{% url 'about' %}">Our Mission</a>
         </li>
         <li>
-            <a href="#">3-steps Curly Routine</a>
-        </li>
-        <li>
-            <a href="#">Shipping Policy</a>
-        </li>
-        <li>
             <a href="#">Terms and Conditions</a>
         </li>
         <li>
             <a href="#">Contact</a>
         </li>
-    </ul>
-
-    <ul class="social-icons">
-        <li><a href="#" target="_blank" title=""><i class="bx bxl-facebook-square"></i></a></li>
-        <li><a href="#" target="_blank" title=""><i class="bx bxl-twitter"></i></a></li>
-        <li><a href="#" target="_blank" title=""><i class="bx bxl-linkedin"></i></a></li>
-        <li><a href="#" target="_blank" title=""><i class="bx bxl-instagram"></i></a></li>
     </ul>
 
 </nav>
