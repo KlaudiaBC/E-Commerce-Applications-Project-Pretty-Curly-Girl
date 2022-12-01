@@ -18,7 +18,7 @@
             aria-haspopup="true" aria-expanded="false">
             Sort by
         </button>
-        <div class="dropdown-menu">
+        <div class="dropdown-menu" id="sort-selector">
             <button class="dropdown-item" type="button"><a href="{% url 'products' %}?sort=price&direction=asc">Price
                     (low to high)</a></button>
             <button class="dropdown-item" type="button"><a href="{% url 'products' %}?sort=price&direction=desc">Price
@@ -52,8 +52,8 @@
                                     <p class="lead mb-0 text-left font-weight-bold">€{{ product.price }}</p>
                                 </div>
                                 <div class="col-6 d-flex justify-content-end">
-                                    <span type="submit" id="add-bag"
-                                        class="btn btn-secondary"><i class="fa-solid fa-cart-plus"></i></span>
+                                    <span type="submit" id="add-bag" class="btn btn-secondary"><i
+                                            class="fa-solid fa-cart-plus"></i></span>
                                 </div>
                             </div>
                         </div>
@@ -80,16 +80,33 @@
         </div>
     </div>
 </div>
+{% endblock %}
 
 
 {% block postloadjs %}
 {{ block.super }}
-<!-- <script>
-    let addBagBtn = document.getElementById("add-bag")
-    addBagBtn.addEventListener("click", function(e) {
-// add to bag
-    } 
-    )
-</script> -->
-{% endblock %}
+
+<script type="text/javascript">
+    $('#sort-selector').change(function () {
+        var selector = $(this);
+        var currentUrl = new URL(window.location);
+
+        var selectedVal = selector.val();
+        if (selectedVal != "reset") {
+            var sort = selectedVal.split("_")[0];
+            var direction = selectedVal.split("_")[1];
+
+            currentUrl.searchParams.set("sort", sort);
+            currentUrl.searchParams.set("direction", direction);
+
+            window.location.replace(currentUrl);
+        } else {
+            currentUrl.searchParams.delete("sort");
+            currentUrl.searchParams.delete("direction");
+
+            window.location.replace(currentUrl);
+        }
+    })
+</script>
+
 {% endblock %}

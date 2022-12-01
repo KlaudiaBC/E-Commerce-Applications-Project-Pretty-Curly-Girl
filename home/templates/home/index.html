@@ -4,18 +4,17 @@
 {% block extra_title %}Home{% endblock %}
 {% block content %}
 
-<div class="container-tall">
-  <!-- Caroulsel for lg/md screen -->
-  <div class="hero-image">
-    <a href="{% url 'products' %}" class="btn btn-shop"><span class="text-uppercase">Shop now</span></a>
+<!-- Hero image  -->
+<div class="container-tall bg">
+  <div class="hero-content bg-sm">
+<button class="btn">shop now!!</button>
   </div>
 </div>
-<br>
 
 <!-- Section overview  -->
 <section id="overview">
   <div class="container-fluid">
-    <h2 class="text-center">Pretty Curly Hair</h2>
+    <h2 class="text-center section-title">Pretty Curly Hair</h2>
     <div class="row overview-row">
       <div class="col-md-4 text-center">
         <span class="overview-icon"><i class="fa-solid fa-medal"></i></span>
@@ -41,10 +40,11 @@
     </div>
   </div>
 </section>
+<br><br>
 
 <!-- Testimonial Section -->
 <section id="testimonials">
-
+<span class="section-title"></span>
   <!-- Carousel Here -->
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- The slideshow -->
@@ -77,17 +77,18 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
-
 </section>
+<br>
 
 <!-- Blog Section -->
 <section id="blog">
   <h2 class="text-center section-title blog-title">Curly Tips</h2>
+  <br>
 
   <div class="card-deck mx-2">
     <div class="card">
       <div class="card-body">
-        <img class="card-img-top" src="{{ MEDIA_URL }}pexels01.jpg" alt="girl with curly hair">
+        <img class="card-img-top" src="{{ MEDIA_URL }}curly-red.webp" alt="girl with curly hair">
         <h5 class="card-title m-3"><a
             href="https://www.naturallycurly.com/curlreading/regimen/top-12-tips-to-diffuse-curly-hair-without-the-frizz"
             target="_blank">12 Tips to Diffuse Curly Hair Without the Frizz</a></h5>
@@ -95,21 +96,22 @@
     </div>
     <div class="card">
       <div class="card-body">
-        <img class="card-img-top" src="..." alt="Card image cap">
+        <img class="card-img-top" src="{{ MEDIA_URL }}curls_back.webp" alt="women with curly hair">
         <h5 class="card-title m-3"><a href="https://www.curlynikki.com/2021/04/hair-porosity-test-and-black-hair.html"
             target="_blank">Hair Porosity: What Is It and How Is Black Hair Affected?</a></h5>
       </div>
     </div>
     <div class="card">
       <div class="card-body">
-        <img class="card-img-top" src="..." alt="Card image cap">
+        <img class="card-img-top" src="{{ MEDIA_URL }}lil-girl.webp" alt="young girl with curly hair">
         <h5 class="card-title m-3"><a href="https://www.moms.com/tips-on-how-to-painlessly-comb-your-childs-hair/"
             target="_blank">How To Painlessly Comb Your Child's Hair</a></h5>
       </div>
     </div>
   </div>
 </section>
-
+<br>
+<hr>
 <!-- Call to Action Section -->
 <section id="cta">
   {% include 'includes/mail_sub.html' %}
