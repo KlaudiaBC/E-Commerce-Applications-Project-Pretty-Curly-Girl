@@ -1,4 +1,5 @@
 from django import forms
+import datetime
 from .models import UserProfile
 
 
@@ -15,7 +16,6 @@ class UserProfileForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
         placeholders = {
             'birthdate': 'Date of birth',
-            'gender': 'Gender',
             'default_phone': 'Phone Number',
             'default_postcode': 'Postal Code',
             'default_city': 'Town or City',

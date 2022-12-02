@@ -16,7 +16,7 @@
                     <span class="badge badge-danger">{{ product_count }}</span>
                     {% endif %}
                 </a>
-            </li>
+            </li> 
         </ul>
 
         <!-- Search bar / large screen -->
@@ -195,10 +195,7 @@
             <a href="{% url 'about' %}">Our Mission</a>
         </li>
         <li>
-            <a href="#">Terms and Conditions</a>
-        </li>
-        <li>
-            <a href="#">Contact</a>
+            <a href="{% url 'privacy_policy' %}">Terms and Conditions</a>
         </li>
     </ul>
 </nav>

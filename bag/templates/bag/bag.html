@@ -23,7 +23,6 @@
                         <tr>
                             <th scope="col">Product Info</th>
                             <th scope="col"></th>
-                            <th scope="col">Price</th>
                             <th scope="col">Quantity</th>
                             <th scope="col">Subtotal</th>
                         </tr>
@@ -36,17 +35,14 @@
                             <img class="img-fluid rounded img-sm" src="{{ item.product.image.url }}"
                                 alt="{{ item.product.name }}">
                             {% else %}
-                            <img class="img-fluid rounded img-sm" src="{{ MEDIA_URL }}noimage.png"
+                            <img class="img-fluid rounded img-sm" src="{{ MEDIA_URL }}noimage.webp"
                                 alt="{{ item.product.name }}">
                             {% endif %}
                         </td>
-                        <td class="py-3">
+                        <td class="py-1">
                             <p class="my-0"><strong>{{ item.product.name }}</strong></p>
                         </td>
-                        <td class="py-3">
-                            <p class="my-0">€{{ item.product.price }}</p>
-                        </td>
-                        <td class="py-3 w-25">
+                        <td class="py-1 w-25">
                             <form class="form update-form" method="POST" action="{% url 'adjust_bag' item.item_id %}">
                                 {% csrf_token %}
                                 <div>
@@ -55,7 +51,7 @@
                                             <button class="decrement-qty btn btn-sm rounded-0"
                                                 data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
                                                 <span class="icon">
-                                                    <i class="fa-solid fa-square-minus"></i>
+                                                    <i class=" fas fa-solid fa-square-minus"></i>
                                                 </span>
                                             </button>
                                         </div>
@@ -66,7 +62,7 @@
                                             <button class="increment-qty btn btn-sm rounded-0"
                                                 data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
                                                 <span class="icon">
-                                                    <i class="fa-solid fa-square-plus"></i>
+                                                    <i class="fas fa-solid fa-square-plus"></i>
                                                 </span>
                                             </button>
                                         </div>
@@ -75,10 +71,10 @@
                             </form>
                             <a class="update-link text-info"><small>Update</small></a>
                             <button class="remove-item">
-                                <i class="fa-regular fa-trash-can fa-lg"></i></button>
+                                <i class="fas-regular fa-trash-can fa-lg"></i></button>
                         </td>
 
-                        <td class="py-3">
+                        <td class="py-1">
                             <p class="my-0">€{{ item.product.price | calc_subtotal:item.quantity }}</p>
                         </td>
                     </tr>
@@ -135,10 +131,9 @@
     // Remove item and reload on click
     $('.remove-item').click(function (e) {
         var csrfToken = "{{ csrf_token }}";
-        var itemId = $(this).attr('id').split('remove_')[1];
-        var size = $(this).data('product_size');
-        var url = `/bag/remove/${itemId}/`;
-        var data = { 'csrfmiddlewaretoken': csrfToken, 'product_size': size };
+        var thingId = $(this).attr('id').split('remove_')[1];
+        var url = `/bag/remove/${thingId}/`;
+        var data = { 'csrfmiddlewaretoken': csrfToken };
 
         $.post(url, data)
             .done(function () {

@@ -5,6 +5,7 @@
 
 {% block extra_title %}Login{% endblock %}
 
+<!-- Social accounts -->
 {% load account socialaccount %}
 {% providers_media_js %}
 
@@ -29,14 +30,39 @@
 </script>
 {% endblock %}
 
+<!-- Header  -->
 {% block inner_content %}
 <div class="text-center">
-  <h1>Login</h1>
+  <h2>Login</h2>
   <hr>
 </div>
 
+<!-- Social accounts  -->
+{% get_providers as socialaccount_providers %}
+<div class="row d-flex justify-content-center">
+  {% if socialaccount_providers %}
+  <div class="m-2">
+    <a href="{% provider_login_url 'google' method='oauth2' %}" class="btn-google btn btn-social">
+      <img src="https://img.icons8.com/color/24/null/google-logo.png" />
+      <span class="social-txt ml-2">Continue with Google</span>
+    </a>
+  </div>
+  <div class="m-2">
+    <a href="{% provider_login_url 'facebook' method='js_sdk' %}" class="btn-facebook btn btn-social">
+      <i class="fa-brands fa-facebook-f"></i><span class="social-txt ml-2"> Continue with Facebook</span>
+    </a>
+  </div>
+  {% endif %}
+</div>
+
+<!-- Divider -->
+<br>
+<div class="col-12">
+  <p class="inline-text"><span> or </span></p>
+</div>
 <br>
 
+<!-- Login form  -->
 <div class="wrapper-form">
   <form class="login" method="POST" action="{% url 'account_login' %}">
     {% csrf_token %}
@@ -55,26 +81,9 @@
 </div>
 
 <br>
-<div class="col-12">
-  <p class="inline-text"><span> or </span></p>
-</div>
 
-{% get_providers as socialaccount_providers %}
-<div class="row d-flex justify-content-center">
-  {% if socialaccount_providers %}
-  <div class="m-2">
-    <a href="{% provider_login_url 'google' method='oauth2' %}" class="btn-google btn btn-social">
-      <img src="https://img.icons8.com/color/24/null/google-logo.png" />
-      <span class="social-txt ml-2">Continue with Google</span>
-    </a>
-  </div>
-  <div class="m-2">
-    <a href="{% provider_login_url 'facebook' method='js_sdk' %}" class="btn-facebook btn btn-social">
-      <i class="fa-brands fa-facebook-f"></i><span class="social-txt ml-2"> Continue with Facebook</span>
-    </a>
-  </div>
-</div>
-{% endif %}
+
+
 <br>
 
 <div class="text-center">

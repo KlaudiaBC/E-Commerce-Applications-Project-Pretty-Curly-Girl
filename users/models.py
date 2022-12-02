@@ -11,16 +11,9 @@ class UserProfile(models.Model):
     A user profile model for maintaining default
     delivery information and order history
     """
-    GENDER_CHOICES = [
-        ('GENDER_MALE', 'Male'),
-        ('GENDER_FEMALE', 'Female'),
-        ('GENDER_OTHER', 'Other'),
-    ]
 
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     birthdate = models.DateField(auto_now=False, null=True, blank=True)
-    gender = models.PositiveSmallIntegerField(choices=GENDER_CHOICES,
-                                              null=True, blank=True)
     default_phone = models.CharField(max_length=20, null=True, blank=True)
     default_address_line_1 = models.CharField(
         max_length=80, null=True, blank=True)
