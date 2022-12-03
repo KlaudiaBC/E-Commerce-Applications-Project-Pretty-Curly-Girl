@@ -47,5 +47,4 @@ class SocialAccountAdapter(DefaultSocialAccountAdapter):
         context = {
             'user': user,
         }
-
         return user

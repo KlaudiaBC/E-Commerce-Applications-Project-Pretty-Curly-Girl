@@ -51,8 +51,8 @@
                     </li>
                     <li class="list-inline-item">
                         <div class="text-center">
-                            <a class="btn" href="{% url 'view_bag' %}"><i
-                                    class="fas fa-duotone fa-cart-shopping fa-lg"></i>
+                            <a class="btn" href="{% url 'view_bag' %}">
+                                <i class="fas fa-duotone fa-cart-shopping fa-lg"></i>
                                 {% if product_count > 0 %}
                                 <span class="badge badge-danger">{{ product_count }}</span>
                                 {% endif %}
@@ -92,14 +92,14 @@
                         Products
                     </a>
                     <div class="dropdown-menu border-0" aria-labelledby="products-link">
-                        <a href="{% url 'products' %}?category=cleanse" class="dropdown-item">Step 1 - Cleanse</a>
-                        <a href="{% url 'products' %}?category=condition" class="dropdown-item">Step 2 - Condition</a>
-                        <a href="{% url 'products' %}?category=style" class="dropdown-item">Step 3 - Style</a>
-                        <a href="{% url 'products' %}?category=bundle_sets" class="dropdown-item">Bundle sets</a>
+                        <a href="{% url 'products' %}?category=cleanse" class="dropdown-item">Cleanse</a>
+                        <a href="{% url 'products' %}?category=condition" class="dropdown-item">Condition</a>
+                        <a href="{% url 'products' %}?category=style" class="dropdown-item">Style</a>
+                        <a href="{% url 'products' %}?category=bundle_sets" class="dropdown-item">Bundle Sets</a>
                         <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
                     </div>
+                </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'products' %}?category=curly_star">Curly STAR</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'products' %}?sale">SALE</a>
@@ -157,23 +157,23 @@
 
     <ul class="list-unstyled components links">
         <li class="active">
-            <a href="{% url 'home' %}"><i class="bx bx-home mr-3"></i> Home</a>
+            <a href="{% url 'home' %}"><i class="bx bx-home mr-3"> Home</a></i>
         </li>
         <li>
             <a href="#productSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i
                     class="bx bx-help-circle mr-3"></i>Products</a>
             <ul class="collapse list-unstyled" id="productSubmenu">
                 <li>
-                    <a href="{% url 'products' %}?category=cleanse">Step 1 - Cleanse</a>
+                    <a href="{% url 'products' %}?category=cleanse">Cleanse</a>
                 </li>
                 <li>
-                    <a href="{% url 'products' %}?category=condition">Step 2 - Condition</a>
+                    <a href="{% url 'products' %}?category=condition">Condition</a>
                 </li>
                 <li>
-                    <a href="{% url 'products' %}?category=style">Step 3 - Style</a>
+                    <a href="{% url 'products' %}?category=style">Style</a>
                 </li>
                 <li>
-                    <a href="{% url 'products' %}?category=bundle_sets">Bundle sets</a>
+                    <a href="{% url 'products' %}?category=bundle_sets">Bundle Sets</a>
                 </li>
                 <li>
                     <a href="{% url 'products' %}">All Products</a>
@@ -195,10 +195,7 @@
             <a href="{% url 'about' %}">Our Mission</a>
         </li>
         <li>
-            <a href="#">Terms and Conditions</a>
-        </li>
-        <li>
-            <a href="#">Contact</a>
+            <a href="{% url 'privacy_policy' %}">Terms and Conditions</a>
         </li>
     </ul>
 </nav>

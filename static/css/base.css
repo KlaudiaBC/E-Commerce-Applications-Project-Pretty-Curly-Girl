@@ -107,109 +107,66 @@ a:hover {
 
 .text-special {
   color: #007791;
+  font-weight: bolder;
 }
 
-/* footer */
-body{
-  font-family: 'Raleway', sans-serif;
-}
 
 .search-text {
-   padding-bottom: 60px;
+  padding-bottom: 60px;
 }
-	
+
 .search-text .input-search {
-	height: 45px;
-	width: 40%;
-	padding-left: 20px;
-    color: #333;
-} 
+  height: 45px;
+  width: 40%;
+  padding-left: 20px;
+  color: #333;
+}
 
 .search-text .btn-search {
-    background: #545454;
-    border: none;
-	color: #FFF;
-	height: 45px;
-    width: 80px;
+  background: #545454;
+  border: none;
+  color: #fff;
+  height: 45px;
+  width: 80px;
 }
 
 .search-text h4 {
-    color: #888582;
-    font-weight: 700;
+  color: #888582;
+  font-weight: 700;
 }
 
 footer {
-	background-color: #222222;
-    padding: 60px 0px;
+  background-color: #46494c;
+  color: #f5f5f5;
+  padding-top: 60px;
 }
 
-footer ul{
-    list-style: none;
-    margin: 0 auto;
-    display: inline-block;
-    padding-top: 50px;
+.fa-brands {
+  font-size: xx-large;
+  color: #fff;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 
-footer ul li {
-    float: left;
+.fa-brands:hover {
+  color: #007791;
 }
 
-footer ul li a{
-	color: #b1aca1;
-    padding: 20px;
+.hr-middle {
+  border: none;
+  height: 1px;
+  margin-left: 4rem;
+  margin-right: 4rem;
+  color: #007791; /* old IE */
+  background-color: #007791; /* Modern Browsers */
 }
 
-footer ul li a:hover {
-	color: #7dabdb;
-	text-decoration: none;
+.legal-box {
+  padding: 1rem;
+  color: #888582;
+  font-size: 13px;
+  text-align: center;
 }
-
-.footer-top {
-	padding-bottom: 50px;
-}
-
-.footer-top .fa {
-    font-size: 8px;
-    color: #FFF;
-    padding-right: 10px;
-}
-
-.footer-top a {
-    color: #FFF;
-    background: #333333; 
-    padding: 10px;
-}
-
-.footer-top .col-lg-2:hover .fa, 
-.footer-top .col-lg-2:hover a{
-    color: #7dabdb;
-	text-decoration: none;
-}
-
-.copyright {
-    background-color: #f0f0f0;
-}
-
-.copyright p {
-	font-size: 12px;
-	padding: 15px 0 10px 0;
-}
-
-#top {
-    color: #fff;
-    background: #7dabdb;
-    cursor: pointer;
-    font-size: 18px;
-    line-height: 40px;
-    height: 40px;
-    width: 40px;
-    right: 30px;
-    position: fixed;
-    border-radius: 3px;
-    text-align: center;
-    bottom: 350px;
-}
-
 
 /* subscription */
 #mc_embed_signup {
@@ -217,6 +174,11 @@ footer ul li a:hover {
 }
 
 .subtext {
+  text-align: center;
+}
+
+.stars {
+  color: #fdcc0d;
   text-align: center;
 }
 
@@ -445,13 +407,28 @@ ul.social-icons li {
 }
 
 
+.btn-hero {
+  color: white;
+  background-color: darkblue;
+  border: 5px solid transparent;
+  transition: 0.2s ease;
+  border-radius: 50px;
+}
+
+.btn-hero:hover {
+  color: darkblue;
+  background-color: white;
+  transform: scale(1.1);
+  border: 5px solid darkblue;
+}
+
 /* hero img */
 .bg {
   /* The image used */
-  background-image: url("/media/desktop_hero.webp");
+  background-image: url("/media/hero-sm.webp");
 
   /* Full height */
-  height: 100%; 
+  height: 100%;
 
   /* Center and scale the image nicely */
   background-position: center;
@@ -490,21 +467,6 @@ ul.social-icons li {
   padding: 1rem 0;
 }
 
-.btn-hero {
-	color: white;
-	background-color: darkblue;
-	border: 5px solid transparent;
-	transition: .2s ease;
-	border-radius: 50px;
-}
-
-.btn-hero:hover {
-	color: darkblue;
-	background-color: white;
-	transform: scale(1.1);
-	border: 5px solid darkblue;
-}
-
 /* Testimonials */
 #testimonials {
   background-color: #007791;
@@ -515,7 +477,6 @@ ul.social-icons li {
 .carousel-item h3 {
   font-size: 1.5rem;
 }
-
 
 .card {
   box-shadow: 0px 3px 63px -12px rgba(0, 0, 0, 0.75);
@@ -530,7 +491,7 @@ ul.social-icons li {
   font-size: 1.5rem;
 }
 
-.card-img-top img{
+.card-img-top img {
   height: 75%;
 }
 
@@ -538,7 +499,9 @@ ul.social-icons li {
 #cta {
   background-color: #f5f5f5;
   height: 300px;
+  padding-top: 2rem;
 }
+
 .cta-text {
   font-weight: bold;
   font-size: 3rem;
