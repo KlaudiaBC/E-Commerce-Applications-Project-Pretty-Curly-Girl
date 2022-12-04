@@ -446,7 +446,9 @@ ul.social-icons li {
 
 /* hero img */
 .bg {
-/* Full height */
+  background-image: url(/workspace/E-Commerce-Applications-Project-Pretty-Curly-Girl/media/hero.webp);
+
+  /* Full height */
   height: 100%;
 
   /* Center and scale the image nicely */
