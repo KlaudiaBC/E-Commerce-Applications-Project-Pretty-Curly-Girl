@@ -446,10 +446,7 @@ ul.social-icons li {
 
 /* hero img */
 .bg {
-  /* The image used */
-  background-image: url("/media/hero-sm.webp");
-
-  /* Full height */
+/* Full height */
   height: 100%;
 
   /* Center and scale the image nicely */
