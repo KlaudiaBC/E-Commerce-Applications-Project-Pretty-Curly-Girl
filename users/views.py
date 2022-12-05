@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from allauth.socialaccount.adapter import DefaultSocialAccountAdapter
+from rest_auth.registration.views import SocialLoginView
 
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
@@ -37,14 +38,3 @@ def users(request):
     form = UserProfileForm(instance=user)
 
     return render(request, template, context)
-
-
-class SocialAccountAdapter(DefaultSocialAccountAdapter):
-    def save_user(self, request, sociallogin, form=None):
-        user = super(SocialAccountAdapter, self).save_user(
-            request, sociallogin, form)
-
-        context = {
-            'user': user,
-        }
-        return user
