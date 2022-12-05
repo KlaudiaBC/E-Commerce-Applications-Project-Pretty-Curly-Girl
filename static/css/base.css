@@ -42,6 +42,14 @@ body {
   width: 300px;
 }
 
+.img-about {
+  display: block;
+  max-width: 280px;
+  max-height: 340px;
+  width: auto;
+  height: auto;
+}
+
 .btt-link,
 .update-link,
 .remove-item {
@@ -568,6 +576,12 @@ ul.social-icons li {
   .btn-shop {
     top: 75%;
     left: 75%;
+  }
+
+  .img-about {
+    display: block;
+    max-width: 470px;
+    max-height: 360px;
   }
 }
 
