@@ -52,7 +52,6 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
-    'allauth.socialaccount.providers.facebook',
 
     'cloudinary',
     'django_summernote',
@@ -126,16 +125,13 @@ AUTHENTICATION_BACKENDS = [
 
     # `allauth` specific authentication methods for Google
     'social_core.backends.google.GoogleOAuth2',
-
-    # `allauth` specific authentication methods for Fabebook
-    'social_core.backends.facebook.FacebookOAuth2',
 ]
 
 SITE_ID = 1
 
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_EMAIL_VERIFICATION = 'none'  # mandatory
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = False
 ACCOUNT_USERNAME_MIN_LENGTH = 3
 SOCIALACCOUNT_QUERY_EMAIL = True
@@ -160,29 +156,7 @@ SOCIALACCOUNT_PROVIDERS = {
             'access_type': 'offline',
             'state': 'sample_passthrough_value',
             'include_granted_scopes': 'true',
-        }},
-    'facebook': {
-        'client_id': os.environ.get('SOCIAL_AUTH_FACEBOOK_ID'),
-        'secret': os.environ.get('SOCIAL_AUTH_FACEBOOK_SECRET'),
-        'OAUTH_PKCE_ENABLED': True,
-        'METHOD': 'OAuth2',
-        'SDK_URL': '//connect.facebook.net/{locale}/sdk.js',
-        'AUTH_PARAMS': {
-            'auth_type': 'reauthenticate',
-            'access_type': 'online',
-            'state': 'sample_passthrough_value',
-            'include_granted_scopes': 'true',
-            },
-        'FIELDS': [
-            'id',
-            'first_name',
-            'last_name',
-            'name',
-        ],
-        'EXCHANGE_TOKEN': True,
-        'LOCALE_FUNC': 'path.to.callable',
-        'VERIFIED_EMAIL': True,
-    }
+        }}
 }
 
 

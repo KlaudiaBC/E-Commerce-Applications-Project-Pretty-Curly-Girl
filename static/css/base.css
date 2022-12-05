@@ -260,6 +260,7 @@ footer .fa-brands {
 
 .navbar-brand {
   margin-top: 1rem;
+  font-size: 1.60rem;
 }
 
 #navbar {
@@ -507,7 +508,7 @@ ul.social-icons li {
 }
 
 #blog .card-img-top {
-  height: 585px;
+  height: 640px;
   width: auto;
   transition: transform .4s;   /* smoother zoom */
 }
@@ -622,4 +623,13 @@ ul.social-icons li {
   .form-inline .form-control {
     width: 300px;
   }
+}
+
+@media only screen and (max-width: 768px){
+	html,
+	body {
+	width: 100%;
+	overflow-x: hidden;
+  margin-bottom: 0;
+	}
 }

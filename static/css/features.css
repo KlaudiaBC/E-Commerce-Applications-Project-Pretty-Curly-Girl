@@ -69,11 +69,6 @@
     display: none;
 }
 
-.btn-facebook {
-    background-color: #3b5998 !important;
-    color: white !important;
-}
-
 .btn-google {
     background-color: #ffff !important;
     border-color: #343a40;
@@ -83,16 +78,11 @@
 .btn-social {
     border-radius: 50px;
     opacity: 0.9;
-    width: 5rem;
 }
 
 .btn-social:hover {
     opacity: 1;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-}
-
-.social-txt {
-    display: none;
 }
 
 

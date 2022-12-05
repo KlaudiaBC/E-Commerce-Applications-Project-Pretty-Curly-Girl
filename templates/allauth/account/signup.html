@@ -6,30 +6,6 @@
 {% block extra_title %}Login{% endblock %}
 
 {% load account socialaccount %}
-{% providers_media_js %}
-
-{% block corejs %}
-  <!-- Js requied by facebook authorisation -->
-<script>
-  window.fbAsyncInit = function () {
-    FB.init({
-      appId: '1024114958983632',
-      xfbml: true,
-      version: 'v15.0'
-    });
-    FB.AppEvents.logPageView();
-  };
-
-  (function (d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) { return; }
-    js = d.createElement(s); js.id = id;
-    js.src = "https://connect.facebook.net/en_US/sdk.js";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
-</script>
-{% endblock %}
-
 
 {% block inner_content %}
 <div class="text-center">
@@ -61,7 +37,7 @@
 <div class="col-12">
   <p class="inline-text"><span> or </span></p>
   <br>
-  <p class="text-center">Signup via your social account:</p>
+  <p class="text-center">Signup via your Google account:</p>
 
   {% get_providers as socialaccount_providers %}
   <div class="row d-flex justify-content-center">
@@ -70,11 +46,6 @@
       <a href="{% provider_login_url 'google' method='oauth2' %}" class="btn-google btn btn-social">
         <img src="https://img.icons8.com/color/24/null/google-logo.png" />
         <span class="social-txt ml-2">Continue with Google</span>
-      </a>
-    </div>
-    <div class="m-1">
-      <a href="{% provider_login_url 'facebook' method='js_sdk' %}" class="btn-facebook btn btn-social">
-        <i class="fa-brands fa-facebook-f"></i><span class="social-txt ml-2"> Continue with Facebook</span>
       </a>
     </div>
   </div>

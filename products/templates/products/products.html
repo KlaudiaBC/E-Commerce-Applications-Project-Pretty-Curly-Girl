@@ -52,8 +52,7 @@
                                     <p class="lead mb-0 text-left font-weight-bold">€{{ product.price }}</p>
                                 </div>
                                 <div class="col-6 d-flex justify-content-end">
-                                    <span type="submit" id="add-bag" class="btn btn-secondary" aria-label="add_to_bag"><i
-                                            class="fa-solid fa-cart-plus"></i></span>
+                                    <a href="{% url 'users:user_wishlist' product.id  %}" class="btn btn-light fw500" role="button" aria-disabled="true">Add to Wish List</a>
                                 </div>
                             </div>
                         </div>

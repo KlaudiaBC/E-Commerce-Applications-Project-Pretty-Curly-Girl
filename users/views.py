@@ -1,6 +1,4 @@
 from django.shortcuts import render, get_object_or_404
-from allauth.socialaccount.adapter import DefaultSocialAccountAdapter
-from rest_auth.registration.views import SocialLoginView
 
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
@@ -8,6 +6,8 @@ from django.contrib import messages
 from .models import UserProfile
 from .forms import UserProfileForm
 from checkout.models import Order
+
+from products.models import Product
 
 
 @login_required
