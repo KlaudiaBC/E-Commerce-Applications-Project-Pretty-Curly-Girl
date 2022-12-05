@@ -45,7 +45,7 @@
                         <div class="form-group">
                             <div class="input-group">
                                 <div class="input-group-prepend">
-                                    <button class="decrement-qty btn btn-sm btn-black rounded-0"
+                                    <button class="decrement-qty btn btn-sm btn-black rounded-0" aria-label="decrement-qty"
                                         data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
                                         <span>
                                             <i class="fas fa-minus fa-sm"></i>
@@ -56,7 +56,7 @@
                                     value="{{ item.quantity }}" min="1" max="99" data-item_id="{{ item.item_id }}"
                                     id="id_qty_{{ item.item_id }}">
                                 <div class="input-group-append">
-                                    <button class="increment-qty btn btn-sm btn-black rounded-0"
+                                    <button class="increment-qty btn btn-sm btn-black rounded-0" aria-label="increment-qty"
                                         data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
                                         <span>
                                             <i class="fas fa-plus fa-sm"></i>
@@ -66,13 +66,13 @@
                             </div>
                         </div>
                     </form>
-                    <a class="update-link text-info"><small>Update</small></a>
+                    <a class="update-link text-info" aria-label="update_data"><small>Update</small></a>
                 </td>
                 <td class="py-3">
                     <p class="my-0">${{ item.product.price | calc_subtotal:item.quantity }}</p>
                 </td>
                 <td>
-                    <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}"
+                    <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}" aria-label="remove_item"
                         data-product_size="{{ item.size }}"><i class="fa-solid fa-trash-can"></i></a>
                 </td>
                 {% endfor %}
@@ -94,10 +94,10 @@
 
 <div>
 <div colspan="5" class="text-right m-5">
-    <a href="{% url 'products' %}" class="btn btn-outline-secondary rounded-0 btn-lg">
+    <a href="{% url 'products' %}" class="btn btn-outline-secondary rounded-0 btn-lg" aria-label="products">
         <span class="text-uppercase"><i class="fa-solid fa-arrow-left"></i> Keep Shopping</span>
     </a>
-    <a href="{% url 'checkout' %}" class="btn btn-secondary rounded-0 btn-lg">
+    <a href="{% url 'checkout' %}" class="btn btn-secondary rounded-0 btn-lg" aria-label="checkout">
         <span class="text-uppercase">Secure Checkout</span>
     </a>
 </div>
@@ -108,14 +108,14 @@
     <br>
     <div class="d-block">
         <div class="text-center">
-            <img class="img-sm" src="{{ MEDIA_URL }}empty-cart.png" alth="empty basket">
+            <img class="img-sm" src="{{ MEDIA_URL }}empty-cart.png" alt="empty basket" aria-label="empty_basket">
             <br>
         </div>
         <div class="text-center">
             <p class="my-3">Your bag is empty.</p>
         </div><br>
         <div class="text-center">
-            <a href="{% url 'products' %}" class="btn btn-outline-secondary rounded-0 btn-lg">
+            <a href="{% url 'products' %}" class="btn btn-outline-secondary rounded-0 btn-lg" aria-label="products">
                 <span class="text-uppercase"><i class="fa-solid fa-arrow-left"></i> Keep Shopping</span>
             </a>
         </div>

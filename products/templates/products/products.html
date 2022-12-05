@@ -15,13 +15,13 @@
     <hr class="w-50 mb-1">
     <div class="btn-group">
         <button type="button" class="btn btn-outline-secondary dropdown-toggle ml-3" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
+            aria-haspopup="true" aria-expanded="false" aria-label="sort">
             Sort by
         </button>
         <div class="dropdown-menu" id="sort-selector">
-            <button class="dropdown-item" type="button"><a href="{% url 'products' %}?sort=price&direction=asc">Price
+            <button class="dropdown-item" type="button" aria-label="products_ascending"><a href="{% url 'products' %}?sort=price&direction=asc">Price
                     (low to high)</a></button>
-            <button class="dropdown-item" type="button"><a href="{% url 'products' %}?sort=price&direction=desc">Price
+            <button class="dropdown-item" type="button" aria-label="products_descending"><a href="{% url 'products' %}?sort=price&direction=desc">Price
                     (high to low)</a></button>
         </div>
     </div>
@@ -52,7 +52,7 @@
                                     <p class="lead mb-0 text-left font-weight-bold">€{{ product.price }}</p>
                                 </div>
                                 <div class="col-6 d-flex justify-content-end">
-                                    <span type="submit" id="add-bag" class="btn btn-secondary"><i
+                                    <span type="submit" id="add-bag" class="btn btn-secondary" aria-label="add_to_bag"><i
                                             class="fa-solid fa-cart-plus"></i></span>
                                 </div>
                             </div>

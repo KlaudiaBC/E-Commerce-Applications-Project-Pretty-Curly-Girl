@@ -39,18 +39,20 @@
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <button class="decrement-qty btn btn-black rounded-0"
-                                                data-item_id="{{ product.id }}" id="decrement-qty_{{ product.id }}">
+                                                aria-label="decrement-qty" data-item_id="{{ product.id }}"
+                                                id="decrement-qty_{{ product.id }}">
                                                 <span class="icon">
                                                     <i class="fas fa-square-minus fa-xl"></i>
                                                 </span>
                                             </button>
                                         </div>
-                                        <input class="form-control qty_input mt-3" type="number" name="quantity" value="1"
-                                            min="1" max="99" data-item_id="{{ product.id }}"
+                                        <input class="form-control qty_input mt-3" type="number" name="quantity"
+                                            value="1" min="1" max="99" data-item_id="{{ product.id }}"
                                             id="id_qty_{{ product.id }}">
                                         <div class="input-group-append">
                                             <button class="increment-qty btn btn-black rounded-0"
-                                                data-item_id="{{ product.id }}" id="increment-qty_{{ product.id }}">
+                                                aria-label="increment-qty" data-item_id="{{ product.id }}"
+                                                id="increment-qty_{{ product.id }}">
                                                 <span class="icon">
                                                     <i class="fas fa-square-plus fa-xl"></i>
                                                 </span>
@@ -61,16 +63,19 @@
                             </div>
 
                             <div class="col-12">
-                                <a href="{% url 'products' %}" class="btn btn-outline-secondary rounded-0">
+                                <a href="{% url 'products' %}" class="btn btn-outline-secondary rounded-0"
+                                    aria-label="products">
                                     <span class="icon"><i class="fas fa-solid fa-arrow-left"></i></span>
                                     <span class="text-uppercase">Keep Shopping</span>
                                 </a>
-                                <button type="submit" class="btn btn-secondary rounded-0 text-uppercase">
+                                <button type="submit" class="btn btn-secondary rounded-0 text-uppercase"
+                                    aria-label="add_to_bag">
                                     <span class="text-uppercase">Add to bag </span>
                                     <i class="fa-solid fa-cart-plus"></i>
                                 </button>
                             </div>
-                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                            <input type="hidden" name="redirect_url" value="{{ request.path }}"
+                                aria-label="redirect_url">
                         </div>
                     </form>
                 </div>

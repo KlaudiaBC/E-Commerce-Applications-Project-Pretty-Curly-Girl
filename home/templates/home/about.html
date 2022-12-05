@@ -18,7 +18,7 @@
     </p>
     <div class="row">
         <div class="col-12 col-md-4">
-            <img class="img-about ml-2" src="{{ MEDIA_URL }}boss_hanan.webp" alt="hanan and sophia">
+            <img class="img-about ml-2" src="{{ MEDIA_URL }}boss_hanan.webp" alt="pretty curly girl foundator">
         </div>
         <div class="col-12 col-md-8">
             <h4>Love your curls</h4>
@@ -50,7 +50,7 @@
                 and I dreamed of having straight hair so many times.</p>
         </div>
         <div class="col-12 col-md-6">
-            <img class="img-about" src="{{ MEDIA_URL }}pretty-team.webp" alt="pretty curly crew">
+            <img class="img-about" src="{{ MEDIA_URL }}pretty-team.webp" alt="pretty curly girl crew">
         </div>
     </div>
     <br>
@@ -118,18 +118,18 @@
             </p>
             <span>
                 <i class="fa-regular fa-star"></i>
-                <a href="{% url 'products' %}?category=curly_star"> Curly Star products are already available! </a>
+                <a href="{% url 'products' %}?category=curly_star" aria-label="curly_star"> Check the Curly Star products! </a>
                 <i class="fa-regular fa-star"></i>
             </span>
         
         </div>
         <div class="col-12 col-md-4">
-            <img class="img-about" src="{{ MEDIA_URL }}hanan_sophia.webp" alt="pretty curly girl - mom and daughter">
+            <img class="img-about" src="{{ MEDIA_URL }}hanan_sophia.webp" alt="pretty curly girl foundater with daughter">
         </div>
     </div>
 </div>
 <br>
 <div class="d-flex">
-    <button class="btn btn-outline-info rounded-3 mx-auto"> <a href="{% url 'products' %}">See our products</a></button>
+    <button class="btn btn-outline-info rounded-3 mx-auto" aria-label="products"> <a href="{% url 'products' %}">See our products</a></button>
 </div>
 {% endblock %}

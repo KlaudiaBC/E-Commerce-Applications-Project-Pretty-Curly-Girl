@@ -7,12 +7,14 @@
   <title>Pretty Curly Girl {% block extra_title %} {% endblock %}</title>
 
   <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="{{ MEDIA_URL }}curly-fav.png">
+  <link rel="icon" type="image/x-icon" aria-label="favicon" href="{{ MEDIA_URL }}curly-fav.png">
 
   <!-- Required meta tags -->
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Hair Products for Curls and Waves">
+  <meta name="keywords" content="curls, wavy hair, frizz, detangle, curly hair method, best hair detanglers, hair conditioner, treat curly hair">
 
   <!-- Google verification -->
   <meta name="google-site-verification" content="oxzaU7N3yX91zEClqDf4Zkxsq3Uq1ZHMVXvZpHJaxCo" />
@@ -44,7 +46,7 @@
   <!-- STRIPE -->
   <script src="https://js.stripe.com/v3/"></script>
 
-  {% block corejs %}
+  {% block extra_js %}
   {% endblock %}
 
 </head>
@@ -65,7 +67,7 @@
       <div class="col-md-8 offset-md-2">
         {% for message in messages %}
         <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
-          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <button type="button" class="close" data-dismiss="alert" aria-label="close">&times;</button>
           {{ message | safe }}
         </div>
         {% endfor %}
@@ -86,16 +88,16 @@
       <div class="col-12 col-md-6 text-center mb-5">
         <h3>Follow us </h3>
         <br>
-        <span><a href="https://www.facebook.com/www.prettyskin.nl" target="_blank">
+        <span><a href="https://www.facebook.com/www.prettyskin.nl" target="_blank" rel="noopener">
             <i class="fa-brands fa-facebook"></i></a>
         </span>
-        <span><a href="https://www.instagram.com/prettycurlygirl_products/" target="_blank"><i
+        <span><a href="https://www.instagram.com/prettycurlygirl_products/" target="_blank" rel="noopener"><i
               class="fa-brands fa-instagram"></i></a>
         </span>
-        <span><a href="https://www.tiktok.com/@prettycurlygirlproducts" target="_blank"><i
+        <span><a href="https://www.tiktok.com/@prettycurlygirlproducts" target="_blank" rel="noopener"><i
               class="fa-brands fa-tiktok"></i></a>
         </span>
-        <span><a href="https://www.pinterest.com/prettycurlygirl_products/" target="_blank"><i
+        <span><a href="https://www.pinterest.com/prettycurlygirl_products/" target="_blank" rel="noopener"><i
               class="fa-brands fa-pinterest"></i></a>
         </span>
         <br>

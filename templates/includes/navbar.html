@@ -2,16 +2,16 @@
 <nav class="navbar navbar-expand-md navbar-light bg-light">
     <div class="container">
 
-        <button type="button" id="sidebarCollapse" class="btn d-block d-md-none">
+        <button type="button" aria-label="collapse" id="sidebarCollapse" class="btn d-block d-md-none">
             <i class="fa-solid fa-bars" aria-hidden="true"></i>
         </button>
 
-        <a class="navbar-brand" href="{% url 'home' %}">
+        <a class="navbar-brand" href="{% url 'home' %}" aria-label="home">
             <p class="font-weight-bold">Pretty Curly Girl</p>
         </a>
         <ul class="navbar-nav d-block d-md-none">
             <li class="nav-item">
-                <a class="btn" href="{% url 'view_bag' %}"><i class="fa-solid fa-cart-shopping fa-lg fa-nav"></i>
+                <a class="btn" aria-label="view_bag" href="{% url 'view_bag' %}"><i class="fa-solid fa-cart-shopping fa-lg fa-nav"></i>
                     {% if product_count > 0 %}
                     <span class="badge badge-danger">{{ product_count }}</span>
                     {% endif %}
@@ -24,7 +24,7 @@
             <form method="GET" action="{% url 'products' %}" class="form-inline my-2 my-lg-0 mx-auto">
                 <input class="form-control" name="q" type="search" placeholder="Search for products..."
                     aria-label="Search">
-                <button class="btn btn-success my-2 my-sm-0" type="submit"><i
+                <button class="btn btn-success my-2 my-sm-0" type="submit" aria-label="search"><i
                         class="fa-solid fa-magnifying-glass"></i></button>
             </form>
 
@@ -33,7 +33,7 @@
                 <ul class="row list-inline mb-0 mt-2 d-flex float-right">
                     <li class="list-inline-item dropdown">
                         <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
+                            aria-haspopup="true" aria-label="dropdown" aria-expanded="false">
                             <div class="text-center fa-nav">
                                 <i class="fa-solid fa-user fa-lg"></i>
                                 <p class="my-0">My Account</p>
@@ -41,17 +41,17 @@
                         </a>
                         <div class="dropdown-menu border-0" aria-labelledby="user-options">
                             {% if request.user.is_authenticated %}
-                            <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
-                            <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                            <a href="{% url 'profile' %}" class="dropdown-item" aria-label="profile">My Profile</a>
+                            <a href="{% url 'account_logout' %}" class="dropdown-item" aria-label="Logout">Logout</a>
                             {% else %}
-                            <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                            <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                            <a href="{% url 'account_signup' %}" class="dropdown-item" aria-label="register">Register</a>
+                            <a href="{% url 'account_login' %}" class="dropdown-item" aria-label="login">Login</a>
                             {% endif %}
                         </div>
                     </li>
                     <li class="list-inline-item">
                         <div class="text-center">
-                            <a class="btn fa-nav" href="{% url 'view_bag' %}">
+                            <a class="btn fa-nav" href="{% url 'view_bag' %}" aria-label="view_bag">
                                 <i class="fa-solid fa-cart-shopping"></i>
                                 {% if product_count > 0 %}
                                 <span class="badge badge-danger">{{ product_count }}</span>
@@ -73,37 +73,37 @@
         <div class="collapse navbar-collapse" id="navbar">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{% url 'home' %}" aria-label="home">Home <span class="sr-only">(current)</span></a>
                 </li>
 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="about-us-link" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
+                        aria-haspopup="true" aria-expanded="false" aria-label="about_us">
                         About Us
                     </a>
                     <div class="dropdown-menu border-0" aria-labelledby="about-us-link">
-                        <a href="{% url 'about' %}" class="dropdown-item">Our mission</a>
-                        <a href="{% url 'privacy_policy' %}" class="dropdown-item ">Terms and Conditions</a>
+                        <a href="{% url 'about' %}" class="dropdown-item" aria-label="out_mission">Our mission</a>
+                        <a href="{% url 'privacy_policy' %}" class="dropdown-item" aria-label="terms_and_conditions">Terms and Conditions</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="products-link" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
+                        aria-haspopup="true" aria-expanded="false" aria-label="dropdown">
                         Products
                     </a>
                     <div class="dropdown-menu border-0" aria-labelledby="products-link">
-                        <a href="{% url 'products' %}?category=cleanse" class="dropdown-item">Cleanse</a>
-                        <a href="{% url 'products' %}?category=condition" class="dropdown-item">Condition</a>
-                        <a href="{% url 'products' %}?category=style" class="dropdown-item">Style</a>
-                        <a href="{% url 'products' %}?category=bundle_sets" class="dropdown-item">Bundle Sets</a>
-                        <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
+                        <a href="{% url 'products' %}?category=cleanse" class="dropdown-item" aria-label="cleanse">Cleanse</a>
+                        <a href="{% url 'products' %}?category=condition" class="dropdown-item" aria-label="condition">Condition</a>
+                        <a href="{% url 'products' %}?category=style" class="dropdown-item" aria-label="style">Style</a>
+                        <a href="{% url 'products' %}?category=bundle_sets" class="dropdown-item" aria-label="bundle_sets">Bundle Sets</a>
+                        <a href="{% url 'products' %}" class="dropdown-item" aria-label="all_products">All Products</a>
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'products' %}?category=curly_star">Curly STAR</a>
+                    <a class="nav-link" href="{% url 'products' %}?category=curly_star" aria-label="curly_star">Curly STAR</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'products' %}?sale">SALE</a>
+                    <a class="nav-link" href="{% url 'products' %}?sale" aria-label="sale">SALE</a>
                 </li>
             </ul>
         </div>
@@ -118,7 +118,7 @@
                 <form method="GET" action="{% url 'products' %}" class="form-inline mb-3 mx-auto">
                     <input class="form-control" type="search" placeholder="Search for products..." aria-label="Search"
                         name="q">
-                    <button class="btn btn-success" type="submit"><i
+                    <button class="btn btn-success" type="submit" aria-label="search"><i
                             class="fas fa-duotone fa-magnifying-glass"></i></button>
                 </form>
             </div>
@@ -134,14 +134,14 @@
             <div class="row align-items-center">
                 <div class="col-10 pl-0">
                     <a class="text-black nav-link dropdown-toggle" href="#user-options-sm" data-toggle="collapse"
-                        aria-expanded="false">My Account</a>
+                        aria-expanded="false" aria-label="dropdown">My Account</a>
                     <ul class="collapse list-unstyled" id="user-options-sm">
                         {% if request.user.is_authenticated %}
-                        <li><a href="{% url 'profile' %}" class="dropdown-item">My Profile</a></li>
-                        <li><a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a></li>
+                        <li><a href="{% url 'profile' %}" class="dropdown-item" aria-label="profile">My Profile</a></li>
+                        <li><a href="{% url 'account_logout' %}" class="dropdown-item" aria-label="logout">Logout</a></li>
                         {% else %}
-                        <li><a href="{% url 'account_signup' %}" class="dropdown-item">Register</a></li>
-                        <li><a href="{% url 'account_login' %}" class="dropdown-item">Login</a></li>
+                        <li><a href="{% url 'account_signup' %}" class="dropdown-item" aria-label="signup">Register</a></li>
+                        <li><a href="{% url 'account_login' %}" class="dropdown-item" aria-label="login">Login</a></li>
                         {% endif %}
                     </ul>
                 </div>
@@ -158,45 +158,45 @@
 
     <ul class="list-unstyled components links">
         <li class="active">
-            <a href="{% url 'home' %}"><i class="bx bx-home mr-3"> Home</a></i>
+            <a href="{% url 'home' %}"><i class="bx bx-home mr-3" aria-label="home"></i> Home</a>
         </li>
         <li>
-            <a href="#productSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i
+            <a href="#productSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle" aria-label="product_submenu"</a>><i
                     class="bx bx-help-circle mr-3"></i>Products</a>
             <ul class="collapse list-unstyled" id="productSubmenu">
                 <li>
-                    <a href="{% url 'products' %}?category=cleanse">Cleanse</a>
+                    <a href="{% url 'products' %}?category=cleanse" aria-label="cleanse">Cleanse</a>
                 </li>
                 <li>
-                    <a href="{% url 'products' %}?category=condition">Condition</a>
+                    <a href="{% url 'products' %}?category=condition" aria-label="condition">Condition</a>
                 </li>
                 <li>
-                    <a href="{% url 'products' %}?category=style">Style</a>
+                    <a href="{% url 'products' %}?category=style" aria-label="style">Style</a>
                 </li>
                 <li>
-                    <a href="{% url 'products' %}?category=bundle_sets">Bundle Sets</a>
+                    <a href="{% url 'products' %}?category=bundle_sets" aria-label="bundle_sets">Bundle Sets</a>
                 </li>
                 <li>
-                    <a href="{% url 'products' %}">All Products</a>
+                    <a href="{% url 'products' %}" aria-label="all_products">All Products</a>
                 </li>
             </ul>
         </li>
 
         <li>
-            <a href="{% url 'products' %}?category=curly_star"><i class="bx bx-crown mr-3"></i> Curly STAR</a>
+            <a href="{% url 'products' %}?category=curly_star" aria-label="curly_star"><i class="bx bx-crown mr-3"></i> Curly STAR</a>
         </li>
         <li>
-            <a href="{% url 'products' %}?category=sale"><i class="bx bx-home mr-3"></i>SALE</a>
+            <a href="{% url 'products' %}?category=sale" aria-label="sale"><i class="bx bx-home mr-3"></i>SALE</a>
         </li>
     </ul>
 
     <h6 class="text-uppercase mb-1">About Us</h6>
     <ul class="list-unstyled components mb-3">
         <li>
-            <a href="{% url 'about' %}">Our Mission</a>
+            <a href="{% url 'about' %}" aria-label="about_us">Our Mission</a>
         </li>
         <li>
-            <a href="{% url 'privacy_policy' %}">Terms and Conditions</a>
+            <a href="{% url 'privacy_policy' %}" aria-label="terms_and_conditions">Terms and Conditions</a>
         </li>
     </ul>
 </nav>
