@@ -111,7 +111,6 @@ a:hover {
   font-weight: bolder;
 }
 
-
 .search-text {
   padding-bottom: 60px;
 }
@@ -193,9 +192,6 @@ footer .fa-brands {
 .subtext {
   text-align: center;
 }
-
-
-
 
 .stars {
   color: #fdcc0d;
@@ -409,44 +405,33 @@ ul.social-icons li {
 /* Style the button and place it in the middle of the container/image */
 .btn-shop {
   position: absolute;
-  top: 70%;
-  left: 75%;
+  display: block;
+  width: 200px;
+  height: 60px;
+  top: 78%;
+  left: 52%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
-  font-size: 24px;
+  font-size: 25px;
+  font-weight: bold;
   padding: 12px 24px;
+  text-align: center;
   cursor: pointer;
   border-radius: 5px;
-  background-color: #fff;
-  color: #46494c;
+  background-color: #46494c;
+  color: #fff;
   border: 1px solid #46494c;
 }
 
 .btn-shop:hover {
-  background-color: #46494c;
+  background-color: #0a0908;
   color: #fff;
   border: none;
 }
 
-
-.btn-hero {
-  color: white;
-  background-color: darkblue;
-  border: 5px solid transparent;
-  transition: 0.2s ease;
-  border-radius: 50px;
-}
-
-.btn-hero:hover {
-  color: darkblue;
-  background-color: white;
-  transform: scale(1.1);
-  border: 5px solid darkblue;
-}
-
 /* hero img */
 .bg {
-  background-image: url(/workspace/E-Commerce-Applications-Project-Pretty-Curly-Girl/media/hero.webp);
+  background-image: url("/media/hero.webp");
 
   /* Full height */
   height: 100%;
@@ -580,15 +565,9 @@ ul.social-icons li {
     padding-right: 5rem;
   }
 
-  .bg-sm {
-    /* The image used */
-    display: none;
-  }
-
-  .bg-md {
-    /* The image used */
-    background-image: url("/media/desktop/hero.webp");
-    display: inline;
+  .btn-shop {
+    top: 75%;
+    left: 75%;
   }
 }
 

@@ -7,23 +7,26 @@
 <div class="container container-tall">
     <div class="row">
         <div class="col">
-            <hr>
-            <h2 class="logo-font mb-4">Thank You</h2>
-            <hr>
-            <p class="text-black">Your order was successfully placed. A confirmation email will be sent to <strong>{{
-                    order.email }}</strong>.</p>
+            <hr class="w-50 mb-1">
+            <h2 class="logo-font mb-4 text-center">Thank you</h2>
+            <hr class="w-50 mb-1">
         </div>
     </div>
-
-    <div class="row">
-        <div class="col-12 col-lg-7"></div>
-    </div>
-    <div class="row">
-        <div class="col-12 col-lg-7 text-right">
+    <div class="d-block">
+        <div class="text-center">
+            <img class="img-sm" src="{{ MEDIA_URL }}spirit.png" alt="success">
+            <br>
+        </div>
+        <div class="text-center">
+            <p class="my-3">Your payment was successful.</p>
+            <p>Your order is now being prepared and will be sent to you shortly!</p>
+            <p>If you have any questions or concerns feel free to contact us: info@prettycurlygirl.com</p>
+            <br>
             <a href="{% url 'products' %}" class="btn btn-outline-info rounded-3 my-2">
-                <span class="text-uppercase">Now check out the latest deals!</span>
+                <span>Home</span>
             </a>
         </div>
     </div>
 </div>
+
 {% endblock %}
