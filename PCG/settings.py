@@ -131,13 +131,12 @@ AUTHENTICATION_BACKENDS = [
     'social_core.backends.facebook.FacebookOAuth2',
 ]
 
-SITE_ID = 1
+SITE_ID = 2
 
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = 'none'  # mandatory
 ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = False
-ACCOUNT_LOGIN_ON_EMAIL_CONFIRMATION = True
 ACCOUNT_USERNAME_MIN_LENGTH = 3
 SOCIALACCOUNT_QUERY_EMAIL = True
 ACCOUNT_LOGOUT_ON_GET = True
@@ -163,13 +162,15 @@ SOCIALACCOUNT_PROVIDERS = {
             'include_granted_scopes': 'true',
         }},
     'facebook': {
+        'client_id': os.environ.get('SOCIAL_AUTH_FACEBOOK_ID'),
+        'secret': os.environ.get('SOCIAL_AUTH_FACEBOOK_SECRET'),
         'OAUTH_PKCE_ENABLED': True,
         'VERIFIED_EMAIL': False,
-        'METHOD': 'oauth2',
+        'METHOD': 'js_sdk',
         'SDK_URL': '//connect.facebook.net/{locale}/sdk.js',
         'AUTH_PARAMS': {
             'auth_type': 'reauthenticate',
-            'access_type': 'offline',
+            'access_type': 'online',
             'state': 'sample_passthrough_value',
             'include_granted_scopes': 'true',
             },
