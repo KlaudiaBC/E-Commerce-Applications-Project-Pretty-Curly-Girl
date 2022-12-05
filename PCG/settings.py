@@ -16,6 +16,7 @@ import dj_database_url
 from htmlmin.minify import html_minify
 from django.contrib.messages import constants as messages
 from django.apps import AppConfig
+from django.test.runner import DiscoverRunner
 if os.path.isfile("env.py"):
     import env
 
@@ -234,8 +235,8 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 # Cloudinary
 CLOUDINARY_STORAGE = {
     'CLOUD_NAME': os.environ.get('CLOUD_NAME'),
-    'CLOUD_API_KEY': os.environ.get('CLOUD_API_KEY'),
-    'CLOUD_API_SECRET': os.environ.get('CLOUD_API_SECRET'),
+    'API_KEY': os.environ.get('API_KEY'),
+    'API_SECRET': os.environ.get('API_SECRET'),
     }
 
 # Default primary key field type
