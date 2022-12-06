@@ -7,7 +7,6 @@
 - [**Testing**](#testing)
   - [**Mannual Testing**](#mannual-testing)
   - [**W3C Validator**](#w3c-validator)
-  - [**PEP8**](#pep8)
   - [**Lighthouse**](#lighthouse)
 - [**Errors and bugs**](#errors-and-bugs)
 
@@ -36,7 +35,7 @@ The features, which was taken into a testing in both scenarios: on the desktop a
   </tr>
   <tr>
       <td>'About Us' Page Images: </td>
-    <td>Make sure that all the images: have a good quality, display correctly on every size of the screen and do not interffere with a text provided on the oposite sides.</td>
+    <td>Make sure that all the images: have a good quality, display correctly on every size of the screen and do not interfere with a text provided on the opposite sides.</td>
     <td>Pass</td>
   </tr>
     <tr>
@@ -46,7 +45,7 @@ The features, which was taken into a testing in both scenarios: on the desktop a
   </tr>
     <tr>
     <td>Login/Logout</td>
-    <td>Check if the login form allows User who had created his account correctly - to access the profile page for authorised users - after providing the correct login credentials. Check if the button "Logout" bring the User back into the "annonymous" mode.</td>
+    <td>Check if the login form allows User who had created his account correctly - to access the profile page for authorised users - after providing the correct login credentials. Check if the button "Logout" bring the User back into the "anonymous" mode.</td>
     <td>Pass</td>
   </tr>
   <tr>
@@ -86,7 +85,7 @@ The features, which was taken into a testing in both scenarios: on the desktop a
   </tr>
       <tr>
     <td>Search engine</td>
-    <td>Make sure the search input is connected with a search function which iterate through the products items (the title and the describtion) and display the results that match User's search request.</td>
+    <td>Make sure the search input is connected with a search function which iterate through the products items (the title and the description) and display the results that match User's search request.</td>
     <td>Pass</td>
   </tr>
         <tr>
@@ -96,12 +95,12 @@ The features, which was taken into a testing in both scenarios: on the desktop a
   </tr>
         <tr>
     <td>Messages</td>
-    <td>Check if messages display in the top of the page as an alert when User taken certain actions on the page: add product to the bad, change product quantity, remove product, register, login, logout, successfuly process the payment, missmatch the search criteria.</td>
+    <td>Check if messages display in the top of the page as an alert when User taken certain actions on the page: add product to the bad, change product quantity, remove product, register, login, logout, successfully  process the payment, mismatch the search criteria.</td>
     <td>Pass</td>
   </tr>
         <tr>
     <td>Error pages</td>
-    <td>Check if error 404 and 500 display customised html pages.</td>
+    <td>Check if error 404 and 500 display custom html pages.</td>
     <td>Pass</td>
   </tr>
           <tr>
@@ -122,46 +121,59 @@ The features, which was taken into a testing in both scenarios: on the desktop a
 
 - **HTML Validator**
 
-**Add Post Page**
+**Home**
 
 <p align="center">
-  <img src="" alt="w3c-add-post">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/readme/README/testing/w3c_home.png?raw=true" alt="w3c-home">
 </p>
 
-**Edit Post Page**
+
+**Products**
 
 <p align="center">
-  <img src="" alt="w3c-checkout-success">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/readme/README/testing/w3c_products.png?raw=true" alt="w3c-products">
 </p>
 
-**Detete Post Page**
+
+**About Us**
 
 <p align="center">
-  <img src="" alt="w3c-checkout">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/readme/README/testing/w3c_about.png?raw=true" alt="w3c-about">
 </p>
 
-**Add Comment Page**
+
+**Privacy Policy**
 
 <p align="center">
-  <img src="" alt="w3c-bag">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/readme/README/testing/w3c_policy.png?raw=true" alt="w3c-bag">
 </p>
 
-**MyPage - filered view of User posts**
+
+**Bag**
 
 <p align="center">
-  <img src="" alt="w3c-home">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/readme/README/testing/w3c_bag.png?raw=true" alt="w3c-bag">
 </p>
 
-**Categories/List Page**
+
+**Checkout**
 
 <p align="center">
-  <img src="" alt="w3c-product/list">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/readme/README/testing/w3c_checkout.png?raw=true" alt="w3c-product/list">
 </p>
 
-**Categories/Filtered Posts Page**
+
+**Checkout/Success**
 
 <p align="center">
-  <img src="" alt="w3c-about-us-page">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/readme/README/testing/w3c_checkout_success.png?raw=true" alt="w3c-about-us-page">
+</p>
+
+
+**Terms and Conditions Page**
+
+<p align="center">
+  <img src="" alt="w3c-terms">
 </p>
 
 **Terms and Conditions Page**
@@ -170,47 +182,34 @@ The features, which was taken into a testing in both scenarios: on the desktop a
   <img src="" alt="w3c-terms">
 </p>
 
+
 <br />
 <hr>
 <br />
 
 - **W3C validator - CSS**
 <p align="center">
-  <img src="" alt="w3c-css">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/readme/README/testing/valid_css.png?raw=true" alt="w3c-css">
 </p>
 
 <p align="right"><a href="#welcome">Bact to top</a></p>
+
 <br />
 
-<p align="right"><a href="#welcome">Bact to top</a></p>
-
-### **PEP8**
-
-- <a href="https://github.com/KlaudiaBC/FST-Project-Empire-of-Thoughts/blob/main/static/images/readme/testing/pep-urls-empire.png?raw=true">empire_blog/urls.py</a>
-- <a href="https://github.com/KlaudiaBC/FST-Project-Empire-of-Thoughts/blob/main/static/images/readme/testing/pep-admin-blog.png?raw=true">blog/admin.py</a>
-- <a href="https://github.com/KlaudiaBC/FST-Project-Empire-of-Thoughts/blob/main/static/images/readme/testing/pep-views-blog.png?raw=true">blog/views.py</a>
-- <a href="https://github.com/KlaudiaBC/FST-Project-Empire-of-Thoughts/blob/main/static/images/readme/testing/pep-forms-blog.png?raw=true">blog/forms.py</a>
-- <a href="https://github.com/KlaudiaBC/FST-Project-Empire-of-Thoughts/blob/main/static/images/readme/testing/pep-models-blog.png?raw=true">blog/models.py</a>
-- <a href="https://github.com/KlaudiaBC/FST-Project-Empire-of-Thoughts/blob/main/static/images/readme/testing/pep-test-views-blog.png?raw=true">blog/test_views.py</a>
-- <a href="https://github.com/KlaudiaBC/FST-Project-Empire-of-Thoughts/blob/main/static/images/readme/testing/pep-test-urls-blog.png?raw=true">blog/test_urls.py</a>
-- <a href="https://github.com/KlaudiaBC/FST-Project-Empire-of-Thoughts/blob/main/static/images/readme/testing/pep-test-models.png?raw=true">blog/test_models</a>
-- <a href="https://github.com/KlaudiaBC/FST-Project-Empire-of-Thoughts/blob/main/static/images/readme/testing/pep-test-forms-blog.png?raw=true">blog/test_forms.py</a>
-- <a href="https://github.com/KlaudiaBC/FST-Project-Empire-of-Thoughts/blob/main/static/images/readme/testing/pep-forms-members.png?raw=true">members/forms.py</a>
-- <a href="https://github.com/KlaudiaBC/FST-Project-Empire-of-Thoughts/blob/main/static/images/readme/testing/pep-urls-members.png?raw=true">members/urls.py</a>
-- <a href="https://github.com/KlaudiaBC/FST-Project-Empire-of-Thoughts/blob/main/static/images/readme/testing/pep-test-forms-members.png?raw=true">members/test_forms.py</a>
-- <a href="https://github.com/KlaudiaBC/FST-Project-Empire-of-Thoughts/blob/main/static/images/readme/testing/pep-views-members.png?raw=true">members/views.py</a>
-
-<p align="right"><a href="#welcome">Bact to top</a></p>
-<br />
-
-### **Lighthouse**
-
-<br/>
+### **Lighthouse Desktop**
 
 <p align="center">
-  <img src="" alt="lighthouse">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/readme/README/testing/lighthouse_last.png?raw=true" alt="lighthouse-desktop">
 </p>
 
+
+### **Lighthouse Mobile**
+
+<p align="center">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/readme/README/testing/mobile_lighthouse.png?raw=true" alt="lighthouse-mobile">
+</p>
+<br>
+<hr>
 The tests were performed on:
 
 - different browsers: Google Chrome, Firefox, Internet Explorer, Opera and Safari
@@ -219,22 +218,63 @@ The tests were performed on:
 <p align="right"><a href="#welcome">Bact to top</a></p>
 <hr>
 
-<a href=""></a>
+## **Errors and Bugs**
+
+Most of the challenges I have met during the implementation are included in the Jira Board, where it was easy and convenient to leave comments in attachment to the tickets I have been working on.
+
+Below you will find an image of error/bug and image with a fix that I have found online or figured out by myself.
+
+The most troubling in the beginning was working on the git-branches, because I haven't been prepared for any eventual issues with creating pull requests and merging the data into the main branch. See below:
 
 <p align="center">
-<img src="" alt="solution">
+<img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/readme/README/pr_20_one.png?raw=true" alt="git-conflict"></p>
+<br/>
+
+<p align="center">
+<img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/readme/README/pr_20_two.png?raw=true" alt="git"></p>
+<br>
+  
+<p align="center">
+<img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/readme/README/pr_20_three.png?raw=true" alt="git"></p>
+<br/><br> 
+  
+**Migrations errors:**
+
+<p align="center">
+<a href="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/readme/README/migrations_error.png?raw=true"></a></p>
+
+<p align="center">
+<img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/readme/README/migrations_error_solution.png?raw=true" alt="solution"></p>
+<br/>
+
+
+**Merge conflict again**
+<p align="center">
+<img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/readme/README/merge_conflict_pull_main.png?raw=true" alt="issue"></p>
+<br />
+
+**I also wanted to 'undo' previous commit what was pretty easy forward now, since I have been working with branches:**
+<p align="center">
+<img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/readme/README/git_log.png?raw=true" alt="solution"></p>
+
+<p align="center">
+<img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/readme/README/git_fetch_pull.png?raw=true" alt="solution"></p>
+<br />
+
+**While working with validation forms and API tokens, I also meet a sensitive data issue / csrf:
+<p align="center">
+<img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/readme/README/error_no_login_as_admin.png?raw=true" alt="issue"></p>
+
+<p align="center">
+<img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/readme/README/csrf_solution.png?raw=true" alt="solution"></p>
+<br />
+
+**Some bugs affected the code that was working perfectly fine before - most od them was the case of typo/bad spell or not closed tag - or simply forgeting about some small - but very cruicial configuration:**
+<p align="center">
+<img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/readme/README/error_post_not_function.png?raw=true" alt="solution"></p>
 <br />
 
 <p align="center">
-<img src="" alt="solution">
-<br />
-
-**Solution:**
-
-<a href=""></a>
-
-<p align="center">
-<img src="" alt="solution">
-<br />
+<img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/readme/README/error_post_solution.png?raw=true" alt="solution"></p>
 <br />
 <p align="right"><a href="#welcome">Bact to top</a></p>
