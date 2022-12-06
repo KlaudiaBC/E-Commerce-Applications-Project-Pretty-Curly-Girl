@@ -1,199 +1,194 @@
 /* Allauth form formatting */
 
 .allauth-form-inner-content p {
-    margin-top: 1.5rem; /* mt-4 */
-    color: #46494c; /* text-secondary */
+  margin-top: 1.5rem; /* mt-4 */
+  color: #46494c; /* text-secondary */
 }
 
 .allauth-form-inner-content input {
-    border-color: #0a0908;
-    border-radius: 0;
+  border-color: #0a0908;
+  border-radius: 0;
 }
 
-.allauth-form-inner-content label:not([for='id_remember']) {
-    display: none;
+.allauth-form-inner-content label:not([for="id_remember"]) {
+  display: none;
 }
 
 .allauth-form-inner-content input::placeholder {
-    color: #aab7c4;
+  color: #aab7c4;
 }
 
 .allauth-form-inner-content button,
-.allauth-form-inner-content input[type='submit'] {
-	/* btn */
-	display: inline-block;
-    font-weight: 400;
-    color: #fff;
-    text-align: center;
-    vertical-align: middle;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    background-color: #0a0908;
-    border: 1px solid #0a0908;
-    padding: .375rem .75rem;
-    font-size: 1rem;
-    line-height: 1.5;
-    border-radius: 0;
+.allauth-form-inner-content input[type="submit"] {
+  /* btn */
+  display: inline-block;
+  font-weight: 400;
+  color: #fff;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #0a0908;
+  border: 1px solid #0a0908;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0;
 
-    /* standard bootstrap btn transitions */
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  /* standard bootstrap btn transitions */
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
 .allauth-form-inner-content button:hover,
-.allauth-form-inner-content input[type='submit']:hover {	
-	color: #fff;
-    background-color: #46494c;
-    border-color: #46494c;
+.allauth-form-inner-content input[type="submit"]:hover {
+  color: #fff;
+  background-color: #46494c;
+  border-color: #46494c;
 }
 
 .allauth-form-inner-content a {
-	color: #007791;
+  color: #007791;
 }
 .inline-text {
-    width: 100%; 
-    text-align: center; 
-    border-bottom: 1px solid #00000036; 
-    line-height: 0.1em;
-    margin: 10px 0 20px; 
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid #00000036;
+  line-height: 0.1em;
+  margin: 10px 0 20px;
 }
- 
-.inline-text span { 
-     background:#fff; 
-     padding:0 10px; 
-     color: black;
- }
+
+.inline-text span {
+  background: #fff;
+  padding: 0 10px;
+  color: black;
+}
 
 #div_id_remember {
-    display: none;
+  display: none;
 }
 
 .btn-google {
-    background-color: #ffff !important;
-    border-color: #343a40;
-    color: black !important;
+  background-color: #ffff !important;
+  border-color: #343a40;
+  color: black !important;
 }
 
 .btn-social {
-    border-radius: 50px;
-    opacity: 0.9;
+  border-radius: 50px;
+  opacity: 0.9;
 }
 
 .btn-social:hover {
-    opacity: 1;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
-
 
 /*------------- media queries ------------- */
 
 /* for tablets */
 @media screen and (min-width: 600px) {
-    .btn-social {
-        width: 14rem;
-    }
-    .social-txt {
-        font-size: smaller;
-        display: inline-block;
-    }
+  .btn-social {
+    width: 14rem;
+  }
+  .social-txt {
+    font-size: smaller;
+    display: inline-block;
+  }
 }
-
 
 /* for laptops */
 @media screen and (min-width: 768px) {
-
 }
 
 /* for large laptops */
 @media screen and (min-width: 992px) {
-    .container {
-        width: 962px;
-    }
+  .container {
+    width: 962px;
+  }
 
-    /* pad the top a bit when navbar is collapsed on mobile */
-    .header-container {
-        padding-top: 116px;
-    }
+  /* pad the top a bit when navbar is collapsed on mobile */
+  .header-container {
+    padding-top: 116px;
+  }
 
-    body {
-        height: calc(100vh - 116px);
-    }
+  body {
+    height: calc(100vh - 116px);
+  }
 }
 
 /* for big TV's (HD screens) */
 @media screen and (min-width: 1280px) {
-    .container {
-        width: 1250px;
-    }
+  .container {
+    width: 1250px;
+  }
 }
-
-
 
 /* =============  404 and 500  ================= */
 * {
-    font-family: Google sans, Arial;
-  }
-  
-  html, body {
-    margin: 0;
-    padding: 0;
-  }
-  
-  .flex-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    color: white;
-    animation: colorSlide 15s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
-  }
+  font-family: Google sans, Arial;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: white;
+  animation: colorSlide 15s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
+}
 
 .fade-in {
-    animation: fadeIn 2s ease infinite;
-        }
+  animation: fadeIn 2s ease infinite;
+}
 
-  
-      h1 {
-        font-size: 8em;
-        transition: font-size 200ms ease-in-out;
-        border-bottom: 1px dashed white;
-      }
-  
-      
-      button {
-        border: 1px solid white;
-        background: transparent;
-        outline: none;
-        padding: 10px 20px;
-        font-size: 1.1rem;
-        font-weight: bold;
-        color: white;
-        text-transform: uppercase;
-        transition: background-color 200ms ease-in;
-        margin: 20px 0;
-      }
-        
-        button:hover {
-          background-color: white;
-          color: #555;
-          cursor: pointer;
-                }
-  
+h1 {
+  font-size: 8em;
+  transition: font-size 200ms ease-in-out;
+  border-bottom: 1px dashed white;
+}
 
-  @keyframes colorSlide {
-    0% { background-color: #152a68; }
-    25% { background-color: royalblue; }
-    50% { background-color: seagreen; }
-    75% { background-color: tomato; }
-    100% { background-color: #152a68; }
+button {
+  border: 1px solid white;
+  background: transparent;
+  outline: none;
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
+  transition: background-color 200ms ease-in;
+  margin: 20px 0;
+}
+
+button:hover {
+  background-color: white;
+  color: #555;
+  cursor: pointer;
+}
+
+@keyframes colorSlide {
+  0% {
+    background-color: #152a68;
   }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    };
-    100% {
-      opacity: 1;
-    }
+  25% {
+    background-color: royalblue;
   }
+  50% {
+    background-color: seagreen;
+  }
+  75% {
+    background-color: tomato;
+  }
+  100% {
+    background-color: #152a68;
+  }
+}
