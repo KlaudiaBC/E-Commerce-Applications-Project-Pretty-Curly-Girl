@@ -31,7 +31,6 @@ def users(request):
     template = 'users/profile.html'
     context = {
         'form': form,
-        'orders': orders,
         'on_profile_page': True
     }
 

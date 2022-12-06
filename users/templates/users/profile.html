@@ -14,23 +14,16 @@
     </div>
 
     <br>
-    <div class="flex col-6 " aria-labelledby="#profile-tab">
+    <div class="flex justify-content-center" aria-labelledby="#profile-tab">
         <div class="container wrapper-form profile-tab">
-            <p class="text-special lead">Default Delivery Information</p>
-            <form class="mt-3" action="{% url 'profile' %}" method="POST" id="profile-update-form">
-                {% csrf_token %}
-                {{ form|crispy }}
-                <br>
-                <span class="d-flex justify-content-center">
-                    <button class="btn btn-info rounded-3 ">Update Information</button></span>
-            </form>
+            <p class="text-special lead">User Information</p>
+            <p>We are currently biulding here a nice neat place for your wish list and shipping details!</p>
+
+            <a href="{% url 'products' %}" class="btn btn-outline-info rounded-3 ml-2" aria-label="products">
+                <span class="font-weight-bold"><i class="fa-solid fa-arrow-left"></i>Back to store</span>
+            </a>
         </div>
     </div>
 </div>
 
-{% endblock %}
-
-{% block postloadjs %}
-{{ block.super }}
-<script type="text/javascript" src="{% static 'profiles/js/countryfield.js' %}"></script>
 {% endblock %}
