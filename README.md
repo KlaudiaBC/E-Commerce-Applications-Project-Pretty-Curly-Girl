@@ -161,7 +161,7 @@ Because Heroku is not longer offering free usage of Postgres, I had migrated my 
 
 Entity relationship diagram for all the models included in the application:
 <p align="center">
-  <img src="#" alt="entity relationship diagram">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/readme/README/ERD_PCG.png?raw=true" alt="entity relationship diagram">
 </p>
 
 ### **Surface**
@@ -249,12 +249,9 @@ If 404 or 500 error occurs within the site, User will see the customized page th
 
 ### **Features**
 
-**Sripe payment**
-During the implementation of this project I have been closely following the last tutorial provided by Code Institute: "Boutique Ado".
-All code connected with **Stripe** payments as well as cofiguration of webhooks is based on the code provided by CI.
-I have implemented a few changes required by the difference between the Order models, however I can not take any acreditation for this part of my application.
+**Stripe** payment During the implementation of this project I have been closely following the last tutorial provided by Code Institute: "Boutique Ado ''. All code connected with Stripe payments as well as configuration of webhooks is based on the code provided by CI. I have implemented a few changes required by the difference between the Order models, however I can not take any accreditation for this part of my application.
 
-Thanks to seting up the **webhooks**, every intend of the payment is registered by Stripe and accessible in the Stripe administration panel.
+Thanks to setting up the webhooks, every intent of the payment is registered by Stripe and accessible in the Stripe administration panel.
 
 <p align="center">
   <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/readme/README/payment_intend.png?raw=true" alt="payment intend">
@@ -265,14 +262,14 @@ Thanks to seting up the **webhooks**, every intend of the payment is registered 
 
                                                                                                                                                      
 **Google Auth**
-I have addeed to my application the social account authorisation - firstly it was possible to login via Fabebook and Google. Unfortunatelly during the process, I have lost the access to the facebook authorisation tokens and did not have time to configure the login again - this is why I left only the Google authorisation available and surely will be expanding the social accounts more as it is very popular way to encourage Users to log into our page and allows owners of the page to collect (some) data, which may be useful in makreting/economy planning.
+I have added to my application the social account authorisation - firstly it was possible to login via Facebook and Google. Unfortunately during the process, I have lost the access to the facebook authorisation tokens and did not have time to configure the login again - this is why I left only the Google authorisation available and surely will be expanding the social accounts more as it is very popular way to encourage Users to log into our page and allows owners of the page to collect (some) data, which may be useful in marketing/economy planning.
     
 <p align="center">
   <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/readme/README/google_auth_ok.png?raw=true" alt="google auth"></p>
 
 
 **Subscription via MailChimp**
-This in another interesting feature which is a good practice in terms of marketing planning, trying to gain information about your potential customer as well as get into a direct contact with customer, which allows to build the trust and create positive B2C relationship.
+This is another interesting feature which is a good practice in terms of marketing planning, trying to gain information about your potential customer as well as get into a direct contact with customer, which allows to build the trust and create positive B2C relationship.
 
 
 **Star Rating**
