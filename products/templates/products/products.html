@@ -19,12 +19,12 @@
             Sort by
         </button>
         <div class="dropdown-menu" id="sort-selector">
-            <a href="{% url 'products' %}?sort=price&direction=asc">
-                <button class="dropdown-item" type="button" aria-label="products_ascending">Price
-                    (low to high)</button></a>
-            <a href="{% url 'products' %}?sort=price&direction=desc">
-                <button class="dropdown-item" type="button" aria-label="products_descending">Price
-                    (high to low)</button></a>
+            <span class="dropdown-item" type="button" aria-label="products_ascending">
+                <a href="{% url 'products' %}?sort=price&direction=asc">Price
+                    (low to high)</a></span>
+            <span class="dropdown-item" type="button" aria-label="products_descending">
+                <a href="{% url 'products' %}?sort=price&direction=desc">Price
+                    (high to low)</a></span>
         </div>
     </div>
     <div class="row">
