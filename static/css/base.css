@@ -1,7 +1,4 @@
-html {
-  scroll-behavior: smooth;
-}
-
+html,
 body {
   width: auto;
   height: 100%;
@@ -155,11 +152,11 @@ footer .fa-brands {
   color: #fff;
   margin-left: 0.5rem;
   margin-right: 0.5rem;
-  transition: transform .2s;
+  transition: transform 0.2s;
 }
 
 .fa-nav {
-  transition: transform .2s;
+  transition: transform 0.2s;
 }
 
 .fa-brands:hover,
@@ -260,7 +257,7 @@ footer .fa-brands {
 
 .navbar-brand {
   margin-top: 1rem;
-  font-size: 1.60rem;
+  font-size: 1.6rem;
 }
 
 #navbar {
@@ -410,15 +407,14 @@ ul.social-icons li {
   width: 3rem !important;
 }
 
-
 /* Style the button and place it in the middle of the container/image */
 .btn-shop {
-  position: absolute;
+  position: relative;
   display: block;
   width: 200px;
   height: 60px;
-  top: 78%;
-  left: 52%;
+  top: 885%;
+  left: 125%;
   transform: translate(-50%, -50%);
   font-size: 25px;
   font-weight: bold;
@@ -500,7 +496,7 @@ ul.social-icons li {
 
 .card-body {
   padding: 7% 0;
-  overflow: hidden; 
+  overflow: hidden;
 }
 
 .btn-block {
@@ -510,14 +506,13 @@ ul.social-icons li {
 #blog .card-img-top {
   height: 640px;
   width: auto;
-  transition: transform .4s;   /* smoother zoom */
+  transition: transform 0.4s; /* smoother zoom */
 }
 
 #blog .card-img-top:hover {
   transform: scale(1.3);
   transform-origin: 50% 50%;
 }
-
 
 /* Call To Action */
 #cta {
@@ -542,16 +537,39 @@ ul.social-icons li {
   position: relative;
 }
 
-
-
 /*------------- media queries ------------- */
+
+
+/* very narrow screen */
+@media screen and (max-width: 280px) {
+  .navbar-brand {
+    font-size: small;
+  }
+
+  .btn-shop {
+    font-size: 18px;
+    height: auto;
+    left: 85% !important;
+  }
+}
+
+/* narrow screen */
+@media screen and (min-width: 280px), (max-width:370px) {
+  .btn-shop {
+    top: 570%;
+    left: 119%;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .btn-shop {
+    top: 663%;
+  }
+}
+
 
 /* for tablets */
 @media screen and (min-width: 600px) {
-  .form-inline .form-control {
-    width: 150px;
-  }
-
   .img-md {
     height: 400px;
     width: 600px;
@@ -576,8 +594,8 @@ ul.social-icons li {
   }
 
   .btn-shop {
-    top: 75%;
-    left: 75%;
+    top: 470%;
+    left: 360%;
   }
 
   .img-about {
@@ -623,13 +641,17 @@ ul.social-icons li {
   .form-inline .form-control {
     width: 300px;
   }
+  .btn-shop {
+    top: 670%;
+    left: 460%;
+  }
 }
 
-@media only screen and (max-width: 768px){
-	html,
-	body {
-	width: 100%;
-	overflow-x: hidden;
-  margin-bottom: 0;
-	}
+@media only screen and (max-width: 850px) {
+  html,
+  body {
+    width: 100%;
+    overflow-x: hidden;
+    margin-bottom: 0;
+  }
 }
