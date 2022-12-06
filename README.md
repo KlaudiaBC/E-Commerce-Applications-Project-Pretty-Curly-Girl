@@ -37,10 +37,8 @@ See the deployed project <a href="https://pretty-curly-girl.herokuapp.com/">here
     * [**Base**](#base-common-for-each-page-of-application)
     * [**Content**](#content-of-the-pages)
     * [**Color scheme**](#color-scheme)
-    * [**Typography**](#typography)
 * [**Implementation**](#implementation)
     * [**Branches in GIT**](#branches-in-git)
-    * [**Performance**](#performance)
     * [**Defensive design**](#defensive-design)
 * [**Business model**](#business-model)
   * [**Marketing strategy**](#marketing-strategy)
@@ -74,6 +72,8 @@ In addition, you can also find a basic e-commerce marketing strategy which inclu
 ### **Product roadmap**
 Following the Agile principles, I have created the *User Stories*, which helped me to map out the work required to develop this application. In order to easily manage the workflow, I have used the <a href="https://jira.atlassian.com/" target="_blank">Jira software</a>.
 
+Please, see the board of my project in Jira, including User Stories, automation with GIT branches and commits, pointed out errors and fixes, comments, images and many more: <a href="https://emporiumofthoughts.atlassian.net/jira/software/projects/PCG/boards/2">click here</a>
+
 Each User Story has assigned a *Story Points*.
 I have used the Fibonacci scale (1,2,3,5,8) to represent complexity and estimated amount of effort/time it takes to complete the task (story).
 The higher the number, the more involvement the task requires.
@@ -105,21 +105,21 @@ See the Sprints as planned in the begging of implementation:
 
 **Jira backlog - Sprint 1:**
 <p align="center">
-  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/static/images/README/jira_backlog_sprint_one.png?raw=true" alt="backlog_sprint_one">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/readme/README/jira_backlog_sprint_one.png?raw=true" alt="backlog_sprint_one">
 </p>
-
+<br>
 
 **Jira backlog - Sprint 2:**
 <p align="center">
-  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/static/images/README/jira_backlog_sprint_two.png?raw=true" alt="backlog_sprint_two">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/readme/README/jira_backlog_sprint_two.png?raw=true" alt="backlog_sprint_two">
 </p>
-
+<br>
 
 **Jira board - during 2nd Sprint:**
 <p align="center">
   <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/readme/README/jira_middle.png?raw=true">
 </p>
-
+<br>
 
 **Jira board - 3rd Sprint:**
 <p align="center">
@@ -521,17 +521,15 @@ I have used the following technologies and support sources:
 - <a href="https://www.atlassian.com/" target="_blank">Jira Software</a> for Agile Scrum
 - <a href="https://app.diagrams.net/" target="_blank">Draw.io</a> for wireframes
 - <a href="https://fonts.google.com/" target="_blank">Google Fonts</a> for the "logo" font
-- <a href="https://www.flaticon.com/" target="_blank">Flaticon</a> by Freepik / for all icons included in the page 
+- <a href="https://fontawesome.com//" target="_blank">FontAwesome for all for all icons included in the page 
 - <a href="https://www.flaticon.com/" target="_blank">Flaticon</a> by Freepik / for all vector images (checkout success/empty shopping bag)
 - <a href="https://coolors.co/" target="_blank">Coolors</a> for a color pallete
 - <a href="https://ezgif.com/" target="_blank">Ezgif</a> for optimization of the images used in the project
 - <a href="https://us21.admin.mailchimp.com/#/">MailChimp</a> for subscribtion automation
-                                                                                            https://fontawesome.com/                by ??
-                                               
-
+                                                                                            
 <p align="right"><a href="#welcome">Bact to top</a></p>
 
-
+                                   
 ## **Acknowledgements**
 
 In this place I would like to thank everyone, who added an knowledge and value to this project:
@@ -556,7 +554,7 @@ In this place I would like to thank everyone, who added an knowledge and value t
 - <a href="https://blog.hubspot.com/marketing/ecommerce-marketing">"Everything you need to know about ecommerce marketing"</a> by HubSpot
 - <a href="https://www.zoho.com/inventory/sku-generator/">Sku generator</a>
 - <a href="https://www.pythonmorsels.com/breaking-long-lines-code-python/">"Breaking long lines of code in Python</a> by Python Morsels
-- <a href="https://www.djangoproject.com/" target="_blank">Django documentation</a> by Django
+- <a href="https://www.djangoproject.com/">Django documentation</a> by Django
 
 Media used:
 - All images of the products are coming directly from the Client: <a href="https://prettycurlygirl.store/">Pretty Curly Girl</a>
