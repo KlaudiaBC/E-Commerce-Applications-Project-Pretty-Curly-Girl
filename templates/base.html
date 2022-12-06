@@ -7,7 +7,7 @@
   <title>Pretty Curly Girl {% block extra_title %} {% endblock %}</title>
 
   <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" aria-label="favicon" href="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/static/media/favicon.png?raw=true">
+  <link rel="icon" type="image/x-icon" href="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/static/media/favicon.png?raw=true">
 
   <!-- Required meta tags -->
   <meta charset="UTF-8">
@@ -88,16 +88,16 @@
       <div class="col-12 col-md-6 text-center mb-5">
         <h3>Follow us </h3>
         <br>
-        <span><a href="https://www.facebook.com/www.prettyskin.nl" target="_blank" rel="noopener">
+        <span><a href="https://www.facebook.com/www.prettyskin.nl" target="_blank" name="facebook" rel="noopener">
             <i class="fa-brands fa-facebook"></i></a>
         </span>
-        <span><a href="https://www.instagram.com/prettycurlygirl_products/" target="_blank" rel="noopener"><i
+        <span><a href="https://www.instagram.com/prettycurlygirl_products/" target="_blank" name="instagram" rel="noopener"><i
               class="fa-brands fa-instagram"></i></a>
         </span>
-        <span><a href="https://www.tiktok.com/@prettycurlygirlproducts" target="_blank" rel="noopener"><i
+        <span><a href="https://www.tiktok.com/@prettycurlygirlproducts" target="_blank" name="tik-tok" rel="noopener"><i
               class="fa-brands fa-tiktok"></i></a>
         </span>
-        <span><a href="https://www.pinterest.com/prettycurlygirl_products/" target="_blank" rel="noopener"><i
+        <span><a href="https://www.pinterest.com/prettycurlygirl_products/" target="_blank" name="pinterest" rel="noopener"><i
               class="fa-brands fa-pinterest"></i></a>
         </span>
         <br>
@@ -125,7 +125,7 @@
     <div class="container legal-box">
       <p>THIS WEBSITE HAS BEEN CREATED FOR EDUCATIONAL PURPOSES ONLY AND DOES NOT CONDUCT ANY COMMERCIAL
         ACTIVITIES PHOTOS AND PRODUCT SPECIFICATIONS WERE COPIED DIRECTLY FROM THE MANUFACTURER AFTER OBTAINING HER
-        PERMISSION. FIND THE OFFICIAL STORE <a href="https://prettycurlygirl.store/" target="_blank"> HERE</a></p>
+        PERMISSION. FIND THE OFFICIAL STORE <a href="https://prettycurlygirl.store/" target="_blank" rel="an official website of the Pretty Curly Girl store"> PRETTY CURLY GIRL OFFICIAL</a></p>
     </div>
     <br>
     <div>
@@ -191,6 +191,16 @@
 
   </script>
   {% endblock %}
+
+  Accept-Encoding: gzip
+Accept-Encoding: compress
+Accept-Encoding: deflate
+Accept-Encoding: br
+Accept-Encoding: identity
+Accept-Encoding: *
+
+// Multiple algorithms, weighted with the quality value syntax:
+Accept-Encoding: deflate, gzip;q=1.0, *;q=0.5
 
 </body>
 
