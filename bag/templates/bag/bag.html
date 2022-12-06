@@ -33,7 +33,9 @@
                     {% if item.product.image %}
                     <img class="img-fluid rounded" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
                     {% else %}
-                    <span class="img-fluid rounded"><i class="fa-solid fa-camera"></i></span>
+                    <img class="card-img-top img-fluid"
+                                src="https://raw.githubusercontent.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/main/static/media/noimage.webp"
+                                alt="{{ product.name }}">
                     {% endif %}
                 </td>
                 <td>
@@ -108,7 +110,7 @@
     <br>
     <div class="d-block">
         <div class="text-center">
-            <img class="img-sm" src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/static/media/empty-cart.png?raw=true" alt="empty basket" aria-label="empty_basket">
+            <img class="img-sm" src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/static/images/empty-cart.png?raw=true" alt="empty basket" aria-label="empty_basket">
             <br>
         </div>
         <div class="text-center">
@@ -129,7 +131,7 @@
 {{ block.super }}
 {% include 'products/includes/quantity_input_script.html' %}
 
-<script type="text/javascript">
+<script>
     // Update quantity on click
     $('.update-link').click(function (e) {
         var form = $(this).prev('.update-form');

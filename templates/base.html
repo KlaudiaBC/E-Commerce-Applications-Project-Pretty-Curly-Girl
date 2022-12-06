@@ -7,14 +7,16 @@
   <title>Pretty Curly Girl {% block extra_title %} {% endblock %}</title>
 
   <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/static/media/favicon.png?raw=true">
+  <link rel="icon" type="image/x-icon"
+    href="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/static/images/favicon.png?raw=true">
 
   <!-- Required meta tags -->
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Hair Products for Curls and Waves">
-  <meta name="keywords" content="curls, wavy hair, frizz, detangle, curly hair method, best hair detanglers, hair conditioner, treat curly hair">
+  <meta name="keywords"
+    content="curls, wavy hair, frizz, detangle, curly hair method, best hair detanglers, hair conditioner, treat curly hair">
 
   <!-- Google verification -->
   <meta name="google-site-verification" content="oxzaU7N3yX91zEClqDf4Zkxsq3Uq1ZHMVXvZpHJaxCo">
@@ -88,17 +90,17 @@
       <div class="col-12 col-md-6 text-center mb-5">
         <h3>Follow us </h3>
         <br>
-        <span><a href="https://www.facebook.com/www.prettyskin.nl" target="_blank" name="facebook" rel="noopener">
+        <span><a href="https://www.facebook.com/www.prettyskin.nl" target="_blank" type="social_media" rel="noopener">
             <i class="fa-brands fa-facebook"></i></a>
         </span>
-        <span><a href="https://www.instagram.com/prettycurlygirl_products/" target="_blank" name="instagram" rel="noopener"><i
-              class="fa-brands fa-instagram"></i></a>
+        <span><a href="https://www.instagram.com/prettycurlygirl_products/" target="_blank" type="social_media"
+            rel="noopener"><i class="fa-brands fa-instagram"></i></a>
         </span>
-        <span><a href="https://www.tiktok.com/@prettycurlygirlproducts" target="_blank" name="tik-tok" rel="noopener"><i
-              class="fa-brands fa-tiktok"></i></a>
+        <span><a href="https://www.tiktok.com/@prettycurlygirlproducts" target="_blank" type="social_media"
+            rel="noopener"><i class="fa-brands fa-tiktok"></i></a>
         </span>
-        <span><a href="https://www.pinterest.com/prettycurlygirl_products/" target="_blank" name="pinterest" rel="noopener"><i
-              class="fa-brands fa-pinterest"></i></a>
+        <span><a href="https://www.pinterest.com/prettycurlygirl_products/" target="_blank" type="social_media"
+            rel="noopener"><i class="fa-brands fa-pinterest"></i></a>
         </span>
         <br>
       </div>
@@ -125,7 +127,8 @@
     <div class="container legal-box">
       <p>THIS WEBSITE HAS BEEN CREATED FOR EDUCATIONAL PURPOSES ONLY AND DOES NOT CONDUCT ANY COMMERCIAL
         ACTIVITIES PHOTOS AND PRODUCT SPECIFICATIONS WERE COPIED DIRECTLY FROM THE MANUFACTURER AFTER OBTAINING HER
-        PERMISSION. FIND THE OFFICIAL STORE <a href="https://prettycurlygirl.store/" target="_blank" rel="an official website of the Pretty Curly Girl store"> PRETTY CURLY GIRL OFFICIAL</a></p>
+        PERMISSION. FIND THE OFFICIAL STORE <a href="https://prettycurlygirl.store/" target="_blank"
+          rel="an official website of the Pretty Curly Girl store"> PRETTY CURLY GIRL OFFICIAL</a></p>
     </div>
     <br>
     <div>
@@ -160,48 +163,10 @@
       sidebarCollapseX.addEventListener("click", function () {
         document.querySelector(".overlay").classList.remove("visible");
       });
-
-      // Facebook - social accounts allauth
-      window.fbAsyncInit = function () {
-        FB.init({
-          appId: '813859003201085',
-          cookie: true,
-          xfbml: true,
-          version: 'v15.0'
-        });
-
-        FB.AppEvents.logPageView();
-      };
-
-      setTimeout(function () {
-        let messages = document.getElementById("msg");
-        let alert = new bootstrap.Alert(messages);
-        alert.close();
-      }, 2500);
-
-
-      (function (d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) { return; }
-        js = d.createElement(s); js.id = id;
-        js.src = "https://connect.facebook.net/en_US/sdk.js";
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
     })();
 
   </script>
   {% endblock %}
 
-  Accept-Encoding: gzip
-Accept-Encoding: compress
-Accept-Encoding: deflate
-Accept-Encoding: br
-Accept-Encoding: identity
-Accept-Encoding: *
-
-// Multiple algorithms, weighted with the quality value syntax:
-Accept-Encoding: deflate, gzip;q=1.0, *;q=0.5
-
 </body>
-
 </html>

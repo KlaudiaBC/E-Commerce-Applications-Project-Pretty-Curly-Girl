@@ -23,4 +23,7 @@ def handler404(request, exception, template_name="404.html"):
 
 
 def handler500(request, *args, **argv):
-    return render(request, '500.html', status=500)
+    response = render_to_response('500.html', {},
+                                  context_instance=RequestContext(request))
+    response.status_code = 500
+    return response
