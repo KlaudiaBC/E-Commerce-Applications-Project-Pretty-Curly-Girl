@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /users/
+Sitemap: https://pretty-curly-girl.herokuapp.com/sitemap.xml
