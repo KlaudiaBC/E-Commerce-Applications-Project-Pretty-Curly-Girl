@@ -33,7 +33,7 @@
                     {% if item.product.image %}
                     <img class="img-fluid rounded" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
                     {% else %}
-                    <img class="img-fluid rounded" src="https://raw.githubusercontent.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/main/static/media/noimage.webp" alt="{{ item.product.name }}">
+                    <span class="img-fluid rounded"><i class="fa-solid fa-camera"></i></span>
                     {% endif %}
                 </td>
                 <td>
@@ -108,7 +108,7 @@
     <br>
     <div class="d-block">
         <div class="text-center">
-            <img class="img-sm" src="/workspace/E-Commerce-Applications-Project-Pretty-Curly-Girl/static/media/empty-cart.png" alt="empty basket" aria-label="empty_basket">
+            <img class="img-sm" src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/static/media/empty-cart.png?raw=true" alt="empty basket" aria-label="empty_basket">
             <br>
         </div>
         <div class="text-center">
