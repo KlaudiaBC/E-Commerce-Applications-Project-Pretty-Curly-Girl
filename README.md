@@ -4,9 +4,17 @@
 <p id="welcome"></p>
 
 ## This is my Portfolio 5 Project regarding the Code Institute's Diploma in Software Development (E-commerce Applications).
-It is an e-commerce application - built with Django / Python / Bootstrap and deployed on Heroku.
 
-See the live project <a href="https://pretty-curly-girl.herokuapp.com/">here</a>.
+Fully responsive e-commerce application built with: Django Framework, Python3, JavaScript and jQuery (AJAX).
+Bootstrap4 as a front-end framework.
+Deployed on Heroku.
+Stripe payments - including webhooks. Saving bag on the session.
+Google social accounts authorization with OAuth/django-allauth.
+User registration with required email confirmation.
+Subscription form with MailChimp.
+
+
+See the deployed project <a href="https://pretty-curly-girl.herokuapp.com/">here</a>.
 
 <p align="center">
   <img src="" alt="">
@@ -29,10 +37,8 @@ See the live project <a href="https://pretty-curly-girl.herokuapp.com/">here</a>
     * [**Base**](#base-common-for-each-page-of-application)
     * [**Content**](#content-of-the-pages)
     * [**Color scheme**](#color-scheme)
-    * [**Typography**](#typography)
 * [**Implementation**](#implementation)
     * [**Branches in GIT**](#branches-in-git)
-    * [**Performance**](#performance)
     * [**Defensive design**](#defensive-design)
 * [**Business model**](#business-model)
   * [**Marketing strategy**](#marketing-strategy)
@@ -66,6 +72,8 @@ In addition, you can also find a basic e-commerce marketing strategy which inclu
 ### **Product roadmap**
 Following the Agile principles, I have created the *User Stories*, which helped me to map out the work required to develop this application. In order to easily manage the workflow, I have used the <a href="https://jira.atlassian.com/" target="_blank">Jira software</a>.
 
+Please, see the board of my project in Jira, including User Stories, automation with GIT branches and commits, pointed out errors and fixes, comments, images and many more: <a href="https://emporiumofthoughts.atlassian.net/jira/software/projects/PCG/boards/2">click here</a>
+
 Each User Story has assigned a *Story Points*.
 I have used the Fibonacci scale (1,2,3,5,8) to represent complexity and estimated amount of effort/time it takes to complete the task (story).
 The higher the number, the more involvement the task requires.
@@ -97,15 +105,26 @@ See the Sprints as planned in the begging of implementation:
 
 **Jira backlog - Sprint 1:**
 <p align="center">
-  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/static/images/README/jira_backlog_sprint_one.png?raw=true" alt="backlog_sprint_one">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/readme/README/jira_backlog_sprint_one.png?raw=true" alt="backlog_sprint_one">
 </p>
-
+<br>
 
 **Jira backlog - Sprint 2:**
 <p align="center">
-  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/static/images/README/jira_backlog_sprint_two.png?raw=true" alt="backlog_sprint_two">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/readme/README/jira_backlog_sprint_two.png?raw=true" alt="backlog_sprint_two">
 </p>
+<br>
 
+**Jira board - during 2nd Sprint:**
+<p align="center">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/readme/README/jira_middle.png?raw=true">
+</p>
+<br>
+
+**Jira board - 3rd Sprint:**
+<p align="center">
+<img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/readme/README/sprint3.png?raw=true"></p>
+<br>
 
 ### **Daily stand-ups**
 This point of agile development would be necessary, if there was more than one developer working on the project. The short daily stand-up meeting helps the team accomplish their tasks by brief update on the work done and work which is planned for that day. I have been reviewing the workflow on the beginning of each day of development to keep track of the achieved tasks in comparison to the estimated time so that I could later implement the changes into a Second Sprint.
@@ -138,29 +157,26 @@ Please, see the wireframes - created via <a href="https://app.diagrams.net/" tar
 
 #### **Database Schema**
 I have implemented **PostgreSQL (Postgres)** - the open-source database object-relational database system, which is an extension of the SQL language.
-<p align="center">
-  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/static/images/README/heroku_data_postgres.png?raw=true" alt="postgres">
-</p>
+Because Heroku is not longer offering free usage of Postgres, I had migrated my database into a new free service called **ElephantSQL** 
 
 Entity relationship diagram for all the models included in the application:
 <p align="center">
   <img src="#" alt="entity relationship diagram">
 </p>
 
-
 ### **Surface**
 
 #### **Base (common for each page of application):**
 
 **Logo and navbar:**
-Sticky top, includes logo (left side) and the navbar on the right side (burder-menu on the mobile devices)
+Sticky top, includes logo (left side) and the button to access the basket/profile page on the right side. On the mobile: burger menu from the left - logo - shopping bag.
 Menu includes following:
 
 <p align="center">
   <img src="#" alt="landing page desktop">
 </p>
 
-**Footer** - on the bottom of the page, contains information about the author, links to social media accounts (buttons/icons) and link to the Regulations.
+**Footer** - on the bottom of the page, contains information about the author, links to social media accounts (buttons/icons) and disclaimer with information about an actual owner of the brand prezented in this application.
 
 
 #### **Content of the pages:**
@@ -189,19 +205,18 @@ MyPage - render the same view as the home page, but display filtered posts- only
 Detalic view page - render the: title, author, date and body of the particular post. Below there is a *"like"* button - User can like and unlike the post by clicking the *"like"* icon. Third part of the container is a comment section, where all added and approved by Admin comments are displayed in ascending order. On top of this section is located an *"Add comment"* button which render the Add Comment Form.
 
 <p align="center">
-  <img src="#" alt="view_page">
+  <img src="" alt="view_page">
 </p>
 
 
 #### **Color scheme**
 
+Following the color scheme of the current store of my Client - I have stayed with the shades of grey: a lot of white space and high-contrast elements in black.
+I added a soft touch of color "Teal Blue", which brought little dynamics into a page and is working well with the css animations I have implemented.
 
 <p align="center">
-  <img src="#" alt="colors">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/readme/README/my-col.png?raw=true" alt="colors">
 </p>
-
-#### **Typography**
-
 
 <p align="right"><a href="#welcome">Bact to top</a></p>
 
@@ -213,11 +228,13 @@ After initial deployment on Heroku (see: Deployment) I have followed the suggest
 
 Using the Jira automation tools, I have connected this repository on GitHub with my project board. The names of the branches follow the Jira story numbers. Each commit message contains the story number of the task that was done and is visible in the Jira backlog. I have also added comments and images to the particular tickets with information that can make the code more readable and easily accessible during the future implementations.
 
+<p align="center">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/readme/README/git.png?raw=true" alt="git">
+</p>
 
-### **Performance**
-• In some cases I have been using the code provided by external sources (see: Acknowledgements). Some of them contained jQuery which I have changed to vanilla Javascript.
-
-• I have stored images of all icons used in the project in my internal static files and manually customized them in order to avoid using Font Awesome because of its extensive size.
+<p align="center">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/readme/README/jira_autom.png?raw=true" alt="jira_automation">
+</p>
 
 
 ### **Defensive design**
@@ -225,25 +242,47 @@ Using the Jira automation tools, I have connected this repository on GitHub with
 
 If 404 or 500 error occurs within the site, User will see the customized page that contains the information about the error and button to go back to the Home page.
 
-
-### **Features**
-1. Create a basic Django project and first application
-2. Initial deployment
-3. Create Superuser
-4. User authentication
-5. Create product model
-6. Add templates
-6. CRUD for Users
-7. Reviews
-8. Categories
-9. Messages
-10. Error pages
-11. Email API
-
 <p align="center">
-  <img src="#" alt="jira_sprint">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/readme/README/error500.png?raw=true" alt="error page">
 </p>
 
+
+### **Features**
+
+**Sripe payment**
+During the implementation of this project I have been closely following the last tutorial provided by Code Institute: "Boutique Ado".
+All code connected with **Stripe** payments as well as cofiguration of webhooks is based on the code provided by CI.
+I have implemented a few changes required by the difference between the Order models, however I can not take any acreditation for this part of my application.
+
+Thanks to seting up the **webhooks**, every intend of the payment is registered by Stripe and accessible in the Stripe administration panel.
+
+<p align="center">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/readme/README/payment_intend.png?raw=true" alt="payment intend">
+</p>
+
+<p align="center">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/readme/README/stripe_success.png?raw=true" alt="payment-success"> <p>
+
+                                                                                                                                                     
+**Google Auth**
+I have addeed to my application the social account authorisation - firstly it was possible to login via Fabebook and Google. Unfortunatelly during the process, I have lost the access to the facebook authorisation tokens and did not have time to configure the login again - this is why I left only the Google authorisation available and surely will be expanding the social accounts more as it is very popular way to encourage Users to log into our page and allows owners of the page to collect (some) data, which may be useful in makreting/economy planning.
+    
+<p align="center">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/readme/README/google_auth_ok.png?raw=true" alt="google auth"></p>
+
+
+**Subscription via MailChimp**
+This in another interesting feature which is a good practice in terms of marketing planning, trying to gain information about your potential customer as well as get into a direct contact with customer, which allows to build the trust and create positive B2C relationship.
+
+
+**Star Rating**
+I have implemented a star rating django library as the rating system is well known to be a strong selling point - however the code that I've fetch from the library was very chaotic and unclear - this is why finally I have decided to resign from using the version that may cause further issues and errors. I decided it will be more efficient to wait with implementation of this feature and provide good quality code to handle it.
+
+<p align="center">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/readme/README/star_ratings.png?raw=true" alt="star rating></p>
+
+                                                                                                                 
+                                                                                                                                                
 <p align="right"><a href="#welcome">Bact to top</a></p>
 
 ## **Business model**
@@ -255,7 +294,15 @@ If 404 or 500 error occurs within the site, User will see the customized page th
 2. While the product is a deliverable, the database should include: product details, stock numbers, shipping or delivery costs, postal address of the customer, who purchased the order, ratings/reviews of the product as well as its image. The features should include: search tools, notice when the product is out of stock and notification for the customer about the order.
 
 
-### **Marketing strategy**
+### **Marketing strategy**           
+
+                                   
+ <p align="center">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/readme/README/persona.png?raw=true"></p>                                                         
+<p align="center">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/readme/README/core_points.png?raw=true" alt="core points"></p>
+                          
+                                   
 #### **Content marketing:**
 The marketing plan is aimed at:
 <ul>
@@ -308,6 +355,24 @@ Collecting data for the newsletter via *"Subscribe for newsletter"* button on th
 
 
 #### **Search Engine Optimization**
+                                                                                                                          
+SEO including descriptive meta tags, keywords included in the "alt" attribute of images. Links to high-ranked websites that are connected with the content of the page. Robots.txt and site maps included.
+                                                                                                                          
+ <p align="center">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/readme/README/words1.jpg?raw=true"></p>
+  
+  
+  <p align="center">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/readme/README/words2.jpg?raw=true"></p>
+  
+  
+  <p align="center">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/readme/README/words3.jpg?raw=true"></p>
+  
+  
+  <p align="center">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/readme/README/words4.jpg?raw=true"></p>
+                                                                                                                                                                                                                                                                          
 In order to find the most effective **keywords** for my SEO, I have followed those steps:
 1. Write down all the keywords that match the website and its purpose.
 2. Take away the most common keywords (too popular keywords are too competitive)
@@ -318,6 +383,10 @@ In order to find the most effective **keywords** for my SEO, I have followed tho
     - check "Related searches" section
 4. I have used the Wordtracker in order to see the quantity of particular words exciting on the web and compare them to other keywords I collected, trying to choose the one that is less competitive.
 5. I have used the Google Trends platform to search for related keywords and check geographical keyword variations.
+                              
+                              
+     <p align="center">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/readme/README/keywords_table.png?raw=true"></p>                                             
 
 #### **Control and updating procedures**
   - BUZZSUMO - monitors the internet in terms of making a given article available to users, has internet monitoring functions in terms of content and competition (keywords)
@@ -332,7 +401,7 @@ he clicks "I like it" etc)
 <p align="right"><a href="#welcome">Bact to top</a></p>
 
 ## **Testing**
-The testing documentation is in separate file: <a href="https://github.com/KlaudiaBC/FST-Project-Empire-of-Thoughts/blob/main/TESTING.md">TESTING.md</a> 
+The testing documentation is in separate file: <a href="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/TESTING.md">TESTING.md</a> 
 
 <p align="right"><a href="#welcome">Bact to top</a></p>
 
@@ -390,7 +459,7 @@ In my case, that was the first commit since creating the Django project. In othe
 - Push the commit into: heroku main
 
 <p align="center">
-  <img src="https://github.com/KlaudiaBC/FST-Project-Empire-of-Thoughts/blob/main/static/images/readme/deploy_cli.png?raw=true" alt="cli">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/readme/README/deploy_cli.png?raw=true" alt="cli">
 </p>
 
 8. At this stage your app should be correctly deployed on Herokuapp.
@@ -407,7 +476,7 @@ Before the application will be handeled to the client in the realise 1.0 stage, 
 By now your app should be ready and running.
 Unless your Django project will not read the staticfiles with the Debug set to *False*.
 See how to handle that in the TESTING.md file / Errors and bugs.
-<a href="https://github.com/KlaudiaBC/FST-Project-Empire-of-Thoughts/blob/main/TESTING.md#errors-and-bugs" target="_blank">You can find it here.</a>
+<a href="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/TESTING.md" target="_blank">You can find it here.</a>
 
 
 ### **Fork this Project**
@@ -452,24 +521,25 @@ I have used the following technologies and support sources:
 - <a href="https://www.atlassian.com/" target="_blank">Jira Software</a> for Agile Scrum
 - <a href="https://app.diagrams.net/" target="_blank">Draw.io</a> for wireframes
 - <a href="https://fonts.google.com/" target="_blank">Google Fonts</a> for the "logo" font
-- <a href="https://www.flaticon.com/" target="_blank">Flaticon</a> by Freepik / for all icons included
+- <a href="https://fontawesome.com//" target="_blank">FontAwesome for all for all icons included in the page 
+- <a href="https://www.flaticon.com/" target="_blank">Flaticon</a> by Freepik / for all vector images (checkout success/empty shopping bag)
 - <a href="https://coolors.co/" target="_blank">Coolors</a> for a color pallete
-- <a href="https://pdfhost.io/" target="_blank">PDF Host</a> for hosting the document with User Stories
-
+- <a href="https://ezgif.com/" target="_blank">Ezgif</a> for optimization of the images used in the project
+- <a href="https://us21.admin.mailchimp.com/#/">MailChimp</a> for subscribtion automation
+                                                                                            
 <p align="right"><a href="#welcome">Bact to top</a></p>
 
-
+                                   
 ## **Acknowledgements**
 
 In this place I would like to thank everyone, who added an knowledge and value to this project:
-- <a href="https://codeinstitute.net/" target="_blank">Code Institute</a> course, materials and walkthroughs - A great part of this project is done in accordance to the last walktrough: "Boutique Ado"
-- lead and support of my Code Institute Mentor - Guido Cecilio
+- <a href="https://codeinstitute.net/" target="_blank">Code Institute</a> course, materials and walkthroughs - A great part of this project is done in accordance to the last walktrough: "Boutique Ado" - Stripe payments, checkout page and functionality / and probably many many more as the walktrough's during all my journey with CI was the most suffitient way to learn and understand coding
+- lead and support of my Code Institute Mentor - Guido Cecilio - also great patience!
+- Hanan el Fizazi - for allowing me to build my own e-store using her brand, product images and story --> all product images included in this project are copied directly from the Pretty Curly Store website. Social media links also provide direction to PCG Original Pages as it allowed me to create very realistic demo of e-commerce application
 - Code Institute Slack Community
 - <a href="https://stackoverflow.com/" target="_blank">Stack Overflow</a>
 - <a href="https://www.w3schools.com/" target="_blank">W3schools</a>
-- 
-- <a href="#">Some title</a> by ??
-- 
+- <a href="https://www.pexels.com/">Pexels</a> The images that are included in the "content/blog" section: the authors are as follow, from the left side: 1) cottonbro studio,2) PNW Production,3) nappy
 - <a href="https://ordinarycoders.com/blog/article/django-user-register-login-logout" target="_blank">"A Guide to User Registration, Login, and Logout in Django"</a> by < ordinary > coders
 - <a href="https://dev.to/lawrence_eagles/causes-of-heroku-h10-app-crashed-error-and-how-to-solve-them-3jnl" target="_blank">"Causes of Heroku H10-App Crashed Error And How To Solve Them"</a> by Dev.to
 - <a href="https://realpython.com/django-hosting-on-heroku/" target="_blank">"Hosting a Django Project on Heroku"</a> by Real Python
@@ -484,10 +554,7 @@ In this place I would like to thank everyone, who added an knowledge and value t
 - <a href="https://blog.hubspot.com/marketing/ecommerce-marketing">"Everything you need to know about ecommerce marketing"</a> by HubSpot
 - <a href="https://www.zoho.com/inventory/sku-generator/">Sku generator</a>
 - <a href="https://www.pythonmorsels.com/breaking-long-lines-code-python/">"Breaking long lines of code in Python</a> by Python Morsels
-- <a href="#">Some title</a> by ??
-- <a href="#">Some title</a> by ??
-- <a href="#">Some title</a> by ??
-- <a href="https://www.djangoproject.com/" target="_blank">Django documentation</a> by Django
+- <a href="https://www.djangoproject.com/">Django documentation</a> by Django
 
 Media used:
 - All images of the products are coming directly from the Client: <a href="https://prettycurlygirl.store/">Pretty Curly Girl</a>
