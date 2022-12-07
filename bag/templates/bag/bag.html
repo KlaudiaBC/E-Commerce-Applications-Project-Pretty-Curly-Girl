@@ -15,7 +15,7 @@
     </div>
 
     {% if bag_items %}
-    <div class="table-responsive rounded mx-4">
+    <div class="table-responsive rounded">
         <table class="table table-sm table-borderless">
             <thead class="text-black">
                 <tr>
@@ -75,8 +75,7 @@
                 </td>
                 <td>
                     <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}"
-                        aria-label="remove_item" data-product_size="{{ item.size }}"><i
-                            class="fa-solid fa-trash-can"></i></a>
+                        aria-label="remove_item"><i class="fa-solid fa-trash-can fa-lg"></i></a>
                 </td>
                 {% endfor %}
             </tr>
@@ -145,9 +144,8 @@
     $('.remove-item').click(function (e) {
         var csrfToken = "{{ csrf_token }}";
         var itemId = $(this).attr('id').split('remove_')[1];
-        var size = $(this).data('product_size');
         var url = `/bag/remove/${itemId}/`;
-        var data = { 'csrfmiddlewaretoken': csrfToken, 'product_size': size };
+        var data = { 'csrfmiddlewaretoken': csrfToken };
 
         $.post(url, data)
             .done(function () {

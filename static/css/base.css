@@ -409,6 +409,11 @@ ul.social-icons li {
   width: 3rem !important;
 }
 
+table td {
+  vertical-align: auto;
+}
+
+
 .overlay {
   background: rgba(0, 0, 0, 0.7);
   height: 100vh;
@@ -422,10 +427,6 @@ ul.social-icons li {
   opacity: 0;
 }
 
-.overlay.visible {
-  opacity: 1;
-  z-index: 5000;
-}
 
 /* Style the button and place it in the middle of the container/image */
 .btn-shop {
@@ -451,6 +452,11 @@ ul.social-icons li {
   background-color: #0a0908;
   color: #fff;
   border: none;
+}
+
+table {
+  width: 90% !important;
+  margin: auto;
 }
 
 /* hero img */
@@ -637,6 +643,12 @@ ul.social-icons li {
   .sub-menu.navbar-expand-md .navbar-nav .nav-link {
     padding: 1rem 1.5rem;
   }
+
+  table {
+    width: 75% !important;
+    margin: auto;
+  }
+
 }
 
 /* for large laptops */

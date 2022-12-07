@@ -10,21 +10,62 @@
         </div>
     </div>
     <hr class="w-50 mb-1">
-    <table class="table-bordered table">
-        <thead>
-            <tr>
-                <th>Title</th>
-                <th>Image</th>
-                <th>Price</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for wl in wlist %}
-            <tr>
-                <td><a href="{% url 'product_detail' wl.product.id %}">{{wl.product.name}}</a></td>
-            {% endfor %}
-        </tbody>
-    </table>
-</div> 
+    <br /><br />
 
+    {% if wlist %}
+    <table class="table table-sm">
+        <thead class="text-black">
+            <thead class="text-black">
+                <tr>
+                    <th scope="col"></th> <!-- img -->
+                    <th scope="col">Product Info</th>
+                    <th scope="col">Price</th>
+                    <th scope="col"></th> <!-- delete -->
+                </tr>
+            </thead>
+
+            <thread>
+                {% for wl in wlist %}
+                <tr>
+                    <td class="w-25">
+                        {% if wl.product.image %}
+                        <img class="img-fluid img-tab rounded" src="{{ wl.product.image.url }}"
+                            alt="{{ wl.product.name }}">
+                        {% else %}
+                        <img class="card-img-top img-tab img-fluid" src="/media/noimage.webp"
+                            alt="{{ wl.product.name }}">
+                        {% endif %}
+                    </td>
+                    <td>
+                        <a href="{% url 'product_detail' wl.product.id %}"><strong>{{ wl.product.name }}</strong></a>
+                    </td>
+                    <td>
+                        {{wl.product.price}}
+                    </td>
+                </tr>
+                {% endfor %}
+        </thead>
+    </table>
+</div>
+
+{% else %}
+
+<!-- if user don't have any item in the wishlist -->
+<div class="flex justify-content-center" aria-labelledby="#profile-tab">
+    <div class="container wrapper-form profile-tab">
+        <p class="text-special lead">Upss! I looks quite empty here, doesn't it?</p>
+        <p>Check out our latest offers and feel free to save them for later. You don't have to make a decision right
+            away. This is what I am for, to remember all the <b>cool products</b> you have seen here!</p>
+        <span class="text-muted"> --- Your Wishlist <i class="fa-regular fa-face-grin-hearts"></i></span>
+        <br>
+        <div class="text-center">
+            <a href="{% url 'products' %}" class="btn btn-outline-info rounded-3 ml-2" aria-label="products">
+                <span class="font-weight-bold"><i class="fa-solid fa-arrow-left"></i>Back to store</span>
+            </a>
+        </div>
+    </div>
+</div>
+<br /><br />
+
+{% endif %}
 {% endblock %}
