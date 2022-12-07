@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container-fluid container-tall">
+    <hr class="w-50 mb-1">
+    <div class="row">
+        <div class="col text-center mt-3">
+            <h2 class="logo-font">Wishlist</h2>
+        </div>
+    </div>
+    <hr class="w-50 mb-1">
+    <table class="table-bordered table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Image</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for wl in wlist %}
+            <tr>
+                <td><a href="{% url 'product_detail' wl.product.id %}">{{wl.product.name}}</a></td>
+            {% endfor %}
+        </tbody>
+    </table>
+</div> 
+
+{% endblock %}

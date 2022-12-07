@@ -1,13 +1,13 @@
-from django.shortcuts import render, get_object_or_404
-
+from django.shortcuts import render, get_object_or_404, redirect
+from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
+from django.views.decorators.csrf import csrf_exempt
 from django.contrib import messages
 
 from .models import UserProfile
 from .forms import UserProfileForm
-from checkout.models import Order
-
 from products.models import Product
+from .models import Wishlist
 
 
 @login_required
@@ -37,3 +37,29 @@ def users(request):
     form = UserProfileForm(instance=user)
 
     return render(request, template, context)
+
+
+# Add product to Wishlist
+@csrf_exempt
+def add_wishlist(request):
+
+    if request.is_ajax() and request.POST:
+        if request.user.is_authenticated:
+            data = Wishlist.objects.filter(
+                user_id=request.user.pk, product_id=int(
+                    request.POST['attr_id']))
+            if data.exists():
+                messages.error(
+                    request, 'This item can not be added to your wishlist.')
+            else:
+                Wishlist.objects.create(
+                    user_id=request.user.pk, product_id=int(
+                        request.POST['attr_id']))
+
+    return HttpResponse(status=200)
+
+
+# My Wishlist
+def wishlist(request):
+    wlist = Wishlist.objects.filter(user=request.user).order_by('-id')
+    return render(request, 'users/wishlist-my.html', {'wlist': wlist})

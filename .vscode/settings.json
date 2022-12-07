@@ -35,5 +35,8 @@
    },
    "[markdown]": {
       "editor.defaultFormatter": "esbenp.prettier-vscode"
+   },
+   "[python]": {
+      "editor.defaultFormatter": "ms-python.python"
    }
 }

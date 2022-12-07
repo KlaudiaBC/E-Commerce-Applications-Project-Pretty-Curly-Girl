@@ -201,6 +201,7 @@ footer .fa-brands {
 
 .stars {
   color: #fdcc0d;
+  font-size: large;
   text-align: center;
 }
 
@@ -406,6 +407,24 @@ ul.social-icons li {
 .qty_input {
   flex: 0;
   width: 3rem !important;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.7);
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  z-index: -1;
+  width: 100%;
+  opacity: 0;
+}
+
+.overlay.visible {
+  opacity: 1;
+  z-index: 5000;
 }
 
 /* Style the button and place it in the middle of the container/image */

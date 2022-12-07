@@ -40,9 +40,7 @@
                         </a>
                         {% else %}
                         <a href="{% url 'product_detail' product.id %}">
-                            <img class="card-img-top img-fluid"
-                                src="{{ MEDIA_URL }}noimage.png"
-                                alt="{{ product.name }}">
+                            <img class="card-img-top img-fluid" src="/media/noimage.webp" alt="{{ product.name }}">
                         </a>
                         {% endif %}
                         <div class="card-body p-3">
@@ -54,8 +52,10 @@
                                 <div class="col-6">
                                     <p class="lead mb-0 text-left font-weight-bold">€{{ product.price }}</p>
                                 </div>
-                                <div class="col-6 d-flex justify-content-end">
-                                </div>
+                                <span class="col-6 d-flex justify-content-end"><button
+                                        class="btn btn-danger addToWish"  id="id" attr_id="{{product.pk}}"><i
+                                            class="fa-solid fa-heart fa-lg mr-1"></i></button>
+                                </span>
                             </div>
                         </div>
                     </div>
@@ -88,6 +88,7 @@
 {{ block.super }}
 
 <script>
+    // sort products //
     $('#sort-selector').change(function () {
         var selector = $(this);
         var currentUrl = new URL(window.location);
@@ -108,6 +109,28 @@
             window.location.replace(currentUrl);
         }
     })
+
+
+// Add wishlist
+$(document).ready(function () {
+    $(".addToWish").click(function() {
+        var attr_id = $(this).attr('attr_id')
+        var that = $(this);
+
+        $.ajax({
+            url: "/users/add_wishlist",
+            type: 'POST',
+            data: {
+                'attr_id': attr_id,
+            },
+            success: function(res) {
+                messages.success(request, 'Product added to your wishlist!')
+                that.addClass('disabled').removeClass('addToWish');
+            }
+        });
+    }); // End ajax
+}); // End document.ready
+
 </script>
 
 {% endblock %}
