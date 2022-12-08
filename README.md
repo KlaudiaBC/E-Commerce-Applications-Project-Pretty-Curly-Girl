@@ -105,25 +105,25 @@ See the Sprints as planned in the begging of implementation:
 
 **Jira backlog - Sprint 1:**
 <p align="center">
-  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/readme/README/jira_backlog_sprint_one.png?raw=true" alt="backlog_sprint_one">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/jira_backlog_sprint_one.png?raw=true" alt="backlog_sprint_one">
 </p>
 <br>
 
 **Jira backlog - Sprint 2:**
 <p align="center">
-  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/readme/README/jira_backlog_sprint_two.png?raw=true" alt="backlog_sprint_two">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/jira_backlog_sprint_two.png?raw=true" alt="backlog_sprint_two">
 </p>
 <br>
 
 **Jira board - during 2nd Sprint:**
 <p align="center">
-  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/readme/README/jira_middle.png?raw=true">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/jira_middle.png?raw=true">
 </p>
 <br>
 
 **Jira board - 3rd Sprint:**
 <p align="center">
-<img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/readme/README/sprint3.png?raw=true"></p>
+<img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/sprint3.png?raw=true"></p>
 <br>
 
 ### **Daily stand-ups**
@@ -215,7 +215,7 @@ Following the color scheme of the current store of my Client - I have stayed wit
 I added a soft touch of color "Teal Blue", which brought little dynamics into a page and is working well with the css animations I have implemented.
 
 <p align="center">
-  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/readme/README/my-col.png?raw=true" alt="colors">
+  <img src="">
 </p>
 
 <p align="right"><a href="#welcome">Bact to top</a></p>
@@ -229,11 +229,11 @@ After initial deployment on Heroku (see: Deployment) I have followed the suggest
 Using the Jira automation tools, I have connected this repository on GitHub with my project board. The names of the branches follow the Jira story numbers. Each commit message contains the story number of the task that was done and is visible in the Jira backlog. I have also added comments and images to the particular tickets with information that can make the code more readable and easily accessible during the future implementations.
 
 <p align="center">
-  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/readme/README/git.png?raw=true" alt="git">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/git.png?raw=true" alt="git">
 </p>
 
 <p align="center">
-  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/readme/README/jira_autom.png?raw=true" alt="jira_automation">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/jira_autom.png?raw=true" alt="jira_automation">
 </p>
 
 
@@ -243,7 +243,7 @@ Using the Jira automation tools, I have connected this repository on GitHub with
 If 404 or 500 error occurs within the site, User will see the customized page that contains the information about the error and button to go back to the Home page.
 
 <p align="center">
-  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/readme/README/error500.png?raw=true" alt="error page">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/error500.png?raw=true" alt="error page">
 </p>
 
 
@@ -254,18 +254,18 @@ If 404 or 500 error occurs within the site, User will see the customized page th
 Thanks to setting up the webhooks, every intent of the payment is registered by Stripe and accessible in the Stripe administration panel.
 
 <p align="center">
-  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/readme/README/payment_intend.png?raw=true" alt="payment intend">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/payment_intend.png?raw=true" alt="payment intend">
 </p>
 
 <p align="center">
-  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/readme/README/stripe_success.png?raw=true" alt="payment-success"> <p>
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/stripe_success.png?raw=true" alt="payment-success"> <p>
 
                                                                                                                                                      
 **Google Auth**
 I have added to my application the social account authorisation - firstly it was possible to login via Facebook and Google. Unfortunately during the process, I have lost the access to the facebook authorisation tokens and did not have time to configure the login again - this is why I left only the Google authorisation available and surely will be expanding the social accounts more as it is very popular way to encourage Users to log into our page and allows owners of the page to collect (some) data, which may be useful in marketing/economy planning.
     
 <p align="center">
-  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/readme/README/google_auth_ok.png?raw=true" alt="google auth"></p>
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/google_auth_ok.png?raw=true" alt="google auth"></p>
 
 
 **Subscription via MailChimp**
@@ -276,7 +276,7 @@ This is another interesting feature which is a good practice in terms of marketi
 I have implemented a star rating django library as the rating system is well known to be a strong selling point - however the code that I've fetch from the library was very chaotic and unclear - this is why finally I have decided to resign from using the version that may cause further issues and errors. I decided it will be more efficient to wait with implementation of this feature and provide good quality code to handle it.
 
 <p align="center">
-  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/readme/README/star_ratings.png?raw=true" alt="star rating></p>
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/star_ratings.png?raw=true" alt="star rating></p>
 
                                                                                                                  
                                                                                                                                                 
@@ -295,9 +295,9 @@ I have implemented a star rating django library as the rating system is well kno
 
                                    
  <p align="center">
-  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/readme/README/persona.png?raw=true"></p>                                                         
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/persona.png?raw=true"></p>                                                         
 <p align="center">
-  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/readme/README/core_points.png?raw=true" alt="core points"></p>
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/core_points.png?raw=true" alt="core points"></p>
                           
                                    
 #### **Content marketing:**
@@ -356,19 +356,19 @@ Collecting data for the newsletter via *"Subscribe for newsletter"* button on th
 SEO including descriptive meta tags, keywords included in the "alt" attribute of images. Links to high-ranked websites that are connected with the content of the page. Robots.txt and site maps included.
                                                                                                                           
  <p align="center">
-  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/readme/README/words1.jpg?raw=true"></p>
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/words1.jpg?raw=true"></p>
   
   
   <p align="center">
-  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/readme/README/words2.jpg?raw=true"></p>
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/words2.jpg?raw=true"></p>
   
   
   <p align="center">
-  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/readme/README/words3.jpg?raw=true"></p>
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/words3.jpg?raw=true"></p>
   
   
   <p align="center">
-  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/readme/README/words4.jpg?raw=true"></p>
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/words4.jpg?raw=true"></p>
                                                                                                                                                                                                                                                                           
 In order to find the most effective **keywords** for my SEO, I have followed those steps:
 1. Write down all the keywords that match the website and its purpose.
@@ -383,7 +383,7 @@ In order to find the most effective **keywords** for my SEO, I have followed tho
                               
                               
      <p align="center">
-  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/readme/README/keywords_table.png?raw=true"></p>                                             
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/keywords_table.png?raw=true"></p>                                             
 
 #### **Control and updating procedures**
   - BUZZSUMO - monitors the internet in terms of making a given article available to users, has internet monitoring functions in terms of content and competition (keywords)
@@ -456,7 +456,7 @@ In my case, that was the first commit since creating the Django project. In othe
 - Push the commit into: heroku main
 
 <p align="center">
-  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/readme/README/deploy_cli.png?raw=true" alt="cli">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/deploy_cli.png?raw=true" alt="cli">
 </p>
 
 8. At this stage your app should be correctly deployed on Herokuapp.
@@ -468,7 +468,7 @@ In order to do so - in the *"Deploy"* tab scroll down and click the button *"Con
 10. Final deployment
 Before the application will be handeled to the client in the realise 1.0 stage, there are two very important steps to be taken:
 - detele DISABLE_COLLECTSTATIC from your confiv VARS in Heroku
-- in the setting.py file, set the **DEBUG=False** in order to protect sensitive information - IMPORTANT!
+- in the setting.py file, set the **DEBUG=False** in order to protect sensitive information - *IMPORTANT!*
 
 By now your app should be ready and running.
 Unless your Django project will not read the staticfiles with the Debug set to *False*.
