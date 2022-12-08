@@ -53,6 +53,7 @@
                                     <p class="lead mb-0 text-left font-weight-bold">€{{ product.price }}</p>
                                 </div>
                                 <div class="col-6 d-flex justify-content-end" id="wish-btn">
+                                    {% csrf_token %}
                                     <span class="addToWish mb-2 mr-2" attr_id="{{product.pk}}" data-toggle="tooltip"
                                         data-placement="left" title="Add to wishlist">
                                         <i class="fa-regular fa-heart"></i></span>
@@ -125,6 +126,7 @@
 
             $.ajax({
                 url: "/users/add_wishlist",
+                
                 type: 'POST',
                 data: {
                     'attr_id': attr_id,
