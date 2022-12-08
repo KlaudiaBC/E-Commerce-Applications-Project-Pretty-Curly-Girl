@@ -533,6 +533,10 @@ table {
   overflow: hidden;
 }
 
+.img-wrap {
+  max-height: 500px;
+}
+
 .btn-block {
   font-size: 1.5rem;
 }

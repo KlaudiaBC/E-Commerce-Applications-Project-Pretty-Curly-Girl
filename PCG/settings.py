@@ -226,9 +226,9 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 STATICFILES_STORAGE = \
     "whitenoise.storage.CompressedManifestStaticFilesStorage"
 X_FRAME_OPTIONS = 'SAMEORIGIN'
-MEDIA_URL = '/media/'
+MEDIA_URL = '/static/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
+STATICFILES_FINDERS = ('django.contrib.staticfiles.finders.FileSystemFinder',)
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
