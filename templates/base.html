@@ -161,9 +161,16 @@
       sidebarCollapseX.addEventListener("click", function () {
         document.querySelector(".overlay").classList.remove("visible");
       });
+
+      // Fade out messages after 3 sec
+  $(function () {
+      setTimeout(function () { $(".alert").fadeOut(1500); }, 3000)
+    })
+
+
     })();
   </script>
-  
+
   {% block postloadjs %}
   {% endblock %}
 

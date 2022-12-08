@@ -13,6 +13,7 @@
 
 <div class="wrapper-form text-center">
 {% url 'account_login' as login_url %}
+{% csrf_token %}
 
 <p>{% blocktrans %}You decided to cancel logging in to our site using one of your existing accounts. If this was a mistake, please proceed to <a href="{{login_url}}">sign in</a>.{% endblocktrans %}</p>
 </div>
