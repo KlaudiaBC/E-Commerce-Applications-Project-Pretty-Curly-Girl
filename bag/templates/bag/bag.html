@@ -15,7 +15,7 @@
     </div>
 
     {% if bag_items %}
-    <div class="table-responsive rounded">
+    <div class="table-responsive rounded m-auto">
         <table class="table table-sm table-borderless">
             <thead class="text-black">
                 <tr>
@@ -29,7 +29,7 @@
 
             {% for item in bag_items %}
             <tr>
-                <td class="w-25">
+                <td class="w-25 tab-img">
                     {% if item.product.image %}
                     <img class="img-fluid rounded" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
                     {% else %}
@@ -73,7 +73,7 @@
                 <td class="py-3">
                     <p class="my-0">${{ item.product.price | calc_subtotal:item.quantity }}</p>
                 </td>
-                <td>
+                <td class="mr-2">
                     <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}"
                         aria-label="remove_item"><i class="fa-solid fa-trash-can fa-lg"></i></a>
                 </td>
@@ -152,6 +152,7 @@
                 location.reload();
             });
     })
+
 </script>
 
 {% endblock %}

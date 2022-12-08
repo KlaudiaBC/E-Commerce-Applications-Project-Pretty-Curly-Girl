@@ -36,11 +36,11 @@
                             alt="{{ wl.product.name }}">
                         {% endif %}
                     </td>
-                    <td>
+                    <td class="align-middle">
                         <a href="{% url 'product_detail' wl.product.id %}"><strong>{{ wl.product.name }}</strong></a>
                     </td>
-                    <td>
-                        {{wl.product.price}}
+                    <td class="align-middle">
+                    {{wl.product.price}}
                     </td>
                 </tr>
                 {% endfor %}
@@ -57,7 +57,9 @@
         <p>Check out our latest offers and feel free to save them for later. You don't have to make a decision right
             away. This is what I am for, to remember all the <b>cool products</b> you have seen here!</p>
         <span class="text-muted"> --- Your Wishlist <i class="fa-regular fa-face-grin-hearts"></i></span>
-        <br>
+    </div>
+    <br> <br>
+        {% endif %}
         <div class="text-center">
             <a href="{% url 'products' %}" class="btn btn-outline-info rounded-3 ml-2" aria-label="products">
                 <span class="font-weight-bold"><i class="fa-solid fa-arrow-left"></i>Back to store</span>
@@ -67,5 +69,5 @@
 </div>
 <br /><br />
 
-{% endif %}
+
 {% endblock %}

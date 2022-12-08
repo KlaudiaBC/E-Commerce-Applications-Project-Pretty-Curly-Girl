@@ -52,10 +52,11 @@
                                 <div class="col-6">
                                     <p class="lead mb-0 text-left font-weight-bold">€{{ product.price }}</p>
                                 </div>
-                                <span class="col-6 d-flex justify-content-end"><button
-                                        class="btn btn-danger addToWish"  id="id" attr_id="{{product.pk}}"><i
-                                            class="fa-solid fa-heart fa-lg mr-1"></i></button>
-                                </span>
+                                <div class="col-6 d-flex justify-content-end" id="wish-btn">
+                                    <span class="addToWish mb-2 mr-2" attr_id="{{product.pk}}" data-toggle="tooltip"
+                                        data-placement="left" title="Add to wishlist">
+                                        <i class="fa-regular fa-heart"></i></span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -81,8 +82,13 @@
         </div>
     </div>
 </div>
+<br><br>
+<div class="text-center">
+    <a href="{% url 'products' %}" class="btn btn-outline-info rounded-3 ml-2" aria-label="products">
+        <span class="font-weight-bold"><i class="fa-solid fa-arrow-left"></i>Back to home</span>
+    </a>
+</div>
 {% endblock %}
-
 
 {% block postloadjs %}
 {{ block.super }}
@@ -110,27 +116,24 @@
         }
     })
 
+    // Add wishlist
+    $(document).ready(function () {
+        $(".addToWish").one('click', function () {
+            var attr_id = $(this).attr('attr_id')
+            var that = $(this).find('i');
 
-// Add wishlist
-$(document).ready(function () {
-    $(".addToWish").click(function() {
-        var attr_id = $(this).attr('attr_id')
-        var that = $(this);
-
-        $.ajax({
-            url: "/users/add_wishlist",
-            type: 'POST',
-            data: {
-                'attr_id': attr_id,
-            },
-            success: function(res) {
-                messages.success(request, 'Product added to your wishlist!')
-                that.addClass('disabled').removeClass('addToWish');
-            }
-        });
-    }); // End ajax
-}); // End document.ready
+            $.ajax({
+                url: "/users/add_wishlist",
+                type: 'POST',
+                data: {
+                    'attr_id': attr_id,
+                },
+                success: function (res) {
+                    that.addClass('fa-solid').removeClass('fa-regular');
+                }
+            });
+        }); // End ajax
+    }); // End document.ready
 
 </script>
-
 {% endblock %}

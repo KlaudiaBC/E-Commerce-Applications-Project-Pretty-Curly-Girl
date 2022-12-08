@@ -30,6 +30,10 @@ body {
   line-height: 2rem;
 }
 
+.img-fluid {
+  min-height: 250px;
+}
+
 .img-sm {
   height: 90px;
   width: 90px;
@@ -413,7 +417,6 @@ table td {
   vertical-align: auto;
 }
 
-
 .overlay {
   background: rgba(0, 0, 0, 0.7);
   height: 100vh;
@@ -425,6 +428,11 @@ table td {
   z-index: -1;
   width: 100%;
   opacity: 0;
+}
+
+.addToWish i {
+  font-size: xx-large;
+  color: red;
 }
 
 
@@ -563,6 +571,8 @@ table {
   position: relative;
 }
 
+
+
 /*------------- media queries ------------- */
 
 /* very narrow screen */
@@ -590,7 +600,11 @@ table {
   .btn-shop {
     top: 663%;
   }
-}
+
+  .tab-img {
+      display: none;
+    }
+  }
 
 /* for tablets */
 @media screen and (min-width: 600px) {
