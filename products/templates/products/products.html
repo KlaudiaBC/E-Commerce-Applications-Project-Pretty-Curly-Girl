@@ -124,12 +124,17 @@
             var attr_id = $(this).attr('attr_id')
             var that = $(this).find('i');
 
+            $.ajaxSetup({
+                data: {csrfmiddlewaretoken: '{{ csrf_token }}' },
+            });
+
             $.ajax({
                 url: "/users/add_wishlist",
                 
                 type: 'POST',
                 data: {
                     'attr_id': attr_id,
+                    'data': data
                 },
                 success: function (res) {
                     that.addClass('fa-solid').removeClass('fa-regular');
