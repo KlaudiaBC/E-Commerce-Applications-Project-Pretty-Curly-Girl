@@ -139,8 +139,8 @@ ACCOUNT_USERNAME_MIN_LENGTH = 3
 SOCIALACCOUNT_QUERY_EMAIL = True
 ACCOUNT_LOGOUT_ON_GET = True
 
-LOGIN_URL = '/login/'
-LOGOUT_URL = '/logout/'
+LOGIN_URL = '/accounts/login/'
+LOGOUT_URL = 'accounts/logout/'
 LOGIN_REDIRECT_URL = '/'
 
 # Social accounts / Google

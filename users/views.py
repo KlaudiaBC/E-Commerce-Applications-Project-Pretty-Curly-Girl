@@ -12,9 +12,10 @@ from .models import Wishlist
 
 @login_required
 def users(request):
-    """ Display the user's profile. """
+    """ Display the user's profile and him allow to update"""
 
     user = get_object_or_404(UserProfile, user=request.user)
+    orders = user.orders.all()
 
     if request.method == 'POST':
         form = UserProfileForm(request.POST, instance=user)
@@ -26,7 +27,6 @@ def users(request):
                            'Update failed. Please ensure the form is valid.')
     else:
         form = UserProfileForm(instance=user)
-    orders = user.orders.all()
 
     template = 'users/profile.html'
     context = {
@@ -39,27 +39,54 @@ def users(request):
     return render(request, template, context)
 
 
-# Add product to Wishlist
-@csrf_exempt
-def add_wishlist(request):
+# # Add product to Wishlist
+# def add_wishlist(request):
 
-    if request.is_ajax() and request.POST:
-        if request.user.is_authenticated:
-            data = Wishlist.objects.filter(
-                user_id=request.user.pk, product_id=int(
-                    request.POST['attr_id']))
-            if data.exists():
-                error: sayno()
-            else:
-                success: sayyes()
-                Wishlist.objects.create(
-                    user_id=request.user.pk, product_id=int(
-                        request.POST['attr_id']))
+#     if request.is_ajax() and request.POST:
+#         if request.user.is_authenticated:
+#             data = Wishlist.objects.filter(
+#                 user_id=request.user.pk, product_id=int(
+#                     request.POST['attr_id']))
+#             if data.exists():
+#                 error: sayno()
+#             else:
+#                 success: sayyes()
+#                 Wishlist.objects.create(
+#                     user_id=request.user.pk, product_id=int(
+#                         request.POST['attr_id']))
 
-    return HttpResponse(status=200)
+#     return HttpResponse(status=200)
 
 
 # My Wishlist
 def wishlist(request):
-    wlist = Wishlist.objects.filter(user=request.user).order_by('-id')
-    return render(request, 'users/wishlist-my.html', {'wlist': wlist})
+    wishlist = Wishlist.objects.filter(user=request.user).order_by('-id')
+    return render(request, 'users/wishlist-my.html', {'wishlist': wishlist})
+
+
+def add_wishlist(request, pk):
+    """
+    Define the function that toggle button
+    'like' and 'unlike' for a specific product
+    and accordingly add/remove this product from users wish list
+    """
+    wish_item = get_object_or_404(Product, id=request.POST.get('product_id'))
+    wishlist = Wishlist.objects.filter(user=request.user)
+    liked = False
+
+    if user.is_authenticated:
+        if wish_item in wishlist():
+            wishlist.objects.remove(wish_item)
+            liked = False
+            messages.danger(request,
+                            f"Removed {wish_item.name} from your wishlist!")
+        else:
+            wishlist.objects.add(wish_item)
+            liked = True
+            messages.success(request,
+                             f"Added {wish_item.name} to your wishlist!")
+
+        return HttpResponse(200)
+
+    else:
+        messages.info(request, "You must login to access wishlist!")

@@ -12,7 +12,7 @@
     <hr class="w-50 mb-1">
     <br /><br />
 
-    {% if wlist %}
+    {% if wishlist %}
     <table class="table table-sm">
         <thead class="text-black">
             <thead class="text-black">
@@ -25,22 +25,22 @@
             </thead>
 
             <thread>
-                {% for wl in wlist %}
+                {% for wish_item in wishlist %}
                 <tr>
                     <td class="w-25">
-                        {% if wl.product.image %}
-                        <img class="img-fluid img-tab rounded" src="{{ wl.product.image.url }}"
-                            alt="{{ wl.product.name }}">
+                        {% if wish_item.image %}
+                        <img class="img-fluid img-tab rounded" src="{{ wish_item.image.url }}"
+                            alt="{{ wish_item.name }}">
                         {% else %}
                         <img class="card-img-top img-tab img-fluid" src="/media/noimage.webp"
-                            alt="{{ wl.product.name }}">
+                            alt="{{ wish_item.name }}">
                         {% endif %}
                     </td>
                     <td class="align-middle">
-                        <a href="{% url 'product_detail' wl.product.id %}"><strong>{{ wl.product.name }}</strong></a>
+                        <a href="{% url 'product_detail' wish_item.id %}"><strong>{{ wish_item.name }}</strong></a>
                     </td>
                     <td class="align-middle">
-                    {{wl.product.price}}
+                    {{ wish_item.price }}
                     </td>
                 </tr>
                 {% endfor %}
