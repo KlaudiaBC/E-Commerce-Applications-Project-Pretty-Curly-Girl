@@ -533,17 +533,11 @@ table {
   overflow: hidden;
 }
 
-.img-wrap {
-  max-height: 500px;
-}
-
 .btn-block {
   font-size: 1.5rem;
 }
 
 #blog .card-img-top {
-  height: 690px;
-  width: auto;
   transition: transform 0.4s; /* smoother zoom */
 }
 
