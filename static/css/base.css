@@ -170,6 +170,10 @@ footer .fa-brands {
   transform: scale(1.3);
 }
 
+.fa-heart {
+  font-size: 2rem;
+}
+
 .hr-middle {
   border: none;
   height: 1px;

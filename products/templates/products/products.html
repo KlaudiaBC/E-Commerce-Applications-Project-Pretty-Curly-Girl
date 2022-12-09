@@ -52,17 +52,31 @@
                                 <div class="col-6">
                                     <p class="lead mb-0 text-left font-weight-bold">€{{ product.price }}</p>
                                 </div>
-                                <div class="col-6 d-flex justify-content-end" id="wish-btn">
-                                    {% csrf_token %}
-                                    <span class="addToWish mb-2 mr-2" attr_id="{{product.pk}}" data-toggle="tooltip"
-                                        data-placement="left" title="Add to wishlist">
-                                        <i class="fa-regular fa-heart"></i></span>
+
+                                <!-- "Like" button / Add to wishlist -->
+                                <div class="col-6 d-flex justify-content-end">
+                                    <form action="{% url 'add_wishlist' %}" method="POST">
+                                        {% csrf_token %}
+
+                                        {% if liked %}
+                                        <span type="submit" name="wish_item" value="{{ wish_item.id }}"
+                                            class="danger mb-2 mr-2" alt="remove-wish">
+                                            <i class="fa-solid fa-heart"></i>
+                                        </span>
+                                        {% else %}
+                                        <span type="submit" name="wish_item" value="{{ wish_item.id }}"
+                                            class="danger mb-2 mr-2" alt="add-list">
+                                            <i class="fa-regular fa-heart"></i>
+                                        </span>
+                                        {% endif %}
+                                    </form>
                                 </div>
                             </div>
+
                         </div>
                     </div>
-
                 </div>
+
                 {% if forloop.counter|divisibleby:1 %}
                 <div class="col-12 d-sm-none mb-5">
                 </div>
@@ -83,13 +97,15 @@
             </div>
         </div>
     </div>
+
+    <br><br>
+    <div class="text-center">
+        <a href="{% url 'products' %}" class="btn btn-outline-info rounded-3 ml-2" aria-label="products">
+            <span class="font-weight-bold"><i class="fa-solid fa-arrow-left"></i>Back to home</span>
+        </a>
+    </div>
 </div>
-<br><br>
-<div class="text-center">
-    <a href="{% url 'products' %}" class="btn btn-outline-info rounded-3 ml-2" aria-label="products">
-        <span class="font-weight-bold"><i class="fa-solid fa-arrow-left"></i>Back to home</span>
-    </a>
-</div>
+
 {% endblock %}
 
 {% block postloadjs %}
@@ -119,29 +135,29 @@
     })
 
     // Add wishlist
-    $(document).ready(function () {
-        $(".addToWish").one('click', function () {
-            var attr_id = $(this).attr('attr_id')
-            var that = $(this).find('i');
+    // $(document).ready(function () {
+    //     $(".addToWish").one('click', function () {
+    //         var attr_id = $(this).attr('attr_id')
+    //         var that = $(this).find('i');
 
-            $.ajaxSetup({
-                data: {csrfmiddlewaretoken: '{{ csrf_token }}' },
-            });
+            // $.ajaxSetup({
+            //     data: { csrfmiddlewaretoken: '{{ csrf_token }}' },
+            // });
 
-            $.ajax({
-                url: "/users/add_wishlist",
-                
-                type: 'POST',
-                data: {
-                    'attr_id': attr_id,
-                    'data': data
-                },
-                success: function (res) {
-                    that.addClass('fa-solid').removeClass('fa-regular');
-                }
-            });
-        }); // End ajax
-    }); // End document.ready
+    //         $.ajax({
+    //             url: "/users/add_wishlist",
+
+    //             type: 'POST',
+    //             data: {
+    //                 'attr_id': attr_id,
+    //                 'data': data
+    //             },
+    //             success: function (res) {
+    //                 that.addClass('fa-solid').removeClass('fa-regular');
+    //             }
+    //         });
+    //     }); // End ajax
+    // }); // End document.ready
 
 </script>
 {% endblock %}
