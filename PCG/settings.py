@@ -35,7 +35,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 
-ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME'), 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME'), 'localhost', '127.0.0.1',
+                 'https://example.com', 'https://prettycurly.example.com']
 
 
 # Application definition
@@ -164,7 +165,9 @@ SOCIALACCOUNT_PROVIDERS = {
 
 WSGI_APPLICATION = 'PCG.wsgi.application'
 CSRF_TRUSTED_ORIGINS = [
-    'https://*pretty-curly-girl.herokuapp.com/', 'https://8000/*']
+    'https://*pretty-curly-girl.herokuapp.com/', 'https://*8000']
+
+CORS_ORIGIN_ALLOW_ALL = True
 
 
 # Database
