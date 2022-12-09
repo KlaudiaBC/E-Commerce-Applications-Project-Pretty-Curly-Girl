@@ -31,7 +31,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'DEVELOPMENT' in os.environ
+# 'DEVELOPMENT' in os.environ
+DEBUG = True
+
 
 ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME'), 'localhost', '127.0.0.1']
 
@@ -162,7 +164,7 @@ SOCIALACCOUNT_PROVIDERS = {
 
 WSGI_APPLICATION = 'PCG.wsgi.application'
 CSRF_TRUSTED_ORIGINS = [
-    'https://*pretty-curly-girl.herokuapp.com/', 'https://*.8000']
+    'https://*pretty-curly-girl.herokuapp.com/', 'https://8000/*']
 
 
 # Database

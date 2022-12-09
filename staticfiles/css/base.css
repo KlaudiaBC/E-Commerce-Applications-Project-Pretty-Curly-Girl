@@ -533,17 +533,11 @@ table {
   overflow: hidden;
 }
 
-.img-wrap {
-  max-height: 500px;
-}
-
 .btn-block {
   font-size: 1.5rem;
 }
 
 #blog .card-img-top {
-  height: 690px;
-  width: auto;
   transition: transform 0.4s; /* smoother zoom */
 }
 
@@ -674,6 +668,11 @@ table {
   /* pad the top a bit when navbar is collapsed on mobile */
   .header-container {
     padding-top: 116px;
+  }
+
+  .navbar-expand-lg .navbar-nav .nav-link {
+      padding-right: 2rem;
+      padding-left: 1.5rem;
   }
 
   body {

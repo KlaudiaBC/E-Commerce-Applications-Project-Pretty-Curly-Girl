@@ -53,6 +53,7 @@
                                     <p class="lead mb-0 text-left font-weight-bold">€{{ product.price }}</p>
                                 </div>
                                 <div class="col-6 d-flex justify-content-end" id="wish-btn">
+                                    {% csrf_token %}
                                     <span class="addToWish mb-2 mr-2" attr_id="{{product.pk}}" data-toggle="tooltip"
                                         data-placement="left" title="Add to wishlist">
                                         <i class="fa-regular fa-heart"></i></span>
@@ -60,6 +61,7 @@
                             </div>
                         </div>
                     </div>
+
                 </div>
                 {% if forloop.counter|divisibleby:1 %}
                 <div class="col-12 d-sm-none mb-5">
@@ -122,11 +124,17 @@
             var attr_id = $(this).attr('attr_id')
             var that = $(this).find('i');
 
+            $.ajaxSetup({
+                data: {csrfmiddlewaretoken: '{{ csrf_token }}' },
+            });
+
             $.ajax({
                 url: "/users/add_wishlist",
+                
                 type: 'POST',
                 data: {
                     'attr_id': attr_id,
+                    'data': data
                 },
                 success: function (res) {
                     that.addClass('fa-solid').removeClass('fa-regular');
