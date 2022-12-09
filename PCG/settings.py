@@ -15,6 +15,7 @@ import os
 import dj_database_url
 from htmlmin.minify import html_minify
 from django.contrib.messages import constants as messages
+import django_heroku
 from django.apps import AppConfig
 from django.test.runner import DiscoverRunner
 if os.path.isfile("env.py"):
@@ -22,7 +23,6 @@ if os.path.isfile("env.py"):
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -235,7 +235,7 @@ X_FRAME_OPTIONS = 'SAMEORIGIN'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 STATICFILES_FINDERS = ('django.contrib.staticfiles.finders.FileSystemFinder',)
-
+django_heroku.settigns(locals(), staticfiles=False)
 
 # AWS S8 Bucket Config
 if 'USE_AWS' in os.environ:
@@ -248,9 +248,9 @@ if 'USE_AWS' in os.environ:
 
     # Static and media files
     STATICFILES_STORAGE = 'custom_storages.StaticStorage'
-    STATICFILES_LOCATION = 'static'
+    STATICFILES_LOCATION = '/static/'
     DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
-    MEDIAFILES_LOCATION = 'media'
+    MEDIAFILES_LOCATION = '/media/'
 
     # Override static and media URLs in production
     STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
