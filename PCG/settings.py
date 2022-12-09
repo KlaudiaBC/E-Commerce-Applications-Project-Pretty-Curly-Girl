@@ -165,7 +165,7 @@ SOCIALACCOUNT_PROVIDERS = {
 
 WSGI_APPLICATION = 'PCG.wsgi.application'
 CSRF_TRUSTED_ORIGINS = [
-    'https://*pretty-curly-girl.herokuapp.com/', 'https://*8000']
+    'https://*pretty-curly-girl.herokuapp.com/', 'http://127.0.0.1:8000/']
 
 CORS_ORIGIN_ALLOW_ALL = True
 

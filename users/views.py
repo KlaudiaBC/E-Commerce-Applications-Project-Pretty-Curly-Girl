@@ -8,6 +8,10 @@ from .models import UserProfile
 from .forms import UserProfileForm
 from products.models import Product
 from .models import Wishlist
+import requests
+
+headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5)\
+    AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'}
 
 
 @login_required
@@ -83,10 +87,9 @@ def add_wishlist(request, pk):
         else:
             wishlist.objects.add(wish_item)
             liked = True
-            messages.success(request,
-                             f"Added {wish_item.name} to your wishlist!")
-
-        return HttpResponse(200)
-
+            messages.success(request, f"Added {wish_item.name}\
+                to your wishlist!")
+            return HttpResponse(200)
     else:
         messages.info(request, "You must login to access wishlist!")
+        return HttpResponse(200)

@@ -59,50 +59,53 @@
                                         {% csrf_token %}
 
                                         {% if liked %}
-                                        <button type="submit" name="wish_item" value="{{ wish_item.id }}"
+                                        <span type="submit" name="wish_item" value="{{ wish_item.id }}"
                                             class="danger mb-2 mr-2" alt="remove-wish">
                                             <i class="fa-solid fa-heart"></i>
-                                        </button>
+                                        </span>
                                         {% else %}
-                                        <button type="submit" name="wish_item" value="{{ wish_item.id }}"
+                                        <span type="submit" name="wish_item" value="{{ wish_item.id }}"
                                             class="danger mb-2 mr-2" alt="add-list">
-                                            <i class="fa-solid fa-heart"></i>
-                                        </button>
+                                            <i class="fa-regular fa-heart"></i>
+                                        </span>
                                         {% endif %}
                                     </form>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
+
+                {% if forloop.counter|divisibleby:1 %}
+                <div class="col-12 d-sm-none mb-5">
+                </div>
+                {% endif %}
+                {% if forloop.counter|divisibleby:2 %}
+                <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
+                </div>
+                {% endif %}
+                {% if forloop.counter|divisibleby:3 %}
+                <div class="col-12 d-none d-lg-block d-xl-none mb-5">
+                </div>
+                {% endif %}
+                {% if forloop.counter|divisibleby:4 %}
+                <div class="col-12 d-none d-xl-block mb-5">
+                </div>
+                {% endif %}
+                {% endfor %}
             </div>
         </div>
-        {% if forloop.counter|divisibleby:1 %}
-        <div class="col-12 d-sm-none mb-5">
-        </div>
-        {% endif %}
-        {% if forloop.counter|divisibleby:2 %}
-        <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
-        </div>
-        {% endif %}
-        {% if forloop.counter|divisibleby:3 %}
-        <div class="col-12 d-none d-lg-block d-xl-none mb-5">
-        </div>
-        {% endif %}
-        {% if forloop.counter|divisibleby:4 %}
-        <div class="col-12 d-none d-xl-block mb-5">
-        </div>
-        {% endif %}
-        {% endfor %}
+    </div>
+
+    <br><br>
+    <div class="text-center">
+        <a href="{% url 'products' %}" class="btn btn-outline-info rounded-3 ml-2" aria-label="products">
+            <span class="font-weight-bold"><i class="fa-solid fa-arrow-left"></i>Back to home</span>
+        </a>
     </div>
 </div>
 
-<br><br>
-<div class="text-center">
-    <a href="{% url 'products' %}" class="btn btn-outline-info rounded-3 ml-2" aria-label="products">
-        <span class="font-weight-bold"><i class="fa-solid fa-arrow-left"></i>Back to home</span>
-    </a>
-</div>
 {% endblock %}
 
 {% block postloadjs %}
