@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from django.http import HttpResponse
+from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib import messages
@@ -43,53 +43,28 @@ def users(request):
     return render(request, template, context)
 
 
-# # Add product to Wishlist
-# def add_wishlist(request):
+# Add product to Wishlist
+@csrf_exempt
+def add_wishlist(request):
 
-#     if request.is_ajax() and request.POST:
-#         if request.user.is_authenticated:
-#             data = Wishlist.objects.filter(
-#                 user_id=request.user.pk, product_id=int(
-#                     request.POST['attr_id']))
-#             if data.exists():
-#                 error: sayno()
-#             else:
-#                 success: sayyes()
-#                 Wishlist.objects.create(
-#                     user_id=request.user.pk, product_id=int(
-#                         request.POST['attr_id']))
+    if request.is_ajax() and request.POST:
+        if request.user.is_authenticated:
+            data = Wishlist.objects.filter(
+                user_id=request.user.pk, product_id=int(
+                    request.POST['attr_id']))
+            if data.exists():
+                Wishlist.objects.remove(
+                    user_id=request.user.pk, product_id=int(
+                        request.POST['attr_id']))
+            else:
+                Wishlist.objects.create(
+                    user_id=request.user.pk, product_id=int(
+                        request.POST['attr_id']))
 
-#     return HttpResponse(status=200)
+    return HttpResponse(status=200)
 
 
 # My Wishlist
 def wishlist(request):
-    wishlist = Wishlist.objects.filter(user=request.user).order_by('-id')
-    return render(request, 'users/wishlist-my.html', {'wishlist': wishlist})
-
-
-def add_wishlist(request, pk):
-    """
-    Define the function that toggle button
-    'like' and 'unlike' for a specific product
-    and accordingly add/remove this product from users wish list
-    """
-    wish_item = get_object_or_404(Product, id=request.POST.get('product_id'))
-    wishlist = Wishlist.objects.filter(user=request.user)
-    liked = False
-
-    if user.is_authenticated:
-        if wish_item in wishlist():
-            wishlist.objects.remove(wish_item)
-            liked = False
-            messages.danger(request,
-                            f"Removed {wish_item.name} from your wishlist!")
-        else:
-            wishlist.objects.add(wish_item)
-            liked = True
-            messages.success(request, f"Added {wish_item.name}\
-                to your wishlist!")
-            return HttpResponse(200)
-    else:
-        messages.info(request, "You must login to access wishlist!")
-        return HttpResponse(200)
+    wlist = Wishlist.objects.filter(user=request.user).order_by('-id')
+    return render(request, 'users/wishlist-my.html', {'wlist': wlist})

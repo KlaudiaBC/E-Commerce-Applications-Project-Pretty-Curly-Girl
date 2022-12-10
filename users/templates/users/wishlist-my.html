@@ -20,27 +20,27 @@
                     <th scope="col"></th> <!-- img -->
                     <th scope="col">Product Info</th>
                     <th scope="col">Price</th>
-                    <th scope="col"></th> <!-- delete -->
+                    <th scope="col"></th> <!-- delete icon -->
                 </tr>
             </thead>
 
             <thread>
-                {% for wish_item in wishlist %}
+                {% for wl in wlist %}
                 <tr>
                     <td class="w-25">
                         {% if wish_item.image %}
-                        <img class="img-fluid img-tab rounded" src="{{ wish_item.image.url }}"
-                            alt="{{ wish_item.name }}">
+                        <img class="img-fluid img-tab rounded" src="{{ wl.image.url }}"
+                            alt="{{ wl.name }}">
                         {% else %}
                         <img class="card-img-top img-tab img-fluid" src="/media/noimage.webp"
-                            alt="{{ wish_item.name }}">
+                            alt="{{ wl.name }}">
                         {% endif %}
                     </td>
                     <td class="align-middle">
-                        <a href="{% url 'product_detail' wish_item.id %}"><strong>{{ wish_item.name }}</strong></a>
+                        <a href="{% url 'product_detail' wl.id %}"><strong>{{ wl.name }}</strong></a>
                     </td>
                     <td class="align-middle">
-                    {{ wish_item.price }}
+                        {{ wl.price }}
                     </td>
                 </tr>
                 {% endfor %}
@@ -59,15 +59,14 @@
         <span class="text-muted"> --- Your Wishlist <i class="fa-regular fa-face-grin-hearts"></i></span>
     </div>
     <br> <br>
-        {% endif %}
-        <div class="text-center">
-            <a href="{% url 'products' %}" class="btn btn-outline-info rounded-3 ml-2" aria-label="products">
-                <span class="font-weight-bold"><i class="fa-solid fa-arrow-left"></i>Back to store</span>
-            </a>
-        </div>
+    {% endif %}
+    <div class="text-center">
+        <a href="{% url 'products' %}" class="btn btn-outline-info rounded-3 ml-2" aria-label="products">
+            <span class="font-weight-bold"><i class="fa-solid fa-arrow-left"></i>Back to store</span>
+        </a>
     </div>
 </div>
-<br /><br />
-
+</div>
+<br/><br/>
 
 {% endblock %}

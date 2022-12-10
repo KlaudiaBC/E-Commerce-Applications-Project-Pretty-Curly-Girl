@@ -13,9 +13,9 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 import dj_database_url
+import django_heroku
 from htmlmin.minify import html_minify
 from django.contrib.messages import constants as messages
-import django_heroku
 from django.apps import AppConfig
 from django.test.runner import DiscoverRunner
 if os.path.isfile("env.py"):
@@ -36,7 +36,7 @@ DEBUG = True
 
 
 ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME'), 'localhost', '127.0.0.1',
-                 'https://example.com', 'https://prettycurly.example.com']
+                 'https://prettycurly.example.com']
 
 
 # Application definition
@@ -60,6 +60,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'django_extensions',
     'storages',
+    'corsheaders',
 
     'home',
     'products',
@@ -73,6 +74,7 @@ MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -140,8 +142,8 @@ ACCOUNT_USERNAME_MIN_LENGTH = 3
 SOCIALACCOUNT_QUERY_EMAIL = True
 ACCOUNT_LOGOUT_ON_GET = True
 
-LOGIN_URL = '/accounts/login/'
-LOGOUT_URL = 'accounts/logout/'
+LOGIN_URL = '/login/'
+LOGOUT_URL = '/logout/'
 LOGIN_REDIRECT_URL = '/'
 
 # Social accounts / Google
@@ -165,7 +167,7 @@ SOCIALACCOUNT_PROVIDERS = {
 
 WSGI_APPLICATION = 'PCG.wsgi.application'
 CSRF_TRUSTED_ORIGINS = [
-    'https://*pretty-curly-girl.herokuapp.com/', 'http://127.0.0.1:8000/']
+    'https://*pretty-curly-girl.herokuapp.com', 'https://*8000']
 
 CORS_ORIGIN_ALLOW_ALL = True
 
