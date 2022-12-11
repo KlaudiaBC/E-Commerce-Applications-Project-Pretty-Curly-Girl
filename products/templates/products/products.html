@@ -128,14 +128,14 @@
         $(".addToWish").one('click', function () {
             var attr_id = $(this).attr('attr_id')
             var that = $(this).find('i');
+            var csrfToken = "{{ csrf_token }}";
 
             $.ajax({
-                // token: { csrfmiddlewaretoken: '{{ csrf_token }}' },
                 url: "/users/add_wishlist",
-
                 type: 'POST',
                 data: {
                     'attr_id': attr_id,
+                    'csrfmiddlewaretoken': csrfToken
                 },
                 success: function (res) {
                     that.addClass('fa-solid').removeClass('fa-regular');

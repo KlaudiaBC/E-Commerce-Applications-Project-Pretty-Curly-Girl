@@ -169,11 +169,12 @@
 
       // set the ajax crsf handler
       // you don't have to include it inco your ajax function anymore)
-      $("body").bind("ajaxSend", function (elm, xhr, s) {
-        if (s.type == "POST") {
-          xhr.setRequestHeader('X-CSRF-Token', getCSRFTokenValue());
-        }
-      });
+      // $("body").bind("ajaxSend", function (elm, xhr, s) {
+      //   if (s.type == "POST") {
+      //     xhr.setRequestHeader('X-CSRF-Token', getCSRFTokenValue());
+      //   }
+      // });
+
     })();
 
   </script>

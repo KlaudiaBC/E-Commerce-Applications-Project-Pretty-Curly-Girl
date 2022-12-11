@@ -35,8 +35,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 
-ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME'), 'localhost', '127.0.0.1',
-                 'https://prettycurly.example.com']
+ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME'), 'localhost']
 
 
 # Application definition
@@ -167,7 +166,7 @@ SOCIALACCOUNT_PROVIDERS = {
 
 WSGI_APPLICATION = 'PCG.wsgi.application'
 CSRF_TRUSTED_ORIGINS = [
-    'https://*pretty-curly-girl.herokuapp.com', 'https://*8000']
+    'https://*.pretty-curly-girl.herokuapp.com', 'http://*.8000']
 
 CORS_ORIGIN_ALLOW_ALL = True
 
@@ -231,8 +230,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
-STATICFILES_STORAGE = \
-    "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -285,18 +283,3 @@ else:
     EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
     EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASS')
     DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
-
-
-# Test Runner Config
-class HerokuDiscoverRunner(DiscoverRunner):
-    """Test Runner for Heroku CI, which provides a database for you.
-    This requires you to set the TEST database (done for you by settings().)"""
-
-    def setup_databases(self, **kwargs):
-        self.keepdb = True
-        return super(HerokuDiscoverRunner, self).setup_databases(**kwargs)
-
-
-# Use HerokuDiscoverRunner on Heroku CI
-if "CI" in os.environ:
-    TEST_RUNNER = "gettingstarted.settings.HerokuDiscoverRunner"
