@@ -153,7 +153,7 @@ SOCIALACCOUNT_PROVIDERS = {
             'secret': os.environ.get('SOCIAL_AUTH_GOOGLE_SECRET'),
         },
         'SCOPE': [
-            'profile',
+            'name',
             'email',
         ],
         'AUTH_PARAMS': {
@@ -224,6 +224,8 @@ USE_L10N = True
 USE_TZ = True
 
 
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
@@ -231,14 +233,22 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
-X_FRAME_OPTIONS = 'SAMEORIGIN'
+# X_FRAME_OPTIONS = 'SAMEORIGIN'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-STATICFILES_FINDERS = ('django.contrib.staticfiles.finders.FileSystemFinder',)
+
+# STATICFILES_FINDERS =
+# ('django.contrib.staticfiles.finders.FileSystemFinder',)
 django_heroku.settings(locals(), staticfiles=False)
 
 # AWS S8 Bucket Config
 if 'USE_AWS' in os.environ:
+    # Cache control
+    AWS_S3_OBJECT_PARAMETERS = {
+        'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+        'CacheControl': 'max-age=94608000',
+    }
+
     # Bucket Config
     AWS_STORAGE_BUCKET_NAME = 'pretty-curly-girl'
     AWS_S3_REGION_NAME = 'us-east-1'
