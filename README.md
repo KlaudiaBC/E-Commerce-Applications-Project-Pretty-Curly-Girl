@@ -536,6 +536,13 @@ In this place I would like to thank everyone, who added an knowledge and value t
 - Code Institute Slack Community
 - <a href="https://stackoverflow.com/" target="_blank">Stack Overflow</a>
 - <a href="https://www.w3schools.com/" target="_blank">W3schools</a>
+- <a href="https://www.djangoproject.com/" target="_blank">Django documentation</a> by Django
+- <a href="https://developer.chrome.com/docs/" target="_blank">Chrome Developers</a> documentation
+- <a href="https://www.djangoproject.com/" target="_blank">Django</a> documentation
+- <a href="https://developers.google.com/identity/protocols/oauth2" target="_blank">Google Developers</a> documentation for OAuth
+- <a href="https://docs.aws.amazon.com/s3/index.html?nc2=h_ql_doc_s3#amazon-s3" target="_blank">Amazon AWS</a> documentation for Amazon S3
+- <a href="https://devcenter.heroku.com/categories/python-support" target="_blank">Heroku Dev Center</a> - Python Support
+- <a href="https://console.cloud.google.com/apis" target="_blank">Google Cloud Console</a> for Google API
 - <a href="https://www.pexels.com/">Pexels</a> The images that are included in the "content/blog" section: the authors are as follow, from the left side: 1) cottonbro studio,2) PNW Production,3) nappy
 - <a href="https://ordinarycoders.com/blog/article/django-user-register-login-logout" target="_blank">"A Guide to User Registration, Login, and Logout in Django"</a> by < ordinary > coders
 - <a href="https://dev.to/lawrence_eagles/causes-of-heroku-h10-app-crashed-error-and-how-to-solve-them-3jnl" target="_blank">"Causes of Heroku H10-App Crashed Error And How To Solve Them"</a> by Dev.to
@@ -544,14 +551,16 @@ In this place I would like to thank everyone, who added an knowledge and value t
 - <a href="https://www.easyagile.com/blog/how-to-write-good-user-stories-in-agile-software-development/" target="_blank">"How to Write Good User Stories in Agile Software Development"</a> by EasyAgile
 - <a href="https://www.knowledgehut.com/blog/agile/powerful-tips-for-writing-the-best-user-stories-in-scrum" target="_blank">"Powerful Tips for Writing the Best User Stories in Scrum"</a> by Knowledgehut
 - <a href="[https://www.canva.com/learn/social-media-design-trends-2022/](https://dribbble.com/tags/ecommerce_app)" target="_blank">"Ecommerce App (design inspirations)"</a> by Dribbble.com
-- <a href="https://www.google.com/amp/s/appinventiv.com/blog/ecommerce-app-features-for-startups-and-enterprises/">"Top 10 eCommerce app features for startups and enterprises"</a> by Appinventiv.com
-- <a href="https://mindsea.com/mobile-app-marketing/">"Mobile app marketing"</a> by Mindsea
-- <a href="https://mindster.com/mindster-blogs/ecommerce-applications/">"How e-Commerce Applications Help Your Business Grow?"</a> by Mindster
-- <a href="https://buildfire.com/mobile-app-ecommerce-marketing-ideas/">"Mobile ecommerce marketing ideas"</a> by Buildfire
-- <a href="https://blog.hubspot.com/marketing/ecommerce-marketing">"Everything you need to know about ecommerce marketing"</a> by HubSpot
-- <a href="https://www.zoho.com/inventory/sku-generator/">Sku generator</a>
-- <a href="https://www.pythonmorsels.com/breaking-long-lines-code-python/">"Breaking long lines of code in Python</a> by Python Morsels
-- <a href="https://www.djangoproject.com/">Django documentation</a> by Django
+- <a href="https://www.google.com/amp/s/appinventiv.com/blog/ecommerce-app-features-for-startups-and-enterprises/" target="_blank">"Top 10 eCommerce app features for startups and enterprises"</a> by Appinventiv.com
+- <a href="https://mindsea.com/mobile-app-marketing/" target="_blank">"Mobile app marketing"</a> by Mindsea
+- <a href="https://mindster.com/mindster-blogs/ecommerce-applications/" target="_blank">"How e-Commerce Applications Help Your Business Grow?"</a> by Mindster
+- <a href="https://buildfire.com/mobile-app-ecommerce-marketing-ideas/" target="_blank">"Mobile ecommerce marketing ideas"</a> by Buildfire
+- <a href="https://blog.hubspot.com/marketing/ecommerce-marketing" target="_blank">"Everything you need to know about ecommerce marketing"</a> by HubSpot
+- <a href="https://www.zoho.com/inventory/sku-generator/" target="_blank">Sku generator</a>
+- <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication" target="_blank">"HTTP Authentication"</a> by MDN Web Docs
+- <a href="https://www.hostinger.com/tutorials/how-to-fix-the-401-unauthorized-error#1_Confirm_the_URL_Is_Correct" target="_blank">"401 Error: 5 Ways to Troubleshoot and Fix It"</a> by Hostinger Tutorials
+- <a href="https://www.pythonmorsels.com/breaking-long-lines-code-python/" target="_blank">"Breaking long lines of code in Python"</a> by Python Morsels
+
 
 Media used:
 - All images of the products are coming directly from the Client: <a href="https://prettycurlygirl.store/">Pretty Curly Girl</a>
