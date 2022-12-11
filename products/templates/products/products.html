@@ -55,6 +55,8 @@
 
                                 <!-- "Like" button / Add to wishlist -->
                                 <div class="col-6 d-flex justify-content-end">
+                                    <form class="form" action="{% url 'add_wishlist' %}" method="POST">
+                                        {% csrf_token %}
                                     <span class="col-6 d-flex justify-content-end"><button
                                             class="btn btn-danger addToWish" id="id" attr_id="{{product.pk}}"><i
                                                 class="fa-solid fa-heart fa-lg mr-1"></i></button>

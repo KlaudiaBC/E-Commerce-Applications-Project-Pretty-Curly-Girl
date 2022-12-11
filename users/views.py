@@ -41,7 +41,6 @@ def users(request):
 
 
 # Add product to Wishlist
-@csrf_exempt
 def add_wishlist(request):
 
     if request.POST:
