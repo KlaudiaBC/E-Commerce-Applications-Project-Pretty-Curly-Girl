@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 import dj_database_url
+import django
 import django_heroku
 from htmlmin.minify import html_minify
 from django.contrib.messages import constants as messages
@@ -20,6 +21,10 @@ from django.apps import AppConfig
 from django.test.runner import DiscoverRunner
 if os.path.isfile("env.py"):
     import env
+
+
+from django.utils.encoding import force_str
+django.utils.encoding.force_text = force_str
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -32,7 +37,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # 'DEVELOPMENT' in os.environ
-DEBUG = True
+DEBUG = False
 
 
 ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME'), 'localhost']
