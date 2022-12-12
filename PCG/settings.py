@@ -172,10 +172,9 @@ WSGI_APPLICATION = 'PCG.wsgi.application'
 CSRF_TRUSTED_ORIGINS = ['https://*.pretty-curly-girl.herokuapp.com',
                         'http://*.8000', 'http://*.gitpod.io']
 
-CSRF_TRUSTED_ORIGINS = ['https://*.pretty-curly-girl.herokuapp.com',
-                        'https://*.127.0.0.1']
-
-CSRF_COOKIE_SECURE = True
+CSRF_USE_SESSIONS = False
+CSRF_COOKIE_HTTPONLY = False
+# CSRF_COOKIE_SECURE = True
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
