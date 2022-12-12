@@ -1,11 +1,12 @@
 {% extends "socialaccount/base.html" %}
 {% load i18n %}
 
-{% block head_title %}{% trans "Login Cancelled" %}{% endblock %}
+{% block head_title %}Login Cancelled{% endblock %}
 
 {% block inner_content %}
 
 <div class="text-center">
+    <hr>
     <h2>Account Connections</h2>
     <hr>
 </div>
@@ -13,7 +14,6 @@
 
 <div class="wrapper-form text-center">
 {% url 'account_login' as login_url %}
-{% csrf_token %}
 
 <p>{% blocktrans %}You decided to cancel logging in to our site using one of your existing accounts. If this was a mistake, please proceed to <a href="{{login_url}}">sign in</a>.{% endblocktrans %}</p>
 </div>

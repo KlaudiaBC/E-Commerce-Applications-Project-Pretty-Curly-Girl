@@ -54,16 +54,10 @@
                                 </div>
 
                                 <!-- "Like" button / Add to wishlist -->
-                                <div class="col-6 d-flex justify-content-end">
-                                    <form class="form" action="{% url 'add_wishlist' %}" method="POST">
-                                        {% csrf_token %}
-                                    <span class="col-6 d-flex justify-content-end"><button
-                                            class="btn btn-danger addToWish" id="id" attr_id="{{product.pk}}"><i
-                                                class="fa-solid fa-heart fa-lg mr-1"></i></button>
-                                    </span>
-                                </div>
+                                <span class="col-6 d-flex justify-content-end addToWish" id="id"
+                                    attr_id="{{product.pk}}"><i class="fa-regular fa-heart fa-lg mr-1 heart-empty"></i>
+                                </span>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -125,22 +119,22 @@
         }
     })
 
+
     // Add wishlist
     $(document).ready(function () {
-        $(".addToWish").one('click', function () {
+        $(".addToWish").click(function () {
             var attr_id = $(this).attr('attr_id')
-            var that = $(this).find('i');
-            var csrfToken = "{{ csrf_token }}";
+            var that = $(this);
 
             $.ajax({
                 url: "/users/add_wishlist",
                 type: 'POST',
                 data: {
                     'attr_id': attr_id,
-                    'csrfmiddlewaretoken': csrfToken
                 },
                 success: function (res) {
-                    that.addClass('fa-solid').removeClass('fa-regular');
+                    messages.success(request, 'Product added to your wishlist!')
+                    that.addClass('heart-full').removeClass('heart-empty');
                 }
             });
         }); // End ajax

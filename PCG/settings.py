@@ -18,13 +18,13 @@ import django_heroku
 from htmlmin.minify import html_minify
 from django.contrib.messages import constants as messages
 from django.apps import AppConfig
-from django.test.runner import DiscoverRunner
 if os.path.isfile("env.py"):
     import env
 
 
 from django.utils.encoding import force_str
 django.utils.encoding.force_text = force_str
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -37,7 +37,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # 'DEVELOPMENT' in os.environ
-DEBUG = False
+DEBUG = True
 
 
 ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME'), 'localhost']
@@ -82,8 +82,8 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'social_django.middleware.SocialAuthExceptionMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
 ROOT_URLCONF = 'PCG.urls'
@@ -146,8 +146,7 @@ ACCOUNT_USERNAME_MIN_LENGTH = 3
 SOCIALACCOUNT_QUERY_EMAIL = True
 ACCOUNT_LOGOUT_ON_GET = True
 
-LOGIN_URL = '/login/'
-LOGOUT_URL = '/logout/'
+LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/'
 
 # Social accounts / Google
@@ -170,11 +169,14 @@ SOCIALACCOUNT_PROVIDERS = {
 
 
 WSGI_APPLICATION = 'PCG.wsgi.application'
-CSRF_TRUSTED_ORIGINS = [
-    'https://*.pretty-curly-girl.herokuapp.com', 'http://*.8000']
+CSRF_TRUSTED_ORIGINS = ['https://*.pretty-curly-girl.herokuapp.com',
+                        'http://*.8000', 'http://*.gitpod.io']
 
-CORS_ORIGIN_ALLOW_ALL = True
+CSRF_USE_SESSIONS = False
+CSRF_COOKIE_HTTPONLY = False
+# CSRF_COOKIE_SECURE = True
 
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
@@ -229,16 +231,12 @@ USE_L10N = True
 USE_TZ = True
 
 
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
-# X_FRAME_OPTIONS = 'SAMEORIGIN'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
@@ -261,10 +259,17 @@ if 'USE_AWS' in os.environ:
     AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
     AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
 
+    AWS_DEFAULT_ACL = 'public-read'
+    AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
+    AWS_LOCATION = 'static'
+
+    AWS_QUERYSTRING_AUTH = False
+    AWS_HEADERS = {'Access-Control-Allow-Origin': '*'}
+
     # Static and media files
-    STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+    STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
     STATICFILES_LOCATION = '/static/'
-    DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+    DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
     MEDIAFILES_LOCATION = '/media/'
 
     # Override static and media URLs in production
@@ -277,10 +282,10 @@ if 'USE_AWS' in os.environ:
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-FREE_DELIVERY_THRESHOLD = 40
-STANDARD_DELIVERY_PERCENTAGE = 10
 
 # Stripe
+FREE_DELIVERY_THRESHOLD = 40
+STANDARD_DELIVERY_PERCENTAGE = 10
 STRIPE_CURRENCY = 'eur'
 STRIPE_PUBLIC_KEY = os.environ.get('STRIPE_PUBLIC_KEY', '')
 STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY', '')

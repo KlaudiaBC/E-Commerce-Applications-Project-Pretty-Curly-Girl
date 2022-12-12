@@ -41,6 +41,7 @@ def users(request):
 
 
 # Add product to Wishlist
+@csrf_exempt
 def add_wishlist(request):
 
     if request.POST:
@@ -49,13 +50,13 @@ def add_wishlist(request):
                 user_id=request.user.pk, product_id=int(
                     request.POST['attr_id']))
             if data.exists():
-                alert("Already in the wishlist!")
+                return False
             else:
                 Wishlist.objects.create(
                     user_id=request.user.pk, product_id=int(
                         request.POST['attr_id']))
 
-    return render(HttpResponse(status=200))
+    return HttpResponse(status=200)
 
 
 # My Wishlist
