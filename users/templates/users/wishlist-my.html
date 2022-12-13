@@ -10,7 +10,9 @@
         </div>
     </div>
     <hr class="w-50 mb-1">
-    <br/><br/>
+    <br /><br />
+
+    {% if user.is_authenticated %}
 
     {% if wishlist %}
     <table class="table table-sm">
@@ -29,11 +31,9 @@
                 <tr>
                     <td class="w-25">
                         {% if wish_item.image %}
-                        <img class="img-fluid img-tab rounded" src="{{ wl.image.url }}"
-                            alt="{{ wl.name }}">
+                        <img class="img-fluid img-tab rounded" src="{{ wl.image.url }}" alt="{{ wl.name }}">
                         {% else %}
-                        <img class="card-img-top img-tab img-fluid" src="/media/noimage.webp"
-                            alt="{{ wl.name }}">
+                        <img class="card-img-top img-tab img-fluid" src="/media/noimage.webp" alt="{{ wl.name }}">
                         {% endif %}
                     </td>
                     <td class="align-middle">
@@ -66,6 +66,6 @@
         </a>
     </div>
 </div>
-<br/><br/>
+<br><br>
 
 {% endblock %}

@@ -4,16 +4,15 @@ from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib import messages
 
-from .models import UserProfile
+from .models import UserProfile, Wishlist
 from .forms import UserProfileForm
 from products.models import Product
-from .models import Wishlist
 import requests
 
 
 @login_required
 def users(request):
-    """ Display the user's profile and him allow to update"""
+    """Display the user's profile and him allow to update"""
 
     user = get_object_or_404(UserProfile, user=request.user)
     orders = user.orders.all()
@@ -40,21 +39,23 @@ def users(request):
     return render(request, template, context)
 
 
-# Add product to Wishlist
 @csrf_exempt
 def add_wishlist(request):
+    """Add product to your wishlist
+    only for registered users"""
+
+    model = Wishlist
 
     if request.POST:
-        if request.user.is_authenticated:
-            data = Wishlist.objects.filter(
+        data = Wishlist.objects.filter(
+            user_id=request.user.pk, product_id=int(
+                request.POST['attr_id']))
+        if data.exists():
+            return False
+        else:
+            Wishlist.objects.create(
                 user_id=request.user.pk, product_id=int(
                     request.POST['attr_id']))
-            if data.exists():
-                return False
-            else:
-                Wishlist.objects.create(
-                    user_id=request.user.pk, product_id=int(
-                        request.POST['attr_id']))
 
     return HttpResponse(status=200)
 

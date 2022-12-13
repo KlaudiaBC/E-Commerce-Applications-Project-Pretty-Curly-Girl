@@ -30,5 +30,8 @@ def create_or_update_user_profile(sender, instance, created, **kwargs):
 
 
 class Wishlist(models.Model):
+    """
+    Create a list of favourite products
+    """
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)

@@ -7,6 +7,10 @@ class OrderItemAdminInline(admin.TabularInline):
     readonly_fields = ('orderitem_total',)
 
 
+def make_published(modeladmin, request, queryset):
+    queryset.update(status='p')
+
+
 class OrderAdmin(admin.ModelAdmin):
     inlines = (OrderItemAdminInline,)
 

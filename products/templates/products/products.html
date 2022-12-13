@@ -27,6 +27,8 @@
                     (high to low)</a></span>
         </div>
     </div>
+    
+    <!-- Render product cards -->
     <div class="row">
         <div class="product-container col-10 offset-1">
             <div class="row mt-1 mb-2"></div>
@@ -81,11 +83,11 @@
                 {% endfor %}
             </div>
         </div>
-    </div>
+    </div> <!-- product card end -->
 
     <br><br>
     <div class="text-center">
-        <a href="{% url 'products' %}" class="btn btn-outline-info rounded-3 ml-2" aria-label="products">
+        <a href="{% url 'home' %}" class="btn btn-outline-info rounded-3 ml-2" aria-label="products">
             <span class="font-weight-bold"><i class="fa-solid fa-arrow-left"></i>Back to home</span>
         </a>
     </div>
@@ -127,13 +129,12 @@
             var that = $(this);
 
             $.ajax({
-                url: "/users/add_wishlist",
+                url: "/users/add_wishlist.html",
                 type: 'POST',
                 data: {
                     'attr_id': attr_id,
                 },
                 success: function (res) {
-                    messages.success(request, 'Product added to your wishlist!')
                     that.addClass('heart-full').removeClass('heart-empty');
                 }
             });

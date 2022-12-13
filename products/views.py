@@ -5,7 +5,7 @@ from .models import Product, Category
 
 
 def all_products(request):
-    """ A view to show the list view of the products """
+    """ A view to show the list of the products """
 
     products = Product.objects.all()
     query = None
@@ -14,6 +14,7 @@ def all_products(request):
     direction = None
     sale = None
 
+    """Allows to sort the products by price"""
     if request.GET:
         if 'sort' in request.GET:
             sortkey = request.GET['sort']
@@ -28,6 +29,7 @@ def all_products(request):
                     sortkey = f'-{sortkey}'
             products = products.order_by(sortkey)
 
+        """Allow to sort the products by category"""
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
             products = products.filter(category__name__in=categories)
@@ -36,6 +38,8 @@ def all_products(request):
         if 'sale' in request.GET:
             products = products.filter(sale=True)
 
+        """Search engine - iterates through
+        the name of the product and its description"""
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:

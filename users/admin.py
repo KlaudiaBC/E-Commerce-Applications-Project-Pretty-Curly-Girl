@@ -9,4 +9,4 @@ class UserWishlistAdmin(admin.ModelAdmin):
 
 @admin.register(UserProfile)
 class UserProfileAdmin(admin.ModelAdmin):
-    list_display = ('user',)
+    list_display = ('user', 'email', 'birthdate')
