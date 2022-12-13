@@ -18,6 +18,30 @@ body {
   min-height: calc(100vh - 200px);
 }
 
+
+/* Style the button and place it in the middle of the container/image */
+#hero-container {
+  width: 100%;
+  display:block;
+  position:relative;
+  margin-top: 100px;
+  text-align: center;
+  height: auto;
+}
+
+#hero-btn {
+  font-family: Volkorn;
+  background: white;
+  border: 4px solid black;
+  cursor: pointer;
+  max-width: 180%;
+  max-height: 100%;
+  width:220px;
+  height: 70px;
+  font-size: 200%;
+  text-align: center;
+}
+
 .card-product {
   border-radius: 10px;
   box-shadow: 1px 2px grey;
