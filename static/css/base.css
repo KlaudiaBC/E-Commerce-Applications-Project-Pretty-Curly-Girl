@@ -425,10 +425,6 @@ ul.social-icons li {
   width: 3rem !important;
 }
 
-table td {
-  vertical-align: auto;
-}
-
 .overlay {
   background: rgba(0, 0, 0, 0.7);
   height: 100vh;
@@ -449,29 +445,27 @@ table td {
 
 
 /* Style the button and place it in the middle of the container/image */
-.btn-shop {
-  position: relative;
-  display: block;
-  width: 200px;
-  height: 60px;
-  top: 885%;
-  left: 125%;
-  transform: translate(-50%, -50%);
-  font-size: 25px;
-  font-weight: bold;
-  padding: 12px 24px;
+#hero-container {
+  padding: auto;
+  width: 100%;
+  display:block;
+  position:relative;
+  margin-top: 100px;
   text-align: center;
-  cursor: pointer;
-  border-radius: 5px;
-  background-color: #46494c;
-  color: #fff;
-  border: 1px solid #46494c;
+  height: auto;
 }
 
-.btn-shop:hover {
-  background-color: #0a0908;
-  color: #fff;
-  border: none;
+#hero-btn {
+  font-family: Volkorn;
+  background: white;
+  border: 4px solid black;
+  cursor: pointer;
+  max-width: 180%;
+  max-height: 100%;
+  width:220px;
+  height: 70px;
+  font-size: 200%;
+  text-align: center;
 }
 
 table {
@@ -526,10 +520,13 @@ table {
 /* Testimonials */
 #testimonials {
   background-color: #007791;
+  height: 20rem;
 }
+
 .carousel-item {
   padding: 7% 15%;
 }
+
 .carousel-item h3 {
   font-size: 1.5rem;
 }
@@ -651,6 +648,10 @@ table {
     max-width: 470px;
     max-height: 360px;
   }
+    
+  #hero-container {
+    padding-left: 12rem;
+  }
 }
 
 /* for laptops */
@@ -672,7 +673,11 @@ table {
     width: 75% !important;
     margin: auto;
   }
-
+  
+  #hero-container {
+    padding-left: 18rem;
+    margin-top: 8rem;
+  }
 }
 
 /* for large laptops */
@@ -698,6 +703,10 @@ table {
     top: 570%;
     left: 380%;
   }
+
+  #hero-container {
+    padding-left: 24rem;
+  }
 }
 
 /* for big TV's (HD screens) */
@@ -712,6 +721,11 @@ table {
   .btn-shop {
     top: 670%;
     left: 460%;
+  }
+    
+  #hero-container {
+    padding-left: 30rem;
+    margin-top: 10rem;
   }
 }
 
