@@ -10,7 +10,7 @@
         </div>
     </div>
     <hr class="w-50 mb-1">
-    <br /><br />
+    <br/><br/>
 
     {% if user.is_authenticated %}
 
@@ -55,16 +55,16 @@
         <p class="text-special lead">Upss! I looks quite empty here, doesn't it?</p>
         <p>Check out our latest offers and feel free to save them for later. You don't have to make a decision right
             away. This is what I am for, to remember all the <b>cool products</b> you have seen here!</p>
-        <span class="text-muted"> --- Your Wishlist <i class="fa-regular fa-face-grin-hearts"></i></span>
+        <span class="text-muted"> --- Your Wishlist <i class="fa-regular fa-heart"></i></span>
     </div>
     <br> <br>
     {% endif %}
     <div class="text-center">
         <a href="{% url 'products' %}" class="btn btn-outline-info rounded-3 ml-2" aria-label="products">
-            <span class="font-weight-bold"><i class="fa-solid fa-arrow-left"></i>Back to store</span>
+            <span class="font-weight-bold"><i class="fa-solid fa-arrow-left"></i> Back to store</span>
         </a>
     </div>
 </div>
 <br><br>
-
+{% endif %}
 {% endblock %}
