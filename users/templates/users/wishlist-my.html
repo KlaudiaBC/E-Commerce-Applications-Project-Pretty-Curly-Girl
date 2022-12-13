@@ -17,34 +17,33 @@
     {% if wishlist %}
     <table class="table table-sm">
         <thead class="text-black">
-            <thead class="text-black">
-                <tr>
-                    <th scope="col"></th> <!-- img -->
-                    <th scope="col">Product Info</th>
-                    <th scope="col">Price</th>
-                    <th scope="col"></th> <!-- delete icon -->
-                </tr>
-            </thead>
-
-            <thread>
-                {% for wl in wlist %}
-                <tr>
-                    <td class="w-25">
-                        {% if wish_item.image %}
-                        <img class="img-fluid img-tab rounded" src="{{ wl.image.url }}" alt="{{ wl.name }}">
-                        {% else %}
-                        <img class="card-img-top img-tab img-fluid" src="/media/noimage.webp" alt="{{ wl.name }}">
-                        {% endif %}
-                    </td>
-                    <td class="align-middle">
-                        <a href="{% url 'product_detail' wl.id %}"><strong>{{ wl.name }}</strong></a>
-                    </td>
-                    <td class="align-middle">
-                        {{ wl.price }}
-                    </td>
-                </tr>
-                {% endfor %}
+            <tr>
+                <th scope="col"></th> <!-- img -->
+                <th scope="col">Product Info</th>
+                <th scope="col">Price</th>
+                <th scope="col"></th> <!-- delete icon -->
+            </tr>
         </thead>
+
+        <thread>
+            {% for wl in wlist %}
+            <tr>
+                <td class="w-25">
+                    {% if wish_item.image %}
+                    <img class="img-fluid img-tab rounded" src="{{ wl.image.url }}" alt="{{ wl.name }}">
+                    {% else %}
+                    <img class="card-img-top img-tab img-fluid" src="/media/noimage.webp" alt="{{ wl.name }}">
+                    {% endif %}
+                </td>
+                <td class="align-middle">
+                    <a href="{% url 'product_detail' wl.id %}"><strong>{{ wl.name }}</strong></a>
+                </td>
+                <td class="align-middle">
+                    {{ wl.price }}
+                </td>
+            </tr>
+            {% endfor %}
+            </thead>
     </table>
 </div>
 
