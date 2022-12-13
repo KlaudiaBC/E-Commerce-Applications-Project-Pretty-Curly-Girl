@@ -5,9 +5,10 @@
 
 ## This is my Portfolio 5 Project regarding the Code Institute's Diploma in Software Development (E-commerce Applications).
 
-Fully responsive e-commerce application built with: Django Framework, Python3, JavaScript and jQuery (AJAX).
+Fully responsive e-commerce application built with: Django 4.0 Framework, Python3, JavaScript and jQuery (AJAX).
 Bootstrap4 as a front-end framework.
 Deployed on Heroku.
+Database hosted via AWS S3 Bucket.
 Stripe payments - including webhooks. Saving bag on the session.
 Google social accounts authorization with OAuth/django-allauth.
 User registration with required email confirmation.
@@ -126,6 +127,17 @@ See the Sprints as planned in the begging of implementation:
 <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/sprint3.png?raw=true"></p>
 <br>
 
+**Jira Insights / 1:**
+<p align="center">
+<img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/insights-s1.png?raw=true"></p>
+<br>
+
+**Jira Epic Progress:**
+<p align="center">
+<img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/ins2.1.png?raw=true"></p>
+<br>
+
+
 ### **Daily stand-ups**
 This point of agile development would be necessary, if there was more than one developer working on the project. The short daily stand-up meeting helps the team accomplish their tasks by brief update on the work done and work which is planned for that day. I have been reviewing the workflow on the beginning of each day of development to keep track of the achieved tasks in comparison to the estimated time so that I could later implement the changes into a Second Sprint.
 
@@ -145,15 +157,15 @@ Particular attention will be placed on the smooth navigation through the page, e
 ### **Skeleton** 
 #### **Wireframes:**
 Please, see the wireframes - created via <a href="https://app.diagrams.net/" target="_blank">Draw.io</a>:
-- <a href="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/static/images/README/wireframes/PCG-home_desktop.png?raw=true" target="_blank">Wireframe for the home page - desktop</a>
-- <a href="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/static/images/README/wireframes/PCG_product_list_page_desktop.png?raw=true" target="_blank">Wireframe for the product list page - desktop</a>
-- <a href="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/static/images/README/wireframes/PCG_product_detail_desktop.png?raw=true" target="_blank">Wireframe for the product detail page - desktop</a>
-- <a href="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/static/images/README/wireframes/PCG_locations_desktop.png?raw=true" target="_blank">Wireframe for the locations page - desktop</a>
+- <a href="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/wireframes/PCG-home_desktop.png?raw=true" target="_blank">Wireframe for the home page - desktop</a>
+- <a href="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/wireframes/PCG_product_list_page_desktop.png?raw=true" target="_blank">Wireframe for the product list page - desktop</a>
+- <a href="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/wireframes/PCG_product_detail_desktop.png?raw=true" target="_blank">Wireframe for the product detail page - desktop</a>
+- <a href="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/wireframes/PCG_locations_desktop.png?raw=true" target="_blank">Wireframe for the locations page - desktop</a>
 
-- <a href="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/static/images/README/wireframes/PCG_landing_page_mobile.png?raw=true" target="_blank">Wireframe for home page - mobile devices</a>
-- <a href="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/static/images/README/wireframes/PCG_product_list_mobile.png?raw=true" target="_blank">Wireframe for the product list page - mobile devices</a>
-- <a href="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/static/images/README/wireframes/product_detail_page_mobile.png?raw=true" target="_blank">Wireframe for the product detail page - mobile devices</a>
-- <a href="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/static/images/README/wireframes/PCG_locations_mobile.png?raw=true" target="_blank">Wireframe for the locations page - mobile devices</a>
+- <a href="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/wireframes/PCG_landing_page_mobile.png?raw=true" target="_blank">Wireframe for home page - mobile devices</a>
+- <a href="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/wireframes/PCG_product_list_mobile.png?raw=true" target="_blank">Wireframe for the product list page - mobile devices</a>
+- <a href="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/wireframes/product_detail_page_mobile.png?raw=true" target="_blank">Wireframe for the product detail page - mobile devices</a>
+- <a href="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/wireframes/PCG_locations_mobile.png?raw=true" target="_blank">Wireframe for the locations page - mobile devices</a>
 
 #### **Database Schema**
 I have implemented **PostgreSQL (Postgres)** - the open-source database object-relational database system, which is an extension of the SQL language.
@@ -173,40 +185,80 @@ Sticky top, includes logo (left side) and the button to access the basket/profil
 Menu includes following:
 
 <p align="center">
-  <img src="#" alt="landing page desktop">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/sign.png?raw=true" alt="landing page desktop">
 </p>
 
 **Footer** - on the bottom of the page, contains information about the author, links to social media accounts (buttons/icons) and disclaimer with information about an actual owner of the brand prezented in this application.
 
+<p align="center">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/footer.png?raw=true" alt="landing page desktop">
+</p>
+
 
 #### **Content of the pages:**
 
-Register page - contains one card with registration form and buttons to submit or to go back.
+Authorisation pages - are implemented from the django-allauth library and customised.
 
 <p align="center">
   <img src="#" alt="register_page">
 </p>
 
-Login page - contains one card with login form and buttons to submit or go back.
+Home page - Section 1: Hero Image (like on the image above)
+
+Home page - Section 2: Insights - why the customer should choose us? Short, catchy messages - loaded with keywords and decorated with a simple icon.
 
 <p align="center">
-  <img src="#" alt="login_page">
-</p>
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/section2.png?raw=true" alt="home">
+</p><br>
 
-Newsfeed page (Home): The posts are wrapped in the card element and displayed in descending order. Each card has the same size and contains: the category, topic, date of creation, the author, snippet of the post content. Button *"Read more"* moves the User to the detalic view of the chosen post.
+Home page - Section 3: Blog / Content marketing: I have added a random articles about hair care, however this place is designed to publish a blog by the owner of the application, providing te customer an extra value into the purchase-sell process. It could be also a section where the partners/connected buisnesses are promoted - im higher recognazible are they, the better chances has an application in the SEO rankings.
 
 <p align="center">
   <img src="#" alt="home_page">
+</p><br>
+
+Home page - Section 4 - Testimonials - because the whisperred marketing tends to be the most effective.
+
+<p align="center">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/testimonials.png?raw=true" alt="home_page">
+</p><br>
+
+Home page - Section 5 - Subscribtion form as another marketingowy tool that allows the seller to bulid relationship with his customers
+
+<p align="center">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/subscrib.png?raw=true" alt="home_page">
 </p>
 
-MyPage - render the same view as the home page, but display filtered posts- only the one which was created by the User. There are two buttons added into a post card: *"Edit"* and *"Delete"*.
+<hr>
 
-
-Detalic view page - render the: title, author, date and body of the particular post. Below there is a *"like"* button - User can like and unlike the post by clicking the *"like"* icon. Third part of the container is a comment section, where all added and approved by Admin comments are displayed in ascending order. On top of this section is located an *"Add comment"* button which render the Add Comment Form.
+Product list page - display the cards with image, name and sub-name of available products.
 
 <p align="center">
   <img src="" alt="view_page">
 </p>
+
+
+Detalic view page - All information about one product. Buttons: *Add to the bag* and *Go back*
+
+<p align="center">
+  <img src="" alt="view_page">
+</p>
+
+Bag page - list of all the products User added to the basket and desire to purchase. Buttons: *Checkout*, *Go back*, *Increment/decrement quantity*, *Remove from the basket*
+
+<p align="center">
+  <img src="" alt="view_page">
+</p>
+
+Checkout page - contains the form for shipping address of the customer as well as his bank card credentials - Stripe element.
+If you would like to test the funcjonality of this component - you can do it anonymously, following Stripe:
+"...use a card number, such as 4242 4242 4242 4242. Use a valid future date, such as 12/34. Use any three-digit CVC (four digits for American Express cards). Use any value you like for other form fields. The success transaction will redirect you to the "Checkout success page".
+
+<p align="center">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/pcg_checkout_tablet.png?raw=true" alt="checkout
+</p>
+
+Wishlist - User personal account. In order to collect the favourite products in one private list, the Registration is required. User can add the item to his wishlist via clicking in the "heart" icon placed in the right-bottom corner of the product card.
 
 
 #### **Color scheme**
@@ -215,7 +267,7 @@ Following the color scheme of the current store of my Client - I have stayed wit
 I added a soft touch of color "Teal Blue", which brought little dynamics into a page and is working well with the css animations I have implemented.
 
 <p align="center">
-  <img src="">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/my-col.png?raw=true">
 </p>
 
 <p align="right"><a href="#welcome">Bact to top</a></p>
@@ -263,13 +315,27 @@ Thanks to setting up the webhooks, every intent of the payment is registered by 
                                                                                                                                                      
 **Google Auth**
 I have added to my application the social account authorisation - firstly it was possible to login via Facebook and Google. Unfortunately during the process, I have lost the access to the facebook authorisation tokens and did not have time to configure the login again - this is why I left only the Google authorisation available and surely will be expanding the social accounts more as it is very popular way to encourage Users to log into our page and allows owners of the page to collect (some) data, which may be useful in marketing/economy planning.
-    
+
+
+In order to connect the Django App z Google API, I created a project: "PCG-Heroku" and connected it with OAuth consent screen to finally receive the credentials: Client_ID and Client Secret Key --> attached them to my Heroku Vars list.
+
+<p align="center">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/google-auth.png?raw=true" alt="google auth"></p>
+
+...and the login interface looks pretty common:
 <p align="center">
   <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/google_auth_ok.png?raw=true" alt="google auth"></p>
 
 
 **Subscription via MailChimp**
 This is another interesting feature which is a good practice in terms of marketing planning, trying to gain information about your potential customer as well as get into a direct contact with customer, which allows to build the trust and create positive B2C relationship.
+
+
+**Hosting the database in AWS S3 Bucket**
+Similarily to setting up API with Google Cloud, there was a necesity to sign up for a developers account and follow a specific path of creation a group, then User and via adding those objects into an S3 forms. I was able to obtain the sensitive credentials which I have set in Heroku Vars.
+
+<p align="center">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/AWS_conf_pcg.png?raw=true" alt="google auth"></p>
 
 
 **Star Rating**
@@ -353,7 +419,7 @@ Collecting data for the newsletter via *"Subscribe for newsletter"* button on th
 
 #### **Search Engine Optimization**
                                                                                                                           
-SEO including descriptive meta tags, keywords included in the "alt" attribute of images. Links to high-ranked websites that are connected with the content of the page. Robots.txt and site maps included.
+SEO including descriptive meta tags, keywords included in the "alt" attribute of images. Links to high-ranked websites that are connected with the content of the page. Robots.txt and sitemaps.xml are included.
                                                                                                                           
  <p align="center">
   <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/words1.jpg?raw=true"></p>
@@ -522,7 +588,14 @@ I have used the following technologies and support sources:
 - <a href="https://www.flaticon.com/" target="_blank">Flaticon</a> by Freepik / for all vector images (checkout success/empty shopping bag)
 - <a href="https://coolors.co/" target="_blank">Coolors</a> for a color pallete
 - <a href="https://ezgif.com/" target="_blank">Ezgif</a> for optimization of the images used in the project
-- <a href="https://us21.admin.mailchimp.com/#/">MailChimp</a> for subscribtion automation
+
+
+*API services:*
+- <a href="https://stripe.com/" target="_blank">Stripe for secure, online payment system</a>
+- <a href="https://dashboard.heroku.com/" target="_blank">Heroku for the application deployment</a>
+- <a href="https://us21.admin.mailchimp.com/" target="_blank">MailChimp for subscribtion automation</a>
+- <a href="https://cloud.google.com/" target="_blank">Google Cloud for authorisation</a>
+- <a href="https://https://aws.amazon.com/" target="_blank">AWS S3 bucket for storing the data
                                                                                             
 <p align="right"><a href="#welcome">Bact to top</a></p>
 
@@ -543,14 +616,13 @@ In this place I would like to thank everyone, who added an knowledge and value t
 - <a href="https://docs.aws.amazon.com/s3/index.html?nc2=h_ql_doc_s3#amazon-s3" target="_blank">Amazon AWS</a> documentation for Amazon S3
 - <a href="https://devcenter.heroku.com/categories/python-support" target="_blank">Heroku Dev Center</a> - Python Support
 - <a href="https://console.cloud.google.com/apis" target="_blank">Google Cloud Console</a> for Google API
-- <a href="https://www.pexels.com/">Pexels</a> The images that are included in the "content/blog" section: the authors are as follow, from the left side: 1) cottonbro studio,2) PNW Production,3) nappy
 - <a href="https://ordinarycoders.com/blog/article/django-user-register-login-logout" target="_blank">"A Guide to User Registration, Login, and Logout in Django"</a> by < ordinary > coders
 - <a href="https://dev.to/lawrence_eagles/causes-of-heroku-h10-app-crashed-error-and-how-to-solve-them-3jnl" target="_blank">"Causes of Heroku H10-App Crashed Error And How To Solve Them"</a> by Dev.to
 - <a href="https://realpython.com/django-hosting-on-heroku/" target="_blank">"Hosting a Django Project on Heroku"</a> by Real Python
 - <a href="https://www.atlassian.com/agile/project-management/user-stories" target="_blank">"User stories with examples and a template"</a> by Atlassian
 - <a href="https://www.easyagile.com/blog/how-to-write-good-user-stories-in-agile-software-development/" target="_blank">"How to Write Good User Stories in Agile Software Development"</a> by EasyAgile
 - <a href="https://www.knowledgehut.com/blog/agile/powerful-tips-for-writing-the-best-user-stories-in-scrum" target="_blank">"Powerful Tips for Writing the Best User Stories in Scrum"</a> by Knowledgehut
-- <a href="[https://www.canva.com/learn/social-media-design-trends-2022/](https://dribbble.com/tags/ecommerce_app)" target="_blank">"Ecommerce App (design inspirations)"</a> by Dribbble.com
+- <a href="https://dribbble.com/tags/ecommerce_app" target="_blank">"Ecommerce App (design inspirations)"</a> by Dribbble.com
 - <a href="https://www.google.com/amp/s/appinventiv.com/blog/ecommerce-app-features-for-startups-and-enterprises/" target="_blank">"Top 10 eCommerce app features for startups and enterprises"</a> by Appinventiv.com
 - <a href="https://mindsea.com/mobile-app-marketing/" target="_blank">"Mobile app marketing"</a> by Mindsea
 - <a href="https://mindster.com/mindster-blogs/ecommerce-applications/" target="_blank">"How e-Commerce Applications Help Your Business Grow?"</a> by Mindster
@@ -565,6 +637,12 @@ In this place I would like to thank everyone, who added an knowledge and value t
 Media used:
 - All images of the products are coming directly from the Client: <a href="https://prettycurlygirl.store/">Pretty Curly Girl</a>
 - Image of persona: <a href="https://www.pexels.com/photo/women-wearing-black-clothes-7623816/">Photo by Mikhail Nilov</a> via Pexels
+- Google Logo Icon: <a href="https://icons8.com/icon/17949/google">Google icon</a>
+- Favicon Generator: <a href="https://favicon.io/favicon-generator/">Favicon</a>
+- Images in the "blog" section / home page:
+<a href="https://www.pexels.com/photo/back-view-of-woman-with-curly-hair-8377518/">PNW Production</a>, 
+<a href="https://www.pexels.com/photo/girl-wearing-pink-white-teal-and-blue-crew-neck-cold-shoulder-standing-near-fence-1068205/">Photo by nappy</a> and 
+<a href="https://www.pexels.com/@cottonbro/">Cottonbro</a>
 
 
 <p align="right"><a href="#welcome">Bact to top</a></p>
