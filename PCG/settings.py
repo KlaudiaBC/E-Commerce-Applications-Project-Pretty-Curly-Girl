@@ -56,6 +56,7 @@ INSTALLED_APPS = [
 
     'allauth',
     'allauth.account',
+    'social_django',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
 
@@ -77,7 +78,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    # 'django.middleware.csrf.CsrfViewMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -125,14 +126,18 @@ MESSAGE_TAGS = {
 }
 
 AUTHENTICATION_BACKENDS = [
+
+    # Needed to manage social accounts allauth `
+    'social_core.backends.open_id.OpenIdAuth',
+    'social_core.backends.google.GoogleOpenId',
+    'social_core.backends.google.GoogleOAuth2',
+    'social_core.backends.google.GoogleOAuth',
+
     # Needed to login by username in Django admin, regardless of `allauth`
     'django.contrib.auth.backends.ModelBackend',
 
     # `allauth` specific authentication methods, such as login by e-mail
     'allauth.account.auth_backends.AuthenticationBackend',
-
-    # `allauth` specific authentication methods for Google
-    'social_core.backends.google.GoogleOAuth2',
 ]
 
 SITE_ID = 1
@@ -143,9 +148,13 @@ ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = False
 ACCOUNT_USERNAME_MIN_LENGTH = 3
 SOCIALACCOUNT_QUERY_EMAIL = True
+SOCIAL_AUTH_ADMIN_USER_SEARCH_FIELDS = ['username', 'email']
 
+SOCIAL_AUTH_LOGIN_URL = '/login-url/'
 LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/'
+SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/logged-in/'
+SOCIAL_AUTH_SESSION_EXPIRATION = False
 
 # Social accounts / Google
 SOCIALACCOUNT_PROVIDERS = {
@@ -162,7 +171,9 @@ SOCIALACCOUNT_PROVIDERS = {
             'access_type': 'offline',
             'state': 'sample_passthrough_value',
             'include_granted_scopes': 'true',
-        }}
+        },
+        'OAUTH_PKCE_ENABLED': True,
+    }
 }
 
 
