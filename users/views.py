@@ -43,19 +43,18 @@ def users(request):
 def add_wishlist(request):
     """Add product to your wishlist
     only for registered users"""
-
-    model = Wishlist
-
     if request.POST:
-        data = Wishlist.objects.filter(
-            user_id=request.user.pk, product_id=int(
-                request.POST['attr_id']))
-        if data.exists():
-            return False
-        else:
-            Wishlist.objects.create(
+        if request.user.is_authenticated:
+            data = Wishlist.objects.filter(
                 user_id=request.user.pk, product_id=int(
                     request.POST['attr_id']))
+            if data.exists():
+                messages.error(
+                    request, 'This item can not be added to your wishlist.')
+            else:
+                Wishlist.objects.create(
+                    user_id=request.user.pk, product_id=int(
+                        request.POST['attr_id']))
 
     return HttpResponse(status=200)
 
@@ -63,4 +62,4 @@ def add_wishlist(request):
 # My Wishlist
 def wishlist(request):
     wlist = Wishlist.objects.filter(user=request.user).order_by('-id')
-    return render(request, 'users/wishlist-my.html', {'wlist': wlist})
+    return render(request, './users/wishlist-my.html', {'wlist': wlist})

@@ -59,7 +59,7 @@
 
                                 <!-- "Like" button / Add to wishlist -->
                                 <span class="col-6 d-flex justify-content-end addToWish" id="id"
-                                    attr_id="{{ product.pk }}"><i class="fa-regular fa-heart fa-lg mr-1"></i></button>
+                                    attr_id="{{ product.pk }}"><i class="fa-regular fa-heart fa-lg mr-1"></i>
                                 </span>
                             </div>
                         </div>
@@ -130,15 +130,13 @@
             var that = $(this);
 
             $.ajax({
-                url: "users/add_wishlist",
+                url: "/users/add_wishlist",
                 type: "POST",
                 data: { 'attr_id': attr_id },
+
                 success: function (result) {
                     console.log("Success")
-                    that.toggleClass("heart");
-                },
-                error: function () {
-                    alert("Please login");
+                    that.addClass('wishAdded').removeClass('addToWish');
                 }
             });
         });

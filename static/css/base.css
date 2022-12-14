@@ -453,9 +453,12 @@ ul.social-icons li {
   opacity: 0;
 }
 
-.addToWish i {
-  font-size: xx-large;
+.wishAdded i {
   color: red;
+}
+
+.addToWish i {
+  color: black;
 }
 
 
