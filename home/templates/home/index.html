@@ -11,7 +11,7 @@
 
     <div id="hero-container">
       <a href= "{% url 'products' %}" >
-      <button id="hero-btn" class="font-spec">SHOP NOW</button></a>
+      <button id="button" class="font-spec">SHOP NOW</button></a>
     </div>
   </div>
 </div>
@@ -132,5 +132,9 @@
 <section id="cta">
   {% include 'includes/mail_sub.html' %}
 </section>
+{% endblock %}
+
+{% block postloadjs %}
+<script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="programmingfans" data-description="Support me on Buy me a coffee!" data-message="" data-color="#FF813F" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
 
 {% endblock %}
