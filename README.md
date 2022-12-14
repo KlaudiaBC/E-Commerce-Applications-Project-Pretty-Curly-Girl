@@ -188,7 +188,7 @@ Menu includes following:
   <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/sign.png?raw=true" alt="landing page desktop">
 </p>
 
-**Footer** - on the bottom of the page, contains information about the author, links to social media accounts (buttons/icons) and disclaimer with information about an actual owner of the brand prezented in this application.
+**Footer** - on the bottom of the page, contains information about the author, links to social media accounts (buttons/icons) and disclaimer with information about an actual owner of the brand presented in this application.
 
 <p align="center">
   <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/footer.png?raw=true" alt="landing page desktop">
@@ -197,7 +197,7 @@ Menu includes following:
 
 #### **Content of the pages:**
 
-Authorisation pages - are implemented from the django-allauth library and customised.
+Authorization pages - are implemented from the django-allauth library and customized.
 
 <p align="center">
   <img src="#" alt="register_page">
@@ -211,19 +211,19 @@ Home page - Section 2: Insights - why the customer should choose us? Short, catc
   <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/section2.png?raw=true" alt="home">
 </p><br>
 
-Home page - Section 3: Blog / Content marketing: I have added a random articles about hair care, however this place is designed to publish a blog by the owner of the application, providing te customer an extra value into the purchase-sell process. It could be also a section where the partners/connected buisnesses are promoted - im higher recognazible are they, the better chances has an application in the SEO rankings.
+Home page - Section 3: Blog / Content marketing: I have added random articles about hair care, however this place is designed to publish a blog by the owner of the application, providing to customer an extra value into the purchase-sell process. It could be also a section where the partners/connected businesses are promoted - the higher recognizable are they, the better chances has an application in the SEO rankings.
 
 <p align="center">
   <img src="#" alt="home_page">
 </p><br>
 
-Home page - Section 4 - Testimonials - because the whisperred marketing tends to be the most effective.
+Home page - Section 4 - Testimonials - because the whispered marketing tends to be the most effective.
 
 <p align="center">
   <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/testimonials.png?raw=true" alt="home_page">
 </p><br>
 
-Home page - Section 5 - Subscribtion form as another marketingowy tool that allows the seller to bulid relationship with his customers
+Home page - Section 5 - Subscription form as another marketing tool that allows the seller to bulit relationship with his customers
 
 <p align="center">
   <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/subscrib.png?raw=true" alt="home_page">
@@ -238,7 +238,7 @@ Product list page - display the cards with image, name and sub-name of available
 </p>
 
 
-Detalic view page - All information about one product. Buttons: *Add to the bag* and *Go back*
+Detail view page - All information about one product. Buttons: *Add to the bag* and *Go back*
 
 <p align="center">
   <img src="" alt="view_page">
@@ -251,31 +251,31 @@ Bag page - list of all the products User added to the basket and desire to purch
 </p>
 
 Checkout page - contains the form for shipping address of the customer as well as his bank card credentials - Stripe element.
-If you would like to test the funcjonality of this component - you can do it anonymously, following Stripe:
+If you would like to test the funcionality of this component - you can do it anonymously, following Stripe:
 "...use a card number, such as 4242 4242 4242 4242. Use a valid future date, such as 12/34. Use any three-digit CVC (four digits for American Express cards). Use any value you like for other form fields. The success transaction will redirect you to the "Checkout success page".
 
 <p align="center">
   <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/pcg_checkout_tablet.png?raw=true" alt="checkout
 </p>
 
-Wishlist - User personal account. In order to collect the favourite products in one private list, the Registration is required. User can add the item to his wishlist via clicking in the "heart" icon placed in the right-bottom corner of the product card.
+Wishlist - User personal account. In order to collect the favorite products in one private list, the Registration is required. User can add the item to his wishlist via clicking in the "heart" icon placed in the right-bottom corner of the product card.
 
 
 #### **Color scheme**
 
-Following the color scheme of the current store of my Client - I have stayed with the shades of grey: a lot of white space and high-contrast elements in black.
+Following the color scheme of the current store of my Client - I have stayed with the shades of gray: a lot of white space and high-contrast elements in black.
 I added a soft touch of color "Teal Blue", which brought little dynamics into a page and is working well with the css animations I have implemented.
 
 <p align="center">
   <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/my-col.png?raw=true">
 </p>
 
-<p align="right"><a href="#welcome">Bact to top</a></p>
+<p align="right"><a href="#welcome">Back to top</a></p>
 
 ## **Implementation**
 
 ### **Branches in GIT**
-The implementation of this project was done in Gitpod (the virtual environment). At first I was working in the main branch where I have set and configured my Django project, created a home app and the base template.
+The implementation of this project was done in Gitpod (the virtual environment). At first, I was working in the main branch where I have set and configured my Django project, created a home app and the base template.
 After initial deployment on Heroku (see: Deployment) I have followed the suggestion of my Mentor to create separate branches for different tasks.
 
 Using the Jira automation tools, I have connected this repository on GitHub with my project board. The names of the branches follow the Jira story numbers. Each commit message contains the story number of the task that was done and is visible in the Jira backlog. I have also added comments and images to the particular tickets with information that can make the code more readable and easily accessible during the future implementations.
@@ -314,10 +314,10 @@ Thanks to setting up the webhooks, every intent of the payment is registered by 
 
                                                                                                                                                      
 **Google Auth**
-I have added to my application the social account authorisation - firstly it was possible to login via Facebook and Google. Unfortunately during the process, I have lost the access to the facebook authorisation tokens and did not have time to configure the login again - this is why I left only the Google authorisation available and surely will be expanding the social accounts more as it is very popular way to encourage Users to log into our page and allows owners of the page to collect (some) data, which may be useful in marketing/economy planning.
+I have added to my application the social account authorization - firstly it was possible to login via Facebook and Google. Unfortunately during the process, I have lost the access to the facebook authorization tokens and did not have time to configure the login again - this is why I left only the Google authorization available and surely will be expanding the social accounts more as it is very popular way to encourage Users to log into our page and allows owners of the page to collect (some) data, which may be useful in marketing/economy planning.
 
 
-In order to connect the Django App z Google API, I created a project: "PCG-Heroku" and connected it with OAuth consent screen to finally receive the credentials: Client_ID and Client Secret Key --> attached them to my Heroku Vars list.
+In order to connect the Django App with Google API, I created a project: "PCG-Heroku" and connected it with OAuth consent screen to finally receive the credentials: Client_ID and Client Secret Key --> attached them to my Heroku Vars list.
 
 <p align="center">
   <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/google-auth.png?raw=true" alt="google auth"></p>
@@ -332,21 +332,21 @@ This is another interesting feature which is a good practice in terms of marketi
 
 
 **Hosting the database in AWS S3 Bucket**
-Similarily to setting up API with Google Cloud, there was a necesity to sign up for a developers account and follow a specific path of creation a group, then User and via adding those objects into an S3 forms. I was able to obtain the sensitive credentials which I have set in Heroku Vars.
+Similary to setting up API with Google Cloud, there was a necessity to sign up for a developers account and follow a specific path of creation a group, then User and via adding those objects into an S3 forms. I was able to obtain the sensitive credentials which I have set in Heroku Vars.
 
 <p align="center">
   <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/AWS_conf_pcg.png?raw=true" alt="google auth"></p>
 
 
 **Star Rating**
-I have implemented a star rating django library as the rating system is well known to be a strong selling point - however the code that I've fetch from the library was very chaotic and unclear - this is why finally I have decided to resign from using the version that may cause further issues and errors. I decided it will be more efficient to wait with implementation of this feature and provide good quality code to handle it.
+I have implemented a star-rating django library as the rating system is well known to be a strong selling point - however the code that I've fetched from the library was very chaotic and unclear - this is why finally I have decided to resign from using the version that may cause further issues and errors. I decided it will be more efficient to wait with implementation of this feature and provide good quality code to handle it.
 
 <p align="center">
   <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/star_ratings.png?raw=true" alt="star rating></p>
 
                                                                                                                  
                                                                                                                                                 
-<p align="right"><a href="#welcome">Bact to top</a></p>
+<p align="right"><a href="#welcome">Back to top</a></p>
 
 ## **Business model**
   - Who is the customer? --> B2C - individual customer
@@ -354,7 +354,7 @@ I have implemented a star rating django library as the rating system is well kno
   - How will they pay? --> Single payment, which means the transaction is finished after the single payment is done.
 
 1. Individual customers are more likely to purchase the product impulsively, therefore it is important to make the check out process as quick and easy as possible.
-2. While the product is a deliverable, the database should include: product details, stock numbers, shipping or delivery costs, postal address of the customer, who purchased the order, ratings/reviews of the product as well as its image. The features should include: search tools, notice when the product is out of stock and notification for the customer about the order.
+2. While the product is a deliverable, the database should include: product details, stock numbers, shipping or delivery costs, postal address of the customer, who purchased the order, ratings/reviews of the product as well as its image. The features should include: search tools, notice when the product is out-of-stock and notification for the customer about the order.
 
 
 ### **Marketing strategy**           
@@ -374,7 +374,7 @@ The marketing plan is aimed at:
   <li> appointment of tasks aimed at reaching the above-mentioned target group</li>
   <li> determining the budget for marketing purposes</li>
   <li> planning activities related to communication with a potential client</li>
-  <li> defining specific actions related to running a 360 degree marketing strategy, and thus:
+  <li> defining specific actions related to running a 360-degree marketing strategy, and thus:
       a) a plan of content marketing: social media accounts / blogging / newsletter,
     b) a plan of experiential marketing activities (events)</li>
   <li> defining the methods and tools used to measure the effectiveness of the strategy</li>
@@ -391,12 +391,12 @@ Facebook / Instagram / TikTok:
   <li> advertisement on FB, IG</li>
   <li> regular posting, photos, videos</li>
   <li> thematic drawings or pictures (holidays, Valentine's Day etc.) - designed and created directly for the brand (not copied from other websites)</li>
-  <li> personal message (eg. “behind the scenes” of creating products)</li>
+  <li> personal message (e.g. “behind the scenes” of creating products)</li>
   <li> leveling up with the average pole, follow the statistics and adjust the strategy to meet New Users</li>
   </ul>
 
 
-**Posts:** For the first 3 months posts should be added at least 2x a week and should be: interesting, divided, personalized, regular. Routine - add one post at a constant time of the day every day: eg in the morning or in the evening (make the User adjust to regular contact, schedule and create a trust tower, expectations).
+**Posts:** For the first 3 months posts should be added at least 2x a week and should be: interesting, divided, personalized, regular. Routine - add one post at a constant time of the day every day: e.g. in the morning or in the evening (make the User adjust to regular contact, schedule and create a trust tower, expectations).
 
 
 **Theme post:**
@@ -454,7 +454,7 @@ In order to find the most effective **keywords** for my SEO, I have followed tho
 #### **Control and updating procedures**
   - BUZZSUMO - monitors the internet in terms of making a given article available to users, has internet monitoring functions in terms of content and competition (keywords)
   - FACEBOOK AUDIENCE INSIGHTS - information about: how big is the target group on Facebook, how it behaves (which pages User likes, how many times in a month
-he clicks "I like it" etc)
+he clicks "I like it" etc.)
   - Programs for editing / graphic processing: PIXLR, Canva
   - Programs useful for updating / publishing new content - PHOTO BANKS: Shutterstock, Fotolia (PAID) + Site Builder Report (FREE OF CHARGE)
   - Sotrender - the best social media tool on the market, which will allow you to analyze activities on Facebook, Twitter, YouTube, Instagram, and suggest what can be improved to make the engagement on these channels higher
