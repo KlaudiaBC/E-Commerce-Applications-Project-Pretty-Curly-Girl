@@ -144,8 +144,10 @@
     <p><small>Generated using Privacy Policy Generator</small></p>
 </div>
 <br>
-<div class="d-flex">
-    <button class="btn btn-outline-info rounded-3 mx-auto"> <a href="{% url 'products' %}">Back</a></button>
+<div class="text-center">
+    <a href="{% url 'home' %}" class="btn btn-outline-info rounded-3 ml-2" aria-label="products">
+        <span class="font-weight-bold"><i class="fa-solid fa-arrow-left"></i>  Back to home</span>
+    </a>
 </div>
 
 {% endblock %}

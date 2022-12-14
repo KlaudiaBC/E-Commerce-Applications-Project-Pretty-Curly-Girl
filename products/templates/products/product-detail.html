@@ -17,7 +17,7 @@
                     {% if product.image %}
                     <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
                     {% else %}
-                    <img class="card-img-top img-fluid" src="/static/images/smile.webp" alt="{{ product.name }}">
+                    <img class="card-img-top img-fluid" src="{% static 'images/noimage.webp' %}" alt="{{ product.name }}">
                     {% endif %}
                 </div>
             </div>

@@ -36,7 +36,7 @@
                         {% if item.product.image %}
                         <img class="w-100 img-sm" src="{{ item.product.image.url }}" alt="{{ product.name }}">
                         {% else %}
-                        <img class="w-100 img-sm" src="/static/images/smile.webp" alt="{{ product.name }}">
+                        <img class="w-100 img-sm" src="{% static 'images/noimage.webp' %}" alt="{{ product.name }}">
                         {% endif %}
                     </a>
                 </div>
@@ -91,7 +91,7 @@
                 </fieldset>
 
                 <div class="submit-button text-right mt-5 mb-2">
-                    <a href="{% url 'view_bag' %}" class="btn btn-outline-info rounded-3" aria-label="view_bag">
+                    <a href="{% url 'view_bag' %}" class="btn btn-outline-secondary rounded-3" aria-label="view_bag">
                         <span class="font-weight-bold"><i class="fa-solid fa-arrow-left"></i> Adjust Bag</span>
                     </a>
                     <button id="submit-button" class="btn btn-info rounded-3" aria-label="complete_order">
@@ -105,7 +105,6 @@
         </div>
     </div>
 </div>
-
 
 {% endblock %}
 

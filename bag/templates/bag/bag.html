@@ -33,7 +33,8 @@
                     {% if item.product.image %}
                     <img class="img-fluid rounded" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
                     {% else %}
-                    <img class="card-img-top img-fluid" src="/static/images/smile.webp" alt="{{ product.name }}">
+                    <img class="card-img-top img-fluid" src="{% static 'images/noimage.webp' %}"
+                        alt="{{ product.name }}">
                     {% endif %}
                 </td>
                 <td>
@@ -92,14 +93,12 @@
         </p>
         {% endif %}
     </div>
-</div>
 
-<div>
     <div colspan="5" class="text-right m-5">
-        <a href="{% url 'products' %}" class="btn btn-outline-secondary rounded-0 btn-lg" aria-label="products">
+        <a href="{% url 'products' %}" class="btn btn-outline-secondary rounded-3 btn-lg" aria-label="products">
             <span class="text-uppercase"><i class="fa-solid fa-arrow-left"></i> Keep Shopping</span>
         </a>
-        <a href="{% url 'checkout' %}" class="btn btn-secondary rounded-0 btn-lg" aria-label="checkout">
+        <a href="{% url 'checkout' %}" class="btn btn-info rounded-3 btn-lg" aria-label="checkout">
             <span class="text-uppercase">Secure Checkout</span>
         </a>
     </div>
@@ -107,20 +106,18 @@
 
     {% else %}
     <div class="container-tall">
-        <br>
-        <div class="d-block">
+        <div class="d-block mt-4">
             <div class="text-center">
-                <img class="img-sm"
-                    src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/static/images/empty-cart.png?raw=true"
-                    alt="empty basket" aria-label="empty_basket">
+                <img class="img-sm" src="{% static 'images/empty-cart.png' %}" alt="empty basket"
+                    aria-label="empty_basket">
                 <br>
             </div>
             <div class="text-center">
                 <p class="my-3">Your bag is empty.</p>
             </div><br>
             <div class="text-center">
-                <a href="{% url 'products' %}" class="btn btn-outline-secondary rounded-0 btn-lg" aria-label="products">
-                    <span class="text-uppercase"><i class="fa-solid fa-arrow-left"></i> Keep Shopping</span>
+                <a href="{% url 'home' %}" class="btn btn-outline-info rounded-3 ml-2" aria-label="products">
+                    <span class="font-weight-bold"><i class="fa-solid fa-arrow-left"></i> See our products</span>
                 </a>
             </div>
         </div>

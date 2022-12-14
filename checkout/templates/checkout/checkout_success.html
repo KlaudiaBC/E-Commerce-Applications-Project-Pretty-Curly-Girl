@@ -8,13 +8,13 @@
     <div class="row">
         <div class="col">
             <hr class="w-50 mb-1">
-            <h2 class="logo-font mb-4 text-center">Thank you</h2>
+            <h2 class="logo-font mb-4 text-center">Thank you!</h2>
             <hr class="w-50 mb-1">
         </div>
     </div>
     <div class="d-block">
         <div class="text-center">
-            <img class="img-sm" src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/static/images/spirit.png?raw=true" alt="success">
+            <img class="img-sm" src="{% static 'images/spirit.png' %}" alt="success">
             <br>
         </div>
         <div class="text-center">
@@ -22,9 +22,11 @@
             <p>Your order is now being prepared and will be sent to you shortly!</p>
             <p>If you have any questions or concerns feel free to contact us: info@prettycurlygirl.com</p>
             <br>
-            <a href="{% url 'products' %}" class="btn btn-outline-info rounded-3 my-2">
-                <span>Home</span>
-            </a>
+            <div class="text-center">
+                <a href="{% url 'home' %}" class="btn btn-outline-info rounded-3 ml-2" aria-label="products">
+                    <span class="font-weight-bold"><i class="fa-solid fa-arrow-left"></i>  Back to home</span>
+                </a>
+            </div>
         </div>
     </div>
 </div>

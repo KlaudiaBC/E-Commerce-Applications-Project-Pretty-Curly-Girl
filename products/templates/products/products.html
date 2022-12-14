@@ -13,6 +13,7 @@
         </div>
     </div>
     <hr class="w-50 mb-1">
+    <br>
     <div class="btn-group">
         <button type="button" class="btn btn-outline-secondary dropdown-toggle ml-3" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false" aria-label="sort">
@@ -42,7 +43,8 @@
                         </a>
                         {% else %}
                         <a href="{% url 'product_detail' product.id %}">
-                            <img class="card-img-top img-fluid" src="/media/noimage.webp" alt="{{ product.name }}">
+                            <img class="card-img-top img-fluid" src="{% static 'images/noimage.webp' %}"
+                                alt="{{ product.name }}">
                         </a>
                         {% endif %}
                         <div class="card-body p-3">
@@ -88,7 +90,7 @@
     <br><br>
     <div class="text-center">
         <a href="{% url 'home' %}" class="btn btn-outline-info rounded-3 ml-2" aria-label="products">
-            <span class="font-weight-bold"><i class="fa-solid fa-arrow-left"></i>Back to home</span>
+            <span class="font-weight-bold"><i class="fa-solid fa-arrow-left"></i>  Back to home</span>
         </a>
     </div>
 </div>
@@ -121,7 +123,6 @@
         }
     })
 
-
     // Add wishlist
     $(document).ready(function () {
         $(".addToWish").click(function () {
@@ -139,7 +140,6 @@
                 error: function () {
                     alert("Please login");
                 }
-
             });
         });
     });

@@ -33,16 +33,6 @@ body {
   height: auto;
 }
 
-#button {
-  font-family: Volkorn;
-  max-width: 180%;
-  max-height: 100%;
-  width:220px;
-  height: 70px;
-  font-size: 200%;
-  text-align: center;
-}
-
 .card-product {
   border-radius: 10px;
   box-shadow: 1px 2px grey;
@@ -125,9 +115,9 @@ a:hover {
   color: black;
   border: 1px solid black;
 }
-.btn-temp-black a:hover,
-.btn-temp-black a:active,
-.btn-temp-black a:focus {
+.btn-temp-blue a:hover,
+.btn-temp-blue a:active,
+.btn-temp-blue a:focus {
   color: #0a0908;
 }
 
@@ -241,7 +231,7 @@ footer .fa-brands {
 }
 
 .stars {
-  color: #fdcc0d;
+  color: #fdcd0dd2;
   font-size: large;
   text-align: center;
 }
@@ -737,16 +727,19 @@ button {
 /* hero btn animation - from codepen */
 #button {
 	position: relative;
-	padding: 1em 2em;
-	border: 0;
+	padding: 0.5em;
+	border: #dee2e6 solid 1px;
 	outline: 0;
 	background: linear-gradient(to right, #40e0d0, #ff8c00, #ff0080);
 	background-size: 400% 400%;
 	color: #000;
-	font-size: 1.25rem;
+	font-size: 2rem;
+  width: 18rem;
+  height: 6rem;
 	cursor: pointer;
   text-align: center;
   border-radius: 0.5rem;
+  font-weight: bold;
 }
 
 #button:hover {
