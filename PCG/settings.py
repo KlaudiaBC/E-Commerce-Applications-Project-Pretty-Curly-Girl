@@ -36,8 +36,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-'DEVELOPMENT' in os.environ
+DEBUG = False
 
 ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME'), 'localhost']
 
@@ -74,7 +73,6 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    # 'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     # 'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -124,13 +122,6 @@ MESSAGE_TAGS = {
 }
 
 AUTHENTICATION_BACKENDS = [
-
-    # Needed to manage social accounts allauth `
-    # 'social_core.backends.open_id.OpenIdAuth',
-    # 'social_core.backends.google.GoogleOpenId',
-    # 'social_core.backends.google.GoogleOAuth2',
-    # 'social_core.backends.google.GoogleOAuth',
-
     # Needed to login by username in Django admin, regardless of `allauth`
     'django.contrib.auth.backends.ModelBackend',
 
@@ -183,12 +174,6 @@ CSRF_TRUSTED_ORIGINS = ['https://*.pretty-curly-girl.herokuapp.com',
                             -wupqhbk7hoz.ws-eu78.gitpod.io',
                         'http://*.gitpod.io']
 
-# CSRF_USE_SESSIONS = False
-# CSRF_COOKIE_HTTPONLY = False
-# CSRF_COOKIE_SECURE = False
-# CORS_ALLOW_CREDENTIALS = True
-
-# SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
@@ -252,9 +237,6 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-# STATICFILES_FINDERS =
-# ('django.contrib.staticfiles.finders.FileSystemFinder',)
-# django_heroku.settings(locals(), staticfiles=False)
 
 # AWS S8 Bucket Config
 if 'USE_AWS' in os.environ:
