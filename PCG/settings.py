@@ -37,7 +37,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # 'DEVELOPMENT' in os.environ
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME'), 'localhost']
 
@@ -50,13 +50,11 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
     'django.contrib.sites',
 
     'allauth',
     'allauth.account',
-    'social_django',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
 
@@ -76,7 +74,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    # 'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     # 'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -146,8 +144,6 @@ ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = 'optional'
 ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = False
-ACCOUNT_USERNAME_MIN_LENGTH = 3
-ACCOUNT_LOGIN_ATTEMPTS_LIMIT = None
 ACCOUNT_LOGIN_ATTEMPTS_LIMIT = None
 ACCOUNT_SIGNUP_LIMITS = None
 
@@ -156,7 +152,7 @@ LOGIN_REDIRECT_URL = '/'
 
 SOCIALACCOUNT_QUERY_EMAIL = False
 SOCIAL_AUTH_ADMIN_USER_SEARCH_FIELDS = ['username', 'email']
-SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/logged-in/'
+SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/'
 SOCIAL_AUTH_SESSION_EXPIRATION = False
 SOCIALACCOUNT_STORE_TOKENS = True
 
@@ -188,7 +184,6 @@ CSRF_TRUSTED_ORIGINS = ['https://*.pretty-curly-girl.herokuapp.com',
 CSRF_USE_SESSIONS = False
 CSRF_COOKIE_HTTPONLY = False
 CSRF_COOKIE_SECURE = False
-
 CORS_ALLOW_CREDENTIALS = True
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')

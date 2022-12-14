@@ -18,6 +18,10 @@ body {
   min-height: calc(100vh - 200px);
 }
 
+#bmc-wbtn {
+  display: none !important;
+}
+
 
 /* Style the button and place it in the middle of the container/image */
 #hero-container {
