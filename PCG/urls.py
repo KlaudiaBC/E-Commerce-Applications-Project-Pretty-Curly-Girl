@@ -38,4 +38,3 @@ if settings.DEBUG:
 
 
 handler404 = 'home.views.handler404'
-handler500 = 'home.views.handler500'
