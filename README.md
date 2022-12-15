@@ -18,7 +18,7 @@ Subscription form with MailChimp.
 See the deployed project <a href="https://pretty-curly-girl.herokuapp.com/">here</a>.
 
 <p align="center">
-  <img src="" alt="">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/respo_dark.png?raw=true" alt="responsive view">
 </p>
 
 ## **Table Of Contents**
@@ -65,7 +65,7 @@ Hanan - the owner of the brand (further called: *Client*), has started her onlin
 At first, I have become familiar with the mission of the business, the offer and mainly the actual website used to provide online sales. I have listed all components and features of the current application. I also pointed out UX issues I have found to make sure we could address them during the development.
 Then, I have discussed those aspects with the Client and proceeded with brainstorm sessions, which over a time have brought the final results.
 
-In this file I have documented all insights, steps and the obstacles I have met during implementation. All technical issues have been documented also in the Jira - you can access the board of this project here.
+In this file I have documented all insights, steps and the obstacles I have met during implementation. All technical issues have been documented also in the Jira - you can access the board via link provided below.
 In addition, you can also find a basic e-commerce marketing strategy which includes critical points for the web implementation process like the SEO keywords.
 --> For more, please see: Marketing
 
@@ -173,7 +173,7 @@ Because Heroku is not longer offering free usage of Postgres, I had migrated my 
 
 Entity relationship diagram for all the models included in the application:
 <p align="center">
-  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/readme/README/ERD_PCG.png?raw=true" alt="entity relationship diagram">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/ERD_PCG.png?raw=true" alt="entity relationship diagram">
 </p>
 
 ### **Surface**
@@ -522,7 +522,7 @@ In my case, that was the first commit since creating the Django project. In othe
 - Push the commit into: heroku main
 
 <p align="center">
-  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/deploy_cli.png?raw=true" alt="cli">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README.png?raw=true" alt="cli">
 </p>
 
 8. At this stage your app should be correctly deployed on Herokuapp.
