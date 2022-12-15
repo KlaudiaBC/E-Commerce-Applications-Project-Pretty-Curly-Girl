@@ -33,10 +33,10 @@ card.addEventListener("change", function (event) {
   var errorDiv = document.getElementById("card-errors");
   if (event.error) {
     var html = `
-            <span class="icon" role="alert">
+            <p class="icon" role="alert">
             <i class="fa-solid fa-circle-xmark"></i>
-            </span>
-            <span>${event.error.message}</span>
+            </p>
+            <p>${event.error.message}</p>
         `;
     $(errorDiv).html(html);
   } else {
@@ -61,10 +61,10 @@ form.addEventListener("submit", function (ev) {
       if (result.error) {
         var errorDiv = document.getElementById("card-errors");
         var html = `
-                <span class="icon" role="alert">
+                <p class="icon" role="alert">
                 <i class="fa-solid fa-circle-xmark"></i>
-                </span>
-                <span>${result.error.message}</span>`;
+                </p>
+                <p>${result.error.message}</p>`;
         $(errorDiv).html(html);
         card.update({ disabled: false });
         $("#submit-button").attr("disabled", false);

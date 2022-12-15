@@ -19,14 +19,16 @@
             aria-haspopup="true" aria-expanded="false" aria-label="sort">
             Sort by
         </button>
-        <div class="dropdown-menu" id="sort-selector">
-            <span class="dropdown-item" type="button" aria-label="products_ascending">
+        <select class="dropdown-menu" id="sort-selector" name="sort-selector">
+            <option class="dropdown-item" aria-label="products_ascending" value="low_to_high">
                 <a href="{% url 'products' %}?sort=price&direction=asc">Price
-                    (low to high)</a></span>
-            <span class="dropdown-item" type="button" aria-label="products_descending">
+                    (low to high)</a>
+            </option>
+            <option class="dropdown-item" aria-label="descending" value="high_to_low">
                 <a href="{% url 'products' %}?sort=price&direction=desc">Price
-                    (high to low)</a></span>
-        </div>
+                    (high to low)</a>
+            </option>
+        </select>
     </div>
 
     <!-- Render product cards -->
@@ -58,9 +60,9 @@
                                 </div>
 
                                 <!-- "Like" button / Add to wishlist -->
-                                <span class="col-6 d-flex justify-content-end addToWish" id="id"
-                                    attr_id="{{ product.pk }}"><i class="fa-regular fa-heart fa-lg mr-1"></i>
-                                </span>
+                                <p class="col-6 d-flex justify-content-end addToWish" attr_id="{{ product.pk }}">
+                                    <i class="fa-regular fa-heart fa-lg mr-1"></i>
+                                </p>
                             </div>
                         </div>
                     </div>
