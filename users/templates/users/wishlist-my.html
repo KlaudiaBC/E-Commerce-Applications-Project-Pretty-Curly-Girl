@@ -12,9 +12,7 @@
     <hr class="w-50 mb-1">
     <br /><br />
 
-    {% if user.is_authenticated %}
-
-    {% if wishlist %}
+    {% if wlist %}
     <table class="table table-sm">
         <thead class="text-black">
             <tr>
@@ -29,17 +27,17 @@
             {% for wl in wlist %}
             <tr>
                 <td class="w-25">
-                    {% if wish_item.image %}
-                    <img class="img-fluid img-tab rounded" src="{{ wl.image.url }}" alt="{{ wl.name }}">
+                    {% if wl.product.image %}
+                    <img class="img-fluid img-tab rounded" src="{{ wl.product.image.url }}" alt="{{ wl.product.name }}">
                     {% else %}
-                    <img class="card-img-top img-tab img-fluid" src="/media/noimage.webp" alt="{{ wl.name }}">
+                    <img class="card-img-top img-tab img-fluid" src="/media/noimage.webp" alt="{{ wl.product.name }}">
                     {% endif %}
                 </td>
                 <td class="align-middle">
-                    <a href="{% url 'product_detail' wl.id %}"><strong>{{ wl.name }}</strong></a>
+                    <a href="{% url 'product_detail' wl.id %}"><strong>{{ wl.product.name }}</strong></a>
                 </td>
                 <td class="align-middle">
-                    {{ wl.price }}
+                    {{ wl.product.price }}
                 </td>
             </tr>
             {% endfor %}
@@ -51,7 +49,7 @@
     <!-- if user don't have any item in the wishlist -->
     <div class="flex justify-content-center" aria-labelledby="#profile-tab">
         <div class="container wrapper-form profile-tab">
-            <p class="text-special lead">Upss! I looks quite empty here, doesn't it?</p>
+            <p class="text-special lead">Upss! It looks quite empty here, doesn't it?</p>
             <p>Check out our latest offers and feel free to save them for later. You don't have to make a decision right
                 away. This is what I am for, to remember all the <b>cool products</b> you have seen here!</p>
             <span class="text-muted"> --- Your Wishlist <i class="fa-regular fa-heart"></i></span>
@@ -66,5 +64,5 @@
         </a>
     </div>
 </div>
-{% endif %}
+
 {% endblock %}

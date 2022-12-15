@@ -41,8 +41,6 @@ def users(request):
 
 @csrf_exempt
 def add_wishlist(request):
-    """Add product to your wishlist
-    only for registered users"""
     if request.POST:
         if request.user.is_authenticated:
             data = Wishlist.objects.filter(
@@ -62,4 +60,4 @@ def add_wishlist(request):
 # My Wishlist
 def wishlist(request):
     wlist = Wishlist.objects.filter(user=request.user).order_by('-id')
-    return render(request, './users/wishlist-my.html', {'wlist': wlist})
+    return render(request, 'users/wishlist-my.html', {'wlist': wlist})

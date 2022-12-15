@@ -61,7 +61,7 @@
 
                                 <!-- "Like" button / Add to wishlist -->
                                 <p class="col-6 d-flex justify-content-end addToWish" attr_id="{{ product.pk }}">
-                                    <i class="fa-regular fa-heart fa-lg mr-1"></i>
+                                    <i class="fa-regular fa-heart fa-lg mr-1 text-danger"></i>
                                 </p>
                             </div>
                         </div>
@@ -130,26 +130,20 @@
     $(document).ready(function () {
         $(".addToWish").click(function () {
             var attr_id = $(this).attr('attr_id')
-            var that = $(this);
+            var that = $(this).find('i');
 
             $.ajax({
                 url: "/users/add_wishlist",
-                type: "POST",
-                data: { 'attr_id': attr_id },
-
-                statusCode: {
-                    200: function () {
-                        // Success! Reload the page
-                        document.location.reload(true);
-                    },
-                    401: function () {
-                        // Unauthorized
-                        document.location.reload(true);
-                    },
+                type: 'POST',
+                data: {
+                    'attr_id': attr_id,
+                },
+                success: function (res) {
+                    that.addClass('fa-solid').removeClass('fa-regular');
                 }
             });
-        });
-    });
+        }); // End ajax
+    }); // End document.ready
 
 </script>
 {% endblock %}
