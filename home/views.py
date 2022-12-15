@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from django.http import Http404
+from polls.models import Poll
 
 
 def index(request):
@@ -16,7 +18,10 @@ def privacy(request):
     return render(request, 'home/privacy_policy.html')
 
 
-def handler404(request, exception):
+def handler404(request, poll_id):
     """ Error Handler 404 - Page Not Found """
-    return render(request, "/workspace/E-Commerce-Applications\
-        -Project-Pretty-Curly-Girl/templates/includes/404.html", status=404)
+    try:
+        p = Poll.objects.get(pk=poll_id)
+    except Poll.DoesNotExist:
+        raise Http404("Poll does not exist")
+    return render(request, "templates/404.html", {'poll': p})

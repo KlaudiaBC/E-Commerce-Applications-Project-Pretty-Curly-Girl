@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_title %}404 Not Found{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/error.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<!-- Hero image container -->
+<div class="container-tall bg">
+    <div class="flex-container">
+        <div class="text-center">
+            <h1>
+                <span class="fade-in" id="digit1">4</span>
+                <span class="fade-in" id="digit2">0</span>
+                <span class="fade-in" id="digit3">4</span>
+            </h1>
+            <h3 class="fadeIn text-center">PAGE NOT FOUND</h3>
+            <a href="{% url 'products' %}">
+            <button type="button" name="button">Take me back!</button></a>
+        </div>
+    </div>
+</div>
+{% endblock %}
