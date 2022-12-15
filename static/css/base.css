@@ -464,7 +464,6 @@ ul.social-icons li {
 
 /* Style the button and place it in the middle of the container/image */
 #hero-container {
-  padding: auto;
   width: 100%;
   display:block;
   position:relative;
@@ -644,6 +643,7 @@ table {
     display: block;
     max-width: 470px;
     max-height: 360px;
+    margin: auto;
   }
     
   #hero-container {

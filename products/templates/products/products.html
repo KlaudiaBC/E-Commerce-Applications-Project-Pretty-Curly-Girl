@@ -90,7 +90,7 @@
     <br><br>
     <div class="text-center">
         <a href="{% url 'home' %}" class="btn btn-outline-info rounded-3 ml-2" aria-label="products">
-            <span class="font-weight-bold"><i class="fa-solid fa-arrow-left"></i>  Back to home</span>
+            <span class="font-weight-bold"><i class="fa-solid fa-arrow-left"></i> Back to home</span>
         </a>
     </div>
 </div>
@@ -123,6 +123,7 @@
         }
     })
 
+
     // Add wishlist
     $(document).ready(function () {
         $(".addToWish").click(function () {
@@ -134,9 +135,15 @@
                 type: "POST",
                 data: { 'attr_id': attr_id },
 
-                success: function (result) {
-                    console.log("Success")
-                    that.addClass('wishAdded').removeClass('addToWish');
+                statusCode: {
+                    200: function () {
+                        // Success! Reload the page
+                        document.location.reload(true);
+                    },
+                    401: function () {
+                        // Unauthorized
+                        document.location.reload(true);
+                    },
                 }
             });
         });
