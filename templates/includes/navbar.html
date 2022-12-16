@@ -42,7 +42,7 @@
                         </a>
                         <div class="dropdown-menu border-0" aria-labelledby="user-options">
                             {% if request.user.is_authenticated %}
-                            <a href="{% url 'wishlist' %}" class="dropdown-item" aria-label="profile">My Profile</a>
+                            <a href="{% url 'wishlist' %}" class="dropdown-item" aria-label="wishlist">My Wishlist</a>
                             <a href="{% url 'account_logout' %}" class="dropdown-item" aria-label="Logout">Logout</a>
                             {% else %}
                             <a href="{% url 'account_signup' %}" class="dropdown-item"
@@ -145,7 +145,7 @@
                         aria-expanded="false" aria-label="dropdown">My Account</a>
                     <ul class="collapse list-unstyled" id="user-options-sm">
                         {% if request.user.is_authenticated %}
-                        <li><a href="{% url 'wishlist' %}" class="dropdown-item" aria-label="profile">My Profile</a></li>
+                        <li><a href="{% url 'wishlist' %}" class="dropdown-item" aria-label="wishlist">My Wishlist</a></li>
                         <li><a href="{% url 'account_logout' %}" class="dropdown-item" aria-label="logout">Logout</a>
                         </li>
                         {% else %}

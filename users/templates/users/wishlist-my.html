@@ -10,7 +10,9 @@
         </div>
     </div>
     <hr class="w-50 mb-1">
-    <br /><br />
+    <br>
+    <h3 class="text-center">Hello back, {{ user.username }}</h3>
+    <br>
 
     {% if wlist %}
 
@@ -25,26 +27,24 @@
                 </tr>
             </thead>
 
-                {% for wl in wlist %}
-                <tr>
-                    <td class="w-25">
-                        {% if wl.product.image %}
-                        <img class="img-md img-tab rounded" src="{{ wl.product.image.url }}"
-                            alt="{{ wl.product.name }}">
-                        {% else %}
-                        <img class="img-md img-tab" src="{% static 'images/noimage.webp' %}"
-                            alt="{{ wl.product.name }}">
-                        {% endif %}
-                    </td>
-                    <td class="align-middle">
-                        <a href="{% url 'product_detail' wl.id %}"><strong>{{ wl.product.name }}</strong></a>
-                    </td>
-                    <td class="align-middle">
-                        {{ wl.product.price }}
-                    </td>
-                </tr>
-                {% endfor %}
-
+            {% for wl in wlist %}
+            <tr>
+                <td class="w-25">
+                    {% if wl.product.image %}
+                    <img class="img-fluid img-tab rounded" src="{{ wl.product.image.url }}" alt="{{ wl.product.name }}">
+                    {% else %}
+                    <img class="img-fluid img-tab rounded" src="{% static 'images/noimage.webp' %}"
+                        alt="{{ wl.product.name }}">
+                    {% endif %}
+                </td>
+                <td class="align-middle">
+                    <a href="{% url 'product_detail' wl.id %}"><strong>{{ wl.product.name }}</strong></a>
+                </td>
+                <td class="align-middle">
+                    {{ wl.product.price }}
+                </td>
+            </tr>
+            {% endfor %}
         </table>
 
         {% else %}
@@ -69,5 +69,6 @@
             </a>
         </div>
     </div>
+</div>
 
     {% endblock %}

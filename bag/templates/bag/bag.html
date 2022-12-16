@@ -31,9 +31,9 @@
             <tr>
                 <td class="w-25 tab-img">
                     {% if item.product.image %}
-                    <img class="img-md rounded-3" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                    <img class="img-fluid rounded" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
                     {% else %}
-                    <img class="card-md rounded-3" src="{% static 'images/noimage.webp' %}"
+                    <img class="img-fluid rounded" src="{% static 'images/noimage.webp' %}"
                         alt="{{ product.name }}">
                     {% endif %}
                 </td>
