@@ -29,7 +29,7 @@
 
             {% for item in bag_items %}
             <tr>
-                <td class="w-25 tab-img">
+                <td class="w-25">
                     {% if item.product.image %}
                     <img class="img-fluid rounded" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
                     {% else %}

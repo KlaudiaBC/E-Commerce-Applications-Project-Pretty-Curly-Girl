@@ -18,19 +18,8 @@ body {
   min-height: calc(100vh - 200px);
 }
 
-#bmc-wbtn {
-  display: none !important;
-}
-
-
-/* Style the button and place it in the middle of the container/image */
-#hero-container {
-  width: 100%;
-  display:block;
-  position:relative;
-  margin-top: 100px;
-  text-align: center;
-  height: auto;
+button {
+  font-family: Volkorn !important;
 }
 
 .card-product {
@@ -46,17 +35,12 @@ body {
 }
 
 .img-fluid {
-  min-height: 250px;
+  height: 60px !important;
 }
 
 .img-sm {
   max-height: 70px;
   width: 70px;
-}
-
-.img-md {
-  height: 200px;
-  width: 300px;
 }
 
 .img-about {
@@ -92,36 +76,6 @@ a:hover {
   color: inherit;
 }
 
-.no-form form {
-  display: none;
-}
-
-/* settings for template */
-/* if needd, change colors */
-.btn-temp-blue {
-  background-color: #007791;
-  color: #f5f5f5;
-}
-
-.btn-temp-black {
-  background: #46494c;
-  color: #fff;
-  width: 8rem;
-}
-
-.btn-temp-black:hover,
-.btn-temp-black:active,
-.btn-temp-black:focus {
-  background: white;
-  color: black;
-  border: 1px solid black;
-}
-.btn-temp-blue a:hover,
-.btn-temp-blue a:active,
-.btn-temp-blue a:focus {
-  color: #0a0908;
-}
-
 .wrapper-form {
   background-color: #f5f5f5;
   padding: 2rem;
@@ -136,30 +90,6 @@ a:hover {
 .text-special {
   color: #007791;
   font-weight: bolder;
-}
-
-.search-text {
-  padding-bottom: 60px;
-}
-
-.search-text .input-search {
-  height: 45px;
-  width: 40%;
-  padding-left: 20px;
-  color: #333;
-}
-
-.search-text .btn-search {
-  background: #545454;
-  border: none;
-  color: #fff;
-  height: 45px;
-  width: 80px;
-}
-
-.search-text h4 {
-  color: #888582;
-  font-weight: 700;
 }
 
 footer {
@@ -188,14 +118,6 @@ footer .fa-brands {
 
 .fa-heart {
   font-size: 2rem;
-}
-
-.heart-full {
-  color: crimson;
-}
-
-.heart-empty {
-  color: #0a0908;
 }
 
 .hr-middle {
@@ -389,22 +311,6 @@ a[data-toggle="collapse"] {
   transform: translateY(-50%);
 }
 
-ul.social-icons {
-  list-style-type: none;
-  padding-left: 0;
-  margin-bottom: 0;
-}
-
-ul.social-icons li {
-  display: inline-block;
-  margin-right: 0px;
-  margin-bottom: 0;
-}
-
-#sidebar ul.social-icons li a {
-  font-size: 24px;
-}
-
 .utility-nav {
   background: #46494c;
   padding: 0.5rem 1rem;
@@ -454,16 +360,8 @@ ul.social-icons li {
   opacity: 0;
 }
 
-.wishAdded i {
-  color: red;
-}
 
-.addToWish i {
-  color: black;
-}
-
-
-/* Style the button and place it in the middle of the container/image */
+/* Hero img and responsive */
 #hero-container {
   width: 100%;
   display:block;
@@ -535,7 +433,7 @@ table {
   padding: 1rem 0;
 }
 
-/* Testimonials */
+/* testimonials */
 #testimonials {
   background-color: #007791;
   height: 20rem;
@@ -558,14 +456,6 @@ table {
 .card-body {
   padding: 7% 0;
   overflow: hidden;
-}
-
-.fa-triangle-exclamation {
-  font-size: 2rem;
-}
-
-.btn-block {
-  font-size: 1.25rem;
 }
 
 #blog .card-img-top {
@@ -600,6 +490,15 @@ table {
   position: relative;
 }
 
+/* allauth */
+.fa-triangle-exclamation {
+  font-size: 2rem;
+}
+
+.btn-block {
+  font-size: 1.25rem;
+}
+
 
 
 /*------------- media queries ------------- */
@@ -610,14 +509,6 @@ table {
     font-size: small;
   }
 }
-
-
-@media screen and (max-width: 540px) {
-
-  .tab-img {
-      display: none;
-    }
-  }
 
 /* for tablets */
 @media screen and (min-width: 600px) {
@@ -653,6 +544,10 @@ table {
     
   #hero-container {
     padding-left: 12rem;
+  }
+
+  .img-fluid {
+    min-height: 250px;
   }
 }
 
@@ -728,9 +623,6 @@ table {
 }
 
 
-button {
-  font-family: Volkorn !important;
-}
 
 /* hero btn animation - from codepen */
 #button {
