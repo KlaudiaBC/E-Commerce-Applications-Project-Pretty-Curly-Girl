@@ -71,16 +71,16 @@
 
                             <!-- action buttons: submit/back -->
                             <div class="col-12">
-                                <a href="{% url 'products' %}" class="btn btn-outline-secondary rounded-0"
+                                <button type="submit" class="btn btn-info rounded-3 btn-lg text-uppercase"
+                                aria-label="add_to_bag">
+                                <span class="text-uppercase">Add to bag  </span>
+                                <i class="fa-solid fa-cart-plus"></i>
+                            </button>
+                                <a href="{% url 'products' %}" class="btn btn-outline-secondary rounded-3 btn-lg"
                                     aria-label="products">
                                     <span class="icon"><i class="fas fa-solid fa-arrow-left"></i></span>
                                     <span class="text-uppercase">Keep Shopping</span>
                                 </a>
-                                <button type="submit" class="btn btn-secondary rounded-0 text-uppercase"
-                                    aria-label="add_to_bag">
-                                    <span class="text-uppercase">Add to bag </span>
-                                    <i class="fa-solid fa-cart-plus"></i>
-                                </button>
                             </div>
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         </div>
