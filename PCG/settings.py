@@ -36,7 +36,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME'), 'localhost']
 
@@ -141,27 +141,23 @@ ACCOUNT_SIGNUP_LIMITS = None
 LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/'
 
-SOCIALACCOUNT_QUERY_EMAIL = False
 SOCIAL_AUTH_ADMIN_USER_SEARCH_FIELDS = ['username', 'email']
 SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/'
-SOCIAL_AUTH_SESSION_EXPIRATION = False
 SOCIALACCOUNT_STORE_TOKENS = True
 
 # Social accounts / Google
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
         'APP': {
-            'client_id': os.environ.get('SOCIAL_AUTH_GOOGLE_ID'),
-            'secret': os.environ.get('SOCIAL_AUTH_GOOGLE_SECRET'),
+            'client_id': os.environ.get('CLIENT_ID'),
+            'secret': os.environ.get('CLIENT_SECRET'),
         },
         'SCOPE': [
-            'name',
+            'profile',
             'email',
         ],
         'AUTH_PARAMS': {
             'access_type': 'offline',
-            'state': 'sample_passthrough_value',
-            'include_granted_scopes': 'true',
         },
         'OAUTH_PKCE_ENABLED': True,
     }
