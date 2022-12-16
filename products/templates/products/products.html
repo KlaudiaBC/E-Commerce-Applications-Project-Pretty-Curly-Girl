@@ -60,9 +60,15 @@
                                 </div>
 
                                 <!-- "Like" button / Add to wishlist -->
+                                {% if user.is_authenticated %}
                                 <p class="col-6 d-flex justify-content-end addToWish" attr_id="{{ product.pk }}">
                                     <i class="fa-regular fa-heart fa-lg mr-1 text-danger"></i>
                                 </p>
+                                {% else %}
+                                <p class="col-6 d-flex justify-content-end" id="not-log">
+                                    <i class="fa-regular fa-heart fa-lg mr-1 text-danger"></i>
+                                </p>
+                                {% endif %}
                             </div>
                         </div>
                     </div>
@@ -140,10 +146,16 @@
                 },
                 success: function (res) {
                     that.addClass('fa-solid').removeClass('fa-regular');
+                    messages.success(request, "Item added to the wishlist")
                 }
             });
         }); // End ajax
     }); // End document.ready
+
+    var notLog = document.getElementById('not-log')
+    notLog.addEventListener('click', function() {
+        alert("Please login to make your wishlist.")
+    });
 
 </script>
 {% endblock %}

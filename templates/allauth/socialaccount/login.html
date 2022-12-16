@@ -1,21 +1,36 @@
 {% extends "socialaccount/base.html" %}
 {% load i18n %}
+{% load static %}
 
-{% block head_title %}{% trans "Sign In" %}{% endblock %}
+{% block extra_title %}Login{% endblock %}
 
-{% block content %}
-{% if process == "connect" %}
-<h1>{% blocktrans with provider.name as provider %}Connect {{ provider }}{% endblocktrans %}</h1>
 
-<p>{% blocktrans with provider.name as provider %}You are about to connect a new third party account from {{ provider }}.{% endblocktrans %}</p>
-{% else %}
-<h1>{% blocktrans with provider.name as provider %}Sign In Via {{ provider }}{% endblocktrans %}</h1>
+<!-- Social accounts -->
+{% load account socialaccount %}
 
-<p>{% blocktrans with provider.name as provider %}You are about to sign in using a third party account from {{ provider }}.{% endblocktrans %}</p>
-{% endif %}
+<!-- Header  -->
+{% block inner_content %}
+<div class="container-fluid container-tall">
+  <div class="text-center">
+    {% if process == "connect" %}
+    <h2>{% blocktrans with provider.name as provider %}Connect {{ provider }}{% endblocktrans %}</h2>
+    {% else %}
+    <h2>{% blocktrans with provider.name as provider %}Sign in via {{ provider }}{% endblocktrans %}</h2>
+    {% endif %}
+    <hr>
+    <br>
+  </div>
 
-<form method="post">
-  {% csrf_token %}
-  <button type="submit">{% trans "Continue" %}</button>
-</form>
+  <!-- Login form  -->
+  <div class="wrapper-form text-center">
+    <i class="fa-solid fa-triangle-exclamation text-warning"></i>
+    <br><br>
+    <p>You are about to connect using a third party account.</p>
+    <form method="post">
+      {% csrf_token %}
+      {{ form|crispy }}
+      <button class="btn-block btn-sm btn-secondary" type="submit">{% trans "Continue" %}</button>
+    </form>
+  </div>
+</div>
 {% endblock %}

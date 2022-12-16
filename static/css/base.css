@@ -560,8 +560,12 @@ table {
   overflow: hidden;
 }
 
+.fa-triangle-exclamation {
+  font-size: 2rem;
+}
+
 .btn-block {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 
 #blog .card-img-top {
@@ -618,8 +622,8 @@ table {
 /* for tablets */
 @media screen and (min-width: 600px) {
   .img-md {
-    height: 400px;
-    width: 600px;
+    height: 300px;
+    width: 500px;
   }
 
   .form-inline {
