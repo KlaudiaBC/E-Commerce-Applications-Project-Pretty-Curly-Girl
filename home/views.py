@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from django.http import Http404
 
 
 def index(request):
@@ -19,5 +18,4 @@ def privacy(request):
 
 def handler404(request, exception):
     """ Error Handler 404 - Page Not Found """
-    raise Http404("Page does not exist")
-    return render(request, "templates/404.html")
+    return render(request, "home/404.html")
