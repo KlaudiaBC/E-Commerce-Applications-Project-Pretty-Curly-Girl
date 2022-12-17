@@ -41,6 +41,10 @@
     integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
     crossorigin="anonymous"></script>
 
+  <!-- Messages -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
   <!-- Font awesome -->
   <script src="https://kit.fontawesome.com/955cad48e1.js" crossorigin="anonymous"></script>
 
@@ -62,79 +66,37 @@
     </div>
   </div>
 
-  <!-- Messages -->
-  <div class="container">
-    <div class="row">
-      <div class="col-md-8 offset-md-2">
-        {% for message in messages %}
-        <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
-          <button type="button" class="close" data-dismiss="alert" aria-label="close">&times;</button>
-          {{ message | safe }}
-        </div>
-        {% endfor %}
-      </div>
-    </div>
-  </div>
-
   <!-- Header and Main navbar -->
   {% include 'includes/navbar.html' %}
+
+    <!-- Messages -->
+    {% if messages %}
+    <div class="message-container">
+      {% for message in messages %}
+        {% with message.level as level %}
+          {% if level == 40 %}
+            {% include 'includes/toasts/toast_error.html' %}
+          {% elif level == 30 %}
+            {% include 'includes/toasts/toast_warning.html' %}
+          {% elif level == 25 %}
+            {% include 'includes/toasts/toast_success.html' %}
+          {% else %}
+            {% include 'includes/toasts/toast_info.html' %}
+          {% endif %}
+        {% endwith %}
+      {% endfor %}
+    </div>
+    {% endif %}
 
   {% block content %}
   <!-- Content goes here -->
   {% endblock content %}
 
+  <!-- Footer -->
   <br>
-  <footer>
-    <div class="row d-flex justify-content-around">
-      <div class="col-12 col-md-6 text-center mb-5">
-        <h3>Follow us </h3>
-        <br>
-        <span><a href="https://www.facebook.com/www.prettyskin.nl" target="_blank" rel="noopener">
-            <i class="fa-brands fa-facebook"></i></a>
-        </span>
-        <span><a href="https://www.instagram.com/prettycurlygirl_products/" target="_blank" rel="noopener"><i
-              class="fa-brands fa-instagram"></i></a>
-        </span>
-        <span><a href="https://www.tiktok.com/@prettycurlygirlproducts" target="_blank" rel="noopener"><i
-              class="fa-brands fa-tiktok"></i></a>
-        </span>
-        <span><a href="https://www.pinterest.com/prettycurlygirl_products/" target="_blank" rel="noopener"><i
-              class="fa-brands fa-pinterest"></i></a>
-        </span>
-        <br>
-      </div>
-
-      <div class="col-12 col-md-6 text-center">
-        <h3>Contact</h3>
-
-        <div class="mb-2">
-          <p class="m-0"><i class="fa-solid fa-user"></i> Owner & Founder</p>
-          <p class="m-0"> Hanan el Fizazi</p>
-        </div>
-        <div class="mb-2">
-          <p class="m-0"><i class="fa-solid fa-phone"></i> 31648143082</p>
-          <p class="m-0"><i class="fa-solid fa-envelope"></i> info@prettycurlygirl.com</p>
-        </div>
-        <div class="mb-2">
-          <p class="m-0"><i class="fa-solid fa-house"></i> Botersloot 42A</p>
-          <p class="m-0">3011HH Rotterdam</p>
-        </div>
-      </div>
-    </div>
-    <hr class="hr-middle">
-
-    <div class="container legal-box">
-      <p>THIS WEBSITE HAS BEEN CREATED FOR EDUCATIONAL PURPOSES ONLY AND DOES NOT CONDUCT ANY COMMERCIAL
-        ACTIVITIES. PHOTOS AND PRODUCT SPECIFICATIONS WERE COPIED DIRECTLY FROM THE MANUFACTURER AFTER OBTAINING HER
-        PERMISSION. FIND THE OFFICIAL STORE <a href="https://prettycurlygirl.store/" target="_blank"
-          rel="an official website of the Pretty Curly Girl store"> PRETTY CURLY GIRL OFFICIAL</a></p>
-    </div>
-    <br>
-    <div>
-      <p class="text-center text-secondary mb-0"><small>&copy; Copyright reserved. KBC 2022 &middot;</small></p>
-    </div>
-  </footer>
-
+  {% include 'includes/footer.html' %}
+ 
+  {% block postloadjs %}
   <script>
     (() => {
       // Immediately Invoked Function Expression
@@ -161,14 +123,14 @@
         document.querySelector(".overlay").classList.remove("visible");
       });
 
-      // Fade out messages after 2 sec
-      $(function () {
-        setTimeout(function () { $(".alert").fadeOut(1000); }, 2000)
-      })
+      // Show and fade out messages after 2 sec
+      $('.toast').toast('show');
+      // $(function () {
+      //   setTimeout(function () { $('.toast').fadeOut(1000); }, 2000)
+      // })
+
     })();
   </script>
-
-  {% block postloadjs %}
   {% endblock %}
 
 </body>

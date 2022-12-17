@@ -35,6 +35,10 @@ button {
 }
 
 .img-fluid {
+  min-height: 250px;
+}
+
+.img-fluid-respo {
   height: 60px !important;
 }
 
@@ -50,6 +54,22 @@ button {
   width: auto;
   height: auto;
   margin: auto;
+}
+
+.toast-info {
+  border-bottom: 3px solid rgb(8, 41, 230);;
+}
+
+.toast-warning {
+  border-bottom: 3px solid rgb(241, 238, 22);
+}
+
+.toast-success {
+  border-bottom: 3px solid rgb(94, 233, 30);
+}
+
+.toast-error {
+  border-bottom: 3px solid rgb(209, 30, 30);
 }
 
 .btt-link,
@@ -546,7 +566,7 @@ table {
     padding-left: 12rem;
   }
 
-  .img-fluid {
+  .img-fluid-respo {
     min-height: 250px;
   }
 }

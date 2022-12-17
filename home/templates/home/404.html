@@ -1,26 +1,41 @@
-{% extends "base.html" %}
 {% load static %}
 
-{% block extra_title %}404 Not Found{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
 
-{% block extra_css %}
-<link rel="stylesheet" href="{% static 'css/error.css' %}">
-{% endblock %}
+<head>
+    <title>Pretty Curly Girl - 404 Not Found</title>
+    <link rel="stylesheet" href="{% static 'css/error.css' %}">
+</head>
 
-{% block content %}
+<body>
+    <header>
+        <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand" href="{% url 'home' %}">Pretty Curly Girl</a>
+        </nav>
+    </header>
 
-<!-- Hero image container -->
-<div class="container-tall bg">
-    <div class="flex-container">
-        <div class="text-center">
-            <h1>
-                <span class="fade-in" id="digit1">4</span>
-                <span class="fade-in" id="digit2">0</span>
-                <span class="fade-in" id="digit3">4</span>
-            </h1>
-            <h3 class="fadeIn text-center">PAGE NOT FOUND</h3>
-            <a href="{% url 'products' %}" type="button" name="button">Take me back!</a>
+    <!-- Hero image container -->
+    <div class="container-tall bg">
+        <div class="flex-container">
+            <div class="text-center">
+                <h1>
+                    <span class="fade-in" id="digit1">4</span>
+                    <span class="fade-in" id="digit2">0</span>
+                    <span class="fade-in" id="digit3">4</span>
+                </h1>
+                <br>
+                <h3 class="fadeIn text-center">PAGE NOT FOUND</h3>
+                <br>
+                <a href="{% url 'products' %}" type="button" name="button" class="btn btn-light">Take me back!</a>
+            </div>
         </div>
     </div>
-</div>
-{% endblock %}
+    <footer>
+        <div>
+            <p class="text-center text-secondary mb-0"><small>&copy; Copyright reserved. KBC 2022 &middot;</small></p>
+        </div>
+    </footer>
+</body>
+
+</html>
