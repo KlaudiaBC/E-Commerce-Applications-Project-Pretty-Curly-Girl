@@ -144,16 +144,16 @@
       // Functions to toggle sidebar - collapse and expand
       // Adjusted to the desktop/mobile size screen
       sidebarCollapse.addEventListener("click", function () {
-        document.querySelector("#sidebar").classList.add("active");
+        document.querySelector("#sidebar").class.add("active");
       });
 
       sidebarCollapseX.addEventListener("click", function () {
-        document.querySelector("#sidebar").classList.remove("active");
+        document.querySelector("#sidebar").class.remove("active");
       });
 
       sidebarCollapse.addEventListener("click", function () {
-        if (document.querySelector("#sidebar").classList.contains("active")) {
-          document.querySelector(".overlay").classList.add("visible");
+        if (document.querySelector("#sidebar").class.contains("active")) {
+          document.querySelector(".overlay").class.add("visible");
         }
       });
 

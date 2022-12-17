@@ -74,7 +74,7 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    # 'django.middleware.csrf.CsrfViewMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -142,7 +142,7 @@ LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/'
 
 SOCIAL_AUTH_ADMIN_USER_SEARCH_FIELDS = ['username', 'email']
-SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/'
+SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/accounts/google/login/callback/'
 SOCIALACCOUNT_STORE_TOKENS = True
 
 # Social accounts / Google
@@ -163,11 +163,13 @@ SOCIALACCOUNT_PROVIDERS = {
     }
 }
 
-
 WSGI_APPLICATION = 'PCG.wsgi.application'
+CORS_ORIGIN_ALLOW_ALL = True
 CSRF_TRUSTED_ORIGINS = ['https://*.pretty-curly-girl.herokuapp.com',
+                        'https://pretty-curly-girl.herokuapp.com/\
+                            accounts/google/login/callback/'
                         'https://8000-klaudiabc-ecommerceappl\
-                            -wupqhbk7hoz.ws-eu78.gitpod.io',
+                            -wupqhbk7hoz.ws-eu79.gitpod.io',
                         'http://*.gitpod.io']
 
 

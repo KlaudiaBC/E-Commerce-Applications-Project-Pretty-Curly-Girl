@@ -19,16 +19,16 @@
             aria-haspopup="true" aria-expanded="false" aria-label="sort">
             Sort by
         </button>
-        <select class="dropdown-menu" id="sort-selector" name="sort-selector">
-            <option class="dropdown-item" aria-label="products_ascending" value="low_to_high">
+        <ul class="dropdown-menu" id="sort-selector" name="sort-selector">
+            <li class="dropdown-item" value="low_to_high">
                 <a href="{% url 'products' %}?sort=price&direction=asc">Price
                     (low to high)</a>
-            </option>
-            <option class="dropdown-item" aria-label="descending" value="high_to_low">
+                </li>
+            <li class="dropdown-item" value="high_to_low">
                 <a href="{% url 'products' %}?sort=price&direction=desc">Price
                     (high to low)</a>
-            </option>
-        </select>
+                </li>
+            </ul>
     </div>
 
     <!-- Render product cards -->
@@ -137,12 +137,14 @@
         $(".addToWish").click(function () {
             var attr_id = $(this).attr('attr_id')
             var that = $(this).find('i');
+            var csrfToken = "{{ csrf_token }}"
 
             $.ajax({
                 url: "/users/add_wishlist",
                 type: 'POST',
                 data: {
                     'attr_id': attr_id,
+                    'csrfmiddlewaretoken': csrfToken,
                 },
                 success: function (res) {
                     that.addClass('fa-solid').removeClass('fa-regular');

@@ -1,7 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
-from django.views.decorators.csrf import csrf_exempt
 from django.contrib import messages
 
 from .models import UserProfile, Wishlist
@@ -39,7 +38,6 @@ def users(request):
     return render(request, template, context)
 
 
-@csrf_exempt
 def add_wishlist(request):
     if request.POST:
         if request.user.is_authenticated:

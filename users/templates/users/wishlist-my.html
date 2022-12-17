@@ -29,11 +29,11 @@
 
             {% for wl in wlist %}
             <tr>
-                <td class="w-25">
+                <td>
                     {% if wl.product.image %}
-                    <img class="img-fluid img-tab rounded" src="{{ wl.product.image.url }}" alt="{{ wl.product.name }}">
+                    <img class="card-img-top img-fluid rounded" src="{{ wl.product.image.url }}" alt="{{ wl.product.name }}">
                     {% else %}
-                    <img class="img-fluid img-tab rounded" src="{% static 'images/noimage.webp' %}"
+                    <img class="card-img-top img-fluid rounded" src="{% static 'images/noimage.webp' %}"
                         alt="{{ wl.product.name }}">
                     {% endif %}
                 </td>
