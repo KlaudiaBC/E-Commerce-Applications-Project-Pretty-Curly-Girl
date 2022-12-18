@@ -50,7 +50,9 @@ def add_wishlist(request):
             else:
                 Wishlist.objects.create(
                     user_id=request.user.pk, product_id=int(
-                        request.POST['attr_id']))
+                        request.POST['attr_id'])),
+                messages.info(
+                    request, 'Added item to your wishlist.')
 
     return HttpResponse(status=200)
 

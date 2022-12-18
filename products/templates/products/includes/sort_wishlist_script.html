@@ -21,13 +21,6 @@
         }
     })
 
-    // Show toasts 
-    function show_alert_from_js(alert_type, text) {
-        msg = `templates/includes/toasts/toast_info.html${text}`;  // to render the text message to show.
-        msg_html = $.parseHTML(msg);
-        $('.toast').append(msg_html);
-    }
-
     // Add wishlist
     $(document).ready(function () {
         $(".addToWish").click(function () {
@@ -44,14 +37,24 @@
                 },
                 success: function (res) {
                     that.addClass('fa-solid').removeClass('fa-regular');
-                    show_alert_from_js("info", "Item was added to your wishlist")
                 }
             });
         }); // End ajax
     }); // End document.ready
 
+    // show messages outside of django scope
+    let permission = Notification.permission;
+
+    if(permission === "granted"){
+        showNotification();
+    } else if(permission === "default"){
+        requestAndShowPermission();
+    } else {
+        alert("Use normal alert");
+    }
+
     var notLog = document.getElementById('not-log')
     notLog.addEventListener('click', function () {
-        show_alert_from_js("info", "Login required.")
+        alert("Login required.")
     });
 </script>

@@ -167,9 +167,7 @@ WSGI_APPLICATION = 'PCG.wsgi.application'
 CORS_ORIGIN_ALLOW_ALL = True
 CSRF_TRUSTED_ORIGINS = ['https://*.pretty-curly-girl.herokuapp.com',
                         'https://pretty-curly-girl.herokuapp.com/\
-                            accounts/google/login/callback/'
-                        'https://8000-klaudiabc-ecommerceappl\
-                            -wupqhbk7hoz.ws-eu79.gitpod.io',
+                            accounts/google/login/callback/',
                         'http://*.gitpod.io']
 
 
