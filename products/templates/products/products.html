@@ -107,57 +107,5 @@
 
 {% block postloadjs %}
 {{ block.super }}
-
-<script>
-    // sort products //
-    $('#sort-selector').change(function () {
-        var selector = $(this);
-        var currentUrl = new URL(window.location);
-
-        var selectedVal = selector.val();
-        if (selectedVal != "reset") {
-            var sort = selectedVal.split("_")[0];
-            var direction = selectedVal.split("_")[1];
-
-            currentUrl.searchParams.set("sort", sort);
-            currentUrl.searchParams.set("direction", direction);
-
-            window.location.replace(currentUrl);
-        } else {
-            currentUrl.searchParams.delete("sort");
-            currentUrl.searchParams.delete("direction");
-
-            window.location.replace(currentUrl);
-        }
-    })
-
-
-    // Add wishlist
-    $(document).ready(function () {
-        $(".addToWish").click(function () {
-            var attr_id = $(this).attr('attr_id')
-            var that = $(this).find('i');
-            var csrfToken = "{{ csrf_token }}"
-
-            $.ajax({
-                url: "/users/add_wishlist",
-                type: 'POST',
-                data: {
-                    'attr_id': attr_id,
-                    'csrfmiddlewaretoken': csrfToken,
-                },
-                success: function (res) {
-                    that.addClass('fa-solid').removeClass('fa-regular');
-                    messages.success(request, "Item added to the wishlist")
-                }
-            });
-        }); // End ajax
-    }); // End document.ready
-
-    var notLog = document.getElementById('not-log')
-    notLog.addEventListener('click', function() {
-        alert("Please login to make your wishlist.")
-    });
-
-</script>
+{% include 'products/includes/sort_wishlist_script.html' %}
 {% endblock %}

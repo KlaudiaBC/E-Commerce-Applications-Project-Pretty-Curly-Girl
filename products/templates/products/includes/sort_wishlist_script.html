@@ -1,0 +1,57 @@
+<script>
+    // sort products //
+    $('#sort-selector').change(function () {
+        var selector = $(this);
+        var currentUrl = new URL(window.location);
+
+        var selectedVal = selector.val();
+        if (selectedVal != "reset") {
+            var sort = selectedVal.split("_")[0];
+            var direction = selectedVal.split("_")[1];
+
+            currentUrl.searchParams.set("sort", sort);
+            currentUrl.searchParams.set("direction", direction);
+
+            window.location.replace(currentUrl);
+        } else {
+            currentUrl.searchParams.delete("sort");
+            currentUrl.searchParams.delete("direction");
+
+            window.location.replace(currentUrl);
+        }
+    })
+
+    // Show toasts 
+    function show_alert_from_js(alert_type, text) {
+        msg = `templates/includes/toasts/toast_info.html${text}`;  // to render the text message to show.
+        msg_html = $.parseHTML(msg);
+        $('.toast').append(msg_html);
+    }
+
+    // Add wishlist
+    $(document).ready(function () {
+        $(".addToWish").click(function () {
+            var attr_id = $(this).attr('attr_id')
+            var that = $(this).find('i');
+            var csrfToken = "{{ csrf_token }}"
+
+            $.ajax({
+                url: "/users/add_wishlist",
+                type: 'POST',
+                data: {
+                    'attr_id': attr_id,
+                    'csrfmiddlewaretoken': csrfToken,
+                },
+                success: function (res) {
+                    that.addClass('fa-solid').removeClass('fa-regular');
+                    show_alert_from_js("info", "Item was added to your wishlist")
+                }
+            });
+        }); // End ajax
+    }); // End document.ready
+
+    var notLog = document.getElementById('not-log')
+    notLog.addEventListener('click', function () {
+        show_alert_from_js("info", "Login required.")
+    });
+</script>

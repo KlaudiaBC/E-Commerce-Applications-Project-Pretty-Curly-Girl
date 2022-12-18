@@ -56,22 +56,6 @@ button {
   margin: auto;
 }
 
-.toast-info {
-  border-bottom: 3px solid rgb(8, 41, 230);;
-}
-
-.toast-warning {
-  border-bottom: 3px solid rgb(241, 238, 22);
-}
-
-.toast-success {
-  border-bottom: 3px solid rgb(94, 233, 30);
-}
-
-.toast-error {
-  border-bottom: 3px solid rgb(209, 30, 30);
-}
-
 .btt-link,
 .update-link,
 .remove-item {
@@ -510,13 +494,32 @@ table {
   position: relative;
 }
 
-/* allauth */
-.fa-triangle-exclamation {
-  font-size: 2rem;
+
+/* bootstrap toasts */
+
+.toast {
+  position: fixed;
+  z-index: 99999999999;
 }
 
-.btn-block {
-  font-size: 1.25rem;
+.custom-toast {
+  overflow: visible;
+}
+
+.toast-info {
+  border-bottom: 3px solid rgb(8, 41, 230);;
+}
+
+.toast-warning {
+  border-bottom: 3px solid rgb(241, 238, 22);
+}
+
+.toast-success {
+  border-bottom: 3px solid rgb(94, 233, 30);
+}
+
+.toast-error {
+  border-bottom: 3px solid rgb(209, 30, 30);
 }
 
 
