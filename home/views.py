@@ -19,3 +19,8 @@ def privacy(request):
 def handler404(request, exception):
     """ Error Handler 404 - Page Not Found """
     return render(request, "home/404.html")
+
+
+def handler500(request):
+    """ Error Handler 500 - Server Error """
+    return render(request, 'home/500.html')

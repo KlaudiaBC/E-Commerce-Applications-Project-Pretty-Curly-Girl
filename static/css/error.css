@@ -29,10 +29,13 @@
     border-bottom: 1px dashed white;
   }
 
+  .card {
+    opacity: .9;
+  }
+
   footer {
     background-color: #46494c;
     color: #f5f5f5;
-    padding-top: 60px;
   }
   
   button {

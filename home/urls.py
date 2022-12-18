@@ -6,4 +6,5 @@ urlpatterns = [
     path('about/', views.about, name="about"),
     path('policy/', views.privacy, name="privacy_policy"),
     path('404/', views.handler404, name="handler404"),
+    path('500/', views.handler500, name="handler500"),
 ]
