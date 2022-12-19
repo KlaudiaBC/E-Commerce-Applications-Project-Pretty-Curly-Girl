@@ -38,10 +38,6 @@ button {
   min-height: 250px;
 }
 
-.img-fluid-respo {
-  height: 60px !important;
-}
-
 .img-sm {
   max-height: 70px;
   width: 70px;
@@ -393,6 +389,11 @@ table {
   margin: auto;
 }
 
+.img-md {
+  max-height: 60px;
+  width: auto;
+}
+
 /* hero img */
 .bg {
   background-image: url("/static/images/hero.webp");
@@ -535,13 +536,13 @@ table {
 
 /* for tablets */
 @media screen and (min-width: 600px) {
-  .img-md {
-    height: 300px;
-    width: 500px;
-  }
-
   .form-inline {
     flex-wrap: nowrap;
+  }
+
+  .img-md {
+    max-height: 200px;
+    width: auto;
   }
 
   .header-lg {
@@ -567,10 +568,6 @@ table {
     
   #hero-container {
     padding-left: 12rem;
-  }
-
-  .img-fluid-respo {
-    min-height: 250px;
   }
 }
 

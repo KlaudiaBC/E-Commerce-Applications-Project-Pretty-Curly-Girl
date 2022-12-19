@@ -33,9 +33,9 @@
             <tr>
                 <td>
                     {% if wl.product.image %}
-                    <img class="card-img-top img-fluid-respo rounded" src="{{ wl.product.image.url }}" alt="{{ wl.product.name }}">
+                    <img class="card-img img-md rounded" src="{{ wl.product.image.url }}" alt="{{ wl.product.name }}">
                     {% else %}
-                    <img class="card-img-top img-fluid-respo rounded" src="{% static 'images/noimage.webp' %}"
+                    <img class="card-img img-md rounded" src="{% static 'images/noimage.webp' %}"
                         alt="{{ wl.product.name }}">
                     {% endif %}
                 </td>
@@ -73,4 +73,4 @@
     </div>
 </div>
 
-    {% endblock %}
+{% endblock %}
