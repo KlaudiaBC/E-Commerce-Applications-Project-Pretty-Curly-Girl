@@ -5,6 +5,8 @@
 
 ## This is my Portfolio 5 Project regarding the Code Institute's Diploma in Software Development (E-commerce Applications).
 
+<img src="https://img.shields.io/badge/django-v4.0.0.-blue"> <img src="https://img.shields.io/badge/django--allauth-v0.51.0-yellowgreen"> <img src="https://img.shields.io/badge/python-v3.8.11-blue"> <img src="https://img.shields.io/badge/javascript-js-blue"> <img src="https://img.shields.io/badge/jQuery-ajax-blue"> <img src="https://img.shields.io/badge/bootstrap-v4.6-orange"> <img src="https://img.shields.io/badge/google--auth-v2.15.0-yellowgreen"> <img src="https://img.shields.io/badge/gunicorn-v20.0.4-orange"> <img src="https://img.shields.io/badge/stripe-v4.2.0-blueviolet"> <img src="https://img.shields.io/badge/aws-s3%20bucket-blueviolet"> <img src="https://img.shields.io/badge/heroku-v7.64.0-green">
+
 Fully responsive e-commerce application built with: Django 4.0 Framework, Python3, JavaScript and jQuery (AJAX).
 Bootstrap4 as a front-end framework.
 Deployed on Heroku.
@@ -122,19 +124,21 @@ See the Sprints as planned in the begging of implementation:
 </p>
 <br>
 
-**Jira board - 3rd Sprint:**
+**Jira board - Sprint 3:**
 <p align="center">
 <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/sprint3.png?raw=true"></p>
 <br>
 
-**Jira Insights / 1:**
+
+**Jira board - during 3rd Sprint:**
 <p align="center">
-<img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/insights-s1.png?raw=true"></p>
+<img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/jira_board_bugs_three.png?raw=true"></p>
 <br>
 
-**Jira Epic Progress:**
+
+**Jira Insights / 1:**
 <p align="center">
-<img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/ins2.1.png?raw=true"></p>
+<img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/insights.png?raw=true"></p>
 <br>
 
 
@@ -185,7 +189,7 @@ Sticky top, includes logo (left side) and the button to access the basket/profil
 Menu includes following:
 
 <p align="center">
-  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/sign.png?raw=true" alt="landing page desktop">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/homepage.png?raw=true" alt="landing page desktop">
 </p>
 
 **Footer** - on the bottom of the page, contains information about the author, links to social media accounts (buttons/icons) and disclaimer with information about an actual owner of the brand presented in this application.
@@ -200,7 +204,11 @@ Menu includes following:
 Authorization pages - are implemented from the django-allauth library and customized.
 
 <p align="center">
-  <img src="#" alt="register_page">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/sign1.jpg?raw=true" alt="register_page">
+</p>
+<br>
+<p align="center">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/sign2.jpg?raw=true" alt="register_page">
 </p>
 
 Home page - Section 1: Hero Image (like on the image above)
@@ -214,7 +222,7 @@ Home page - Section 2: Insights - why the customer should choose us? Short, catc
 Home page - Section 3: Blog / Content marketing: I have added random articles about hair care, however this place is designed to publish a blog by the owner of the application, providing to customer an extra value into the purchase-sell process. It could be also a section where the partners/connected businesses are promoted - the higher recognizable are they, the better chances has an application in the SEO rankings.
 
 <p align="center">
-  <img src="#" alt="home_page">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/blog_cont.png?raw=true" alt="home_page">
 </p><br>
 
 Home page - Section 4 - Testimonials - because the whispered marketing tends to be the most effective.
@@ -231,35 +239,42 @@ Home page - Section 5 - Subscription form as another marketing tool that allows 
 
 <hr>
 
-Product list page - display the cards with products - with image, name and sub-name.
+**Product list page** - display the cards with products - with image, name and sub-name.
 
 <p align="center">
-  <img src="" alt="view_page">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/produst-list.png?raw=true" alt="view_page">
 </p>
+<br>
 
-
-Detail view page - All information about one product. Buttons: *Add to the bag* and *Go back*
+**Detail view page** - All information about one product. Buttons: *Add to the bag* and *Go back*
 
 <p align="center">
   <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/prod_deatils.png?raw=true" alt="view_page">
 </p>
+<br>
 
-Bag page - list of all the products User added to the basket and desire to purchase. Buttons: *Checkout*, *Go back*, *Increment/decrement quantity*, *Remove from the basket*
+**Bag page** - list of all the products User added to the basket and desire to purchase. Buttons: *Checkout*, *Go back*, *Increment/decrement quantity*, *Remove from the basket*
 
 <p align="center">
-  <img src="" alt="view_page">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/bag.png?raw=true" alt="view_page">
 </p>
+<br>
 
-Checkout page - contains the form for shipping address of the customer as well as his bank card credentials - Stripe element.
+**Checkout page** - contains the form for shipping address of the customer as well as his bank card credentials - Stripe element.
 If you would like to test the funcionality of this component - you can do it anonymously, following Stripe:
 "...use a card number, such as 4242 4242 4242 4242. Use a valid future date, such as 12/34. Use any three-digit CVC (four digits for American Express cards). Use any value you like for other form fields. The success transaction will redirect you to the "Checkout success page".
 
 <p align="center">
-  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/pcg_checkout_tablet.png?raw=true" alt="checkout
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/checkout.png?raw=true" alt="checkout">
 </p>
+<br>
 
-Wishlist - User personal account. In order to collect the favorite products in one private list, the Registration is required. User can add the item to his wishlist via clicking in the "heart" icon placed in the right-bottom corner of the product card.
+**Wishlist** - User personal account. In order to collect the favorite products in one private list, the Registration is required. User can add the item to his wishlist via clicking in the "heart" icon placed in the right-bottom corner of the product card.
 
+<p align="center">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/pcg_checkout_tablet.png?raw=true" alt="wishlist">
+</p>
+<br>
 
 #### **Color scheme**
 
@@ -281,8 +296,10 @@ After initial deployment on Heroku (see: Deployment) I have followed the suggest
 Using the Jira automation tools, I have connected this repository on GitHub with my project board. The names of the branches follow the Jira story numbers. Each commit message contains the story number of the task that was done and is visible in the Jira backlog. I have also added comments and images to the particular tickets with information that can make the code more readable and easily accessible during the future implementations.
 
 <p align="center">
-  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/git.png?raw=true" alt="git">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/git_fetch_pull_second.png?raw=true" alt="git">
 </p>
+<br>
+<p>Automation with Jira:
 
 <p align="center">
   <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/jira_autom.png?raw=true" alt="jira_automation">
@@ -295,9 +312,9 @@ Using the Jira automation tools, I have connected this repository on GitHub with
 If 404 or 500 error occurs within the site, User will see the customized page that contains the information about the error and button to go back to the Home page.
 
 <p align="center">
-  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/error500.png?raw=true" alt="error page">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/error404.png?raw=true" alt="error page">
 </p>
-
+<br>
 
 ### **Features**
 
@@ -310,21 +327,14 @@ Thanks to setting up the webhooks, every intent of the payment is registered by 
 </p>
 
 <p align="center">
-  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/stripe_success.png?raw=true" alt="payment-success"> <p>
-
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/stripe_success.png?raw=true" alt="payment-success"></p>
+<br>
                                                                                                                                                      
 **Google Auth**
 I have added to my application the social account authorization - firstly it was possible to login via Facebook and Google. Unfortunately during the process, I have lost the access to the facebook authorization tokens and did not have time to configure the login again - this is why I left only the Google authorization available and surely will be expanding the social accounts more as it is very popular way to encourage Users to log into our page and allows owners of the page to collect (some) data, which may be useful in marketing/economy planning.
 
 
 In order to connect the Django App with Google API, I created a project: "PCG-Heroku" and connected it with OAuth consent screen to finally receive the credentials: Client_ID and Client Secret Key --> attached them to my Heroku Vars list.
-
-<p align="center">
-  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/google-auth.png?raw=true" alt="google auth"></p>
-
-...and the login interface looks pretty common:
-<p align="center">
-  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/google_auth_ok.png?raw=true" alt="google auth"></p>
 
 
 **Subscription via MailChimp**
@@ -335,7 +345,7 @@ This is another interesting feature which is a good practice in terms of marketi
 Similary to setting up API with Google Cloud, there was a necessity to sign up for a developers account and follow a specific path of creation a group, then User and via adding those objects into an S3 forms. I was able to obtain the sensitive credentials which I have set in Heroku Vars.
 
 <p align="center">
-  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/AWS_conf_pcg.png?raw=true" alt="google auth"></p>
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/aws-bucket.png?raw=true" alt="aws"></p>
 
 
 **Star Rating**
@@ -643,6 +653,7 @@ Media used:
 <a href="https://www.pexels.com/photo/back-view-of-woman-with-curly-hair-8377518/">PNW Production</a>, 
 <a href="https://www.pexels.com/photo/girl-wearing-pink-white-teal-and-blue-crew-neck-cold-shoulder-standing-near-fence-1068205/">Photo by nappy</a> and 
 <a href="https://www.pexels.com/@cottonbro/">Cottonbro</a>
+- Hero Image <a href="https://www.pexels.com/photo/women-s-pink-sweatshirt-and-brown-plaid-skirt-794064/"> Photo by Godisable Jacob from Pexels</a>
 
 
 <p align="right"><a href="#welcome">Bact to top</a></p>
