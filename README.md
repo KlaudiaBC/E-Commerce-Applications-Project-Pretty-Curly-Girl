@@ -231,7 +231,7 @@ Home page - Section 5 - Subscription form as another marketing tool that allows 
 
 <hr>
 
-Product list page - display the cards with image, name and sub-name of available products.
+Product list page - display the cards with products - with image, name and sub-name.
 
 <p align="center">
   <img src="" alt="view_page">
@@ -241,7 +241,7 @@ Product list page - display the cards with image, name and sub-name of available
 Detail view page - All information about one product. Buttons: *Add to the bag* and *Go back*
 
 <p align="center">
-  <img src="" alt="view_page">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/prod_deatils.png?raw=true" alt="view_page">
 </p>
 
 Bag page - list of all the products User added to the basket and desire to purchase. Buttons: *Checkout*, *Go back*, *Increment/decrement quantity*, *Remove from the basket*
@@ -522,7 +522,7 @@ In my case, that was the first commit since creating the Django project. In othe
 - Push the commit into: heroku main
 
 <p align="center">
-  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README.png?raw=true" alt="cli">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/deploy_cli.png?raw=true" alt="cli">
 </p>
 
 8. At this stage your app should be correctly deployed on Herokuapp.
