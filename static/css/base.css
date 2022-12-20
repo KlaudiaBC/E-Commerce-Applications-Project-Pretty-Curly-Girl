@@ -34,10 +34,6 @@ button {
   line-height: 2rem;
 }
 
-.img-fluid {
-  min-height: 250px;
-}
-
 .img-sm {
   max-height: 70px;
   width: 70px;
@@ -541,7 +537,7 @@ table {
   }
 
   .img-md {
-    max-height: 200px;
+    max-height: 150px;
     width: auto;
   }
 
