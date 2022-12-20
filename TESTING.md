@@ -1,4 +1,4 @@
-# Full Stack Toolkit: "Empire of Thoughts" Portfolio Project - TESTING
+# E-Commerce Application: "Pretty Curly Girl" Portfolio Project - TESTING
 
 <p id="welcome"></p>
 
@@ -222,7 +222,10 @@ The tests were performed on:
 
 Most of the challenges I have met during the implementation are included in the Jira Board, where it was easy and convenient to leave comments in attachment to the tickets I have been working on.
 
-1. The most troubling in the beginning was working on the git-branches, because I haven't been prepared for any eventual issues with creating pull requests and merging the data into the main branch. See below:
+**Issue - 01**
+**Merging conflicts:**
+
+The most troubling in the beginning was working on the git-branches, because I haven't been prepared for any eventual issues with creating pull requests and merging the data into the main branch. See below:
 
 From the GitHub side when merging your PR it can look like this:
 <p align="center">
@@ -244,7 +247,7 @@ Open the working tree view to choose the changes that should be implemented and 
 <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/merge_cli.png?raw=true" alt="git"></p>
 <br><br>
 
-**Issue - 01**
+**Issue - 02**
 **Migrations errors:**
 
 Migration error happened to me at least 2 times and was caused by lack of continuous integration with database in the time, changes were applied. It van happen if you forget to make migrations on the time you made a change --> then apply more changes to the same object and try to make migrations. That can lead to real issues with the database like e.g., duplicate the name of the table, which will result with an error every time you want to apply any change to this table.
@@ -261,7 +264,7 @@ There was a table in the database which hasn't been removed and Django wanted to
 <br/>
 
 
-**Issue - 02**
+**Issue - 03**
 **CSRF validation - no access to the admin page**
 
 <p align="center">
@@ -299,7 +302,7 @@ After many trials I finally got into a short term solution to comment out the *"
 **Solution**: In my list of "CSRF_TRUSTED_ORIGINS" was a bug with url spell, therefore the website I was trying to access wasn't on this list. Once the provided url was correct, I received back my access to the page.
 
 
-**Issue - 03**
+**Issue - 04**
 **The AJAX function doesn't work.**
 
 <p align="center">
@@ -312,7 +315,7 @@ Solution was just to update my jQuery scripy with non-slim version:
 <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/error_post_solution.png?raw=true" alt="solution"></p>
 <br>
 
-**Issue - 04**
+**Issue - 05**
 **Favicon not found**
 
 <p align="center">
@@ -325,7 +328,7 @@ The solution was to make my won favicon - normally it would be a logo of the com
 <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/static/images/favicon.png?raw=true" alt="favicon"></p>
 <br>
 
-**Issue - 05**
+**Issue - 06**
 **Dependency conflict: Boto3**
 
 <p align="center">
@@ -343,8 +346,8 @@ I uninstalled the invalid version and installed the “correct” one. That caus
 <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/aws-task-jira-boto.png?raw=true" alt="dependency-error"></p>
 <br>
 
-**Issue - 06**
-**Not secure**
+**Issue - 07**
+**Page is not secure**
 
 <p align="center">
 <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/not_secure01.png?raw=true" alt="notsecure-error"></p>
