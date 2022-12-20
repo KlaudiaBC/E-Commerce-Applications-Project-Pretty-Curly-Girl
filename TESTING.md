@@ -1,4 +1,4 @@
-# Full Stack Toolkit: "Empire of Thoughts" Portfolio Project - TESTING
+# E-Commerce Application: "Pretty Curly Girl" Portfolio Project - TESTING
 
 <p id="welcome"></p>
 
@@ -196,20 +196,24 @@ The features, which was taken into a testing in both scenarios: on the desktop a
 
 <br />
 
-### **Lighthouse Desktop**
+### **Lighthouse**
+<br>
+
+**Lighthouse Desktop**
 
 <p align="center">
   <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/testing/lighthouse_last.png?raw=true" alt="lighthouse-desktop">
 </p>
+<br>
 
-
-### **Lighthouse Mobile**
+**Lighthouse Mobile**
 
 <p align="center">
   <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/testing/mobile_lighthouse.png?raw=true">
 </p>
 <br>
 <hr>
+
 The tests were performed on:
 
 - different browsers: Google Chrome, Firefox, Internet Explorer, Opera and Safari
@@ -221,8 +225,13 @@ The tests were performed on:
 ## **Errors and Bugs**
 
 Most of the challenges I have met during the implementation are included in the Jira Board, where it was easy and convenient to leave comments in attachment to the tickets I have been working on.
+<br><br>
 
-1. The most troubling in the beginning was working on the git-branches, because I haven't been prepared for any eventual issues with creating pull requests and merging the data into the main branch. See below:
+**Issue - 01**
+**Merging conflicts:**
+<br>
+The most troubling in the beginning was working on the git-branches, because I haven't been prepared for any eventual issues with creating pull requests and merging the data into the main branch. See below:
+<br>
 
 From the GitHub side when merging your PR it can look like this:
 <p align="center">
@@ -242,26 +251,31 @@ Git-pull
 Open the working tree view to choose the changes that should be implemented and merge successfully.
 <p align="center">
 <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/merge_cli.png?raw=true" alt="git"></p>
-<br><br>
+<br>
+<hr>
+<br>
 
-**Issue - 01**
+**Issue - 02**
 **Migrations errors:**
 
 Migration error happened to me at least 2 times and was caused by lack of continuous integration with database in the time, changes were applied. It van happen if you forget to make migrations on the time you made a change --> then apply more changes to the same object and try to make migrations. That can lead to real issues with the database like e.g., duplicate the name of the table, which will result with an error every time you want to apply any change to this table.
+<br>
 
 In my case, the issue was that when I tried to “migrate” I was getting an error message. Therefore I have tried to re-apply changes:
 
 <p align="center">
 <a href="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/migrations_error.png?raw=true"></a></p>
+<br>
 
 There was a table in the database which hasn't been removed and Django wanted to record the changes on that table, however in my code this table was removed several commits ago and there were no changes coming in. If I wanted to add the table to my code and apply the changes that supposedly happen, the error was: table with this name already exists.Solutions:I have tried to remove the migrations record from the django-migrations table, where all previous migrations were stored. That helped on time, other time I had to delete one of the elements from my model – as it was taken by migration as already "not-excisting" (still when I wanted to add it I was receiving a message: this table already excist") --> I have pushed all the changes, then added this element back and makemigrations.
 
 <p align="center">
 <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/migrations_error_solution.png?raw=true" alt="solution"></p>
-<br/>
+<br>
+<hr>
+<br>
 
-
-**Issue - 02**
+**Issue - 03**
 **CSRF validation - no access to the admin page**
 
 <p align="center">
@@ -271,6 +285,7 @@ There was a table in the database which hasn't been removed and Django wanted to
 At first I have:
 - refreshed my page and clean all the cookies/cache data
 - checked if all the forms contain the "CSRF" token and if those tokens are placed in the correct place
+<br>
 
 The first bug was found:
 <p align="center">
@@ -296,10 +311,16 @@ I found out that for some reason there are two csrf tokens being made during loa
 <br>
 
 After many trials I finally got into a short term solution to comment out the *"django.middleware.csrf.CsrfViewMiddleware"*. And that worked, for maybe a day. The issue came again and I asked the Student Support Group for help. The solution was incredibly simple:
-**Solution**: In my list of "CSRF_TRUSTED_ORIGINS" was a bug with url spell, therefore the website I was trying to access wasn't on this list. Once the provided url was correct, I received back my access to the page.
+<br>
+**Solution**:
+<br>
+In my list of "CSRF_TRUSTED_ORIGINS" was a bug with url spell, therefore the website I was trying to access wasn't on this list. Once the provided url was correct, I received back my access to the page.
 
+<br>
+<hr>
+<br>
 
-**Issue - 03**
+**Issue - 04**
 **The AJAX function doesn't work.**
 
 <p align="center">
@@ -311,8 +332,10 @@ Solution was just to update my jQuery scripy with non-slim version:
 <p align="center">
 <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/error_post_solution.png?raw=true" alt="solution"></p>
 <br>
+<hr>
+<br>
 
-**Issue - 04**
+**Issue - 05**
 **Favicon not found**
 
 <p align="center">
@@ -324,8 +347,10 @@ The solution was to make my won favicon - normally it would be a logo of the com
 <p align="center">
 <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/static/images/favicon.png?raw=true" alt="favicon"></p>
 <br>
+<hr>
+<br>
 
-**Issue - 05**
+**Issue - 06**
 **Dependency conflict: Boto3**
 
 <p align="center">
@@ -336,20 +361,23 @@ In order to host my static files in the AWS bucket, I had to add a Boto library 
 Solution: At first, I had checked in my CLI which dependencies were in conflict with the one I just added, and I tried to install versions that would match.
 As soon as that happened, the other libraries appeared to not be compatible with the versions I added.
 After a few times of re-installing various dependencies, I found out that the version of Boto which caused the issue in the first place was deprecated.
-
+<br>
 I uninstalled the invalid version and installed the “correct” one. That caused new issues with other dependencies, however this time I found the matching versions of all included dependencies- below you can see the set of “matching” ones.
 
 <p align="center">
 <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/aws-task-jira-boto.png?raw=true" alt="dependency-error"></p>
 <br>
+<hr>
+<br>
 
-**Issue - 06**
-**Not secure**
+**Issue - 07**
+**Page is not secure**
 
 <p align="center">
 <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/not_secure01.png?raw=true" alt="notsecure-error"></p>
 <br>
 
 As a solution for that I had un-commented the *"django.middleware.csrf.CsrfViewMiddleware"* in my Settings.py, which was not active before.
+<br>
 
 <p align="right"><a href="#welcome">Bact to top</a></p>
