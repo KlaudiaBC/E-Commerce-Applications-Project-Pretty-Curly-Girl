@@ -201,7 +201,7 @@ Menu includes following:
 
 #### **Content of the pages:**
 
-Authorization pages - are implemented from the django-allauth library and customized.
+**Authorization pages** - are implemented from the django-allauth library and customized.
 
 <p align="center">
   <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/sign1.jpg?raw=true" alt="register_page">
@@ -211,27 +211,27 @@ Authorization pages - are implemented from the django-allauth library and custom
   <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/sign2.jpg?raw=true" alt="register_page">
 </p>
 
-Home page - Section 1: Hero Image (like on the image above)
-
-Home page - Section 2: Insights - why the customer should choose us? Short, catchy messages - loaded with keywords and decorated with a simple icon.
+**Home page - Section 1: Hero Image** (like on the image above)
+<br>
+**Home page - Section 2: Insights** - why the customer should choose us? Short, catchy messages - loaded with keywords and decorated with a simple icon.
 
 <p align="center">
   <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/section2.png?raw=true" alt="home">
 </p><br>
 
-Home page - Section 3: Blog / Content marketing: I have added random articles about hair care, however this place is designed to publish a blog by the owner of the application, providing to customer an extra value into the purchase-sell process. It could be also a section where the partners/connected businesses are promoted - the higher recognizable are they, the better chances has an application in the SEO rankings.
+**Home page - Section 3: Blog** / Content marketing: I have added random articles about hair care, however this place is designed to publish a blog by the owner of the application, providing to customer an extra value into the purchase-sell process. It could be also a section where the partners/connected businesses are promoted - the higher recognizable are they, the better chances has an application in the SEO rankings.
 
 <p align="center">
   <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/blog_cont.png?raw=true" alt="home_page">
 </p><br>
 
-Home page - Section 4 - Testimonials - because the whispered marketing tends to be the most effective.
+**Home page - Section 4 - Testimonials** - because the whispered marketing tends to be the most effective.
 
 <p align="center">
   <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/testimonials.png?raw=true" alt="home_page">
 </p><br>
 
-Home page - Section 5 - Subscription form as another marketing tool that allows the seller to bulit relationship with his customers
+**Home page - Section 5 - Subscription form** as another marketing tool that allows the seller to bulit relationship with his customers
 
 <p align="center">
   <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/subscrib.png?raw=true" alt="home_page">
@@ -272,7 +272,7 @@ If you would like to test the funcionality of this component - you can do it ano
 **Wishlist** - User personal account. In order to collect the favorite products in one private list, the Registration is required. User can add the item to his wishlist via clicking in the "heart" icon placed in the right-bottom corner of the product card.
 
 <p align="center">
-  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/pcg_checkout_tablet.png?raw=true" alt="wishlist">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/wishlist.png?raw=true" alt="wishlist">
 </p>
 <br>
 
@@ -284,7 +284,7 @@ I added a soft touch of color "Teal Blue", which brought little dynamics into a 
 <p align="center">
   <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/my-col.png?raw=true">
 </p>
-
+<br>
 <p align="right"><a href="#welcome">Back to top</a></p>
 
 ## **Implementation**
@@ -304,7 +304,7 @@ Using the Jira automation tools, I have connected this repository on GitHub with
 <p align="center">
   <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/jira_autom.png?raw=true" alt="jira_automation">
 </p>
-
+<br>
 
 ### **Defensive design**
 **Error pages (404 and 500)**
@@ -317,9 +317,11 @@ If 404 or 500 error occurs within the site, User will see the customized page th
 <br>
 
 ### **Features**
-
-**Stripe** payment During the implementation of this project I have been closely following the last tutorial provided by Code Institute: "Boutique Ado ''. All code connected with Stripe payments as well as configuration of webhooks is based on the code provided by CI. I have implemented a few changes required by the difference between the Order models, however I can not take any accreditation for this part of my application.
-
+<br>
+**Stripe payment**
+<br>
+During the implementation of this project I have been closely following the last tutorial provided by Code Institute: "Boutique Ado ''. All code connected with Stripe payments as well as configuration of webhooks is based on the code provided by CI. I have implemented a few changes required by the difference between the Order models, however I can not take any accreditation for this part of my application.
+<br>
 Thanks to setting up the webhooks, every intent of the payment is registered by Stripe and accessible in the Stripe administration panel.
 
 <p align="center">
@@ -328,33 +330,35 @@ Thanks to setting up the webhooks, every intent of the payment is registered by 
 
 <p align="center">
   <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/stripe_success.png?raw=true" alt="payment-success"></p>
-<br>
+<br><br>
                                                                                                                                                      
 **Google Auth**
+<br>
 I have added to my application the social account authorization - firstly it was possible to login via Facebook and Google. Unfortunately during the process, I have lost the access to the facebook authorization tokens and did not have time to configure the login again - this is why I left only the Google authorization available and surely will be expanding the social accounts more as it is very popular way to encourage Users to log into our page and allows owners of the page to collect (some) data, which may be useful in marketing/economy planning.
-
+<br>
 
 In order to connect the Django App with Google API, I created a project: "PCG-Heroku" and connected it with OAuth consent screen to finally receive the credentials: Client_ID and Client Secret Key --> attached them to my Heroku Vars list.
-
+<br>
 
 **Subscription via MailChimp**
+<br>
 This is another interesting feature which is a good practice in terms of marketing planning, trying to gain information about your potential customer as well as get into a direct contact with customer, which allows to build the trust and create positive B2C relationship.
-
+<br>
 
 **Hosting the database in AWS S3 Bucket**
+<br>
 Similary to setting up API with Google Cloud, there was a necessity to sign up for a developers account and follow a specific path of creation a group, then User and via adding those objects into an S3 forms. I was able to obtain the sensitive credentials which I have set in Heroku Vars.
 
 <p align="center">
   <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/aws-bucket.png?raw=true" alt="aws"></p>
-
+<br>
 
 **Star Rating**
+<br>
 I have implemented a star-rating django library as the rating system is well known to be a strong selling point - however the code that I've fetched from the library was very chaotic and unclear - this is why finally I have decided to resign from using the version that may cause further issues and errors. I decided it will be more efficient to wait with implementation of this feature and provide good quality code to handle it.
 
 <p align="center">
-  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/star_ratings.png?raw=true" alt="star rating></p>
-
-                                                                                                                 
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/star_ratings.png?raw=true" alt="star rating></p>           <br>                                                                                                  
                                                                                                                                                 
 <p align="right"><a href="#welcome">Back to top</a></p>
 
@@ -391,9 +395,12 @@ The marketing plan is aimed at:
   <li> defining deadlines associated with specific activities in the future</li>
   <li> forecasts of results and determination of efficiency targets</li>
 </ul>
+<br>
 
-**Time frame of the project:** After the first month of operation, the project will be evaluated for effectiveness. Then a decision will be made as to whether the planned campaign is efficient or there are any necessary changes.
-
+**Time frame of the project:**
+<br>
+After the first month of operation, the project will be evaluated for effectiveness. Then a decision will be made as to whether the planned campaign is efficient or there are any necessary changes.
+<br>
 
 #### **Social Media**
 Facebook / Instagram / TikTok:
@@ -404,20 +411,23 @@ Facebook / Instagram / TikTok:
   <li> personal message (e.g. “behind the scenes” of creating products)</li>
   <li> leveling up with the average pole, follow the statistics and adjust the strategy to meet New Users</li>
   </ul>
+<br>
 
-
-**Posts:** For the first 3 months posts should be added at least 2x a week and should be: interesting, divided, personalized, regular. Routine - add one post at a constant time of the day every day: e.g. in the morning or in the evening (make the User adjust to regular contact, schedule and create a trust tower, expectations).
-
+**Posts:**
+<br>
+For the first 3 months posts should be added at least 2x a week and should be: interesting, divided, personalized, regular. Routine - add one post at a constant time of the day every day: e.g. in the morning or in the evening (make the User adjust to regular contact, schedule and create a trust tower, expectations).
+<br>
 
 **Theme post:**
+<br>
   - Posts related to current celebrations, holidays etc.
   - Hair care, skin care and wellbeing
   - Questions about opinions, it is best to ask a question in a personal form, eg "This morning I thought about putting on a dress, I'm counting down the days until spring with impatience! Are you cold? Do any of you share my ideas for today's creations?" (the same applies to instagram: it is important to ALWAYS post also all the content on the “story” - FB and IG).
-
+<br>
 
 #### **Newsletter**
 Collecting data for the newsletter via *"Subscribe for newsletter"* button on the website. Once a week: "Smart Collection" - Updates on items exhibited by our customers. Additionally: wishes for Christmas, Easter, Women / Men's Day, referring to children's day, birthday, Valentine's Day, Halloween, etc.
-
+<br>
 
 #### **Public Relations**
   - opening gala (contact local press)
@@ -425,10 +435,10 @@ Collecting data for the newsletter via *"Subscribe for newsletter"* button on th
   - contact via form located on the web page
   - after 12 months of functioning - a charity event
   - remember: respond to the customer within one working day, be polite and professional
-
+<br>
 
 #### **Search Engine Optimization**
-                                                                                                                          
+
 SEO including descriptive meta tags, keywords included in the "alt" attribute of images. Links to high-ranked websites that are connected with the content of the page. Robots.txt and sitemaps.xml are included.
                                                                                                                           
  <p align="center">
@@ -446,7 +456,7 @@ SEO including descriptive meta tags, keywords included in the "alt" attribute of
   <p align="center">
   <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/words4.jpg?raw=true"></p>
                                                                                                                                                                                                                                                                           
-In order to find the most effective **keywords** for my SEO, I have followed those steps:
+In order to find the **most effective keywords** for my SEO, I have followed those steps:
 1. Write down all the keywords that match the website and its purpose.
 2. Take away the most common keywords (too popular keywords are too competitive)
 3. Search for keywords in Google:
@@ -458,8 +468,8 @@ In order to find the most effective **keywords** for my SEO, I have followed tho
 5. I have used the Google Trends platform to search for related keywords and check geographical keyword variations.
                               
                               
-     <p align="center">
-  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/keywords_table.png?raw=true"></p>                                             
+  <p align="center">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/keywords_table.png?raw=true"></p>                             <br>            
 
 #### **Control and updating procedures**
   - BUZZSUMO - monitors the internet in terms of making a given article available to users, has internet monitoring functions in terms of content and competition (keywords)
