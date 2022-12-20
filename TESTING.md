@@ -198,6 +198,7 @@ The features, which was taken into a testing in both scenarios: on the desktop a
 
 ### **Lighthouse**
 <br>
+
 **Lighthouse Desktop**
 
 <p align="center">
