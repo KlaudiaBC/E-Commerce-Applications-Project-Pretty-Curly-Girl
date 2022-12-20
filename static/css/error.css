@@ -19,9 +19,6 @@
     animation: colorSlide 15s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
   }
   
-  .card {
-    background-color: none !important;
-  }
 
   .fade-in {
     animation: fadeIn 2s ease infinite;

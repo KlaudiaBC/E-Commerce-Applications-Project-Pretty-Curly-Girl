@@ -35,26 +35,17 @@
                     'attr_id': attr_id,
                     'csrfmiddlewaretoken': csrfToken,
                 },
-                success: function (res) {
+                success: function () {
                     that.addClass('fa-solid').removeClass('fa-regular');
+                    location.reload(); // to show django message
                 }
             });
         }); // End ajax
     }); // End document.ready
 
-    // show messages outside of django scope
-    let permission = Notification.permission;
-
-    if(permission === "granted"){
-        showNotification();
-    } else if(permission === "default"){
-        requestAndShowPermission();
-    } else {
-        alert("Use normal alert");
-    }
 
     var notLog = document.getElementById('not-log')
     notLog.addEventListener('click', function () {
-        alert("Login required.")
+        alert('Login required! Please, login to your account or create one.')
     });
 </script>

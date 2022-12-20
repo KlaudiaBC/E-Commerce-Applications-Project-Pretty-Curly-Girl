@@ -60,31 +60,31 @@
   <!-- Promo text -->
   <div class="utility-nav">
     <div class="container">
-        <p class="small">Netherlands: Next Day Delivery | Express Shipping Worldwide</p>
+      <p class="small">Netherlands: Next Day Delivery | Express Shipping Worldwide</p>
     </div>
   </div>
 
   <!-- Header and Main navbar -->
   {% include 'includes/navbar.html' %}
 
-    <!-- Messages -->
-    {% if messages %}
-    <div class="message-container">
-      {% for message in messages %}
-        {% with message.level as level %}
-          {% if level == 40 %}
-            {% include 'includes/toasts/toast_error.html' %}
-          {% elif level == 30 %}
-            {% include 'includes/toasts/toast_warning.html' %}
-          {% elif level == 25 %}
-            {% include 'includes/toasts/toast_success.html' %}
-          {% else %}
-            {% include 'includes/toasts/toast_info.html' %}
-          {% endif %}
-        {% endwith %}
-      {% endfor %}
-    </div>
+  <!-- Messages -->
+  {% if messages %}
+  <div class="message-container">
+    {% for message in messages %}
+    {% with message.level as level %}
+    {% if level == 40 %}
+    {% include 'includes/toasts/toast_error.html' %}
+    {% elif level == 30 %}
+    {% include 'includes/toasts/toast_warning.html' %}
+    {% elif level == 25 %}
+    {% include 'includes/toasts/toast_success.html' %}
+    {% else %}
+    {% include 'includes/toasts/toast_info.html' %}
     {% endif %}
+    {% endwith %}
+    {% endfor %}
+  </div>
+  {% endif %}
 
   {% block content %}
   <!-- Content goes here -->
@@ -93,7 +93,7 @@
   <!-- Footer -->
   <br>
   {% include 'includes/footer.html' %}
- 
+
   {% block postloadjs %}
   <script>
     (() => {
@@ -121,11 +121,14 @@
         document.querySelector(".overlay").classList.remove("visible");
       });
 
-      // Show and fade out messages after 2 sec
+      // Show and hide messages after 5 sec
       $('.toast').toast('show');
-      // $(function () {
-      //   setTimeout(function () { $('.toast').fadeOut(1000); }, 2000)
-      // })
+      var m = document.getElementsByClassName("toast");  // Return an array
+      setTimeout(function () {
+        if (m && m.length) {
+          m[0].classList.add('hide');
+        }
+      }, 5000);
 
     })();
   </script>
