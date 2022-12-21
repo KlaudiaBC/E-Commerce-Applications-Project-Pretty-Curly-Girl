@@ -168,11 +168,10 @@
 
     <ul class="list-unstyled components links">
         <li class="active">
-            <a href="{% url 'home' %}"><i class="bx bx-home mr-3"></i> Home</a>
+            <a href="{% url 'home' %}">Home</a>
         </li>
         <li>
-            <a class="dropdown-toggle" href="#productSubmenu" data-toggle="collapse" aria-expanded="false">
-                <i class="bx bx-help-circle mr-3"></i>Products</a>
+            <a class="dropdown-toggle" href="#productSubmenu" data-toggle="collapse" aria-expanded="false">Products</a>
             <ul class="collapse list-unstyled" id="productSubmenu">
                 <li>
                     <a href="{% url 'products' %}?category=cleanse" aria-label="cleanse">Cleanse</a>
@@ -193,11 +192,10 @@
         </li>
 
         <li>
-            <a href="{% url 'products' %}?category=curly_star" aria-label="curly_star"><i class="bx bx-crown mr-3"></i>
-                Curly STAR</a>
+            <a href="{% url 'products' %}?category=curly_star" aria-label="curly_star">Curly STAR</a>
         </li>
         <li>
-            <a href="{% url 'products' %}?category=sale" aria-label="sale"><i class="bx bx-home mr-3"></i>SALE</a>
+            <a href="{% url 'products' %}?sale" aria-label="sale">SALE</a>
         </li>
     </ul>
 

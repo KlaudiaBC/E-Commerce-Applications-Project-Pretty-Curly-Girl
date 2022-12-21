@@ -45,6 +45,9 @@ def add_wishlist(request):
                 user_id=request.user.pk, product_id=int(
                     request.POST['attr_id']))
             if data.exists():
+                messages.info(
+                    request, 'This item is already in your basket.')
+            else:
                 Wishlist.objects.create(
                     user_id=request.user.pk, product_id=int(
                         request.POST['attr_id'])),
