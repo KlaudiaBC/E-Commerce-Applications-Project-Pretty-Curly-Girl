@@ -17,7 +17,8 @@ User registration with required email confirmation.
 Subscription form with MailChimp.
 
 
-See the deployed project <a href="https://pretty-curly-girl.herokuapp.com/">here</a>.
+See the deployed project <a href="https://pretty-curly-girl.herokuapp.com/" target="_blank">here</a>.<br>
+See the Jira Board for this project: <a href="https://emporiumofthoughts.atlassian.net/jira/software/projects/PCG/boards/2" target="_blank">here</a>.
 
 <p align="center">
   <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/respo_dark.png?raw=true" alt="responsive view">
@@ -75,7 +76,7 @@ In addition, you can also find a basic e-commerce marketing strategy which inclu
 ### **Product roadmap**
 Following the Agile principles, I have created the *User Stories*, which helped me to map out the work required to develop this application. In order to easily manage the workflow, I have used the <a href="https://jira.atlassian.com/" target="_blank">Jira software</a>.
 
-Please, see the board of my project in Jira, including User Stories, automation with GIT branches and commits, pointed out errors and fixes, comments, images and many more: <a href="https://emporiumofthoughts.atlassian.net/jira/software/projects/PCG/boards/2">click here</a>
+Please, see the board of my project in Jira, including User Stories, automation with GIT branches and commits, pointed out errors and fixes, comments, images and many more: <a href="https://emporiumofthoughts.atlassian.net/jira/software/projects/PCG/boards/2" target="_blank">click here</a>
 
 Each User Story has assigned a *Story Points*.
 I have used the Fibonacci scale (1,2,3,5,8) to represent complexity and estimated amount of effort/time it takes to complete the task (story).
@@ -310,6 +311,8 @@ Using the Jira automation tools, I have connected this repository on GitHub with
 **Error pages (404 and 500)**
 
 If 404 or 500 error occurs within the site, User will see the customized page that contains the information about the error and button to go back to the Home page.
+<br>
+Inspiration --> CodePen: <a href="https://codepen.io/mhdmhsni/pen/NmRojB" target="_blank">"Simple 404 Page" by Mehdi Mohseni</a>
 
 <p align="center">
   <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/error404.png?raw=true" alt="error page">
@@ -358,8 +361,25 @@ Similary to setting up API with Google Cloud, there was a necessity to sign up f
 I have implemented a star-rating django library as the rating system is well known to be a strong selling point - however the code that I've fetched from the library was very chaotic and unclear - this is why finally I have decided to resign from using the version that may cause further issues and errors. I decided it will be more efficient to wait with implementation of this feature and provide good quality code to handle it.
 
 <p align="center">
-  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/star_ratings.png?raw=true" alt="star rating></p>           <br>                                                                                                  
-                                                                                                                                                
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/star_ratings.png?raw=true" alt="star rating"></p>           <br>
+  
+**Further implementations**
+<br>
+There are a few features that should have place in the further implementations – before the application could go into actual use:
+- Locations page: includes the Google Maps widget with pins that shows the locations of the stores <br> *(You can find this feature in my <a href="https://github.com/KlaudiaBC/Resume-Project" target="_blank">Resume Project</a>)*
+- Improvement of the wishlist functionality
+- Save billing address of the registered customer
+- Allow adding more images of the products and add carousel that allows to swipe them
+- A contact form
+- The profile page with possibilities to update and remove information
+- Admin in-app functionality
+- More social accounts providers
+
+<br>
+<p align="center">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/further_impl.png?raw=true" alt="futher implementations"></p>
+<br>
+
 <p align="right"><a href="#welcome">Back to top</a></p>
 
 ## **Business model**
@@ -372,7 +392,6 @@ I have implemented a star-rating django library as the rating system is well kno
 
 
 ### **Marketing strategy**           
-
                                    
  <p align="center">
   <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/persona.png?raw=true"></p>                                                         
@@ -480,11 +499,14 @@ he clicks "I like it" etc.)
   - Sotrender - the best social media tool on the market, which will allow you to analyze activities on Facebook, Twitter, YouTube, Instagram, and suggest what can be improved to make the engagement on these channels higher
   - Brand24 and Sentione are two tools for monitoring social media as well as broadly understood Internet (portals, websites). These tools will tell you if internet users are talking about the brand and where exactly.
   - Google Analytics
+ 
+  <p align="center">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/sitemaps.png?raw=true"></p>      
 
 <p align="right"><a href="#welcome">Bact to top</a></p>
 
 ## **Testing**
-The testing documentation is in separate file: <a href="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/TESTING.md">TESTING.md</a> 
+The testing documentation is in separate file: <a href="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/TESTING.md" target="_blank">TESTING.md</a> 
 
 <p align="right"><a href="#welcome">Bact to top</a></p>
 
@@ -600,10 +622,10 @@ I have used the following technologies and support sources:
 - <a href="https://github.com/" target="_blank">GitHub</a> for hosting and managing my Git repositories
 - <a href="https://git-scm.com/" target="_blank">Git</a> for managing and keeping track of my source code history
 - <a href="https://www.heroku.com/" target="_blank">Heroku</a> for deployment
-- <a href="https://developer.chrome.com/docs/devtools/">Chrome DevTools</a> (for testing throughout the workflow)
+- <a href="https://developer.chrome.com/docs/devtools/" target="_blank">Chrome DevTools</a> (for testing throughout the workflow)
 - <a href="https://www.atlassian.com/" target="_blank">Jira Software</a> for Agile Scrum
 - <a href="https://app.diagrams.net/" target="_blank">Draw.io</a> for wireframes
-- <a href="https://fonts.google.com/" target="_blank">Google Fonts</a> for the "logo" font
+- <a href="https://www.xml-sitemaps.com/" target="_blank">XML-Sitemaps</a> for the sitemaps.xml
 - <a href="https://fontawesome.com//" target="_blank">FontAwesome for all for all icons included in the page 
 - <a href="https://www.flaticon.com/" target="_blank">Flaticon</a> by Freepik / for all vector images (checkout success/empty shopping bag)
 - <a href="https://coolors.co/" target="_blank">Coolors</a> for a color pallete
@@ -655,15 +677,15 @@ In this place I would like to thank everyone, who added an knowledge and value t
 
 
 Media used:
-- All images of the products are coming directly from the Client: <a href="https://prettycurlygirl.store/">Pretty Curly Girl</a>
-- Image of persona: <a href="https://www.pexels.com/photo/women-wearing-black-clothes-7623816/">Photo by Mikhail Nilov</a> via Pexels
-- Google Logo Icon: <a href="https://icons8.com/icon/17949/google">Google icon</a>
-- Favicon Generator: <a href="https://favicon.io/favicon-generator/">Favicon</a>
+- All images of the products are coming directly from the Client: <a href="https://prettycurlygirl.store/" target="_blank">Pretty Curly Girl</a>
+- Image of persona: <a href="https://www.pexels.com/photo/women-wearing-black-clothes-7623816/" target="_blank">Photo by Mikhail Nilov</a> via Pexels
+- Google Logo Icon: <a href="https://icons8.com/icon/17949/google" target="_blank">Google icon</a>
+- Favicon Generator: <a href="https://favicon.io/favicon-generator/" target="_blank">Favicon</a>
 - Images in the "blog" section / home page:
-<a href="https://www.pexels.com/photo/back-view-of-woman-with-curly-hair-8377518/">PNW Production</a>, 
-<a href="https://www.pexels.com/photo/girl-wearing-pink-white-teal-and-blue-crew-neck-cold-shoulder-standing-near-fence-1068205/">Photo by nappy</a> and 
-<a href="https://www.pexels.com/@cottonbro/">Cottonbro</a>
-- Hero Image <a href="https://www.pexels.com/photo/women-s-pink-sweatshirt-and-brown-plaid-skirt-794064/"> Photo by Godisable Jacob from Pexels</a>
+<a href="https://www.pexels.com/photo/back-view-of-woman-with-curly-hair-8377518/" target="_blank">PNW Production</a>, 
+<a href="https://www.pexels.com/photo/girl-wearing-pink-white-teal-and-blue-crew-neck-cold-shoulder-standing-near-fence-1068205/" target="_blank">Photo by nappy</a> and 
+<a href="https://www.pexels.com/@cottonbro/" target="_blank">Cottonbro</a>
+- Hero Image <a href="https://www.pexels.com/photo/women-s-pink-sweatshirt-and-brown-plaid-skirt-794064/" target="_blank"> Photo by Godisable Jacob from Pexels</a>
 
 
 <p align="right"><a href="#welcome">Bact to top</a></p>
