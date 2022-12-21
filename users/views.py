@@ -46,12 +46,12 @@ def add_wishlist(request):
                     request.POST['attr_id']))
             if data.exists():
                 messages.info(
-                    request, 'This item is already in your basket.')
+                    request, 'This item is already in your wishlist!')
             else:
                 Wishlist.objects.create(
                     user_id=request.user.pk, product_id=int(
                         request.POST['attr_id'])),
-                messages.info(
+                messages.success(
                     request, 'Added item to your wishlist.')
 
     return HttpResponse(status=200)
