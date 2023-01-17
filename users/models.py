@@ -18,22 +18,6 @@ class UserProfile(models.Model):
     def __str__(self):
         return self.user.username
 
-    @receiver(user_signed_up)
-    # Populate a user who signed up via social account
-    def populate_profile(sociallogin, user, **kwargs):
-
-        user.profile = UserProfile()
-
-        if sociallogin.account.provider == 'google':
-            user_data = user.socialaccount_set.filter(
-                provider='google')[0].extra_data
-            email = user_data['email']
-            user = user_data['name']
-
-        user.userprofile.email = email
-        user.userprofile.name = user
-        user.profile.save()
-
 
 @receiver(post_save, sender=User)
 def create_or_update_user_profile(sender, instance, created, **kwargs):
