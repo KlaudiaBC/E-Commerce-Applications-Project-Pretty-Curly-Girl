@@ -31,9 +31,9 @@ class StripeWH_Handler:
         stripe_charge = stripe.Charge.retrieve(
             intent.latest_charge)
 
-        billing_details = stripe_charge.billing_details
+        billing_details = intent.charges.data[0].billing_details
         shipping_details = intent.shipping
-        grand_total = round(stripe_charge.amount / 100, 2)
+        grand_total = round(intent.charges.data[0].amount / 100, 2)
 
         # Clean data in the shipping details
         for field, value in shipping_details.address.items():
@@ -45,8 +45,7 @@ class StripeWH_Handler:
         while attempt <= 5:
             try:
                 order = Order.objects.get(
-                    first_name__iexact=shipping_details.first_name,
-                    last_name__iexact=shipping_details.last_name,
+                    full_name__iexact=shipping_details.name,
                     email__iexact=billing_details.email,
                     phone__iexact=shipping_details.phone,
                     country__iexact=shipping_details.address.country,
@@ -72,8 +71,7 @@ class StripeWH_Handler:
             order = None
             try:
                 order = Order.objects.create(
-                    first_name=shipping_details.first_name,
-                    last_name=shipping_details.last_name,
+                    full_name=shipping_details.name,
                     email=billing_details.email,
                     phone=shipping_details.phone,
                     country=shipping_details.address.country,
@@ -92,7 +90,7 @@ class StripeWH_Handler:
                             product=product,
                             quantity=item_data,
                         )
-                        order_line_item.save()
+                        order_item.save()
             except Exception as e:
                 if order:
                     order.delete()

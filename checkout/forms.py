@@ -5,7 +5,7 @@ from .models import Order
 class OrderForm(forms.ModelForm):
     class Meta:
         model = Order
-        fields = ('first_name', 'last_name', 'email', 'phone',
+        fields = ('full_name', 'email', 'phone',
                   'address_line_1', 'address_line_2',
                   'city', 'postcode', 'country',)
 
@@ -16,8 +16,7 @@ class OrderForm(forms.ModelForm):
         """
         super().__init__(*args, **kwargs)
         placeholders = {
-            'first_name': 'First Name',
-            'last_name': 'Last Name',
+            'full_name': 'Full Name',
             'email': 'Email Address',
             'phone': 'Phone Number',
             'postcode': 'Postal Code',
@@ -27,9 +26,9 @@ class OrderForm(forms.ModelForm):
         }
 
         """
-        Start the cursor on the first_name field when user loads the page
+        Start the cursor on the full_name field when user loads the page
         """
-        self.fields['first_name'].widget.attrs['autofocus'] = True
+        self.fields['full_name'].widget.attrs['autofocus'] = True
 
         """
         Add star to the placeholder if the field is required

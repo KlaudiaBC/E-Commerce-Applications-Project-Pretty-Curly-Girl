@@ -20,7 +20,7 @@ class Product(models.Model):
     category = models.ForeignKey('Category', null=True, blank=True,
                                  on_delete=models.SET_NULL)
     sku = models.CharField(max_length=20, null=True, blank=True)
-    name = models.CharField(max_length=50)
+    name = models.CharField(max_length=254)
     extra_info = models.CharField(max_length=50, null=True, blank=True)
     description = models.TextField()
     volume = models.IntegerField(null=False, blank=True, default="0")

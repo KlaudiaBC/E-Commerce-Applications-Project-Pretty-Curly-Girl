@@ -33,10 +33,10 @@ card.addEventListener("change", function (event) {
   var errorDiv = document.getElementById("card-errors");
   if (event.error) {
     var html = `
-            <p class="icon" role="alert">
-            <i class="fa-solid fa-circle-xmark"></i>
-            </p>
-            <p>${event.error.message}</p>
+            <span class="icon" role="alert">
+            <i class="fa-solid fa-times"></i>
+            </span>
+            <span>${event.error.message}</span>
         `;
     $(errorDiv).html(html);
   } else {
@@ -67,8 +67,7 @@ form.addEventListener('submit', function(ev) {
           payment_method: {
               card: card,
               billing_details: {
-                  first_name: $.trim(form.first_name.value),
-                  last_name: $.trim(form.last_name.value),
+                  name: $.trim(form.full_name.value),
                   phone: $.trim(form.phone.value),
                   email: $.trim(form.email.value),
                   address:{
@@ -80,8 +79,7 @@ form.addEventListener('submit', function(ev) {
               }
           },
           shipping: {
-              first_name: $.trim(form.first_name.value),
-              last_name: $.trim(form.last_name.value),
+              name: $.trim(form.full_name.value),
               phone: $.trim(form.phone.value),
               address: {
                   line1: $.trim(form.address_line_1.value),

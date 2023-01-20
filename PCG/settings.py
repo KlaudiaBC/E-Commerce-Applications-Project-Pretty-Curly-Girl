@@ -168,6 +168,7 @@ CORS_ORIGIN_ALLOW_ALL = True
 CSRF_TRUSTED_ORIGINS = ['https://*.pretty-curly-girl.herokuapp.com',
                         'https://pretty-curly-girl.herokuapp.com/\
                             accounts/google/login/callback/',
+                        'https://8000-klaudiabc-ecommerceappl-jf2l2afkl4o.ws-eu83.gitpod.io',
                         'http://*.gitpod.io']
 
 
