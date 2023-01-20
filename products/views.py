@@ -90,7 +90,7 @@ class AddReview(CreateView):
     success_url = reverse_lazy('home')
 
     def form_valid(self, form):
-        form.instance.product_id = self.kwargs['pk']
+        form.instance.product_id = self.kwargs['product_id']
         messages.info(self.request, 'Thank You! Your review has been added.')
 
         return super().form_valid(form)

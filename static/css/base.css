@@ -48,6 +48,12 @@ button {
   margin: auto;
 }
 
+.review-wrapper {
+  border-radius: 30px;
+  background-color: #17a2b81f;
+  border: solid #f2f8fd;
+}
+
 .btt-link,
 .update-link,
 .remove-item {
