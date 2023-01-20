@@ -48,16 +48,6 @@ class Migration(migrations.Migration):
         ),
         migrations.AlterField(
             model_name='order',
-            name='first_name',
-            field=models.CharField(max_length=50),
-        ),
-        migrations.AlterField(
-            model_name='order',
-            name='last_name',
-            field=models.CharField(max_length=50),
-        ),
-        migrations.AlterField(
-            model_name='order',
             name='order_note',
             field=models.CharField(blank=True, max_length=100, null=True),
         ),
