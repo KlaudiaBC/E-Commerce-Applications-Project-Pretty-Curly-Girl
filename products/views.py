@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
-from django.views.generic import CreateView
+from django.views.generic import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
+from django.http import HttpResponseRedirect
 from django.contrib import messages
 from django.db.models import Q
 from .models import Product, Category, Review
@@ -90,7 +91,34 @@ class AddReview(CreateView):
     success_url = reverse_lazy('home')
 
     def form_valid(self, form):
-        form.instance.product_id = self.kwargs['product_id']
+        form.instance.review_id = self.kwargs['review_id']
         messages.info(self.request, 'Thank You! Your review has been added.')
 
         return super().form_valid(form)
+
+
+class UpdateReview(UpdateView):
+    """
+    Define attributes for the Edit Post form,
+    which will render in specyfied html file.
+    """
+    model = Review
+    form_class = ReviewForm
+    template_name = "products/update_review.html"
+    success_url = reverse_lazy('products')
+
+    def form_valid(self, form):
+        form.instance.review_id = self.kwargs['pk']
+        messages.success(self.request, 'All changes have been saved!')
+
+        return super().form_valid(form)
+
+
+class DeleteReview(DeleteView):
+    """
+    Define attributes for the delete post page,
+    which will render in specyfied html file.
+    """
+    model = Review
+    template_name = "products/delete_review.html"
+    success_url = reverse_lazy('home')

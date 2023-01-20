@@ -100,42 +100,46 @@
                     <h3 class="text-info">Reviews:</h3>
                 </div>
                 <div class="ml-2 col-sm-7">
-                    <div class="btn btn-outline-info"><a href="{% url 'add_review' product.pk %}" class="nostyle">Add your
+                    <div class="btn btn-outline-info"><a href="{% url 'add_review' product.pk %}" class="nostyle">Add
+                            your
                             review.</a>
                     </div>
                 </div>
             </div>
         </div>
-        <br/>
-        <div class="mt-2 ml-2 ml-lg-5">
+        <br />
+
+        <div class="row mx-2 mx-md-5">
             {% if not product.product_reviews.all %}
-            <p>This product has no reviews. Be the first one to share your opinion!</p>
+            <div class="mt-2 ml-2 ml-lg-5">
+                <p>This product has no reviews. Be the first one to share your opinion!</p>
+            </div>
             <br />
             {% else %}
-            <div class="review-wrapper col-md-6 col-sm-12 p-3">
+            <div class="review-wrapper col-md-8 col-sm-12 p-3">
                 {% for review in product.product_reviews.all %}
                 <small>
                     <p> {{ review.author }} on {{ review.created_on }}</p>
                 </small>
-                <p> {{ review.body }} </p>
+                <p class="m-0"> {{ review.body }} </p>
+
+                <!-- Reviews edit/delete buttons -->
+                {% if User.id == review.author.id %}
+                <div class="d-flex justify-content-end">
+                    <div class="btn btn-outline-warning mr-3"><a class="nostyle" href="{% url 'update_review' review.pk %}">
+                        <i class="fa-regular fa-pen-to-square"></i> Edit</a>
+                    </div>
+                    <div class="btn btn-outline-danger mr-3"><a class="nostyle" href="{% url 'delete_review' review.pk %}">
+                        <i class="fa-solid fa-trash-can"></i> Delete</a>
+                    </div>
+                </div>
+                {% endif %}
                 <hr class="hr-middle">
                 {% endfor %}
                 {% endif %}
             </div>
         </div>
-
-        <!-- Reviews edit/delete buttons -->
-        <div class="d-flex justify-content-around">
-            {% if user.id == review.author.id %}
-            <div class="btn btn-outline-warning mr-3"><a href="{% url 'update_review' product.pk %}">Edit</a>
-            </div>
-            <div class="btn btn-outline-danger mr-3"><a href="{% url 'delete_review' product.pk %}">Delete</a>
-            </div>
-            {% endif %}
-        </div>
     </div>
-</div>
-</div>
 </div>
 
 {% endblock %}

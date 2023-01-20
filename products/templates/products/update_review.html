@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
-{% block extra_title %}Add review{% endblock %}
+{% block extra_title %}Update review{% endblock %}
 
 {% block content %}
 
@@ -9,7 +9,7 @@
     <hr class="w-50 mb-1">
     <div class="row">
         <div class="col text-center mt-3">
-            <h2 class="logo-font">Add a review</h2>
+            <h2 class="logo-font">Update your review</h2>
         </div>
     </div>
     <hr class="w-50 mb-1">
@@ -19,9 +19,10 @@
     <div class="d-flex justify-content-center">
         <div class="form-group">
             <form method="POST">
-                {% csrf_token %} {% crispy form %}
+                {% csrf_token %}
+                {% crispy form %} {{ form.media }}
                 <div class="d-flex justify-content-center">
-                    <button type="submit" class="btn btn-info m-2">Add review</button>
+                    <button type="submit" class="btn btn-info m-2">Update review</button>
                     <div class="btn btn-outline-info m-2">
                         <a class="nostyle" href="{% url 'home' %}">Cancel</a>
                     </div>
