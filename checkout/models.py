@@ -18,10 +18,9 @@ class Order(models.Model):
     )
 
     order_number = models.CharField(max_length=32, null=False, editable=False)
-    user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
-                                     null=True, blank=True,
-                                     related_name='orders')
-    full_name = models.CharField(max_length=100, null=False, blank=False)
+    name = models.CharField(max_length=100, blank=False, null=False)
+    customer = models.CharField(max_length=100, blank=False, null=False)
+    full_name = models.CharField(max_length=100, blank=False, null=False)
     phone = models.CharField(max_length=30, null=False, blank=False)
     email = models.EmailField(max_length=100, null=False, blank=False)
     address_line_1 = models.CharField(max_length=100, null=False, blank=False)

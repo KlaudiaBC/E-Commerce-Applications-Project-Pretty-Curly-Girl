@@ -3,6 +3,9 @@ from django.http import HttpResponse
 from .models import Order, OrderItem
 from products.models import Product
 
+import json
+import time
+
 
 class StripeWH_Handler:
     """Handle Stripe webhooks"""
@@ -26,10 +29,6 @@ class StripeWH_Handler:
         pid = intent.id
         bag = intent.metadata.bag
         save_info = intent.metadata.save_info
-
-        # Get the Charge object
-        stripe_charge = stripe.Charge.retrieve(
-            intent.latest_charge)
 
         billing_details = intent.charges.data[0].billing_details
         shipping_details = intent.shipping
