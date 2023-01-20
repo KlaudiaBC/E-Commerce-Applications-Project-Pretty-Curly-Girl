@@ -21,6 +21,34 @@
                         alt="{{ product.name }}">
                     {% endif %}
                 </div>
+
+                <!-- Comment section -->
+                <div class="d-flex w-100 justify-content-between">
+                    <div>
+                        <h3>Reviews:</h3>
+                    </div>
+                    <div class="mr-4">
+                        <div class="btn btn-outline-info"><a href="{% url 'add_review' product.pk %}">Add your
+                                review.</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-100 mt-3">
+                    {% if not product_reviews.all %}
+                    <p>This product has no reviews. Be the first one to share your opinion!</p>
+                    <br />
+                    {% else %}
+                    <div>
+                        {% for review in product_reviews.all %}
+                        <small>
+                            <p> {{ review.author }} on {{ review.created_on }}</p>
+                        </small>
+                        <p> {{ review.body }} </p>
+                        <br />
+                        {% endfor %}
+                        {% endif %}
+                    </div>
+                </div>
             </div>
 
             <!-- product details -->
