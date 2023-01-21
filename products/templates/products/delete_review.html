@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load static %}
+{% block extra_title %}Remove review{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid container-tall">
+    <hr class="w-50 mb-1">
+    <div class="row">
+        <div class="col text-center mt-3">
+            <h2 class="logo-font">Remove your review</h2>
+        </div>
+    </div>
+    <hr class="w-50 mb-1">
+    <br><br>
+
+    {% if user.is_authenticated %}
+    <div class="text-center col-12">
+        <div class="d-flex justify-content-center">
+            <div class="card card-product p-3">
+                <h5 class="card-title">Delete review:</h5>
+                <h6 class="card-subtitle mb-2 text-muted">"{{ review.body }}"</h6>
+                <p class="card-text">
+                    Are you sure you want to permanently remove this review?
+                </p>
+                <div class="form-group">
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div class="btn btn-light">
+                            <a class='nostyle' href="{% url 'home' %}">Cancel</a>
+                        </div>
+                        <button type="sumbit" class="btn btn-light">Delete</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% else %}
+    <div>
+        <p class="text-center">Ooops! You do not have access to this page.</p>
+        <p class="text-center">
+            <a class="text-info" href="{% url 'account_signup' %}">Create an account</a> or
+            <a class="text-info" href="{% url 'account_login' %}">login</a> to add a review.
+        </p>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

@@ -18,7 +18,7 @@ body {
   min-height: calc(100vh - 200px);
 }
 
-button {
+button btn {
   font-family: Volkorn !important;
 }
 
@@ -46,6 +46,12 @@ button {
   width: auto;
   height: auto;
   margin: auto;
+}
+
+.review-wrapper {
+  border-radius: 30px;
+  background-color: #17a2b81f;
+  border: solid #f2f8fd;
 }
 
 .btt-link,
