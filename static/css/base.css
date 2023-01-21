@@ -18,7 +18,7 @@ body {
   min-height: calc(100vh - 200px);
 }
 
-button {
+button btn {
   font-family: Volkorn !important;
 }
 

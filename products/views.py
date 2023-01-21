@@ -91,7 +91,7 @@ class AddReview(CreateView):
     success_url = reverse_lazy('home')
 
     def form_valid(self, form):
-        form.instance.review_id = self.kwargs['review_id']
+        form.instance.product_id = self.kwargs['product_pk']
         messages.info(self.request, 'Thank You! Your review has been added.')
 
         return super().form_valid(form)
@@ -99,7 +99,7 @@ class AddReview(CreateView):
 
 class UpdateReview(UpdateView):
     """
-    Define attributes for the Edit Post form,
+    Define attributes for the edit review,
     which will render in specyfied html file.
     """
     model = Review
@@ -116,9 +116,9 @@ class UpdateReview(UpdateView):
 
 class DeleteReview(DeleteView):
     """
-    Define attributes for the delete post page,
+    Define attributes for the delete review,
     which will render in specyfied html file.
     """
     model = Review
     template_name = "products/delete_review.html"
-    success_url = reverse_lazy('home')
+    success_url = reverse_lazy('products')
