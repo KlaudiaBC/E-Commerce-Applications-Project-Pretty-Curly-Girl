@@ -6,13 +6,13 @@
 
 {% block content %}
 <div class="container mb-2 container-tall">
+    <hr class="w-50 mb-1">
     <div class="row">
-        <div class="col">
-            <hr class="w-50 mb-1">
-            <h2 class="logo-font mb-4 text-center">Shopping Bag</h2>
-            <hr class="w-50 mb-1">
+        <div class="col text-center mt-3">
+            <h2 class="logo-font">Shopping Bag</h2>
         </div>
     </div>
+    <hr class="w-50 mb-1">
 
     {% if bag_items %}
     <div class="table-responsive rounded m-auto">
@@ -33,8 +33,7 @@
                     {% if item.product.image %}
                     <img class="img-fluid rounded" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
                     {% else %}
-                    <img class="img-fluid rounded" src="{% static 'images/noimage.webp' %}"
-                        alt="{{ product.name }}">
+                    <img class="img-fluid rounded" src="{% static 'images/noimage.webp' %}" alt="{{ product.name }}">
                     {% endif %}
                 </td>
                 <td>
@@ -82,7 +81,7 @@
             </tr>
         </table>
     </div>
-    <div colspan="5" class="pt-5 text-right">
+    <div colspan="5" class="pt-5 m-1 text-right">
         <h6><strong>Bag Total: €{{ total|floatformat:2 }}</strong></h6>
         <h6>Delivery: €{{ delivery|floatformat:2 }}</h6>
         <h4 class="mt-4"><strong>Grand Total: €{{ grand_total|floatformat:2 }}</strong></h4>
@@ -94,9 +93,10 @@
         {% endif %}
     </div>
 
-    <div colspan="5" class="text-right m-5">
+    <div colspan="5" class="text-right m-1">
         <a href="{% url 'products' %}" class="btn btn-outline-secondary rounded-3 btn-lg" aria-label="products">
-            <span class="text-uppercase"><i class="fa-solid fa-arrow-left"></i> Keep Shopping</span>
+            <i class="fa-solid fa-arrow-left"></i>
+            <span class="text-uppercase d-md-inline d-none"> Keep Shopping</span>
         </a>
         <a href="{% url 'checkout' %}" class="btn btn-info rounded-3 btn-lg" aria-label="checkout">
             <span class="text-uppercase">Secure Checkout</span>

@@ -34,12 +34,14 @@
                 </div>
 
                 <!-- quantity form -->
-                <div class="row">
+                <div class="row mx-2 ">
                     <form class="form text-center" action="{% url 'add_to_bag' product.id %}" method="POST">
                         {% csrf_token %}
                         <div class="form-row">
-                            <div class="col-12">
-                                <p class="mt-3"><strong>Quantity:</strong></p>
+                            <div class="d-flex justify-content-between">
+                                <div>
+                                    <p class="mt-3"><strong>Quantity:</strong></p>
+                                </div>
                                 <div class="form-group">
                                     <div class="input-group">
 
@@ -73,23 +75,24 @@
                                 </div>
                             </div>
                         </div>
+
+                        <!-- action buttons: submit/back -->
+                        <div class="text-center">
+                            <a href="{% url 'products' %}" class="btn btn-outline-secondary rounded-3"
+                                aria-label="products">
+                                <span class="icon"><i class="fas fa-solid fa-arrow-left"></i></span>
+                                <span class="text-uppercase d-md-inline d-none">Keep Shopping</span>
+                            </a>
+                            <button type="submit" class="btn btn-info rounded-3 text-uppercase" aria-label="add_to_bag">
+                                <span class="text-uppercase">Add to bag </span>
+                                <i class="fa-solid fa-cart-plus"></i>
+                            </button>
+                        </div>
+                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
                     </form>
                 </div>
             </div>
         </div>
-
-        <!-- action buttons: submit/back -->
-        <div class="text-center">
-            <a href="{% url 'products' %}" class="btn btn-outline-secondary rounded-3" aria-label="products">
-                <span class="icon"><i class="fas fa-solid fa-arrow-left"></i></span>
-                <span class="text-uppercase">Keep Shopping</span>
-            </a>
-            <button type="submit" class="btn btn-info rounded-3 text-uppercase" aria-label="add_to_bag">
-                <span class="text-uppercase">Add to bag </span>
-                <i class="fa-solid fa-cart-plus"></i>
-            </button>
-        </div>
-        <input type="hidden" name="redirect_url" value="{{ request.path }}">
 
         <hr>
 
@@ -100,16 +103,16 @@
                     <h3 class="text-info">Reviews:</h3>
                 </div>
                 <div class="ml-2 col-sm-7">
-                    <div class="btn btn-outline-info"><a href="{% url 'add_review' product.pk %}" class="nostyle">Add
-                            your
-                            review.</a>
+                    <div class="btn btn-outline-info"><a href="{% url 'add_review' product.pk %}" class="nostyle">
+                            <i class="fa-solid fa-feather-pointed"></i>
+                            Add your review.</a>
                     </div>
                 </div>
             </div>
         </div>
         <br />
 
-        <div class="row mx-2 mx-md-5">
+        <div class="row mx-1 mx-md-5">
             {% if not product.product_reviews.all %}
             <div class="mt-2 ml-2 ml-lg-5">
                 <p>This product has no reviews. Be the first one to share your opinion!</p>
@@ -119,25 +122,31 @@
             <div class="review-wrapper col-md-8 col-sm-12 p-3">
                 {% for review in product.product_reviews.all %}
                 <small>
-                    <p> {{ review.author }} on {{ review.created_on }}</p>
+                    <p><i class="fa-solid fa-feather-pointed text-info"></i> {{ review.author }} on {{
+                        review.created_on
+                        }}</p>
                 </small>
                 <p class="m-0"> {{ review.body }} </p>
 
                 <!-- Reviews edit/delete buttons -->
                 {% if User.id == review.author.id %}
                 <div class="d-flex justify-content-end">
-                    <div class="btn btn-outline-warning mr-3"><a class="nostyle" href="{% url 'update_review' review.pk %}">
-                        <i class="fa-regular fa-pen-to-square"></i> Edit</a>
+                    <div class="btn btn-outline-warning mr-3">
+                        <a class="nostyle" href="{% url 'update_review' review.pk %}">
+                            <i class="fa-regular fa-pen-to-square"></i>
+                            <span class="d-md-inline d-none"> Edit</span></a>
                     </div>
-                    <div class="btn btn-outline-danger mr-3"><a class="nostyle" href="{% url 'delete_review' review.pk %}">
-                        <i class="fa-solid fa-trash-can"></i> Delete</a>
+                    <div class="btn btn-outline-danger mr-3">
+                        <a class="nostyle" href="{% url 'delete_review' review.pk %}">
+                            <i class="fa-solid fa-trash-can"></i>
+                            <span class="d-md-inline d-none"> Delete</span></a>
                     </div>
                 </div>
                 {% endif %}
                 <hr class="hr-middle">
                 {% endfor %}
-                {% endif %}
             </div>
+            {% endif %}
         </div>
     </div>
 </div>

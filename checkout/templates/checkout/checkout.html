@@ -10,13 +10,14 @@
 
 {% block content %}
 <div class="container">
+    <hr class="w-50 mb-1">
     <div class="row">
-        <div class="col">
-            <hr class="w-50 mb-1">
-            <h2 class="logo-font mb-4 text-center">Checkout</h2>
-            <hr class="w-50 mb-1">
+        <div class="col text-center mt-3">
+            <h2 class="logo-font">Checkout</h2>
         </div>
     </div>
+    <hr class="w-50 mb-1">
+
     <br>
     <div class="row">
         <div class="col-12 col-lg-6 order-lg-last mb-5">
@@ -104,10 +105,11 @@
 
                 <div class="submit-button text-right mt-5 mb-2">
                     <a href="{% url 'view_bag' %}" class="btn btn-outline-secondary rounded-3" aria-label="view_bag">
-                        <span class="font-weight-bold"><i class="fa-solid fa-arrow-left"></i> Adjust Bag</span>
+                            <i class="fa-solid fa-arrow-left"></i>
+                            <span class="text-uppercase d-md-inline d-none"> Adjust Bag</span>
                     </a>
                     <button id="submit-button" class="btn btn-info rounded-3" aria-label="complete_order">
-                        <span class="font-weight-bold">Complete Order</span>
+                        <span class="text-uppercase">Complete Order</span>
                     </button>
                     <p class="small text-danger my-0">
                         <span>Your card will be charged <strong>€{{ grand_total|floatformat:2 }}</strong></span>
