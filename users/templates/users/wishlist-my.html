@@ -11,65 +11,69 @@
     </div>
     <hr class="w-50 mb-1">
     <br>
-    <h3 class="text-center">Hello back, {{ user.username }}</h3>
+    <h3 class="text-center text-info">
+        Hello back, {{ user.username }}! 
+        <i class="fa-solid fa-sm fa-sun"></i></h3>
     <p class="text-center">Have a look at the things you've liked so far:</p>
-    
-    <hr class="hr-middle">
+
+    <!-- <hr class="hr-middle"> -->
 
     {% if wlist %}
+    <div class="blue-wrapper m-auto mx-lg-5">
+        <div class="table-responsive rounded">
+            <table class="table table-sm table-borderless">
+                <thead class="text-black">
+                    <tr>
+                        <th scope="col"></th> <!-- img -->
+                        <th scope="col">Product Info</th>
+                        <th scope="col">Price</th>
+                        <th scope="col"></th> <!-- delete icon -->
+                    </tr>
+                </thead>
 
-    <div class="table-responsive rounded m-auto">
-        <table class="table table-sm table-borderless">
-            <thead class="text-black">
+                {% for wl in wlist %}
                 <tr>
-                    <th scope="col"></th> <!-- img -->
-                    <th scope="col">Product Info</th>
-                    <th scope="col">Price</th>
-                    <th scope="col"></th> <!-- delete icon -->
+                    <td>
+                        {% if wl.product.image %}
+                        <img class="card-img img-md rounded" src="{{ wl.product.image.url }}"
+                            alt="{{ wl.product.name }}">
+                        {% else %}
+                        <img class="card-img img-md rounded" src="{% static 'images/noimage.webp' %}"
+                            alt="{{ wl.product.name }}">
+                        {% endif %}
+                    </td>
+                    <td class="align-middle">
+                        <a href="{% url 'product_detail' wl.product.id %}"><strong>{{ wl.product.name }}</strong></a>
+                    </td>
+                    <td class="align-middle">
+                        €{{ wl.product.price }}
+                    </td>
                 </tr>
-            </thead>
-
-            {% for wl in wlist %}
-            <tr>
-                <td>
-                    {% if wl.product.image %}
-                    <img class="card-img img-md rounded" src="{{ wl.product.image.url }}" alt="{{ wl.product.name }}">
-                    {% else %}
-                    <img class="card-img img-md rounded" src="{% static 'images/noimage.webp' %}"
-                        alt="{{ wl.product.name }}">
-                    {% endif %}
-                </td>
-                <td class="align-middle">
-                    <a href="{% url 'product_detail' wl.product.id %}"><strong>{{ wl.product.name }}</strong></a>
-                </td>
-                <td class="align-middle">
-                    {{ wl.product.price }}
-                </td>
-            </tr>
-            {% endfor %}
-        </table>
-
-        {% else %}
-
-        <!-- if user don't have any item in the wishlist -->
-        <div class="flex justify-content-center" aria-labelledby="#profile-tab">
-            <div class="container wrapper-form profile-tab">
-                <p class="text-special lead">Upss! It looks quite empty here, doesn't it?</p>
-                <p>Check out our latest offers and feel free to save them for later. You don't have to make a decision
-                    right
-                    away. This is what I am for, to remember all the <b>cool products</b> you have seen here!</p>
-                <span class="text-muted"> --- Your Wishlist <i class="fa-regular fa-heart"></i></span>
-            </div>
+                {% endfor %}
+            </table>
         </div>
-        <br><br>
-        {% endif %}
+    </div>
 
-        <br>
-        <div class="text-center">
-            <a href="{% url 'products' %}" class="btn btn-outline-info rounded-3 ml-2" aria-label="products">
-                <span class="font-weight-bold"><i class="fa-solid fa-arrow-left"></i> Back to store</span>
-            </a>
+    {% else %}
+
+    <!-- if user don't have any item in the wishlist -->
+    <div class="flex justify-content-center" aria-labelledby="#profile-tab">
+        <div class="container wrapper-form profile-tab">
+            <p class="text-special lead">Upss! It looks quite empty here, doesn't it?</p>
+            <p>Check out our latest offers and feel free to save them for later. You don't have to make a decision
+                right
+                away. This is what I am for, to remember all the <b>cool products</b> you have seen here!</p>
+            <span class="text-muted"> --- Your Wishlist <i class="fa-regular fa-heart"></i></span>
         </div>
+    </div>
+    <br><br>
+    {% endif %}
+
+    <br>
+    <div class="text-center">
+        <a href="{% url 'products' %}" class="btn btn-outline-info rounded-3 ml-2" aria-label="products">
+            <span class="font-weight-bold"><i class="fa-solid fa-arrow-left"></i> Back to store</span>
+        </a>
     </div>
 </div>
 

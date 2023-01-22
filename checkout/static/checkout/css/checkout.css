@@ -45,3 +45,16 @@ select:invalid,
 select option[value=""] {
     color: #aab7c4 !important;
 }
+
+.order-confirmation-wrapper {
+  overflow: auto;
+  border-radius: 5px;
+  padding: 1rem;
+}
+
+
+@media screen and (min-width: 768px) {
+  .order-confirmation-wrapper {
+    padding: 1rem 4rem 1rem 4rem;
+  }
+}
