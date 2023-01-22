@@ -36,7 +36,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME'), 'localhost']
 
@@ -168,7 +168,6 @@ CORS_ORIGIN_ALLOW_ALL = True
 CSRF_TRUSTED_ORIGINS = ['https://*.pretty-curly-girl.herokuapp.com',
                         'https://pretty-curly-girl.herokuapp.com/\
                             accounts/google/login/callback/',
-                        'https://8000-klaudiabc-ecommerceappl-jf2l2afkl4o.ws-eu83.gitpod.io',
                         'http://*.gitpod.io']
 
 
