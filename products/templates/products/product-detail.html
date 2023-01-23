@@ -119,14 +119,13 @@
             </div>
             <br />
             {% else %}
-            <div class="review-wrapper col-md-8 col-sm-12 p-3">
+            <div class="blue-wrapper col-md-8 col-sm-12 p-3">
                 {% for review in product.product_reviews.all %}
                 <small>
-                    <p><i class="fa-solid fa-feather-pointed text-info"></i> {{ review.author }} on {{
-                        review.created_on
-                        }}</p>
+                    <p><i class="fa-solid fa-feather-pointed text-info"></i>
+                         {{ review.author }} on {{ review.created_on }}</p>
                 </small>
-                <p class="m-0"> {{ review.body }} </p>
+                <p> {{ review.body }} </p>
 
                 <!-- Reviews edit/delete buttons -->
                 {% if User.id == review.author.id %}

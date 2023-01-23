@@ -20,7 +20,7 @@
         <div class="form-group">
             <form method="POST">
                 {% csrf_token %}
-                {% crispy form %} {{ form.media }}
+                {{ form.as_p }} {{ form.media }}
                 <div class="d-flex justify-content-center">
                     <button type="submit" class="btn btn-info m-2">Update review</button>
                     <div class="btn btn-outline-info m-2">
