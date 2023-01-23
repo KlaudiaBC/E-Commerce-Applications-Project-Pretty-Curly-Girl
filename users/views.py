@@ -6,58 +6,88 @@ from django.contrib import messages
 from .models import UserProfile, Wishlist
 from .forms import UserProfileForm
 from products.models import Product
-import requests
+from checkout.models import Order
+
+import request
 
 
-@login_required
-def users(request):
-    """Display the user's profile and him allow to update"""
-
-    user = get_object_or_404(UserProfile, user=request.user)
-    orders = user.orders.all()
+def dashboard(request):
+    """Display the user's profile."""
+    profile = get_object_or_404(UserProfile, user=request.user)
+    address = get_object_or_404(Address, user=request.user)
 
     if request.method == 'POST':
-        form = UserProfileForm(request.POST, instance=user)
+        form = UserProfileForm(request.POST, instance=profile)
         if form.is_valid():
             form.save()
             messages.success(request, 'Profile updated successfully')
-        else:
-            messages.error(request,
-                           'Update failed. Please ensure the form is valid.')
-    else:
-        form = UserProfileForm(instance=user)
+    form_user = UserProfileForm(instance=profile)
 
-    template = 'users/profile.html'
+    if request.method == 'POST':
+        form = AddressForm(request.POST, instance=address)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Address updated successfully')
+    form_address = AddressForm(instance=address)
+
+    orders = profile.orders.all()
+
+    template = 'users/dashboard.html'
     context = {
-        'form': form,
+        'form_user': form_user,
+        'form_address': form_address,
+        'orders': orders,
         'on_profile_page': True
     }
-
-    form = UserProfileForm(instance=user)
 
     return render(request, template, context)
 
 
-def add_wishlist(request):
-    if request.POST:
-        if request.user.is_authenticated:
-            data = Wishlist.objects.filter(
-                user_id=request.user.pk, product_id=int(
-                    request.POST['attr_id']))
-            if data.exists():
-                messages.info(
-                    request, 'This item is already in your wishlist!')
-            else:
-                Wishlist.objects.create(
-                    user_id=request.user.pk, product_id=int(
-                        request.POST['attr_id'])),
-                messages.success(
-                    request, 'Added item to your wishlist.')
+def order_history(request, order_number):
+    """Display the order history."""
+    order = get_object_or_404(Order, order_number=order_number)
 
-    return HttpResponse(status=200)
+    messages.info(request, (
+        f'This is a past confirmation for order number {order_number}. '
+        'A confirmation email was sent on the order date.'
+    ))
+
+    template = 'checkout/checkout_success.html'
+    context = {
+        'order': order,
+        'from_profile': True,
+    }
+
+    return render(request, template, context)
 
 
-# My Wishlist
+@login_required
 def wishlist(request):
-    wlist = Wishlist.objects.filter(user=request.user).order_by('-id')
-    return render(request, 'users/wishlist-my.html', {'wlist': wlist})
+    """Display the user's wishlist."""
+    products = Product.objects.filter(users_wishlist=request.user)
+    return render(request, "users/my_wishlist.html", {"wishlist": products})
+
+
+@login_required
+def add_to_wishlist(request, id):
+    """Add/Remove product to/from the wishlist"""
+    product = get_object_or_404(Product, id=id)
+    if product.users_wishlist.filter(id=request.user.id).exists():
+        product.users_wishlist.remove(request.user)
+        messages.info(
+            request, f'{product.title} has been removed from your WishList.')
+    else:
+        product.users_wishlist.add(request.user)
+        messages.success(
+            request, f'Added {product.title} to your WishList.')
+    return HttpResponseRedirect(request.META["HTTP_REFERER"])
+
+
+@login_required
+def delete_user(request):
+    """Remove User Profile"""
+    user = UserProfile.objects.get(user_name=request.user)
+    user.is_active = False
+    user.save()
+    logout(request)
+    return redirect("users:delete_confirmation")
