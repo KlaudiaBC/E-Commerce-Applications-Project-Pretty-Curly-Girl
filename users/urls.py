@@ -11,5 +11,5 @@ urlpatterns = [
     # Wish List
     path("my_wishlist", views.wishlist, name="wishlist"),
     path("my_wishlist/<int:id>",
-         views.add_to_wishlist, name="edit_wishlist"),
+         views.add_to_wishlist, name="add_to_wishlist"),
 ]

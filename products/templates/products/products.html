@@ -23,12 +23,12 @@
             <li class="dropdown-item" value="low_to_high">
                 <a href="{% url 'products' %}?sort=price&direction=asc">Price
                     (low to high)</a>
-                </li>
+            </li>
             <li class="dropdown-item" value="high_to_low">
                 <a href="{% url 'products' %}?sort=price&direction=desc">Price
                     (high to low)</a>
-                </li>
-            </ul>
+            </li>
+        </ul>
     </div>
 
     <!-- Render product cards -->
@@ -61,9 +61,14 @@
 
                                 <!-- "Like" button / Add to wishlist -->
                                 {% if user.is_authenticated %}
-                                <p class="col-6 d-flex justify-content-end addToWish" attr_id="{{ product.pk }}">
-                                    <i class="fa-regular fa-heart fa-lg mr-1 text-danger"></i>
-                                </p>
+                                <form method="post">
+                                    {% csrf_token %}
+                                    <input type="hidden" value="{{product.id}}" name="product_id">
+                                    <span role="button" type="submit">
+                                        <i class="fa-regular fa-heart fa-lg mr-1 text-danger"></i>
+                                        <a href="{% url 'products' %}">
+                                        Add to Wish List</a></span>
+                                </form>
                                 {% else %}
                                 <p class="col-6 d-flex justify-content-end" id="not-log">
                                     <i class="fa-regular fa-heart fa-lg mr-1 text-danger"></i>

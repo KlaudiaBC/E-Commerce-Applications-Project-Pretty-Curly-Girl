@@ -21,29 +21,6 @@
         }
     })
 
-    // Add wishlist
-    $(document).ready(function () {
-        $(".addToWish").click(function () {
-            var attr_id = $(this).attr('attr_id')
-            var that = $(this).find('i');
-            var csrfToken = "{{ csrf_token }}"
-
-            $.ajax({
-                url: "/users/add_wishlist",
-                type: 'POST',
-                data: {
-                    'attr_id': attr_id,
-                    'csrfmiddlewaretoken': csrfToken,
-                },
-                success: function () {
-                    that.addClass('fa-solid').removeClass('fa-regular');
-                    location.reload(); // to show django message
-                }
-            });
-        }); // End ajax
-    }); // End document.ready
-
-
     var notLog = document.getElementById('not-log')
     notLog.addEventListener('click', function () {
         alert('Login required! Please, login to your account or create one.')

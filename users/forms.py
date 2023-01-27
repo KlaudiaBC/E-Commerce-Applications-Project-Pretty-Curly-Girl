@@ -19,7 +19,6 @@ class UserProfileForm(forms.ModelForm):
             'default_city': 'Town or City',
             'default_address_line_1': 'Street Address 1',
             'default_address_line_2': 'Street Address 2',
-            'birthdate': models.DateField(default="1999-01-01"),
         }
 
         self.fields['default_phone'].widget.attrs['autofocus'] = True

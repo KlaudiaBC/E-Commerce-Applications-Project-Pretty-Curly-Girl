@@ -11,5 +11,4 @@ class UserProfileAdmin(admin.ModelAdmin):
                     'default_address_line_2',
                     'default_postcode',
                     'default_city',
-                    'default_country',
-                    'birthdate')
+                    'default_country')

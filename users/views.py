@@ -4,6 +4,7 @@ from django.contrib.auth.decorators import login_required
 
 from .models import UserProfile, Wishlist
 from .forms import UserProfileForm
+from products.models import Product
 from checkout.models import Order
 
 
@@ -17,7 +18,7 @@ def dashboard(request):
             form.save()
             messages.success(request, 'Profile updated successfully')
 
-    form = UserProfileForm(instance=profile)
+        form = UserProfileForm(instance=profile)
     orders = profile.orders.all()
 
     template = 'users/dashboard.html'
@@ -56,13 +57,20 @@ def wishlist(request):
 
 @login_required
 def add_to_wishlist(request, id):
-    product = get_object_or_404(Product, id=id)
-    if product.Wishlist.filter(id=request.user.id).exists():
-        product.Wishlist.remove(request.user)
-        messages.info(
-            request, f'{product.title} has been removed from your WishList.')
-    else:
-        product.Wishlist.add(request.user)
-        messages.success(
-            request, f'Added {product.title} to your WishList.')
-    return render(request, "users/my_wishlist/<int:id>.html")
+    if request.user.is_authenticated:
+        data = Wishlist.objects.filter(
+            user_id=request.user.pk, product_id=int(
+                request.POST['attr_id']))
+        if data.exists():
+            Wishlist.objects.remove(
+                user_id=request.user.pk),
+            messages.info(
+                request, 'This item has been removed from your wishlist.')
+        else:
+            Wishlist.objects.create(
+                user_id=request.user.pk, product_id=int(
+                    request.POST['attr_id'])),
+            messages.info(
+                request, 'Added item to your wishlist.'),
+
+        return HttpResponse(status=200)
