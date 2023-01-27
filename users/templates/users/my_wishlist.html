@@ -19,8 +19,8 @@
 
     <!-- <hr class="hr-middle"> -->
 
-    {% if wishlist %}
-    {% for product in wishlist %}
+    {% if Wishlist %}
+    {% for wl in Wishlist %}
     <div class="blue-wrapper m-auto mx-lg-5">
         <div class="table-responsive rounded">
             <table class="table table-sm table-borderless">
@@ -33,7 +33,6 @@
                     </tr>
                 </thead>
 
-                {% for wl in wlist %}
                 <tr>
                     <td>
                         {% if wl.product.image %}
