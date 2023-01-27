@@ -3,18 +3,16 @@ from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
-from .models import UserProfile, Wishlist
+from .models import UserProfile
 from .forms import UserProfileForm
 from products.models import Product
 from checkout.models import Order
 
-import request
 
-
+@login_required
 def dashboard(request):
     """Display the user's profile."""
     profile = get_object_or_404(UserProfile, user=request.user)
-    address = get_object_or_404(Address, user=request.user)
 
     if request.method == 'POST':
         form = UserProfileForm(request.POST, instance=profile)
@@ -23,6 +21,23 @@ def dashboard(request):
             messages.success(request, 'Profile updated successfully')
     form_user = UserProfileForm(instance=profile)
 
+    orders = profile.orders.all()
+
+    template = 'users/dashboard.html'
+    context = {
+        'form_user': form_user,
+        'orders': orders,
+        'on_profile_page': True
+    }
+
+    return render(request, template, context)
+
+
+@login_required
+def address(request):
+    """Display the user's address."""
+    address = get_object_or_404(Address, user=request.user)
+
     if request.method == 'POST':
         form = AddressForm(request.POST, instance=address)
         if form.is_valid():
@@ -30,14 +45,9 @@ def dashboard(request):
             messages.success(request, 'Address updated successfully')
     form_address = AddressForm(instance=address)
 
-    orders = profile.orders.all()
-
-    template = 'users/dashboard.html'
+    template = 'users/address.html'
     context = {
-        'form_user': form_user,
         'form_address': form_address,
-        'orders': orders,
-        'on_profile_page': True
     }
 
     return render(request, template, context)
@@ -80,14 +90,4 @@ def add_to_wishlist(request, id):
         product.users_wishlist.add(request.user)
         messages.success(
             request, f'Added {product.title} to your WishList.')
-    return HttpResponseRedirect(request.META["HTTP_REFERER"])
-
-
-@login_required
-def delete_user(request):
-    """Remove User Profile"""
-    user = UserProfile.objects.get(user_name=request.user)
-    user.is_active = False
-    user.save()
-    logout(request)
-    return redirect("users:delete_confirmation")
+    return (request, 'users/wishlist')

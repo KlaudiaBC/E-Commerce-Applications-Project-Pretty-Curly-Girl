@@ -6,6 +6,7 @@ from django.views.generic import TemplateView
 urlpatterns = [
     # User dashboard
     path("dashboard", views.dashboard, name="dashboard"),
+    path("address", views.address, name="address"),
     path('order_history/<order_number>', views.order_history,
          name='order_history'),
     path(
