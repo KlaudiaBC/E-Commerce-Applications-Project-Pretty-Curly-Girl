@@ -17,8 +17,8 @@ class UserProfileForm(forms.ModelForm):
             'default_phone': 'Phone Number',
             'default_postcode': 'Postal Code',
             'default_city': 'Town or City',
-            'default_address_line_1': 'Street Address 1',
-            'default_address_line_2': 'Street Address 2',
+            'default_address_line_1': 'Address Line 1',
+            'default_address_line_2': 'Address Line 2',
         }
 
         self.fields['default_phone'].widget.attrs['autofocus'] = True
