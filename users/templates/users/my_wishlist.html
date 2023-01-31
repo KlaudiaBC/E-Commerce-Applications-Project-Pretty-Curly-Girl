@@ -38,7 +38,8 @@
                 <tr>
                     <td>
                         {% if wl.product.image %}
-                        <img class="card-img img-md rounded" src="{{ wl.product.image.url }}" alt="{{ wl.product.name }}">
+                        <img class="card-img img-md rounded" src="{{ wl.product.image.url }}"
+                            alt="{{ wl.product.name }}">
                         {% else %}
                         <img class="card-img img-md rounded" src="{% static 'images/noimage.webp' %}"
                             alt="{{ wl.product.name }}">
@@ -51,10 +52,10 @@
                         €{{ wl.product.price }}
                     </td>
                 </tr>
+                {% endfor %}
             </table>
         </div>
     </div>
-    {% endfor %}
 
     {% else %}
     <!-- if user don't have any item in the wishlist -->
@@ -80,7 +81,7 @@
         </p>
     </div>
     {% endif %}
-    
+
     <br>
     <div class="text-center">
         <a href="{% url 'products' %}" class="btn btn-outline-info rounded-3 ml-2" aria-label="products">

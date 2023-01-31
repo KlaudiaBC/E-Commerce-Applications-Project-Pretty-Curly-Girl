@@ -49,6 +49,7 @@ def checkout(request):
             'address_line_1': request.POST['address_line_1'],
             'address_line_2': request.POST['address_line_2'],
         }
+
         order_form = OrderForm(form_data)
         if order_form.is_valid():
             order = order_form.save(commit=False)
