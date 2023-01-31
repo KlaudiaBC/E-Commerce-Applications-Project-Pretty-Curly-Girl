@@ -6,8 +6,7 @@ from django.views.generic import TemplateView
 urlpatterns = [
     # User dashboard
     path("dashboard", views.dashboard, name="dashboard"),
-    # Wish List
-    path("my_wishlist", views.wishlist, name="wishlist"),
-    path("my_wishlist/<int:id>",
-         views.add_to_wishlist, name="add_to_wishlist"),
+    # Wishlist
+    path('add_wishlist', views.add_wishlist, name='add_wishlist'),
+    path('wishlist-my', views.wishlist, name='wishlist'),
 ]

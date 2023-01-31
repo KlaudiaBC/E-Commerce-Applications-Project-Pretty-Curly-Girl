@@ -1,6 +1,7 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponse
 
 from .models import UserProfile, Wishlist
 from .forms import UserProfileForm
@@ -30,27 +31,24 @@ def dashboard(request):
 
 @login_required
 def wishlist(request):
-    products = Wishlist.objects.filter(user=request.user).order_by('-id')
-    return render(request, "users/my_wishlist.html", {
-        "wishlist": products})
+    wlist = Wishlist.objects.filter(user=request.user).order_by('-id')
+    return render(request, 'users/my_wishlist.html', {'wlist': wlist})
 
 
-@login_required
-def add_to_wishlist(request, id):
-    if request.user.is_authenticated:
-        data = Wishlist.objects.filter(
-            user_id=request.user.pk, product_id=int(
-                request.POST['attr_id']))
-        if data.exists():
-            Wishlist.objects.remove(
-                user_id=request.user.pk),
-            messages.info(
-                request, 'This item has been removed from your wishlist.')
-        else:
-            Wishlist.objects.create(
+def add_wishlist(request):
+    if request.POST:
+        if request.user.is_authenticated:
+            data = Wishlist.objects.filter(
                 user_id=request.user.pk, product_id=int(
-                    request.POST['attr_id'])),
-            messages.info(
-                request, 'Added item to your wishlist.'),
+                    request.POST['attr_id']))
+            if data.exists():
+                messages.error(
+                    request, 'This item can not be added to your wishlist.')
+            else:
+                Wishlist.objects.create(
+                    user_id=request.user.pk, product_id=int(
+                        request.POST['attr_id'])),
+                messages.info(
+                    request, 'Added item to your wishlist.')
 
-        return HttpResponse(status=200)
+    return HttpResponse(status=200)

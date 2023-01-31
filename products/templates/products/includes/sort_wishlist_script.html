@@ -21,8 +21,40 @@
         }
     })
 
+    // Add wishlist
+    $(document).ready(function () {
+        $(".addToWish").click(function () {
+            var attr_id = $(this).attr('attr_id')
+            var that = $(this).find('i');
+            var csrfToken = "{{ csrf_token }}"
+
+            $.ajax({
+                url: "/users/add_wishlist",
+                type: 'POST',
+                data: {
+                    'attr_id': attr_id,
+                    'csrfmiddlewaretoken': csrfToken,
+                },
+                success: function (res) {
+                    that.addClass('fa-solid').removeClass('fa-regular');
+                }
+            });
+        }); // End ajax
+    }); // End document.ready
+
+    // show messages outside of django scope
+    let permission = Notification.permission;
+
+    if(permission === "granted"){
+        showNotification();
+    } else if(permission === "default"){
+        requestAndShowPermission();
+    } else {
+        alert("Use normal alert");
+    }
+
     var notLog = document.getElementById('not-log')
     notLog.addEventListener('click', function () {
-        alert('Login required! Please, login to your account or create one.')
+        alert("Login required.")
     });
 </script>
