@@ -128,7 +128,7 @@
                 <p> {{ review.body }} </p>
 
                 <!-- Reviews edit/delete buttons -->
-                {% if user.id == review.author.id %}
+                {% if User.id == review.author.id %}
                 <div class="d-flex justify-content-end">
                     <div class="btn btn-outline-warning mr-3">
                         <a class="nostyle" href="{% url 'update_review' review.pk %}">
