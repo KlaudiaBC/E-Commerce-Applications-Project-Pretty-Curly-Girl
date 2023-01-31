@@ -182,6 +182,30 @@ The features, which was taken into a testing in both scenarios: on the desktop a
   <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/testing/w3c_signup.png?raw=true" alt="w3c-terms">
 </p>
 
+**Reviews Page**
+
+<p align="center">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/testing/w3c_review.png?raw=true" alt="w3c-revierw">
+</p>
+
+**Update review Page**
+
+<p align="center">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/testing/w3c_update.png?raw=true" alt="w3c-update">
+</p>
+
+**Delete review Page**
+
+<p align="center">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/testing/w3c_delete.png?raw=true" alt="w3c-delete">
+</p>
+
+**Request Refund Page**
+
+<p align="center">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/testing/w3c_refund.png?raw=true" alt="w3c-refund">
+</p>
+
 
 <br />
 <hr>
