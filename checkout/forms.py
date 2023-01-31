@@ -21,8 +21,8 @@ class OrderForm(forms.ModelForm):
             'email': 'Email Address',
             'postcode': 'Postal Code',
             'city': 'City',
-            'address_line_1': 'Street Name',
-            'address_line_2': 'House Number',
+            'address_line_1': 'Address Line 1',
+            'address_line_2': 'Address Line 2',
         }
 
         """

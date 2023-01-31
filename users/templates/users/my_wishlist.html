@@ -11,12 +11,16 @@
     </div>
     <hr class="w-50 mb-1">
     <br>
+
+    {% if user.is_authenticated %}
+
     <h3 class="text-center text-info">
-        Hello back, {{ user.username }}! 
-        <i class="fa-solid fa-sm fa-sun"></i></h3>
+        Hello back, {{ user.username }}!
+        <i class="fa-solid fa-sm fa-sun"></i>
+    </h3>
     <p class="text-center">Have a look at the things you've liked so far:</p>
 
-    <!-- <hr class="hr-middle"> -->
+    <hr class="hr-middle">
 
     {% if wlist %}
     <div class="blue-wrapper m-auto mx-lg-5">
@@ -27,7 +31,6 @@
                         <th scope="col"></th> <!-- img -->
                         <th scope="col">Product Info</th>
                         <th scope="col">Price</th>
-                        <th scope="col"></th> <!-- delete icon -->
                     </tr>
                 </thead>
 
@@ -35,8 +38,7 @@
                 <tr>
                     <td>
                         {% if wl.product.image %}
-                        <img class="card-img img-md rounded" src="{{ wl.product.image.url }}"
-                            alt="{{ wl.product.name }}">
+                        <img class="card-img img-md rounded" src="{{ wl.product.image.url }}" alt="{{ wl.product.name }}">
                         {% else %}
                         <img class="card-img img-md rounded" src="{% static 'images/noimage.webp' %}"
                             alt="{{ wl.product.name }}">
@@ -49,13 +51,12 @@
                         €{{ wl.product.price }}
                     </td>
                 </tr>
-                {% endfor %}
             </table>
         </div>
     </div>
+    {% endfor %}
 
     {% else %}
-
     <!-- if user don't have any item in the wishlist -->
     <div class="flex justify-content-center" aria-labelledby="#profile-tab">
         <div class="container wrapper-form profile-tab">
@@ -69,6 +70,17 @@
     <br><br>
     {% endif %}
 
+    {% else %}
+    <!-- if user is not logged in -->
+    <div>
+        <p class="text-center">Ooops! You do not have access to this page.</p>
+        <p class="text-center">
+            <a class="text-info" href="{% url 'account_signup' %}">Create an account</a> or
+            <a class="text-info" href="{% url 'account_login' %}">login</a> to see the wishlist.
+        </p>
+    </div>
+    {% endif %}
+    
     <br>
     <div class="text-center">
         <a href="{% url 'products' %}" class="btn btn-outline-info rounded-3 ml-2" aria-label="products">
