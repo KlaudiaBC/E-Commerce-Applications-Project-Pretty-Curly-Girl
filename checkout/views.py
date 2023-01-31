@@ -109,8 +109,8 @@ def checkout(request):
                     'country': profile.default_country,
                     'postcode': profile.default_postcode,
                     'city': profile.default_city,
-                    'default_address_line_1': profile.default_address_line_1,
-                    'default_address_line_2': profile.default_address_line_2,
+                    'address_line_1': profile.default_address_line_1,
+                    'address_line_2': profile.default_address_line_2,
                 })
             except UserProfile.DoesNotExist:
                 order_form = OrderForm()
@@ -138,8 +138,7 @@ def checkout_success(request, order_number):
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
     messages.success(request, f'Order successfully processed! \
-        Your order number is {order_number}. A confirmation \
-        email will be sent to {order.email}.')
+        Your order number is {order_number}.')
 
     if 'bag' in request.session:
         del request.session['bag']
