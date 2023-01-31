@@ -127,7 +127,6 @@
                 </small>
                 <p> {{ review.body }} </p>
 
-                {% if user.is_authenticated %}
                 <!-- Reviews edit/delete buttons -->
                 {% if user.id == review.author.id %}
                 <div class="d-flex justify-content-end">
@@ -142,7 +141,6 @@
                             <span class="d-md-inline d-none"> Delete</span></a>
                     </div>
                 </div>
-                {% endif %}
                 {% endif %}
                 <hr class="hr-middle">
                 {% endfor %}

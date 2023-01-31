@@ -19,7 +19,7 @@
             aria-haspopup="true" aria-expanded="false" aria-label="sort">
             Sort by
         </button>
-        <ul class="dropdown-menu" id="sort-selector" name="sort-selector">
+        <ul class="dropdown-menu" id="sort-selector">
             <li class="dropdown-item" value="low_to_high">
                 <a href="{% url 'products' %}?sort=price&direction=asc">Price
                     (low to high)</a>
@@ -65,7 +65,7 @@
                                     <i class="fa-regular fa-heart fa-lg mr-1 text-danger"></i>
                                 </p>
                                 {% else %}
-                                <p class="col-6 d-flex justify-content-end" id="not-log">
+                                <p class="col-6 d-flex justify-content-end" id="no-log">
                                     <i class="fa-regular fa-heart fa-lg mr-1 text-danger"></i>
                                 </p>
                                 {% endif %}
