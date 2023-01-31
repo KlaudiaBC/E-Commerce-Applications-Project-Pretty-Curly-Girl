@@ -123,12 +123,13 @@
                 {% for review in product.product_reviews.all %}
                 <small>
                     <p><i class="fa-solid fa-feather-pointed text-info"></i>
-                         {{ review.author }} on {{ review.created_on }}</p>
+                        {{ review.author }} on {{ review.created_on }}</p>
                 </small>
                 <p> {{ review.body }} </p>
 
+                {% if user.is_authenticated %}
                 <!-- Reviews edit/delete buttons -->
-                {% if User.id == review.author.id %}
+                {% if user.id == review.author.id %}
                 <div class="d-flex justify-content-end">
                     <div class="btn btn-outline-warning mr-3">
                         <a class="nostyle" href="{% url 'update_review' review.pk %}">
@@ -141,6 +142,7 @@
                             <span class="d-md-inline d-none"> Delete</span></a>
                     </div>
                 </div>
+                {% endif %}
                 {% endif %}
                 <hr class="hr-middle">
                 {% endfor %}

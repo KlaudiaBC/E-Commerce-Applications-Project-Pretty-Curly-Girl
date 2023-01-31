@@ -21,4 +21,5 @@ class UserWishlist(admin.ModelAdmin):
 
 @admin.register(RefundView)
 class AcceptRefund(admin.ModelAdmin):
-    list_filter = ('accepted', 'order')
+    list_display = ('order', 'reason', 'accepted', 'email')
+    list_filter = ('accepted', 'email')
