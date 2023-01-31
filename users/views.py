@@ -1,10 +1,12 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from django.urls import reverse_lazy
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
+from django.views.generic import CreateView
 
-from .models import UserProfile, Wishlist
-from .forms import UserProfileForm
+from .models import UserProfile, Wishlist, RefundView
+from .forms import UserProfileForm, RefundForm
 from products.models import Product
 
 
@@ -15,7 +17,6 @@ def dashboard(request):
     if request.method == 'POST':
         form = UserProfileForm(request.POST, instance=profile)
         if form.is_valid():
-            form.save()
             messages.success(request, 'Profile updated successfully')
 
     form = UserProfileForm(instance=profile)
@@ -52,3 +53,21 @@ def add_wishlist(request):
                     request, 'Added item to your wishlist.')
 
     return HttpResponse(status=200)
+
+
+def refund_view(request):
+
+    if request.method == 'POST':
+        form = RefundForm(request.POST)
+        if form.is_valid():
+            messages.success(request, 'Your request has been sent!\
+                We will contact you shortly.')
+
+    form = RefundForm()
+
+    template = 'users/refund.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)

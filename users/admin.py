@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import UserProfile, Wishlist
+from .models import UserProfile, Wishlist, RefundView
 
 
 @admin.register(UserProfile)
@@ -17,3 +17,8 @@ class UserProfileAdmin(admin.ModelAdmin):
 @admin.register(Wishlist)
 class UserWishlist(admin.ModelAdmin):
     list_display = ('user', 'product')
+
+
+@admin.register(RefundView)
+class AcceptRefund(admin.ModelAdmin):
+    list_filter = ('accepted', 'order')

@@ -32,3 +32,14 @@ class UserProfileForm(forms.ModelForm):
             self.fields[field].widget.attrs[
                 'class'] = 'border-black rounded-0 profile-form-input'
             self.fields[field].label = False
+
+
+class RefundForm(forms.Form):
+    reference = forms.CharField()
+    message = forms.CharField(widget=forms.Textarea(attrs={
+        'rows': 4
+    }))
+    email = forms.EmailField()
+
+    def __str__(self):
+        return self.email
