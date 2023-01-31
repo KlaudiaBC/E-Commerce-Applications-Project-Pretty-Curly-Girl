@@ -143,6 +143,17 @@ See the Sprints as planned in the begging of implementation:
 <br>
 
 
+**Jira board - Sprint 4 - adding a missing elements:**
+<p align="center">
+<img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/sprint4a.png?raw=true"></p>
+<br>
+
+
+### **Sprint 4 - adding a missing elements**
+In order to meet the requirements of 5th portfolio assessment, there were a few elements that had to be added and the fix of registration form (please, see the Jira Board where all the issues and tasks are listed and explained). I had introduced two new models: review and request refund. I added a views and templates accordingly. Reviews can be added only by registered Users, however, every (also anonymous user) can fill and send the request of refund.
+The other missing element was feedback of successful and unsuccessful payment, which was also implemented together with an address form which was integrated with user profile model. Testing was handled through the entire process (you can find more about it in the "TESTING.md" file.
+
+
 ### **Daily stand-ups**
 This point of agile development would be necessary, if there was more than one developer working on the project. The short daily stand-up meeting helps the team accomplish their tasks by brief update on the work done and work which is planned for that day. I have been reviewing the workflow on the beginning of each day of development to keep track of the achieved tasks in comparison to the estimated time so that I could later implement the changes into a Second Sprint.
 
@@ -277,6 +288,28 @@ If you would like to test the funcionality of this component - you can do it ano
 </p>
 <br>
 
+**Dashboard** - The information about the User that is automatically implemented in the checkout form.
+
+<p align="center">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/dashboard.png?raw=true" alt="dashboard">
+</p>
+<br>
+
+**Reviews** - Reviews section is on the product details page - registered User can add, edit and remove the review.
+
+<p align="center">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/review.png?raw=true" alt="reviews">
+</p>
+<br>
+
+**Request Refund** - This page is providing a User with the simple form, where he can request a refund but also send a complaint or any other message to the store owner.
+
+<p align="center">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/refund.png?raw=true" alt="refund">
+</p>
+<br>
+
+
 #### **Color scheme**
 
 Following the color scheme of the current store of my Client - I have stayed with the shades of gray: a lot of white space and high-contrast elements in black.
@@ -321,6 +354,7 @@ Inspiration --> CodePen: <a href="https://codepen.io/mhdmhsni/pen/NmRojB" target
 
 ### **Features**
 <br>
+
 **Stripe payment**
 <br>
 During the implementation of this project I have been closely following the last tutorial provided by Code Institute: "Boutique Ado ''. All code connected with Stripe payments as well as configuration of webhooks is based on the code provided by CI. I have implemented a few changes required by the difference between the Order models, however I can not take any accreditation for this part of my application.
