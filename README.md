@@ -298,7 +298,7 @@ If you would like to test the funcionality of this component - you can do it ano
 **Reviews** - Reviews section is on the product details page - registered User can add, edit and remove the review.
 
 <p align="center">
-  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/review.png?raw=true" alt="reviews">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/reviews.png?raw=true" alt="reviews">
 </p>
 <br>
 
