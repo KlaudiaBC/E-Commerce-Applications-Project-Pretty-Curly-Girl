@@ -47,10 +47,10 @@ class Wishlist(models.Model):
 
 
 class RefundView(models.Model):
-    reference = models.CharField(max_length=50)
-    message = models.TextField()
-    email = models.EmailField()
+    order = models.ForeignKey(to='checkout.Order', on_delete=models.CASCADE)
+    reason = models.TextField()
     accepted = models.BooleanField(default=False)
+    email = models.EmailField()
 
     def __str__(self):
         return f"{self.pk}"

@@ -1,5 +1,5 @@
 from django import forms
-from .models import UserProfile, RefundView
+from .models import UserProfile
 
 
 class UserProfileForm(forms.ModelForm):
@@ -34,18 +34,12 @@ class UserProfileForm(forms.ModelForm):
             self.fields[field].label = False
 
 
-class RefundForm(forms.ModelForm):
-    class Meta:
-        model = RefundView
-        fields = ('reference', 'message', 'email',)
+class RefundForm(forms.Form):
+    reference = forms.CharField()
+    message = forms.CharField(widget=forms.Textarea(attrs={
+        'rows': 4
+    }))
+    email = forms.EmailField()
 
-    def __init__(self, *args, **kwargs):
-        """
-        Add placeholders
-        """
-        super().__init__(*args, **kwargs)
-        placeholders = {
-            'reference': 'Order Number',
-            'message': 'Please, tell us what went wrong.',
-            'email': 'Email Address',
-        }
+    def __str__(self):
+        return self.email

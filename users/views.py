@@ -56,11 +56,18 @@ def add_wishlist(request):
 
 
 def refund_view(request):
+
     if request.method == 'POST':
         form = RefundForm(request.POST)
         if form.is_valid():
-            form.save()
-            return render(request, 'users/refund_success.html')
+            messages.success(request, 'Your request has been sent!\
+                We will contact you shortly.')
+
     form = RefundForm()
-    context = {'form': form}
-    return render(request, 'users/refund.html', context)
+
+    template = 'users/refund.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
