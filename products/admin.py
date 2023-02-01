@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Product, Category, Review
+from .models import Product, Category
 from django_summernote.admin import SummernoteModelAdmin
 
 
@@ -26,13 +26,3 @@ class ProductAdmin(SummernoteModelAdmin):
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ('friendly_name', 'name',)
-
-
-@admin.register(Review)
-class ReviewAdmin(admin.ModelAdmin):
-    """
-    Customise the Comment Post form in the Admin Panel.
-    """
-    list_display = ('author', 'body', 'product', 'created_on')
-    list_filter = ('author', 'created_on')
-    search_fields = ('author', 'product')

@@ -47,7 +47,7 @@ class Wishlist(models.Model):
 
 
 class RefundView(models.Model):
-    reference = models.CharField(max_length=50)
+    reference = models.CharField(max_length=50, default="abc")
     message = models.TextField()
     accepted = models.BooleanField(default=False)
     email = models.EmailField()
