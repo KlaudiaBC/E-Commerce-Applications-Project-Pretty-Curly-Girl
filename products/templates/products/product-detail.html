@@ -93,10 +93,60 @@
                 </div>
             </div>
         </div>
+        <hr>
+
+        <!-- Reviews section -->
+        <div class="mt-2 ml-2 ml-lg-5">
+            <div class="d-flex justify-content-between">
+                <div>
+                    <h3 class="text-info">Reviews:</h3>
+                </div>
+                <div class="ml-2 col-sm-7">
+                    <div class="btn btn-outline-info"><a href="{% url 'add_review' product.pk %}" class="nostyle">
+                            <i class="fa-solid fa-feather-pointed"></i>
+                            Add your review.</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="row mx-1 mx-md-5">
+            {% if not product.reviews.all %}
+            <div class="mt-2 ml-2 ml-lg-5">
+                <p>This product has no reviews. Be the first one to share your opinion!</p>
+            </div>
+            <br>
+            {% else %}
+            <div class="blue-wrapper col-md-8 col-sm-12 p-3">
+                {% for review in product.reviews.all %}
+                <small>
+                    <p><i class="fa-solid fa-feather-pointed text-info"></i>
+                        {{ review.author }} on {{ review.created_on }}</p>
+                </small>
+                <p> {{ review.body }} </p>
+            </div>
+
+            <!-- Reviews edit/delete buttons -->
+            <div class="d-flex justify-content-end">
+                <div class="btn btn-outline-warning mr-3">
+                    <a class="nostyle" href="{% url 'update_review' review.pk %}">
+                        <i class="fa-regular fa-pen-to-square"></i>
+                        <span class="d-md-inline d-none"> Edit</span></a>
+                </div>
+                <div class="btn btn-outline-danger mr-3">
+                    <a class="nostyle" href="{% url 'delete_review' review.pk %}">
+                        <i class="fa-solid fa-trash-can"></i>
+                        <span class="d-md-inline d-none"> Delete</span></a>
+                </div>
+            </div>
+            <hr class="hr-middle">
+            {% endfor %}
+        </div>
+        {% endif %}
     </div>
 </div>
-
-        <hr>
 
 {% endblock %}
 
