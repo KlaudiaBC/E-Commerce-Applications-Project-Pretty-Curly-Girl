@@ -2,7 +2,7 @@
 Define and customise Forms
 """
 from django import forms
-from .models import Review
+from .models import UserReview
 
 
 class ReviewForm(forms.ModelForm):
@@ -13,7 +13,7 @@ class ReviewForm(forms.ModelForm):
         """
         Add widgets in the meta class
         """
-        model = Review
+        model = UserReview
         fields = ('body', 'author')
         widgets = {
             'body': forms.Textarea(attrs={

@@ -34,12 +34,12 @@ class Product(models.Model):
         return self.name
 
 
-class Review(models.Model):
+class UserReview(models.Model):
     """
     Define the Review model
     """
     product = models.ForeignKey(
-        Product, on_delete=models.CASCADE, related_name="product_reviews"
+        Product, on_delete=models.CASCADE, related_name="reviews"
     )
     author = models.CharField(max_length=100)
     body = models.TextField(max_length=500)

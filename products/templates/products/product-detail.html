@@ -126,25 +126,25 @@
                         {{ review.author }} on {{ review.created_on }}</p>
                 </small>
                 <p> {{ review.body }} </p>
-            </div>
 
-            <!-- Reviews edit/delete buttons -->
-            <div class="d-flex justify-content-end">
-                <div class="btn btn-outline-warning mr-3">
-                    <a class="nostyle" href="{% url 'update_review' review.pk %}">
-                        <i class="fa-regular fa-pen-to-square"></i>
-                        <span class="d-md-inline d-none"> Edit</span></a>
+                <!-- Reviews edit/delete buttons -->
+                <div class="d-flex justify-content-end">
+                    <div class="btn btn-outline-warning mr-3">
+                        <a class="nostyle" href="{% url 'update_review' review.pk %}">
+                            <i class="fa-regular fa-pen-to-square"></i>
+                            <span class="d-md-inline d-none"> Edit</span></a>
+                    </div>
+                    <div class="btn btn-outline-danger mr-3">
+                        <a class="nostyle" href="{% url 'delete_review' review.pk %}">
+                            <i class="fa-solid fa-trash-can"></i>
+                            <span class="d-md-inline d-none"> Delete</span></a>
+                    </div>
                 </div>
-                <div class="btn btn-outline-danger mr-3">
-                    <a class="nostyle" href="{% url 'delete_review' review.pk %}">
-                        <i class="fa-solid fa-trash-can"></i>
-                        <span class="d-md-inline d-none"> Delete</span></a>
-                </div>
+                <hr class="hr-middle">
+                {% endfor %}
             </div>
-            <hr class="hr-middle">
-            {% endfor %}
+            {% endif %}
         </div>
-        {% endif %}
     </div>
 </div>
 

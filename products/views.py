@@ -4,7 +4,7 @@ from django.urls import reverse_lazy
 from django.http import HttpResponseRedirect
 from django.contrib import messages
 from django.db.models import Q
-from .models import Product, Category, Review
+from .models import Product, Category, UserReview
 from .forms import ReviewForm
 
 
@@ -85,7 +85,7 @@ class AddReview(CreateView):
     Define attributes for the add review form,
     which will render in specified html file.
     """
-    model = Review
+    model = UserReview
     form_class = ReviewForm
     template_name = 'products/add_review.html'
     success_url = reverse_lazy('home')
@@ -102,7 +102,7 @@ class UpdateReview(UpdateView):
     Define attributes for the edit review,
     which will render in specyfied html file.
     """
-    model = Review
+    model = UserReview
     form_class = ReviewForm
     template_name = "products/update_review.html"
     success_url = reverse_lazy('products')
@@ -119,6 +119,6 @@ class DeleteReview(DeleteView):
     Define attributes for the delete review,
     which will render in specyfied html file.
     """
-    model = Review
+    model = UserReview
     template_name = "products/delete_review.html"
     success_url = reverse_lazy('products')
