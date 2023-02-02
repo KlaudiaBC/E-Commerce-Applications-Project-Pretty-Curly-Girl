@@ -121,10 +121,9 @@
             {% else %}
             <div class="blue-wrapper col-md-8 col-sm-12 p-3">
                 {% for review in product.reviews.all %}
-                <small>
-                    <p><i class="fa-solid fa-feather-pointed text-info"></i>
+                <p class='small'>
+                    <i class="fa-solid fa-feather-pointed text-info"></i>
                         {{ review.author }} on {{ review.created_on }}</p>
-                </small>
                 <p> {{ review.body }} </p>
 
                 <!-- Reviews edit/delete buttons -->
