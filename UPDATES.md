@@ -13,7 +13,7 @@
 ### **Bug 01 - Password Reset**
 
 <p align="center">
-  <img src="#" alt="responsive view">
+  <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/update_one.png?raw=true" alt="update one">
 </p>
 
 <br>
