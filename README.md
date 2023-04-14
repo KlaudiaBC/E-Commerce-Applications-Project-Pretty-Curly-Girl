@@ -20,6 +20,10 @@ Subscription form with MailChimp.
 See the deployed project <a href="https://pretty-curly-girl.herokuapp.com/" target="_blank">here</a>.<br>
 See the Jira Board for this project: <a href="https://emporiumofthoughts.atlassian.net/jira/software/projects/PCG/boards/2" target="_blank">here</a>.
 
+See the newest updates in the <a href="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/UPDATES.md" target="_blank">UPDATES.md</a> file.
+
+<br>
+
 <p align="center">
   <img src="https://github.com/KlaudiaBC/E-Commerce-Applications-Project-Pretty-Curly-Girl/blob/main/README/respo_dark.png?raw=true" alt="responsive view">
 </p>
