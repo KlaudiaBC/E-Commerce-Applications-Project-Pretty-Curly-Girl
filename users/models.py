@@ -54,3 +54,26 @@ class RefundView(models.Model):
 
     def __str__(self):
         return f"{self.pk}"
+
+
+class ReviewProduct(models.Model):
+    """
+    Define the Rating/Review model
+    """
+    product = models.ForeignKey(
+        Product, on_delete=models.CASCADE, related_name="review_product"
+    )
+    author = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="review_author"
+    )
+    body = models.TextField(max_length=500)
+    created_on = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        """
+        Set the order of displaying the posts
+        """
+        ordering = ['created_on']
+
+    def __str__(self):
+        return f"Review {self.body} by {self.author}"

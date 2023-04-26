@@ -1,5 +1,5 @@
 from django import forms
-from .models import UserProfile, RefundView
+from .models import UserProfile, RefundView, ReviewProduct
 
 
 class UserProfileForm(forms.ModelForm):
@@ -48,4 +48,26 @@ class RefundForm(forms.ModelForm):
             'reference': 'Order Number',
             'message': 'Please, tell us what went wrong.',
             'email': 'Email Address',
+        }
+
+
+class ReviewForm(forms.ModelForm):
+    """
+    Define the Comment form fields
+    """
+    class Meta:
+        """
+        Add widgets in the meta class
+        """
+        model = ReviewProduct
+        fields = ('body', 'author')
+        widgets = {
+            'body': forms.Textarea(attrs={
+                'class': 'form-control',
+                'placeholder': "Type your review here."}),
+            'author': forms.TextInput(attrs={
+                'class': 'form-control',
+                'value': '',
+                'id': 'review_author',
+                'type': 'hidden'}),
         }

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import UserProfile, Wishlist, RefundView
+from .models import UserProfile, Wishlist, RefundView, ReviewProduct
 
 
 @admin.register(UserProfile)
@@ -23,3 +23,13 @@ class UserWishlist(admin.ModelAdmin):
 class AcceptRefund(admin.ModelAdmin):
     list_display = ('reference', 'message', 'email', 'accepted')
     list_filter = ('accepted', 'email')
+
+
+@admin.register(ReviewProduct)
+class ReviewAdmin(admin.ModelAdmin):
+    """
+    Customise the Comment Post form in the Admin Panel.
+    """
+    list_display = ('author', 'body', 'product', 'created_on')
+    list_filter = ('author', 'created_on')
+    search_fields = ('author', 'product')
