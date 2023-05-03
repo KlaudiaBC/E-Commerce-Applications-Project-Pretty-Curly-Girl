@@ -60,7 +60,7 @@ class ReviewForm(forms.ModelForm):
         Add widgets in the meta class
         """
         model = ReviewProduct
-        fields = ('body', 'author')
+        fields = ('body',)
         widgets = {
             'body': forms.Textarea(attrs={
                 'class': 'form-control',
@@ -68,6 +68,7 @@ class ReviewForm(forms.ModelForm):
             'author': forms.TextInput(attrs={
                 'class': 'form-control',
                 'value': '',
-                'id': 'review_author',
-                'type': 'hidden'}),
+                'type': 'hidden',
+                'id': 'username',
+                }),
         }
