@@ -38,7 +38,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME'), 'localhost']
+ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME'), 'localhost', '8000-klaudiabc-ecommerceappl-wraaqhdxjwh.ws-eu106.gitpod.io']
 
 
 # Application definition
@@ -168,7 +168,8 @@ CORS_ORIGIN_ALLOW_ALL = True
 CSRF_TRUSTED_ORIGINS = ['https://*.pretty-curly-girl.herokuapp.com',
                         'https://pretty-curly-girl.herokuapp.com/\
                             accounts/google/login/callback/',
-                        'http://*.gitpod.io']
+                        'http://*.gitpod.io',
+                        'https://8000-klaudiabc-ecommerceappl-wraaqhdxjwh.ws-eu106.gitpod.io']
 
 
 # Database

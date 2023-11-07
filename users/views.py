@@ -6,8 +6,8 @@ from django.views.generic import CreateView, UpdateView, DeleteView
 from django.http import HttpResponse
 from django.views.generic import CreateView
 
-from .models import UserProfile, Wishlist, RefundView, ReviewProduct
-from .forms import UserProfileForm, RefundForm, ReviewForm
+from .models import UserProfile, Wishlist, RefundView
+from .forms import UserProfileForm, RefundForm
 from products.models import Product
 
 
@@ -65,47 +65,3 @@ def refund_view(request):
     form = RefundForm()
     context = {'form': form}
     return render(request, 'users/refund.html', context)
-
-
-class AddReview(CreateView):
-    """
-    Define attributes for the add review form,
-    which will render in specified html file.
-    """
-    model = ReviewProduct
-    form_class = ReviewForm
-    template_name = 'users/add_review.html'
-    success_url = reverse_lazy('home')
-
-    def form_valid(self, form):
-        form.instance.product_id = self.kwargs['product_pk']
-        messages.info(self.request, 'Thank You! Your review has been added.')
-
-        return super().form_valid(form)
-
-
-class UpdateReview(UpdateView):
-    """
-    Define attributes for the edit review,
-    which will render in specyfied html file.
-    """
-    model = ReviewProduct
-    form_class = ReviewForm
-    template_name = "users/update_review.html"
-    success_url = reverse_lazy('products')
-
-    def form_valid(self, form):
-        form.instance.review_id = self.kwargs['pk']
-        messages.success(self.request, 'All changes have been saved!')
-
-        return super().form_valid(form)
-
-
-class DeleteReview(DeleteView):
-    """
-    Define attributes for the delete review,
-    which will render in specyfied html file.
-    """
-    model = ReviewProduct
-    template_name = "users/delete_review.html"
-    success_url = reverse_lazy('products')
